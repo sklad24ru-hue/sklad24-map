@@ -14,3 +14,5 @@
 
 https://sklad24ru-hue.github.io/sklad24-map/
 
+
+Pages deployment enabled: 2026-10-15.
