@@ -4,8 +4,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#243746">
-  <link rel="preconnect" href="https://tile.openstreetmap.org" crossorigin>
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+  <link rel="preconnect" href="https://api-maps.yandex.ru" crossorigin>
   <title>Мониторинг отзывов · Склад-24</title>
   <style>
     :root{--navy:#243746;--orange:#ff7200;--text:#243746;--muted:#71808a;--line:#dfe5e9}
@@ -103,8 +102,8 @@
   'use strict';
   const $=id=>document.getElementById(id);
   const REGION_VIEW={
-    moscow:{center:[55.7558,37.6173],zoom:9},
-    spb:{center:[59.9391,30.3159],zoom:9}
+    moscow:{center:[37.6173,55.7558],zoom:9},
+    spb:{center:[30.3159,59.9391],zoom:9}
   };
   const LEAFLET_JS=[
     'https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js',
@@ -116,7 +115,21 @@
     'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css',
     'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css'
   ];
-  const state={data:null,map:null,layer:null,markers:[],selected:null,region:'all'};
+  const state={data:null,map:null,provider:null,leafletLayer:null,markers:[],selected:null,region:'all',providerNote:''};
+
+  const esc=v=>String(v==null?'':v).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+  const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+  const setLoad=(title,pct,sub)=>{
+    $('loadTitle').textContent=title;
+    $('loadBar').style.width=Math.max(5,Math.min(100,Number(pct)||0))+'%';
+    $('loadSub').textContent=sub||'';
+  };
+  const showError=(title,msg)=>{
+    $('loading').classList.add('hidden');
+    $('error').innerHTML='<h2>'+esc(title)+'</h2><p>'+esc(msg)+'</p>'+
+      '<p style="color:#71808a">Данные обновляются автоматически раз в 15 минут. Попробуйте обновить страницу чуть позже.</p>';
+    $('error').classList.remove('hidden');
+  };
 
   function applySnapshotOptions(){
     const o=state.data&&state.data.options||{};
@@ -137,19 +150,37 @@
     $('error').classList.remove('hidden');
   }
 
-  const esc=v=>String(v==null?'':v).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
-  const setLoad=(title,pct,sub)=>{
-    $('loadTitle').textContent=title;
-    $('loadBar').style.width=Math.max(5,Math.min(100,Number(pct)||0))+'%';
-    $('loadSub').textContent=sub||'';
-  };
-  const showError=(title,msg)=>{
-    $('loading').classList.add('hidden');
-    $('error').innerHTML='<h2>'+esc(title)+'</h2><p>'+esc(msg)+'</p>'+
-      '<p style="color:#71808a">Данные обновляются автоматически раз в 15 минут. Попробуйте обновить страницу чуть позже.</p>';
-    $('error').classList.remove('hidden');
-  };
-  const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+  async function loadData(){
+    setLoad('Получаю объекты…',22,'Читаю готовый снимок данных с GitHub Pages.');
+    const response=await fetch('map-data.json',{cache:'no-cache'});
+    if(!response.ok)throw Error('Не удалось получить map-data.json: HTTP '+response.status);
+    const data=await response.json();
+    if(data&&data.error)throw Error('Обновление данных завершилось ошибкой: '+data.error);
+    if(!data||!Array.isArray(data.points)||!data.summary)throw Error('Файл данных карты имеет неверный формат.');
+    return data;
+  }
+
+  function loadYandex(apiKey,timeout=14000){
+    if(window.ymaps3)return Promise.resolve(window.ymaps3.ready);
+    return new Promise((resolve,reject)=>{
+      const el=document.createElement('script');let done=false;
+      const finish=async err=>{
+        if(done)return;done=true;clearTimeout(timer);
+        if(err){try{el.remove()}catch(_){}reject(err);return;}
+        try{
+          if(!window.ymaps3)throw Error('Яндекс Maps API не инициализировался');
+          await window.ymaps3.ready;
+          resolve();
+        }catch(e){reject(e);}
+      };
+      el.src='https://api-maps.yandex.ru/v3/?apikey='+encodeURIComponent(apiKey)+'&lang=ru_RU';
+      el.async=true;
+      el.onload=()=>finish();
+      el.onerror=()=>finish(Error('Не удалось загрузить Яндекс Maps API'));
+      const timer=setTimeout(()=>finish(Error('Таймаут загрузки Яндекс Maps API')),timeout);
+      document.head.appendChild(el);
+    });
+  }
 
   function loadScript(url,timeout=6000){
     return new Promise((resolve,reject)=>{
@@ -186,21 +217,33 @@
   }
   async function loadLeaflet(){
     if(window.L)return;
-    setLoad('Загружаю карту…',24,'Подключаю Leaflet и OpenStreetMap.');
     const css=firstGood(loadCss,LEAFLET_CSS).catch(()=>null);
     await firstGood(loadScript,LEAFLET_JS);
     await css;
   }
-  async function loadData(){
-    setLoad('Получаю объекты…',42,'Читаю готовый снимок данных с GitHub Pages.');
-    const response=await fetch('map-data.json',{cache:'no-cache'});
-    if(!response.ok)throw Error('Не удалось получить map-data.json: HTTP '+response.status);
-    const data=await response.json();
-    if(data&&data.error)throw Error('Обновление данных завершилось ошибкой: '+data.error);
-    if(!data||!Array.isArray(data.points)||!data.summary)
-      throw Error('Файл данных карты имеет неверный формат.');
-    return data;
+
+  async function chooseProvider(){
+    const o=state.data&&state.data.options||{};
+    const key=String(o.yandexApiKey||'').trim();
+    if(key){
+      setLoad('Загружаю Яндекс Карты…',44,'Подключаю Yandex Maps JS API 3.0.');
+      try{
+        await loadYandex(key);
+        state.provider='yandex';
+        state.providerNote='Яндекс Карты';
+        return;
+      }catch(e){
+        console.warn('Yandex Maps failed, using reserve map:',e);
+        state.providerNote='Резервная карта · Яндекс временно недоступен';
+      }
+    }else{
+      state.providerNote='Резервная карта · ключ Яндекс Maps API ещё не настроен';
+    }
+    setLoad('Загружаю резервную карту…',44,state.providerNote);
+    await loadLeaflet();
+    state.provider='leaflet';
   }
+
   function filtered(){
     const d=state.data;if(!d)return [];
     return d.points.filter(p=>{
@@ -212,28 +255,66 @@
       return true;
     });
   }
-  const latLng=p=>[Number(p.coordinates[1]),Number(p.coordinates[0])];
-  function clearMarkers(){if(state.layer)state.layer.clearLayers();state.markers=[]}
+  const yCoords=p=>[Number(p.coordinates[0]),Number(p.coordinates[1])];
+  const lCoords=p=>[Number(p.coordinates[1]),Number(p.coordinates[0])];
+
+  function clearMarkers(){
+    if(state.provider==='yandex'&&state.map){
+      for(const x of state.markers){try{state.map.removeChild(x.marker)}catch(_){}}
+    }else if(state.leafletLayer){
+      state.leafletLayer.clearLayers();
+    }
+    state.markers=[];
+  }
+
+  function paddedBounds(points){
+    let minX=Infinity,minY=Infinity,maxX=-Infinity,maxY=-Infinity;
+    for(const p of points){
+      const c=yCoords(p);
+      if(!Number.isFinite(c[0])||!Number.isFinite(c[1]))continue;
+      minX=Math.min(minX,c[0]);maxX=Math.max(maxX,c[0]);
+      minY=Math.min(minY,c[1]);maxY=Math.max(maxY,c[1]);
+    }
+    if(!Number.isFinite(minX))return null;
+    const dx=Math.max((maxX-minX)*.12,.015),dy=Math.max((maxY-minY)*.12,.01);
+    return [[minX-dx,minY-dy],[maxX+dx,maxY+dy]];
+  }
+
   function fit(points,animate=true){
     if(!points.length)return false;
-    if(points.length===1){state.map.setView(latLng(points[0]),12,{animate});return true}
-    state.map.fitBounds(L.latLngBounds(points.map(latLng)).pad(.12),{animate,maxZoom:13});
+    if(state.provider==='yandex'){
+      if(points.length===1){
+        state.map.setLocation({center:yCoords(points[0]),zoom:12,duration:animate?250:0,easing:'ease-in-out'});
+        return true;
+      }
+      const bounds=paddedBounds(points);
+      if(bounds)state.map.setLocation({bounds,duration:animate?300:0,easing:'ease-in-out'});
+      return !!bounds;
+    }
+    if(points.length===1){state.map.setView(lCoords(points[0]),12,{animate});return true}
+    state.map.fitBounds(L.latLngBounds(points.map(lCoords)).pad(.12),{animate,maxZoom:13});
     return true;
   }
+
+  function setPreset(view,animate=false){
+    if(state.provider==='yandex'){
+      state.map.setLocation({center:view.center,zoom:view.zoom,duration:animate?250:0,easing:'ease-in-out'});
+    }else{
+      state.map.setView([view.center[1],view.center[0]],view.zoom,{animate});
+    }
+  }
+
   function focusRegion(){
     const points=filtered();
-    if(state.region==='all'){
-      if(!fit(points,true))state.map.setView([56.5,36],6);
-      return;
-    }
-    const preset=REGION_VIEW[state.region];
-    if(preset)state.map.setView(preset.center,preset.zoom,{animate:false});
-    if(points.length)setTimeout(()=>fit(points,true),0);
+    if(points.length){fit(points,true);return;}
+    if(state.region!=='all'&&REGION_VIEW[state.region]){setPreset(REGION_VIEW[state.region]);return;}
+    setPreset({center:[36,56.5],zoom:6});
   }
+
   function selectPoint(p){
     state.selected=p;
     for(const x of state.markers){
-      const root=x.marker.getElement(),el=root&&root.querySelector('.marker');
+      const el=x.el||(x.marker&&x.marker.getElement&&x.marker.getElement());
       if(el)el.classList.toggle('selected',x.p.id===p.id);
     }
     const rating=p.rating==null?'—':Number(p.rating).toFixed(1)+'★';
@@ -250,42 +331,94 @@
       '<div class="links"><a class="primary" href="'+esc(p.url)+'" target="_blank" rel="noopener">Открыть Яндекс</a>'+
       '<a class="secondary" href="'+esc(p.reviewsUrl)+'" target="_blank" rel="noopener">Отзывы</a></div>';
   }
+
+  function markerHtml(p,selected){
+    return '<span>'+(p.rating==null?'—':Number(p.rating).toFixed(1))+'</span>'+
+      (p.reviewCount==null?'':'<small>'+esc(p.reviewCount)+'</small>');
+  }
+
+  function addYandexMarker(p,selected){
+    const el=document.createElement('div');
+    el.className='marker '+(p.band||'none')+(selected?' selected':'');
+    el.innerHTML=markerHtml(p,selected);
+    el.title=p.name||'';
+    el.setAttribute('role','button');
+    el.tabIndex=0;
+    el.addEventListener('click',()=>selectPoint(p));
+    el.addEventListener('keydown',e=>{
+      if(e.key==='Enter'||e.key===' '){e.preventDefault();selectPoint(p);}
+    });
+    const marker=new ymaps3.YMapMarker({
+      coordinates:yCoords(p),
+      zIndex:selected?1000:100,
+      hideOutsideViewport:true
+    },el);
+    state.map.addChild(marker);
+    state.markers.push({marker,p,el});
+  }
+
+  function addLeafletMarker(p,selected){
+    const html='<div class="marker '+(p.band||'none')+(selected?' selected':'')+'">'+markerHtml(p,selected)+'</div>';
+    const icon=L.divIcon({className:'s24-map-marker',html,iconSize:[58,42],iconAnchor:[29,21]});
+    const marker=L.marker(lCoords(p),{icon,keyboard:true,title:p.name})
+      .on('click',()=>selectPoint(p))
+      .addTo(state.leafletLayer);
+    state.markers.push({marker,p,el:null});
+  }
+
   function render(doFocus=false){
     if(!state.map||!state.data)return;
     clearMarkers();
     const points=filtered();
     for(const p of points){
       if(!Array.isArray(p.coordinates)||p.coordinates.length<2)continue;
-      const selected=state.selected&&state.selected.id===p.id,
-        html='<div class="marker '+(p.band||'none')+(selected?' selected':'')+'"><span>'+
-          (p.rating==null?'—':Number(p.rating).toFixed(1))+'</span>'+
-          (p.reviewCount==null?'':'<small>'+esc(p.reviewCount)+'</small>')+'</div>',
-        icon=L.divIcon({className:'s24-map-marker',html,iconSize:[58,42],iconAnchor:[29,21]}),
-        marker=L.marker(latLng(p),{icon,keyboard:true,title:p.name})
-          .on('click',()=>selectPoint(p))
-          .addTo(state.layer);
-      state.markers.push({marker,p});
+      const selected=state.selected&&state.selected.id===p.id;
+      if(state.provider==='yandex')addYandexMarker(p,selected);
+      else addLeafletMarker(p,selected);
     }
     const sm=state.data.summary||{};
     $('summary').textContent=points.length+' на карте · '+Number(sm.total||state.data.points.length)+
       ' карточек всего · '+Number(sm.below||0)+' ниже '+Number(state.data.target||4.8).toFixed(1)+'★';
+    const parts=[];
     if(state.data.generatedAt){
       const when=new Date(state.data.generatedAt);
-      $('status').textContent='Данные: '+when.toLocaleString('ru-RU');
-    }else{
-      $('status').textContent='Данные ещё не опубликованы.';
+      parts.push('Данные: '+when.toLocaleString('ru-RU'));
     }
+    if(state.providerNote)parts.push(state.providerNote);
+    $('status').textContent=parts.join(' · ');
     if(doFocus)focusRegion();
   }
-  function initMap(){
+
+  async function initYandexMap(){
+    const {YMap,YMapDefaultSchemeLayer,YMapDefaultFeaturesLayer}=ymaps3;
+    state.map=new YMap(
+      document.getElementById('map'),
+      {location:{center:[37.6173,55.7558],zoom:8},theme:'light',showScaleInCopyrights:true},
+      [new YMapDefaultSchemeLayer({}),new YMapDefaultFeaturesLayer({zIndex:1800})]
+    );
+    try{
+      const {YMapZoomControl}=await ymaps3.import('@yandex/ymaps3-default-ui-theme');
+      const controls=new ymaps3.YMapControls({position:'right'});
+      controls.addChild(new YMapZoomControl({easing:'ease-in-out'}));
+      state.map.addChild(controls);
+    }catch(e){console.warn('Yandex zoom control unavailable:',e);}
+  }
+
+  function initLeafletMap(){
     state.map=L.map('map',{zoomControl:true,attributionControl:true}).setView([55.7558,37.6173],8);
     L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{
       maxZoom:19,
       attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(state.map);
-    state.layer=L.layerGroup().addTo(state.map);
+    state.leafletLayer=L.layerGroup().addTo(state.map);
     setTimeout(()=>state.map.invalidateSize(),0);
   }
+
+  async function initMap(){
+    if(state.provider==='yandex')await initYandexMap();
+    else initLeafletMap();
+  }
+
   function bind(){
     $('regions').addEventListener('click',e=>{
       const b=e.target.closest('button[data-region]');if(!b)return;
@@ -303,16 +436,18 @@
       });
     }
   }
+
   async function start(){
     bind();
     try{
-      setLoad('Подготавливаю карту…',8,'Загружаю интерфейс и готовый снимок данных.');
-      const [data]=await Promise.all([loadData(),loadLeaflet()]);
-      state.data=data;
+      setLoad('Подготавливаю карту…',8,'Загружаю интерфейс и снимок данных.');
+      state.data=await loadData();
       applySnapshotOptions();
-      if(data.enabled===false){showDisabledMap();return;}
-      setLoad('Рисую объекты…',84,'Настраиваю маркеры и масштаб.');
-      initMap();render(true);
+      if(state.data.enabled===false){showDisabledMap();return;}
+      await chooseProvider();
+      setLoad('Рисую объекты…',82,state.provider==='yandex'?'Создаю маркеры на Яндекс Картах.':'Создаю маркеры на резервной карте.');
+      await initMap();
+      render(true);
       await sleep(80);
       setLoad('Готово',100,'');
       $('loading').classList.add('done');
