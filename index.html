@@ -31,6 +31,14 @@
     .marker{min-width:48px;height:38px;border:3px solid #fff;border-radius:21px;box-shadow:0 2px 8px rgba(0,0,0,.25);color:#fff;font:800 14px Arial;display:flex;flex-direction:column;justify-content:center;align-items:center;cursor:pointer;padding:2px 7px;user-select:none;transform:translate(-50%,-50%)}
     .marker small{font-size:9px;font-weight:600;opacity:.92}.marker.green{background:#3f7d58}.marker.yellow{background:#c69728}.marker.orange{background:#d9772f}.marker.red{background:#b94a43}.marker.none{background:#77848d}
     .marker.selected{outline:3px solid var(--navy);outline-offset:2px;z-index:30}
+    .marker-label{position:absolute;left:58px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.96);color:var(--text);border:1px solid var(--line);border-radius:7px;padding:4px 7px;font:700 11px/1.15 Arial;white-space:nowrap;box-shadow:0 1px 5px rgba(36,55,70,.10);pointer-events:none;max-width:170px;overflow:hidden;text-overflow:ellipsis}
+    .marker-trend{font-style:normal;font-size:11px;margin-left:2px}.marker-trend.up{color:#dff7e5}.marker-trend.down{color:#ffe0dc}.marker-trend.flat{color:#eef2f4}
+    .attention-card{border:1px solid var(--line);border-radius:9px;padding:10px 12px;margin:12px 0;background:#f7f9fa}.attention-card b{font-size:14px}
+    .attention-card.watch{background:#fff8e8}.attention-card.high{background:#fff0dc}.attention-card.critical{background:#fce9e7}
+    .section-title{font-weight:800;margin:17px 0 8px}.periods,.trends{display:grid;grid-template-columns:auto 1fr;gap:7px 12px}.periods div:nth-child(odd),.trends div:nth-child(odd){color:var(--muted)}
+    .trend-up{color:#2d7a46;font-weight:800}.trend-down{color:#a43c32;font-weight:800}.trend-flat{color:var(--muted);font-weight:800}
+    .changes{margin:0;padding-left:18px}.changes li{margin:5px 0}.actions{margin:0;padding-left:18px}.actions li{margin:5px 0}
+
     .loading{position:absolute;z-index:30;inset:0;background:linear-gradient(145deg,#f7f9fa,#edf2f4);display:flex;align-items:center;justify-content:center;padding:24px;transition:opacity .18s ease}
     .loading.done{opacity:0;pointer-events:none}.loader-card{width:min(430px,92%);background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:0 10px 32px rgba(36,55,70,.10);text-align:center}
     .spinner{width:42px;height:42px;margin:0 auto 16px;border-radius:50%;border:4px solid #e5eaed;border-top-color:var(--orange);animation:spin .8s linear infinite}
@@ -67,12 +75,51 @@
   function applyOptions(){const o=state.data.options||{};$('activeOnly').checked=o.activeOnly!==false;state.region=['all','moscow','spb'].includes(String(o.region))?String(o.region):'all';[...$('regions').querySelectorAll('button[data-region]')].forEach(b=>b.classList.toggle('active',b.dataset.region===state.region))}
   function filtered(){const d=state.data;if(!d)return[];return d.points.filter(p=>{if(state.region!=='all'&&p.region!==state.region)return false;if($('activeOnly').checked&&!p.active)return false;if($('below').checked&&!(p.rating!=null&&p.rating<d.target))return false;if($('low30').checked&&!(Number(p.low30)>0))return false;if($('attention').checked&&!p.attention)return false;return Array.isArray(p.coordinates)&&p.coordinates.length>=2})}
   function updateSummary(points){const sm=state.data.summary||{};$('summary').textContent=points.length+' на карте · '+Number(sm.total||state.data.points.length)+' карточек всего · '+Number(sm.below||0)+' ниже '+Number(state.data.target||4.8).toFixed(1)+'★';const parts=[];if(state.data.generatedAt){const dt=new Date(state.data.generatedAt);parts.push('Данные: '+dt.toLocaleString('ru-RU'))}if(state.providerNote)parts.push(state.providerNote);$('status').textContent=parts.join(' · ')}
-  function selectPoint(p){state.selected=p;for(const x of state.overlays)x.el.classList.toggle('selected',String(x.p.id)===String(p.id));for(const x of $('fallbackGrid').querySelectorAll('[data-id]'))x.classList.toggle('selected',x.dataset.id===String(p.id));const rating=p.rating==null?'—':Number(p.rating).toFixed(1)+'★';$('detail').innerHTML='<div class="name">'+esc(p.name)+'</div><div class="rating"><strong>'+rating+'</strong><span>'+(p.reviewCount==null?'нет данных':esc(p.reviewCount)+' отзывов')+'</span></div><div class="grid"><div>Новых за 30 дней</div><b>'+Number(p.new30||0)+'</b><div>1–4★ за 30 дней</div><b>'+Number(p.below5_30||0)+'</b><div>1–3★ за 30 дней</div><b>'+Number(p.low30||0)+'</b><div>1–3★ без ответа</div><b>'+Number(p.lowNo||0)+'</b></div>'+(p.signal?'<div class="signal"><b>'+esc(p.signal)+'</b>'+(p.action?'<br>'+esc(p.action):'')+'</div>':'')+'<div class="links"><a class="primary" href="'+esc(urlFor(p))+'" target="_blank" rel="noopener">Открыть карточку</a><a class="secondary" href="'+esc(reviewsUrlFor(p))+'" target="_blank" rel="noopener">Отзывы</a></div>'}
-  function markerElement(p){const el=document.createElement('button');el.type='button';el.className='marker '+(p.band||'none');el.title=p.name||'';el.innerHTML='<span>'+(p.rating==null?'—':Number(p.rating).toFixed(1))+'</span>'+(p.reviewCount==null?'':'<small>'+esc(p.reviewCount)+'</small>');el.addEventListener('click',()=>selectPoint(p));return el}
+  function trendArrow(t){if(!t||t.available!==true)return'';const d=Number(t.ratingDelta)||0;return d>0?'↑':d<0?'↓':'→'}
+  function trendClass(t){if(!t||t.available!==true)return'trend-flat';const d=Number(t.ratingDelta)||0;return d>0?'trend-up':d<0?'trend-down':'trend-flat'}
+  function trendMarkerClass(t){if(!t||t.available!==true)return'flat';const d=Number(t.ratingDelta)||0;return d>0?'up':d<0?'down':'flat'}
+  function trendLine(p,t,days){if(!t||t.available!==true){const since=p.ratingHistorySince?' · история с '+esc(p.ratingHistorySince):'';return '—'+since}const from=Number(t.fromRating).toFixed(1),to=p.rating==null?'—':Number(p.rating).toFixed(1),d=Number(t.ratingDelta)||0,sign=d>0?'+':'';return from+' → '+to+' <span class="'+trendClass(t)+'">'+trendArrow(t)+' '+sign+d.toFixed(1)+'</span>'+(t.reviewDelta==null?'':' · '+(Number(t.reviewDelta)>=0?'+':'')+Number(t.reviewDelta)+' отзывов')}
+  function attentionInfo(p){let score=Number(p.attentionScore);if(!Number.isFinite(score)){score=0;if(Number(p.lowNo)>0)score+=Math.min(4,Number(p.lowNo)*2);if(Number(p.low7||p.low30)>0)score+=Math.min(3,Number(p.low7||p.low30));if(p.rating!=null&&Number(p.rating)<Number(state.data.target||4.8))score+=2;if(Number(p.noReply30)>0)score+=1;score=Math.min(10,score)}const level=p.attentionLevel|| (score>=8?'critical':score>=5?'high':score>=3?'watch':'normal'),label=p.attentionLabel||(level==='critical'?'Критический':level==='high'?'Высокий':level==='watch'?'Наблюдать':'Норма');return{score:Math.round(score),level,label}}
+  function periodText(p,days){const n=Number(p['new'+days]||0),low=Number(p['low'+days]||0);return n+' новых · '+low+' на 1–3★'}
+  function changeItems(p){const a=[],t=p.trend30;if(t&&t.available===true){const d=Number(t.ratingDelta)||0;if(d<0)a.push('Рейтинг за 30 дней снизился на '+Math.abs(d).toFixed(1)+'★.');else if(d>0)a.push('Рейтинг за 30 дней вырос на '+d.toFixed(1)+'★.')}if(Number(p.low7)>0)a.push('За 7 дней получено '+Number(p.low7)+' отзыв(а) на 1–3★.');if(Number(p.lowNo)>0)a.push('Без ответа остаётся '+Number(p.lowNo)+' отзыв(а) на 1–3★.');if(Number(p.new7)>0&&!Number(p.low7))a.push('За 7 дней получено '+Number(p.new7)+' новых отзыв(а), без свежих 1–3★.');if(!a.length)a.push('Свежих негативных сигналов по доступным данным нет.');return a.slice(0,4)}
+  function actionItems(p){const a=Array.isArray(p.recommendations)?p.recommendations.filter(Boolean):[];if(!a.length&&p.action)a.push(p.action);if(!a.length)a.push('Срочных действий нет.');return a.slice(0,3)}
+  function selectPoint(p){
+    state.selected=p;
+    for(const x of state.overlays)x.el.classList.toggle('selected',String(x.p.id)===String(p.id));
+    for(const x of $('fallbackGrid').querySelectorAll('[data-id]'))x.classList.toggle('selected',x.dataset.id===String(p.id));
+    const rating=p.rating==null?'—':Number(p.rating).toFixed(1)+'★',att=attentionInfo(p),t30=p.trend30,
+      changes=changeItems(p),actions=actionItems(p);
+    $('detail').innerHTML=
+      '<div class="name">'+esc(p.name)+'</div>'+
+      '<div class="rating"><strong>'+rating+'</strong><span>'+(t30&&t30.available===true?'<span class="'+trendClass(t30)+'">'+trendArrow(t30)+' '+((Number(t30.ratingDelta)||0)>0?'+':'')+(Number(t30.ratingDelta)||0).toFixed(1)+' за 30 дней</span>':'динамика рейтинга накапливается')+'</span></div>'+
+      '<div class="attention-card '+esc(att.level)+'"><b>Индекс внимания '+att.score+'/10 · '+esc(att.label)+'</b></div>'+
+      '<div class="section-title">Отзывы</div><div class="periods">'+
+        '<div>7 дней</div><b>'+periodText(p,7)+'</b>'+
+        '<div>30 дней</div><b>'+periodText(p,30)+'</b>'+
+        '<div>90 дней</div><b>'+periodText(p,90)+'</b>'+
+        '<div>1–3★ без ответа</div><b>'+Number(p.lowNo||0)+'</b>'+
+      '</div>'+
+      '<div class="section-title">Динамика рейтинга</div><div class="trends">'+
+        '<div>7 дней</div><div>'+trendLine(p,p.trend7,7)+'</div>'+
+        '<div>30 дней</div><div>'+trendLine(p,p.trend30,30)+'</div>'+
+        '<div>90 дней</div><div>'+trendLine(p,p.trend90,90)+'</div>'+
+      '</div>'+
+      '<div class="section-title">Что изменилось</div><ul class="changes">'+changes.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>'+
+      '<div class="section-title">Что делать</div><ul class="actions">'+actions.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>'+
+      '<div class="links"><a class="primary" href="'+esc(urlFor(p))+'" target="_blank" rel="noopener">Открыть карточку</a><a class="secondary" href="'+esc(reviewsUrlFor(p))+'" target="_blank" rel="noopener">Отзывы</a></div>';
+  }
+  function markerElement(p){
+    const el=document.createElement('button'),t=p.trend30,arrow=trendArrow(t);
+    el.type='button';el.className='marker '+(p.band||'none');el.title=p.name||'';
+    el.innerHTML='<span>'+(p.rating==null?'—':Number(p.rating).toFixed(1))+(arrow?' <em class="marker-trend '+trendMarkerClass(t)+'">'+arrow+'</em>':'')+'</span>'+
+      (p.reviewCount==null?'':'<small>'+esc(p.reviewCount)+'</small>')+
+      '<span class="marker-label">'+esc(p.name||'')+'</span>';
+    el.addEventListener('click',()=>selectPoint(p));return el
+  }
   function clearOverlays(){if(!state.map){state.overlays=[];return}for(const x of state.overlays){try{state.map.removeOverlay(x.overlay)}catch(_){}}state.overlays=[]}
   function renderList(points){$('fallbackList').classList.remove('hidden');$('fallbackGrid').innerHTML='';for(const p of points){const b=document.createElement('button');b.type='button';b.className='fallback-item';b.dataset.id=String(p.id);b.innerHTML='<strong>'+esc(p.name)+'</strong><span>'+(p.rating==null?'—':Number(p.rating).toFixed(1)+'★')+(p.reviewCount==null?'':' · '+esc(p.reviewCount)+' отзывов')+'</span>';b.addEventListener('click',()=>selectPoint(p));$('fallbackGrid').appendChild(b)}}
   function renderMarkers(){clearOverlays();const points=filtered();$('fallbackList').classList.add('hidden');for(const p of points){const el=markerElement(p),overlay=new ol.Overlay({element:el,position:ol.proj.fromLonLat([Number(p.coordinates[0]),Number(p.coordinates[1])]),positioning:'center-center',stopEvent:true});state.map.addOverlay(overlay);state.overlays.push({overlay,p,el})}updateSummary(points);return points}
-  function fitMap(points,animate=true){if(!state.map||!points.length)return;const view=state.map.getView();if(points.length===1){view.animate({center:ol.proj.fromLonLat([Number(points[0].coordinates[0]),Number(points[0].coordinates[1])]),zoom:12,duration:animate?250:0});return}const coords=points.map(p=>ol.proj.fromLonLat([Number(p.coordinates[0]),Number(p.coordinates[1])]));view.fit(ol.extent.boundingExtent(coords),{padding:[78,55,52,45],maxZoom:13,duration:animate?330:0})}
+  function fitMap(points,animate=true){if(!state.map||!points.length)return;const view=state.map.getView();if(points.length===1){view.animate({center:ol.proj.fromLonLat([Number(points[0].coordinates[0]),Number(points[0].coordinates[1])]),zoom:12,duration:animate?250:0});return}const coords=points.map(p=>ol.proj.fromLonLat([Number(p.coordinates[0]),Number(p.coordinates[1])]));view.fit(ol.extent.boundingExtent(coords),{padding:[82,185,58,70],maxZoom:13,duration:animate?330:0})}
   function imageProbe(src,timeout=5000){return new Promise((resolve,reject)=>{const img=new Image();let done=false;const finish=ok=>{if(done)return;done=true;clearTimeout(timer);img.onload=img.onerror=null;ok?resolve(src):reject(Error('resource unavailable'))};img.onload=()=>finish(true);img.onerror=()=>finish(false);const timer=setTimeout(()=>finish(false),timeout);img.src=src+(src.includes('?')?'&':'?')+'_='+Date.now()})}
   function tileAt(lon,lat,z){const n=2**z,x=Math.floor((lon+180)/360*n),r=lat*Math.PI/180;return{x,y:Math.floor((1-Math.log(Math.tan(r)+1/Math.cos(r))/Math.PI)/2*n),z}}
   function tileTemplate(key){return'https://tiles.api-maps.yandex.ru/v1/tiles/?x={x}&y={y}&z={z}&lang=ru_RU&l=map&projection=web_mercator&apikey='+encodeURIComponent(key)}
