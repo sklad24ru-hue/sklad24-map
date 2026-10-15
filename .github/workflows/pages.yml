@@ -1,4 +1,4 @@
-name: Refresh map data and deploy Pages
+name: Refresh review map and deploy Pages
 
 on:
   push:
@@ -19,6 +19,7 @@ concurrency:
 env:
   MAP_EXPORT_URL: "https://script.google.com/macros/s/AKfycbxzmL1KFlWZ2Ch-9FCM_Zel7y0Pd2e7dJiyBNsTYf7A_SBYkNUMGpGewaMwESn2vps/exec?view=map-export"
   MAP_HEALTH_URL: "https://script.google.com/macros/s/AKfycbxzmL1KFlWZ2Ch-9FCM_Zel7y0Pd2e7dJiyBNsTYf7A_SBYkNUMGpGewaMwESn2vps/exec?view=health"
+  YANDEX_LOGO_ZIP: "https://download.cdn.yandex.net/tech/ru/zout_maps-tiles/doc/dg_5991b5839950b3d45e6991d40308f5a6/files/yandex_logo.zip"
 
 jobs:
   deploy:
@@ -30,6 +31,35 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Add official Yandex Tiles logo
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p assets /tmp/yandex-logo
+
+          if [ -s assets/yandex-logo.png ]; then
+            echo "Using existing official logo asset."
+            exit 0
+          fi
+
+          curl --fail --location --silent --show-error \
+            --retry 3 --retry-all-errors \
+            --connect-timeout 15 --max-time 60 \
+            "${YANDEX_LOGO_ZIP}" \
+            --output /tmp/yandex-logo.zip
+
+          unzip -qq /tmp/yandex-logo.zip -d /tmp/yandex-logo
+
+          logo="$(find /tmp/yandex-logo -type f -iname '*.png' | sort | head -n 1)"
+          if [ -z "${logo}" ]; then
+            echo "::error::Official Yandex logo archive did not contain a PNG file."
+            exit 1
+          fi
+
+          cp "${logo}" assets/yandex-logo.png
+          test -s assets/yandex-logo.png
+          echo "Official Yandex logo added to Pages artifact from: ${logo}"
 
       - name: Refresh public map snapshot
         shell: bash
@@ -108,7 +138,7 @@ jobs:
           PY
             then
               mv /tmp/map-data.valid.json map-data.json
-              echo "S24_MAP_REFRESHED=1" >> "$GITHUB_ENV"
+              echo "REVIEW_MAP_REFRESHED=1" >> "$GITHUB_ENV"
               success=1
               break
             fi
@@ -157,7 +187,7 @@ jobs:
           fi
 
       - name: Persist last-known-good snapshot
-        if: env.S24_MAP_REFRESHED == '1'
+        if: env.REVIEW_MAP_REFRESHED == '1'
         shell: bash
         run: |
           cp map-data.json /tmp/map-data.snapshot.json
@@ -176,7 +206,7 @@ jobs:
             fi
 
             git add map-data.json
-            git commit -m "Refresh map data snapshot [skip ci]"
+            git commit -m "Refresh review map data [skip ci]"
 
             if git push origin HEAD:main; then
               exit 0
