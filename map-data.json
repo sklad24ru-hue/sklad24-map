@@ -1,6 +1,6 @@
 {
   "schema": "review-map-3",
-  "generatedAt": "2026-10-15T20:23:54.723Z",
+  "generatedAt": "2026-10-15T20:47:45.204Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -355,8 +355,8 @@
       ],
       "region": "moscow",
       "band": "green",
-      "signal": "Ошибка данных",
-      "action": "Проверить карточку"
+      "signal": "6 без ответа на 1–3★",
+      "action": "Ответить на 1–3★"
     },
     {
       "id": "159095481106",
@@ -855,6 +855,5 @@
     "pmtilesSpbUrl": "maps/spb.pmtiles",
     "activeOnly": true,
     "region": "all"
-  },
-  "cacheFallback": true
+  }
 }
