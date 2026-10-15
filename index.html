@@ -166,13 +166,26 @@
           if(done)return;done=true;cleanup();
           if(err)reject(err);else resolve(data);
         };
+        let busyRetries=0;
         const onMessage=e=>{
+          let host='';
+          try{host=new URL(e.origin).hostname}catch(_){}
           const allowed=e.origin==='https://script.google.com'||
             e.origin==='https://script.googleusercontent.com'||
-            /\\.googleusercontent\\.com$/i.test(new URL(e.origin).hostname);
+            /\\.googleusercontent\\.com$/i.test(host);
           if(!allowed)return;
           const m=e.data;
           if(!m||m.type!=='sklad24-map-data'||m.nonce!==nonce)return;
+
+          if(m.error==='busy'){
+            if(++busyRetries>20)return finish(Error('Google Apps Script долго занят фоновым обновлением.'));
+            setLoad('Система занята обновлением…',46,'Жду свободное окно и повторяю запрос автоматически.');
+            setTimeout(()=>{
+              const sep=api.includes('?')?'&':'?';
+              iframe.src=api+sep+'view=map-bridge&nonce='+encodeURIComponent(nonce)+'&_='+Date.now();
+            },Math.min(600+busyRetries*120,1800));
+            return;
+          }
           if(m.error)return finish(Error(m.error));
           if(!m.data||!Array.isArray(m.data.points)||!m.data.summary)
             return finish(Error('Сервер вернул неверный формат данных.'));
@@ -187,7 +200,7 @@
         iframe.onerror=()=>finish(Error('Не удалось открыть канал данных Google Apps Script.'));
         document.body.appendChild(iframe);
 
-        const timer=setTimeout(()=>finish(Error('Google Apps Script не ответил за 25 секунд.')),25000);
+        const timer=setTimeout(()=>finish(Error('Google Apps Script не ответил за 45 секунд.')),45000);
       });
     }
 
