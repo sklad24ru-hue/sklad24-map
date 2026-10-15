@@ -138,11 +138,20 @@ jobs:
               raise SystemExit('Committed fallback contains an error')
           if not data.get('generatedAt'):
               raise SystemExit('Committed fallback has never been populated')
-          if not isinstance(data.get('points'), list) or not data['points']:
-              raise SystemExit('Committed fallback has no map points')
-          if not isinstance(data.get('summary'), dict) or int(data['summary'].get('total') or 0) <= 0:
-              raise SystemExit('Committed fallback has no cards')
-          print('Using committed last-known-good snapshot with', len(data['points']), 'points')
+          if not isinstance(data.get('points'), list):
+              raise SystemExit('Committed fallback points is not a list')
+          if not isinstance(data.get('summary'), dict):
+              raise SystemExit('Committed fallback summary is invalid')
+          enabled = data.get('enabled', True) is not False
+          if enabled:
+              if not data['points']:
+                  raise SystemExit('Committed fallback has no map points')
+              if int(data['summary'].get('total') or 0) <= 0:
+                  raise SystemExit('Committed fallback has no cards')
+          else:
+              if data['points'] or int(data['summary'].get('mapped') or 0) != 0:
+                  raise SystemExit('Committed disabled fallback unexpectedly publishes points')
+          print('Using committed last-known-good snapshot: enabled=', enabled, 'points=', len(data['points']))
           PY
           fi
 
