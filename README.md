@@ -1,0 +1,1 @@
+# sklad24-map
