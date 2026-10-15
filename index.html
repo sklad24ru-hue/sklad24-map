@@ -147,61 +147,64 @@
     const css=firstGood(loadCss,LEAFLET_CSS).catch(()=>null);
     await firstGood(loadScript,LEAFLET_JS);await css;
   }
+  function bridgeRequest(api,view,type,timeoutMs=22000){
+    return new Promise((resolve,reject)=>{
+      const nonce='s24_'+Date.now()+'_'+Math.random().toString(36).slice(2),
+        iframe=document.createElement('iframe');
+      let done=false,timer=null,slowTimer=null,busyRetries=0;
+
+      const cleanup=()=>{
+        window.removeEventListener('message',onMessage);
+        if(timer)clearTimeout(timer);
+        if(slowTimer)clearTimeout(slowTimer);
+        try{iframe.remove()}catch(_){}
+      };
+      const finish=(err,data)=>{
+        if(done)return;done=true;cleanup();
+        if(err)reject(err);else resolve(data);
+      };
+      const open=()=>{
+        const sep=api.includes('?')?'&':'?';
+        iframe.src=api+sep+'view='+encodeURIComponent(view)+'&nonce='+encodeURIComponent(nonce)+'&_='+Date.now();
+      };
+      const onMessage=e=>{
+        if(e.source!==iframe.contentWindow)return;
+        const m=e.data;
+        if(!m||m.type!==type||m.nonce!==nonce)return;
+        if(m.error==='busy'){
+          if(++busyRetries>8)return finish(Error('Apps Script долго занят фоновым обновлением.'));
+          setLoad('Система занята…',48,'Жду свободное окно, попытка '+busyRetries+' из 8.');
+          return setTimeout(open,Math.min(600+busyRetries*200,1800));
+        }
+        if(m.error)return finish(Error(m.error));
+        finish(null,m.data);
+      };
+
+      window.addEventListener('message',onMessage);
+      iframe.style.display='none';
+      iframe.title='Sklad-24 data bridge';
+      iframe.addEventListener('load',()=>{
+        if(!done)setLoad('Канал данных открыт…',52,'Apps Script обрабатывает запрос.');
+      });
+      document.body.appendChild(iframe);
+      open();
+
+      slowTimer=setTimeout(()=>{
+        if(!done)setLoad('Apps Script ещё отвечает…',58,'Карта не зависла. Жду данные ещё несколько секунд.');
+      },7000);
+      timer=setTimeout(()=>finish(Error('Apps Script не вернул '+view+' за '+Math.round(timeoutMs/1000)+' секунд.')),timeoutMs);
+    });
+  }
+
   async function loadData(){
-    setLoad('Получаю объекты…',38,'Читаю актуальные данные Склад-24.');
+    setLoad('Получаю объекты…',38,'Сначала загружаю только координаты и основные показатели.');
     const api=new URLSearchParams(location.search).get('api');
 
     if(api){
-      return new Promise((resolve,reject)=>{
-        const nonce='s24_'+Date.now()+'_'+Math.random().toString(36).slice(2),
-          iframe=document.createElement('iframe');
-        let done=false;
-
-        const cleanup=()=>{
-          window.removeEventListener('message',onMessage);
-          try{iframe.remove()}catch(_){}
-          clearTimeout(timer);
-        };
-        const finish=(err,data)=>{
-          if(done)return;done=true;cleanup();
-          if(err)reject(err);else resolve(data);
-        };
-        let busyRetries=0;
-        const onMessage=e=>{
-          let host='';
-          try{host=new URL(e.origin).hostname}catch(_){}
-          const allowed=e.origin==='https://script.google.com'||
-            e.origin==='https://script.googleusercontent.com'||
-            /\\.googleusercontent\\.com$/i.test(host);
-          if(!allowed)return;
-          const m=e.data;
-          if(!m||m.type!=='sklad24-map-data'||m.nonce!==nonce)return;
-
-          if(m.error==='busy'){
-            if(++busyRetries>20)return finish(Error('Google Apps Script долго занят фоновым обновлением.'));
-            setLoad('Система занята обновлением…',46,'Жду свободное окно и повторяю запрос автоматически.');
-            setTimeout(()=>{
-              const sep=api.includes('?')?'&':'?';
-              iframe.src=api+sep+'view=map-bridge&nonce='+encodeURIComponent(nonce)+'&_='+Date.now();
-            },Math.min(600+busyRetries*120,1800));
-            return;
-          }
-          if(m.error)return finish(Error(m.error));
-          if(!m.data||!Array.isArray(m.data.points)||!m.data.summary)
-            return finish(Error('Сервер вернул неверный формат данных.'));
-          finish(null,m.data);
-        };
-
-        window.addEventListener('message',onMessage);
-        iframe.style.display='none';
-        iframe.title='Sklad-24 data bridge';
-        const sep=api.includes('?')?'&':'?';
-        iframe.src=api+sep+'view=map-bridge&nonce='+encodeURIComponent(nonce)+'&_='+Date.now();
-        iframe.onerror=()=>finish(Error('Не удалось открыть канал данных Google Apps Script.'));
-        document.body.appendChild(iframe);
-
-        const timer=setTimeout(()=>finish(Error('Google Apps Script не ответил за 45 секунд.')),45000);
-      });
+      const d=await bridgeRequest(api,'map-bridge','sklad24-map-data',22000);
+      if(!d||!Array.isArray(d.points)||!d.summary)throw Error('Сервер вернул неверный формат основных данных.');
+      d._api=api;
+      return d;
     }
 
     const r=await fetch('map-data.json?v='+Date.now(),{cache:'no-store'});
@@ -209,6 +212,27 @@
     const d=await r.json();
     if(!d||!Array.isArray(d.points)||!d.summary)throw Error('Файл данных карты имеет неверный формат.');
     return d;
+  }
+
+  async function loadAnalytics(){
+    const api=state.data&&state.data._api;
+    if(!api)return;
+    try{
+      $('status').textContent='Догружаю аналитику за 30 дней…';
+      const a=await bridgeRequest(api,'map-analytics-bridge','sklad24-map-analytics',30000);
+      if(!a||!a.byId)return;
+      for(const p of state.data.points){
+        const x=a.byId[String(p.id)];
+        if(x)Object.assign(p,x);
+      }
+      if(a.summary&&Number.isFinite(Number(a.summary.attention)))
+        state.data.summary.attention=Number(a.summary.attention);
+      state.data.analyticsReady=true;
+      $('status').textContent=state.data.generatedAt?'Данные: '+new Date(state.data.generatedAt).toLocaleString('ru-RU'):'Аналитика загружена';
+      if($('low30').checked||$('attention').checked)render(false);
+    }catch(e){
+      $('status').textContent='Карта работает · аналитика 30 дней не загрузилась: '+(e.message||e);
+    }
   }
   function filtered(){
     const d=state.data;if(!d)return [];
@@ -295,11 +319,16 @@
   async function start(){
     bind();
     try{
-      const [data]=await Promise.all([loadData(),loadLeaflet()]);
-      state.data=data;setLoad('Рисую объекты…',82,'Настраиваю маркеры и масштаб.');
-      initMap();render(true);await sleep(100);
+      setLoad('Подготавливаю карту…',8,'Проверяю доступ к данным и загружаю Leaflet.');
+      const leafletP=loadLeaflet();
+      const dataP=loadData();
+      const [data]=await Promise.all([dataP,leafletP]);
+      state.data=data;
+      setLoad('Рисую объекты…',86,'Основные данные получены. Аналитика загрузится отдельно.');
+      initMap();render(true);await sleep(80);
       setLoad('Готово',100,'');
       $('loading').classList.add('done');setTimeout(()=>$('loading').classList.add('hidden'),220);
+      setTimeout(loadAnalytics,150);
     }catch(e){showError('Карта не загрузилась',e&&e.message||String(e))}
   }
   start();
