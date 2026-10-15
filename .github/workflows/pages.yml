@@ -51,7 +51,7 @@ jobs:
 
           unzip -qq /tmp/yandex-logo.zip -d /tmp/yandex-logo
 
-          logo="$(find /tmp/yandex-logo -type f -iname '*.png' | sort | head -n 1)"
+          logo="$(find /tmp/yandex-logo -type f -iname '*.png' ! -path '*/__MACOSX/*' ! -name '._*' | sort | head -n 1)"
           if [ -z "${logo}" ]; then
             echo "::error::Official Yandex logo archive did not contain a PNG file."
             exit 1
