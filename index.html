@@ -6,7 +6,6 @@
   <meta name="theme-color" content="#243746">
   <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="preconnect" href="https://tiles.api-maps.yandex.ru" crossorigin>
-  <link rel="preconnect" href="https://api-maps.yandex.ru" crossorigin>
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <title>Карта отзывов</title>
   <style>
@@ -95,7 +94,7 @@
   'use strict';
   const $=id=>document.getElementById(id);
   const REGION_VIEW={moscow:{center:[37.6173,55.7558],zoom:8.8},spb:{center:[30.3159,59.9391],zoom:8.8}};
-  const state={data:null,map:null,maplibre:null,provider:'none',providerNote:'',markers:[],selected:null,region:'all',legacyYmaps:null};
+  const state={data:null,map:null,maplibre:null,provider:'none',providerNote:'',markers:[],selected:null,region:'all'};
   const esc=v=>String(v==null?'':v).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
   const sleep=ms=>new Promise(r=>setTimeout(r,ms));
   const setLoad=(title,pct,sub)=>{$('loadTitle').textContent=title;$('loadBar').style.width=Math.max(5,Math.min(100,Number(pct)||0))+'%';$('loadSub').textContent=sub||''};
@@ -167,7 +166,7 @@
   }
 
   function clearMarkers(){
-    for(const x of state.markers){try{state.provider==='legacy-yandex'?state.map.removeChild(x.marker):x.marker.remove()}catch(_){}}
+    for(const x of state.markers){try{x.marker.remove()}catch(_){}}
     state.markers=[];
   }
 
@@ -183,12 +182,6 @@
 
   function fitMap(points,animate=true){
     if(!state.map||!points.length||state.provider==='list')return;
-    if(state.provider==='legacy-yandex'){
-      if(points.length===1){state.map.setLocation({center:pcoord(points[0]),zoom:12,duration:animate?250:0});return}
-      const c=points.map(pcoord),xs=c.map(x=>x[0]),ys=c.map(x=>x[1]);
-      state.map.setLocation({bounds:[[Math.min(...xs),Math.min(...ys)],[Math.max(...xs),Math.max(...ys)]],duration:animate?300:0});
-      return;
-    }
     if(points.length===1){state.map.easeTo({center:pcoord(points[0]),zoom:12,duration:animate?250:0});return}
     const b=new state.maplibre.LngLatBounds();for(const p of points)b.extend(pcoord(p));
     state.map.fitBounds(b,{padding:{top:78,bottom:52,left:42,right:42},maxZoom:13,duration:animate?330:0});
@@ -204,13 +197,8 @@
       for(const p of points){
         if(!Array.isArray(p.coordinates)||p.coordinates.length<2)continue;
         const el=markerElement(p);
-        if(state.provider==='legacy-yandex'){
-          const marker=new state.legacyYmaps.YMapMarker({coordinates:pcoord(p),zIndex:100,hideOutsideViewport:true},el);
-          state.map.addChild(marker);state.markers.push({marker,p,el});
-        }else{
-          const marker=new state.maplibre.Marker({element:el,anchor:'center'}).setLngLat(pcoord(p)).addTo(state.map);
-          state.markers.push({marker,p,el});
-        }
+        const marker=new state.maplibre.Marker({element:el,anchor:'center'}).setLngLat(pcoord(p)).addTo(state.map);
+        state.markers.push({marker,p,el});
       }
     }
     updateSummary(points);return points;
@@ -265,25 +253,6 @@
     return true;
   }
 
-  async function initLegacy(){
-    const key=String(state.data.options?.yandexApiKey||'').trim();
-    if(!key)return false;
-    setLoad('Открываю текущую карту…',40,'Совместимый режим до перехода на Tiles API.');
-    try{
-      if(!window.ymaps3){
-        await new Promise((resolve,reject)=>{
-          const s=document.createElement('script');s.src='https://api-maps.yandex.ru/v3/?apikey='+encodeURIComponent(key)+'&lang=ru_RU';s.async=true;
-          s.onload=resolve;s.onerror=()=>reject(Error('legacy api load failed'));document.head.appendChild(s);
-        });
-      }
-      await ymaps3.ready;state.legacyYmaps=ymaps3;
-      const {YMap,YMapDefaultSchemeLayer,YMapDefaultFeaturesLayer}=ymaps3;
-      state.map=new YMap(document.getElementById('map'),{location:{center:[37.6173,55.7558],zoom:8},theme:'light'},[new YMapDefaultSchemeLayer({}),new YMapDefaultFeaturesLayer({})]);
-      state.provider='legacy-yandex';providerNote('Яндекс Карты · переходный режим');
-      return true;
-    }catch(e){console.warn('Legacy map failed:',e);return false}
-  }
-
   function showList(note){
     state.provider='list';providerNote(note||'Режим списка');
     $('yandexLogo').classList.remove('visible');$('openMaps').classList.remove('visible');
@@ -297,7 +266,6 @@
       state.selected=null;$('detail').innerHTML='<div class="empty">Выберите объект.</div>';
       const points=render();
       if(state.provider==='yandex-tiles')fitMap(points,true);
-      else if(state.provider==='legacy-yandex'&&points.length)fitMap(points,true);
     });
     for(const id of ['activeOnly','below','low30','attention'])$(id).addEventListener('change',()=>{
       state.selected=null;$('detail').innerHTML='<div class="empty">Выберите объект.</div>';
@@ -311,8 +279,7 @@
       state.data=await loadData();applyOptions();
       if(state.data.enabled===false){showList('Карта отзывов отключена');$('loading').classList.add('hidden');return}
 
-      let ok=await initTiles();
-      if(!ok)ok=await initLegacy(); // нужен только до установки Apps Script v3.40
+      const ok=await initTiles();
       if(!ok){showList('Картографическая подложка недоступна');$('loading').classList.add('hidden');return}
 
       setLoad('Рисую объекты…',80,state.providerNote);
