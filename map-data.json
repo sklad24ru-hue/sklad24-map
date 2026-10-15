@@ -1,6 +1,6 @@
 {
-  "schema": "review-map-5",
-  "generatedAt": "2026-10-15T21:47:26.764Z",
+  "schema": "review-map-6",
+  "generatedAt": "2026-10-15T22:02:17.827Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -10,11 +10,39 @@
       "active": true,
       "rating": 4.6,
       "reviewCount": 10,
+      "new7": 0,
       "new30": 0,
+      "new90": 0,
+      "below5_7": 0,
       "below5_30": 0,
+      "below5_90": 0,
+      "low7": 0,
       "low30": 0,
+      "low90": 0,
       "lowNo": 0,
+      "noReply7": 0,
+      "noReply30": 0,
+      "noReply90": 0,
+      "trend7": {
+        "available": false,
+        "days": 7
+      },
+      "trend30": {
+        "available": false,
+        "days": 30
+      },
+      "trend90": {
+        "available": false,
+        "days": 90
+      },
+      "ratingHistorySince": "",
       "attention": true,
+      "attentionScore": 3,
+      "attentionLevel": "watch",
+      "attentionLabel": "Наблюдать",
+      "recommendations": [
+        "Разобрать причины рейтинга ниже цели 4.8★."
+      ],
       "coordinates": [
         37.532677,
         55.81423
@@ -30,11 +58,39 @@
       "active": true,
       "rating": 5,
       "reviewCount": 93,
+      "new7": 0,
       "new30": 0,
+      "new90": 0,
+      "below5_7": 0,
       "below5_30": 0,
+      "below5_90": 0,
+      "low7": 0,
       "low30": 0,
+      "low90": 0,
       "lowNo": 3,
+      "noReply7": 0,
+      "noReply30": 0,
+      "noReply90": 0,
+      "trend7": {
+        "available": false,
+        "days": 7
+      },
+      "trend30": {
+        "available": false,
+        "days": 30
+      },
+      "trend90": {
+        "available": false,
+        "days": 90
+      },
+      "ratingHistorySince": "",
       "attention": true,
+      "attentionScore": 4,
+      "attentionLevel": "watch",
+      "attentionLabel": "Наблюдать",
+      "recommendations": [
+        "Ответить на 3 отзыв(а) 1–3★ без ответа."
+      ],
       "coordinates": [
         37.648028,
         55.562384
@@ -50,11 +106,40 @@
       "active": true,
       "rating": 4.6,
       "reviewCount": 49,
+      "new7": 0,
       "new30": 0,
+      "new90": 0,
+      "below5_7": 0,
       "below5_30": 0,
+      "below5_90": 0,
+      "low7": 0,
       "low30": 0,
+      "low90": 0,
       "lowNo": 2,
+      "noReply7": 0,
+      "noReply30": 0,
+      "noReply90": 0,
+      "trend7": {
+        "available": false,
+        "days": 7
+      },
+      "trend30": {
+        "available": false,
+        "days": 30
+      },
+      "trend90": {
+        "available": false,
+        "days": 90
+      },
+      "ratingHistorySince": "",
       "attention": true,
+      "attentionScore": 7,
+      "attentionLevel": "high",
+      "attentionLabel": "Высокий",
+      "recommendations": [
+        "Ответить на 2 отзыв(а) 1–3★ без ответа.",
+        "Разобрать причины рейтинга ниже цели 4.8★."
+      ],
       "coordinates": [
         37.570573,
         55.919402
@@ -70,11 +155,39 @@
       "active": true,
       "rating": 5,
       "reviewCount": 43,
+      "new7": 0,
       "new30": 0,
+      "new90": 0,
+      "below5_7": 0,
       "below5_30": 0,
+      "below5_90": 0,
+      "low7": 0,
       "low30": 0,
+      "low90": 0,
       "lowNo": 1,
+      "noReply7": 0,
+      "noReply30": 0,
+      "noReply90": 0,
+      "trend7": {
+        "available": false,
+        "days": 7
+      },
+      "trend30": {
+        "available": false,
+        "days": 30
+      },
+      "trend90": {
+        "available": false,
+        "days": 90
+      },
+      "ratingHistorySince": "",
       "attention": true,
+      "attentionScore": 2,
+      "attentionLevel": "normal",
+      "attentionLabel": "Норма",
+      "recommendations": [
+        "Ответить на 1 отзыв(а) 1–3★ без ответа."
+      ],
       "coordinates": [
         37.589059,
         55.929223
@@ -90,11 +203,40 @@
       "active": true,
       "rating": 4.3,
       "reviewCount": 9,
+      "new7": 0,
       "new30": 0,
+      "new90": 0,
+      "below5_7": 0,
       "below5_30": 0,
+      "below5_90": 0,
+      "low7": 0,
       "low30": 0,
+      "low90": 0,
       "lowNo": 1,
+      "noReply7": 0,
+      "noReply30": 0,
+      "noReply90": 0,
+      "trend7": {
+        "available": false,
+        "days": 7
+      },
+      "trend30": {
+        "available": false,
+        "days": 30
+      },
+      "trend90": {
+        "available": false,
+        "days": 90
+      },
+      "ratingHistorySince": "",
       "attention": true,
+      "attentionScore": 6,
+      "attentionLevel": "high",
+      "attentionLabel": "Высокий",
+      "recommendations": [
+        "Ответить на 1 отзыв(а) 1–3★ без ответа.",
+        "Разобрать причины рейтинга ниже цели 4.8★."
+      ],
       "coordinates": [
         37.254958,
         55.621318
@@ -110,11 +252,40 @@
       "active": true,
       "rating": 4.3,
       "reviewCount": 15,
+      "new7": 0,
       "new30": 0,
+      "new90": 0,
+      "below5_7": 0,
       "below5_30": 0,
+      "below5_90": 0,
+      "low7": 0,
       "low30": 0,
+      "low90": 0,
       "lowNo": 1,
+      "noReply7": 0,
+      "noReply30": 0,
+      "noReply90": 0,
+      "trend7": {
+        "available": false,
+        "days": 7
+      },
+      "trend30": {
+        "available": false,
+        "days": 30
+      },
+      "trend90": {
+        "available": false,
+        "days": 90
+      },
+      "ratingHistorySince": "",
       "attention": true,
+      "attentionScore": 6,
+      "attentionLevel": "high",
+      "attentionLabel": "Высокий",
+      "recommendations": [
+        "Ответить на 1 отзыв(а) 1–3★ без ответа.",
+        "Разобрать причины рейтинга ниже цели 4.8★."
+      ],
       "coordinates": [
         37.571174,
         55.71983
@@ -130,11 +301,39 @@
       "active": true,
       "rating": 5,
       "reviewCount": 61,
+      "new7": 0,
       "new30": 0,
+      "new90": 0,
+      "below5_7": 0,
       "below5_30": 0,
+      "below5_90": 0,
+      "low7": 0,
       "low30": 0,
+      "low90": 0,
       "lowNo": 1,
+      "noReply7": 0,
+      "noReply30": 0,
+      "noReply90": 0,
+      "trend7": {
+        "available": false,
+        "days": 7
+      },
+      "trend30": {
+        "available": false,
+        "days": 30
+      },
+      "trend90": {
+        "available": false,
+        "days": 90
+      },
+      "ratingHistorySince": "",
       "attention": true,
+      "attentionScore": 2,
+      "attentionLevel": "normal",
+      "attentionLabel": "Норма",
+      "recommendations": [
+        "Ответить на 1 отзыв(а) 1–3★ без ответа."
+      ],
       "coordinates": [
         37.91443,
         55.6769
@@ -150,11 +349,39 @@
       "active": true,
       "rating": 4.2,
       "reviewCount": 4,
+      "new7": 0,
       "new30": 0,
+      "new90": 0,
+      "below5_7": 0,
       "below5_30": 0,
+      "below5_90": 0,
+      "low7": 0,
       "low30": 0,
+      "low90": 0,
       "lowNo": 0,
+      "noReply7": 0,
+      "noReply30": 0,
+      "noReply90": 0,
+      "trend7": {
+        "available": false,
+        "days": 7
+      },
+      "trend30": {
+        "available": false,
+        "days": 30
+      },
+      "trend90": {
+        "available": false,
+        "days": 90
+      },
+      "ratingHistorySince": "",
       "attention": true,
+      "attentionScore": 4,
+      "attentionLevel": "watch",
+      "attentionLabel": "Наблюдать",
+      "recommendations": [
+        "Разобрать причины рейтинга ниже цели 4.8★."
+      ],
       "coordinates": [
         30.288874,
         59.890627
@@ -170,11 +397,39 @@
       "active": true,
       "rating": 4.6,
       "reviewCount": 11,
+      "new7": 0,
       "new30": 0,
+      "new90": 0,
+      "below5_7": 0,
       "below5_30": 0,
+      "below5_90": 0,
+      "low7": 0,
       "low30": 0,
+      "low90": 0,
       "lowNo": 0,
+      "noReply7": 0,
+      "noReply30": 0,
+      "noReply90": 0,
+      "trend7": {
+        "available": false,
+        "days": 7
+      },
+      "trend30": {
+        "available": false,
+        "days": 30
+      },
+      "trend90": {
+        "available": false,
+        "days": 90
+      },
+      "ratingHistorySince": "",
       "attention": true,
+      "attentionScore": 3,
+      "attentionLevel": "watch",
+      "attentionLabel": "Наблюдать",
+      "recommendations": [
+        "Разобрать причины рейтинга ниже цели 4.8★."
+      ],
       "coordinates": [
         30.364233,
         59.909531
@@ -190,11 +445,39 @@
       "active": true,
       "rating": 5,
       "reviewCount": 25,
+      "new7": 0,
       "new30": 0,
+      "new90": 0,
+      "below5_7": 0,
       "below5_30": 0,
+      "below5_90": 0,
+      "low7": 0,
       "low30": 0,
+      "low90": 0,
       "lowNo": 0,
+      "noReply7": 0,
+      "noReply30": 0,
+      "noReply90": 0,
+      "trend7": {
+        "available": false,
+        "days": 7
+      },
+      "trend30": {
+        "available": false,
+        "days": 30
+      },
+      "trend90": {
+        "available": false,
+        "days": 90
+      },
+      "ratingHistorySince": "",
       "attention": false,
+      "attentionScore": 0,
+      "attentionLevel": "normal",
+      "attentionLabel": "Норма",
+      "recommendations": [
+        "Срочных действий нет."
+      ],
       "coordinates": [
         37.231108,
         55.675138
@@ -208,11 +491,39 @@
       "active": true,
       "rating": 4.8,
       "reviewCount": 15,
+      "new7": 0,
       "new30": 0,
+      "new90": 0,
+      "below5_7": 0,
       "below5_30": 0,
+      "below5_90": 0,
+      "low7": 0,
       "low30": 0,
+      "low90": 0,
       "lowNo": 1,
+      "noReply7": 0,
+      "noReply30": 0,
+      "noReply90": 0,
+      "trend7": {
+        "available": false,
+        "days": 7
+      },
+      "trend30": {
+        "available": false,
+        "days": 30
+      },
+      "trend90": {
+        "available": false,
+        "days": 90
+      },
+      "ratingHistorySince": "",
       "attention": true,
+      "attentionScore": 2,
+      "attentionLevel": "normal",
+      "attentionLabel": "Норма",
+      "recommendations": [
+        "Ответить на 1 отзыв(а) 1–3★ без ответа."
+      ],
       "coordinates": [
         30.499169,
         59.87061
@@ -228,11 +539,39 @@
       "active": true,
       "rating": null,
       "reviewCount": 1,
+      "new7": 0,
       "new30": 0,
+      "new90": 0,
+      "below5_7": 0,
       "below5_30": 0,
+      "below5_90": 0,
+      "low7": 0,
       "low30": 0,
+      "low90": 0,
       "lowNo": 0,
+      "noReply7": 0,
+      "noReply30": 0,
+      "noReply90": 0,
+      "trend7": {
+        "available": false,
+        "days": 7
+      },
+      "trend30": {
+        "available": false,
+        "days": 30
+      },
+      "trend90": {
+        "available": false,
+        "days": 90
+      },
+      "ratingHistorySince": "",
       "attention": false,
+      "attentionScore": 0,
+      "attentionLevel": "normal",
+      "attentionLabel": "Норма",
+      "recommendations": [
+        "Срочных действий нет."
+      ],
       "coordinates": [
         37.734713,
         55.974181
@@ -246,11 +585,39 @@
       "active": true,
       "rating": 4.5,
       "reviewCount": 8,
+      "new7": 0,
       "new30": 0,
+      "new90": 0,
+      "below5_7": 0,
       "below5_30": 0,
+      "below5_90": 0,
+      "low7": 0,
       "low30": 0,
+      "low90": 0,
       "lowNo": 0,
+      "noReply7": 0,
+      "noReply30": 0,
+      "noReply90": 0,
+      "trend7": {
+        "available": false,
+        "days": 7
+      },
+      "trend30": {
+        "available": false,
+        "days": 30
+      },
+      "trend90": {
+        "available": false,
+        "days": 90
+      },
+      "ratingHistorySince": "",
       "attention": true,
+      "attentionScore": 3,
+      "attentionLevel": "watch",
+      "attentionLabel": "Наблюдать",
+      "recommendations": [
+        "Разобрать причины рейтинга ниже цели 4.8★."
+      ],
       "coordinates": [
         30.311008,
         59.824199
@@ -266,11 +633,39 @@
       "active": true,
       "rating": 4.5,
       "reviewCount": 8,
+      "new7": 0,
       "new30": 0,
+      "new90": 0,
+      "below5_7": 0,
       "below5_30": 0,
+      "below5_90": 0,
+      "low7": 0,
       "low30": 0,
+      "low90": 0,
       "lowNo": 0,
+      "noReply7": 0,
+      "noReply30": 0,
+      "noReply90": 0,
+      "trend7": {
+        "available": false,
+        "days": 7
+      },
+      "trend30": {
+        "available": false,
+        "days": 30
+      },
+      "trend90": {
+        "available": false,
+        "days": 90
+      },
+      "ratingHistorySince": "",
       "attention": true,
+      "attentionScore": 3,
+      "attentionLevel": "watch",
+      "attentionLabel": "Наблюдать",
+      "recommendations": [
+        "Разобрать причины рейтинга ниже цели 4.8★."
+      ],
       "coordinates": [
         37.680209,
         55.846391
@@ -286,11 +681,39 @@
       "active": true,
       "rating": 4.8,
       "reviewCount": 16,
+      "new7": 0,
       "new30": 0,
+      "new90": 0,
+      "below5_7": 0,
       "below5_30": 0,
+      "below5_90": 0,
+      "low7": 0,
       "low30": 0,
+      "low90": 0,
       "lowNo": 0,
+      "noReply7": 0,
+      "noReply30": 0,
+      "noReply90": 0,
+      "trend7": {
+        "available": false,
+        "days": 7
+      },
+      "trend30": {
+        "available": false,
+        "days": 30
+      },
+      "trend90": {
+        "available": false,
+        "days": 90
+      },
+      "ratingHistorySince": "",
       "attention": false,
+      "attentionScore": 0,
+      "attentionLevel": "normal",
+      "attentionLabel": "Норма",
+      "recommendations": [
+        "Срочных действий нет."
+      ],
       "coordinates": [
         30.449888,
         59.983369
@@ -304,11 +727,40 @@
       "active": true,
       "rating": 4.6,
       "reviewCount": 27,
+      "new7": 0,
       "new30": 0,
+      "new90": 0,
+      "below5_7": 0,
       "below5_30": 0,
+      "below5_90": 0,
+      "low7": 0,
       "low30": 0,
+      "low90": 0,
       "lowNo": 2,
+      "noReply7": 0,
+      "noReply30": 0,
+      "noReply90": 0,
+      "trend7": {
+        "available": false,
+        "days": 7
+      },
+      "trend30": {
+        "available": false,
+        "days": 30
+      },
+      "trend90": {
+        "available": false,
+        "days": 90
+      },
+      "ratingHistorySince": "",
       "attention": true,
+      "attentionScore": 7,
+      "attentionLevel": "high",
+      "attentionLabel": "Высокий",
+      "recommendations": [
+        "Ответить на 2 отзыв(а) 1–3★ без ответа.",
+        "Разобрать причины рейтинга ниже цели 4.8★."
+      ],
       "coordinates": [
         37.758823,
         55.717082
@@ -324,11 +776,39 @@
       "active": true,
       "rating": 4.3,
       "reviewCount": 4,
+      "new7": 0,
       "new30": 0,
+      "new90": 0,
+      "below5_7": 0,
       "below5_30": 0,
+      "below5_90": 0,
+      "low7": 0,
       "low30": 0,
+      "low90": 0,
       "lowNo": 0,
+      "noReply7": 0,
+      "noReply30": 0,
+      "noReply90": 0,
+      "trend7": {
+        "available": false,
+        "days": 7
+      },
+      "trend30": {
+        "available": false,
+        "days": 30
+      },
+      "trend90": {
+        "available": false,
+        "days": 90
+      },
+      "ratingHistorySince": "",
       "attention": true,
+      "attentionScore": 4,
+      "attentionLevel": "watch",
+      "attentionLabel": "Наблюдать",
+      "recommendations": [
+        "Разобрать причины рейтинга ниже цели 4.8★."
+      ],
       "coordinates": [
         30.365626,
         59.898503
@@ -344,11 +824,39 @@
       "active": true,
       "rating": 5,
       "reviewCount": 84,
+      "new7": 0,
       "new30": 0,
+      "new90": 0,
+      "below5_7": 0,
       "below5_30": 0,
+      "below5_90": 0,
+      "low7": 0,
       "low30": 0,
+      "low90": 0,
       "lowNo": 6,
+      "noReply7": 0,
+      "noReply30": 0,
+      "noReply90": 0,
+      "trend7": {
+        "available": false,
+        "days": 7
+      },
+      "trend30": {
+        "available": false,
+        "days": 30
+      },
+      "trend90": {
+        "available": false,
+        "days": 90
+      },
+      "ratingHistorySince": "",
       "attention": true,
+      "attentionScore": 4,
+      "attentionLevel": "watch",
+      "attentionLabel": "Наблюдать",
+      "recommendations": [
+        "Ответить на 6 отзыв(а) 1–3★ без ответа."
+      ],
       "coordinates": [
         37.430031,
         55.907844
@@ -364,11 +872,39 @@
       "active": true,
       "rating": 4.8,
       "reviewCount": 26,
+      "new7": 0,
       "new30": 0,
+      "new90": 0,
+      "below5_7": 0,
       "below5_30": 0,
+      "below5_90": 0,
+      "low7": 0,
       "low30": 0,
+      "low90": 0,
       "lowNo": 0,
+      "noReply7": 0,
+      "noReply30": 0,
+      "noReply90": 0,
+      "trend7": {
+        "available": false,
+        "days": 7
+      },
+      "trend30": {
+        "available": false,
+        "days": 30
+      },
+      "trend90": {
+        "available": false,
+        "days": 90
+      },
+      "ratingHistorySince": "",
       "attention": false,
+      "attentionScore": 0,
+      "attentionLevel": "normal",
+      "attentionLabel": "Норма",
+      "recommendations": [
+        "Срочных действий нет."
+      ],
       "coordinates": [
         37.785746,
         55.817704
@@ -382,11 +918,40 @@
       "active": false,
       "rating": 4.5,
       "reviewCount": 24,
+      "new7": 0,
       "new30": 0,
+      "new90": 0,
+      "below5_7": 0,
       "below5_30": 0,
+      "below5_90": 0,
+      "low7": 0,
       "low30": 0,
+      "low90": 0,
       "lowNo": 1,
+      "noReply7": 0,
+      "noReply30": 0,
+      "noReply90": 0,
+      "trend7": {
+        "available": false,
+        "days": 7
+      },
+      "trend30": {
+        "available": false,
+        "days": 30
+      },
+      "trend90": {
+        "available": false,
+        "days": 90
+      },
+      "ratingHistorySince": "",
       "attention": true,
+      "attentionScore": 5,
+      "attentionLevel": "high",
+      "attentionLabel": "Высокий",
+      "recommendations": [
+        "Ответить на 1 отзыв(а) 1–3★ без ответа.",
+        "Разобрать причины рейтинга ниже цели 4.8★."
+      ],
       "coordinates": [
         37.579978,
         55.864338
@@ -402,11 +967,40 @@
       "active": false,
       "rating": 4.7,
       "reviewCount": 38,
+      "new7": 0,
       "new30": 0,
+      "new90": 0,
+      "below5_7": 0,
       "below5_30": 0,
+      "below5_90": 0,
+      "low7": 0,
       "low30": 0,
+      "low90": 0,
       "lowNo": 4,
+      "noReply7": 0,
+      "noReply30": 0,
+      "noReply90": 0,
+      "trend7": {
+        "available": false,
+        "days": 7
+      },
+      "trend30": {
+        "available": false,
+        "days": 30
+      },
+      "trend90": {
+        "available": false,
+        "days": 90
+      },
+      "ratingHistorySince": "",
       "attention": true,
+      "attentionScore": 6,
+      "attentionLevel": "high",
+      "attentionLabel": "Высокий",
+      "recommendations": [
+        "Ответить на 4 отзыв(а) 1–3★ без ответа.",
+        "Разобрать причины рейтинга ниже цели 4.8★."
+      ],
       "coordinates": [
         37.609654,
         55.582897
@@ -422,11 +1016,39 @@
       "active": false,
       "rating": 4.2,
       "reviewCount": 7,
+      "new7": 0,
       "new30": 0,
+      "new90": 0,
+      "below5_7": 0,
       "below5_30": 0,
+      "below5_90": 0,
+      "low7": 0,
       "low30": 0,
+      "low90": 0,
       "lowNo": 0,
+      "noReply7": 0,
+      "noReply30": 0,
+      "noReply90": 0,
+      "trend7": {
+        "available": false,
+        "days": 7
+      },
+      "trend30": {
+        "available": false,
+        "days": 30
+      },
+      "trend90": {
+        "available": false,
+        "days": 90
+      },
+      "ratingHistorySince": "",
       "attention": true,
+      "attentionScore": 4,
+      "attentionLevel": "watch",
+      "attentionLabel": "Наблюдать",
+      "recommendations": [
+        "Разобрать причины рейтинга ниже цели 4.8★."
+      ],
       "coordinates": [
         37.501851,
         55.75782
@@ -442,11 +1064,40 @@
       "active": false,
       "rating": 4.5,
       "reviewCount": 12,
+      "new7": 0,
       "new30": 0,
+      "new90": 0,
+      "below5_7": 0,
       "below5_30": 0,
+      "below5_90": 0,
+      "low7": 0,
       "low30": 0,
+      "low90": 0,
       "lowNo": 1,
+      "noReply7": 0,
+      "noReply30": 0,
+      "noReply90": 0,
+      "trend7": {
+        "available": false,
+        "days": 7
+      },
+      "trend30": {
+        "available": false,
+        "days": 30
+      },
+      "trend90": {
+        "available": false,
+        "days": 90
+      },
+      "ratingHistorySince": "",
       "attention": true,
+      "attentionScore": 5,
+      "attentionLevel": "high",
+      "attentionLabel": "Высокий",
+      "recommendations": [
+        "Ответить на 1 отзыв(а) 1–3★ без ответа.",
+        "Разобрать причины рейтинга ниже цели 4.8★."
+      ],
       "coordinates": [
         37.528437,
         55.850176
@@ -462,11 +1113,39 @@
       "active": false,
       "rating": 4,
       "reviewCount": 7,
+      "new7": 0,
       "new30": 0,
+      "new90": 0,
+      "below5_7": 0,
       "below5_30": 0,
+      "below5_90": 0,
+      "low7": 0,
       "low30": 0,
+      "low90": 0,
       "lowNo": 0,
+      "noReply7": 0,
+      "noReply30": 0,
+      "noReply90": 0,
+      "trend7": {
+        "available": false,
+        "days": 7
+      },
+      "trend30": {
+        "available": false,
+        "days": 30
+      },
+      "trend90": {
+        "available": false,
+        "days": 90
+      },
+      "ratingHistorySince": "",
       "attention": true,
+      "attentionScore": 4,
+      "attentionLevel": "watch",
+      "attentionLabel": "Наблюдать",
+      "recommendations": [
+        "Разобрать причины рейтинга ниже цели 4.8★."
+      ],
       "coordinates": [
         37.798816,
         55.62415
@@ -482,11 +1161,40 @@
       "active": false,
       "rating": 4.7,
       "reviewCount": 39,
+      "new7": 0,
       "new30": 0,
+      "new90": 0,
+      "below5_7": 0,
       "below5_30": 0,
+      "below5_90": 0,
+      "low7": 0,
       "low30": 0,
+      "low90": 0,
       "lowNo": 1,
+      "noReply7": 0,
+      "noReply30": 0,
+      "noReply90": 0,
+      "trend7": {
+        "available": false,
+        "days": 7
+      },
+      "trend30": {
+        "available": false,
+        "days": 30
+      },
+      "trend90": {
+        "available": false,
+        "days": 90
+      },
+      "ratingHistorySince": "",
       "attention": true,
+      "attentionScore": 4,
+      "attentionLevel": "watch",
+      "attentionLabel": "Наблюдать",
+      "recommendations": [
+        "Ответить на 1 отзыв(а) 1–3★ без ответа.",
+        "Разобрать причины рейтинга ниже цели 4.8★."
+      ],
       "coordinates": [
         37.54047,
         55.906088
@@ -502,11 +1210,40 @@
       "active": false,
       "rating": 4.7,
       "reviewCount": 43,
+      "new7": 0,
       "new30": 0,
+      "new90": 0,
+      "below5_7": 0,
       "below5_30": 0,
+      "below5_90": 0,
+      "low7": 0,
       "low30": 0,
+      "low90": 0,
       "lowNo": 2,
+      "noReply7": 0,
+      "noReply30": 0,
+      "noReply90": 0,
+      "trend7": {
+        "available": false,
+        "days": 7
+      },
+      "trend30": {
+        "available": false,
+        "days": 30
+      },
+      "trend90": {
+        "available": false,
+        "days": 90
+      },
+      "ratingHistorySince": "",
       "attention": true,
+      "attentionScore": 6,
+      "attentionLevel": "high",
+      "attentionLabel": "Высокий",
+      "recommendations": [
+        "Ответить на 2 отзыв(а) 1–3★ без ответа.",
+        "Разобрать причины рейтинга ниже цели 4.8★."
+      ],
       "coordinates": [
         37.450093,
         55.798855
@@ -522,11 +1259,39 @@
       "active": false,
       "rating": 4.8,
       "reviewCount": 35,
+      "new7": 0,
       "new30": 0,
+      "new90": 0,
+      "below5_7": 0,
       "below5_30": 0,
+      "below5_90": 0,
+      "low7": 0,
       "low30": 0,
+      "low90": 0,
       "lowNo": 3,
+      "noReply7": 0,
+      "noReply30": 0,
+      "noReply90": 0,
+      "trend7": {
+        "available": false,
+        "days": 7
+      },
+      "trend30": {
+        "available": false,
+        "days": 30
+      },
+      "trend90": {
+        "available": false,
+        "days": 90
+      },
+      "ratingHistorySince": "",
       "attention": true,
+      "attentionScore": 4,
+      "attentionLevel": "watch",
+      "attentionLabel": "Наблюдать",
+      "recommendations": [
+        "Ответить на 3 отзыв(а) 1–3★ без ответа."
+      ],
       "coordinates": [
         37.527094,
         55.65949
@@ -542,11 +1307,39 @@
       "active": false,
       "rating": 4.8,
       "reviewCount": 35,
+      "new7": 0,
       "new30": 0,
+      "new90": 0,
+      "below5_7": 0,
       "below5_30": 0,
+      "below5_90": 0,
+      "low7": 0,
       "low30": 0,
+      "low90": 0,
       "lowNo": 2,
+      "noReply7": 0,
+      "noReply30": 0,
+      "noReply90": 0,
+      "trend7": {
+        "available": false,
+        "days": 7
+      },
+      "trend30": {
+        "available": false,
+        "days": 30
+      },
+      "trend90": {
+        "available": false,
+        "days": 90
+      },
+      "ratingHistorySince": "",
       "attention": true,
+      "attentionScore": 4,
+      "attentionLevel": "watch",
+      "attentionLabel": "Наблюдать",
+      "recommendations": [
+        "Ответить на 2 отзыв(а) 1–3★ без ответа."
+      ],
       "coordinates": [
         37.463386,
         55.862237
@@ -562,11 +1355,39 @@
       "active": false,
       "rating": 4.4,
       "reviewCount": 5,
+      "new7": 0,
       "new30": 0,
+      "new90": 0,
+      "below5_7": 0,
       "below5_30": 0,
+      "below5_90": 0,
+      "low7": 0,
       "low30": 0,
+      "low90": 0,
       "lowNo": 0,
+      "noReply7": 0,
+      "noReply30": 0,
+      "noReply90": 0,
+      "trend7": {
+        "available": false,
+        "days": 7
+      },
+      "trend30": {
+        "available": false,
+        "days": 30
+      },
+      "trend90": {
+        "available": false,
+        "days": 90
+      },
+      "ratingHistorySince": "",
       "attention": true,
+      "attentionScore": 3,
+      "attentionLevel": "watch",
+      "attentionLabel": "Наблюдать",
+      "recommendations": [
+        "Разобрать причины рейтинга ниже цели 4.8★."
+      ],
       "coordinates": [
         37.393919,
         55.792184
@@ -582,11 +1403,40 @@
       "active": false,
       "rating": 4.3,
       "reviewCount": 7,
+      "new7": 0,
       "new30": 0,
+      "new90": 0,
+      "below5_7": 0,
       "below5_30": 0,
+      "below5_90": 0,
+      "low7": 0,
       "low30": 0,
+      "low90": 0,
       "lowNo": 1,
+      "noReply7": 0,
+      "noReply30": 0,
+      "noReply90": 0,
+      "trend7": {
+        "available": false,
+        "days": 7
+      },
+      "trend30": {
+        "available": false,
+        "days": 30
+      },
+      "trend90": {
+        "available": false,
+        "days": 90
+      },
+      "ratingHistorySince": "",
       "attention": true,
+      "attentionScore": 6,
+      "attentionLevel": "high",
+      "attentionLabel": "Высокий",
+      "recommendations": [
+        "Ответить на 1 отзыв(а) 1–3★ без ответа.",
+        "Разобрать причины рейтинга ниже цели 4.8★."
+      ],
       "coordinates": [
         37.725206,
         55.653279
@@ -602,11 +1452,39 @@
       "active": false,
       "rating": 4.9,
       "reviewCount": 41,
+      "new7": 0,
       "new30": 0,
+      "new90": 0,
+      "below5_7": 0,
       "below5_30": 0,
+      "below5_90": 0,
+      "low7": 0,
       "low30": 0,
+      "low90": 0,
       "lowNo": 5,
+      "noReply7": 0,
+      "noReply30": 0,
+      "noReply90": 0,
+      "trend7": {
+        "available": false,
+        "days": 7
+      },
+      "trend30": {
+        "available": false,
+        "days": 30
+      },
+      "trend90": {
+        "available": false,
+        "days": 90
+      },
+      "ratingHistorySince": "",
       "attention": true,
+      "attentionScore": 4,
+      "attentionLevel": "watch",
+      "attentionLabel": "Наблюдать",
+      "recommendations": [
+        "Ответить на 5 отзыв(а) 1–3★ без ответа."
+      ],
       "coordinates": [
         37.708163,
         55.891984
@@ -622,11 +1500,39 @@
       "active": false,
       "rating": 4.9,
       "reviewCount": 37,
+      "new7": 0,
       "new30": 0,
+      "new90": 0,
+      "below5_7": 0,
       "below5_30": 0,
+      "below5_90": 0,
+      "low7": 0,
       "low30": 0,
+      "low90": 0,
       "lowNo": 0,
+      "noReply7": 0,
+      "noReply30": 0,
+      "noReply90": 0,
+      "trend7": {
+        "available": false,
+        "days": 7
+      },
+      "trend30": {
+        "available": false,
+        "days": 30
+      },
+      "trend90": {
+        "available": false,
+        "days": 90
+      },
+      "ratingHistorySince": "",
       "attention": false,
+      "attentionScore": 0,
+      "attentionLevel": "normal",
+      "attentionLabel": "Норма",
+      "recommendations": [
+        "Срочных действий нет."
+      ],
       "coordinates": [
         37.758356,
         55.881737
@@ -640,11 +1546,39 @@
       "active": false,
       "rating": 4.3,
       "reviewCount": 3,
+      "new7": 0,
       "new30": 0,
+      "new90": 0,
+      "below5_7": 0,
       "below5_30": 0,
+      "below5_90": 0,
+      "low7": 0,
       "low30": 0,
+      "low90": 0,
       "lowNo": 0,
+      "noReply7": 0,
+      "noReply30": 0,
+      "noReply90": 0,
+      "trend7": {
+        "available": false,
+        "days": 7
+      },
+      "trend30": {
+        "available": false,
+        "days": 30
+      },
+      "trend90": {
+        "available": false,
+        "days": 90
+      },
+      "ratingHistorySince": "",
       "attention": true,
+      "attentionScore": 4,
+      "attentionLevel": "watch",
+      "attentionLabel": "Наблюдать",
+      "recommendations": [
+        "Разобрать причины рейтинга ниже цели 4.8★."
+      ],
       "coordinates": [
         37.780635,
         55.93837
@@ -660,11 +1594,40 @@
       "active": false,
       "rating": 4,
       "reviewCount": 6,
+      "new7": 0,
       "new30": 0,
+      "new90": 0,
+      "below5_7": 0,
       "below5_30": 0,
+      "below5_90": 0,
+      "low7": 0,
       "low30": 0,
+      "low90": 0,
       "lowNo": 1,
+      "noReply7": 0,
+      "noReply30": 0,
+      "noReply90": 0,
+      "trend7": {
+        "available": false,
+        "days": 7
+      },
+      "trend30": {
+        "available": false,
+        "days": 30
+      },
+      "trend90": {
+        "available": false,
+        "days": 90
+      },
+      "ratingHistorySince": "",
       "attention": true,
+      "attentionScore": 6,
+      "attentionLevel": "high",
+      "attentionLabel": "Высокий",
+      "recommendations": [
+        "Ответить на 1 отзыв(а) 1–3★ без ответа.",
+        "Разобрать причины рейтинга ниже цели 4.8★."
+      ],
       "coordinates": [
         37.177371,
         55.832141
@@ -680,11 +1643,39 @@
       "active": false,
       "rating": 4.5,
       "reviewCount": 8,
+      "new7": 0,
       "new30": 0,
+      "new90": 0,
+      "below5_7": 0,
       "below5_30": 0,
+      "below5_90": 0,
+      "low7": 0,
       "low30": 0,
+      "low90": 0,
       "lowNo": 0,
+      "noReply7": 0,
+      "noReply30": 0,
+      "noReply90": 0,
+      "trend7": {
+        "available": false,
+        "days": 7
+      },
+      "trend30": {
+        "available": false,
+        "days": 30
+      },
+      "trend90": {
+        "available": false,
+        "days": 90
+      },
+      "ratingHistorySince": "",
       "attention": true,
+      "attentionScore": 3,
+      "attentionLevel": "watch",
+      "attentionLabel": "Наблюдать",
+      "recommendations": [
+        "Разобрать причины рейтинга ниже цели 4.8★."
+      ],
       "coordinates": [
         37.158605,
         55.783956
@@ -700,11 +1691,39 @@
       "active": false,
       "rating": 4.3,
       "reviewCount": 10,
+      "new7": 0,
       "new30": 0,
+      "new90": 0,
+      "below5_7": 0,
       "below5_30": 0,
+      "below5_90": 0,
+      "low7": 0,
       "low30": 0,
+      "low90": 0,
       "lowNo": 0,
+      "noReply7": 0,
+      "noReply30": 0,
+      "noReply90": 0,
+      "trend7": {
+        "available": false,
+        "days": 7
+      },
+      "trend30": {
+        "available": false,
+        "days": 30
+      },
+      "trend90": {
+        "available": false,
+        "days": 90
+      },
+      "ratingHistorySince": "",
       "attention": true,
+      "attentionScore": 4,
+      "attentionLevel": "watch",
+      "attentionLabel": "Наблюдать",
+      "recommendations": [
+        "Разобрать причины рейтинга ниже цели 4.8★."
+      ],
       "coordinates": [
         37.79605,
         55.756533
@@ -720,11 +1739,39 @@
       "active": false,
       "rating": 4.6,
       "reviewCount": 30,
+      "new7": 0,
       "new30": 0,
+      "new90": 0,
+      "below5_7": 0,
       "below5_30": 0,
+      "below5_90": 0,
+      "low7": 0,
       "low30": 0,
+      "low90": 0,
       "lowNo": 0,
+      "noReply7": 0,
+      "noReply30": 0,
+      "noReply90": 0,
+      "trend7": {
+        "available": false,
+        "days": 7
+      },
+      "trend30": {
+        "available": false,
+        "days": 30
+      },
+      "trend90": {
+        "available": false,
+        "days": 90
+      },
+      "ratingHistorySince": "",
       "attention": true,
+      "attentionScore": 3,
+      "attentionLevel": "watch",
+      "attentionLabel": "Наблюдать",
+      "recommendations": [
+        "Разобрать причины рейтинга ниже цели 4.8★."
+      ],
       "coordinates": [
         37.722514,
         55.724591
@@ -740,11 +1787,40 @@
       "active": false,
       "rating": 4.3,
       "reviewCount": 24,
+      "new7": 0,
       "new30": 0,
+      "new90": 0,
+      "below5_7": 0,
       "below5_30": 0,
+      "below5_90": 0,
+      "low7": 0,
       "low30": 0,
+      "low90": 0,
       "lowNo": 3,
+      "noReply7": 0,
+      "noReply30": 0,
+      "noReply90": 0,
+      "trend7": {
+        "available": false,
+        "days": 7
+      },
+      "trend30": {
+        "available": false,
+        "days": 30
+      },
+      "trend90": {
+        "available": false,
+        "days": 90
+      },
+      "ratingHistorySince": "",
       "attention": true,
+      "attentionScore": 8,
+      "attentionLevel": "critical",
+      "attentionLabel": "Критический",
+      "recommendations": [
+        "Ответить на 3 отзыв(а) 1–3★ без ответа.",
+        "Разобрать причины рейтинга ниже цели 4.8★."
+      ],
       "coordinates": [
         37.511553,
         55.725362
@@ -760,11 +1836,39 @@
       "active": false,
       "rating": 4.1,
       "reviewCount": 3,
+      "new7": 0,
       "new30": 0,
+      "new90": 0,
+      "below5_7": 0,
       "below5_30": 0,
+      "below5_90": 0,
+      "low7": 0,
       "low30": 0,
+      "low90": 0,
       "lowNo": 0,
+      "noReply7": 0,
+      "noReply30": 0,
+      "noReply90": 0,
+      "trend7": {
+        "available": false,
+        "days": 7
+      },
+      "trend30": {
+        "available": false,
+        "days": 30
+      },
+      "trend90": {
+        "available": false,
+        "days": 90
+      },
+      "ratingHistorySince": "",
       "attention": true,
+      "attentionScore": 4,
+      "attentionLevel": "watch",
+      "attentionLabel": "Наблюдать",
+      "recommendations": [
+        "Разобрать причины рейтинга ниже цели 4.8★."
+      ],
       "coordinates": [
         37.421129,
         55.695656
@@ -780,11 +1884,40 @@
       "active": false,
       "rating": 4.2,
       "reviewCount": 9,
+      "new7": 0,
       "new30": 0,
+      "new90": 0,
+      "below5_7": 0,
       "below5_30": 0,
+      "below5_90": 0,
+      "low7": 0,
       "low30": 0,
+      "low90": 0,
       "lowNo": 1,
+      "noReply7": 0,
+      "noReply30": 0,
+      "noReply90": 0,
+      "trend7": {
+        "available": false,
+        "days": 7
+      },
+      "trend30": {
+        "available": false,
+        "days": 30
+      },
+      "trend90": {
+        "available": false,
+        "days": 90
+      },
+      "ratingHistorySince": "",
       "attention": true,
+      "attentionScore": 6,
+      "attentionLevel": "high",
+      "attentionLabel": "Высокий",
+      "recommendations": [
+        "Ответить на 1 отзыв(а) 1–3★ без ответа.",
+        "Разобрать причины рейтинга ниже цели 4.8★."
+      ],
       "coordinates": [
         37.590239,
         55.809582
@@ -800,11 +1933,39 @@
       "active": false,
       "rating": 4,
       "reviewCount": 1,
+      "new7": 0,
       "new30": 0,
+      "new90": 0,
+      "below5_7": 0,
       "below5_30": 0,
+      "below5_90": 0,
+      "low7": 0,
       "low30": 0,
+      "low90": 0,
       "lowNo": 0,
+      "noReply7": 0,
+      "noReply30": 0,
+      "noReply90": 0,
+      "trend7": {
+        "available": false,
+        "days": 7
+      },
+      "trend30": {
+        "available": false,
+        "days": 30
+      },
+      "trend90": {
+        "available": false,
+        "days": 90
+      },
+      "ratingHistorySince": "",
       "attention": true,
+      "attentionScore": 4,
+      "attentionLevel": "watch",
+      "attentionLabel": "Наблюдать",
+      "recommendations": [
+        "Разобрать причины рейтинга ниже цели 4.8★."
+      ],
       "coordinates": [
         37.467498,
         55.739726
@@ -820,11 +1981,39 @@
       "active": false,
       "rating": 4.7,
       "reviewCount": 16,
+      "new7": 0,
       "new30": 0,
+      "new90": 0,
+      "below5_7": 0,
       "below5_30": 0,
+      "below5_90": 0,
+      "low7": 0,
       "low30": 0,
+      "low90": 0,
       "lowNo": 0,
+      "noReply7": 0,
+      "noReply30": 0,
+      "noReply90": 0,
+      "trend7": {
+        "available": false,
+        "days": 7
+      },
+      "trend30": {
+        "available": false,
+        "days": 30
+      },
+      "trend90": {
+        "available": false,
+        "days": 90
+      },
+      "ratingHistorySince": "",
       "attention": true,
+      "attentionScore": 2,
+      "attentionLevel": "normal",
+      "attentionLabel": "Норма",
+      "recommendations": [
+        "Разобрать причины рейтинга ниже цели 4.8★."
+      ],
       "coordinates": [
         37.707036,
         55.702008
@@ -844,7 +2033,7 @@
     "attention": 38
   },
   "enabled": true,
-  "version": "3.41",
+  "version": "3.43",
   "options": {
     "renderer": "openlayers",
     "provider": "yandex-tiles-api-v1",
