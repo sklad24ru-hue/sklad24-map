@@ -1,6 +1,6 @@
 {
-  "schema": "review-map-3",
-  "generatedAt": "2026-10-15T20:47:45.204Z",
+  "schema": "review-map-4",
+  "generatedAt": "2026-10-15T20:51:29.499Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -844,15 +844,12 @@
     "attention": 38
   },
   "enabled": true,
-  "version": "3.39",
+  "version": "3.40",
   "options": {
     "renderer": "maplibre-gl",
     "provider": "yandex-tiles-api-v1",
-    "fallbackProvider": "pmtiles-maplibre-v1",
-    "yandexTilesApiKey": "",
-    "pmtilesEnabled": true,
-    "pmtilesMoscowUrl": "maps/moscow.pmtiles",
-    "pmtilesSpbUrl": "maps/spb.pmtiles",
+    "fallbackProvider": "interactive-list-v1",
+    "yandexTilesApiKey": "7a87b7fe-e14f-447d-8c84-666b248a6a2b",
     "activeOnly": true,
     "region": "all"
   }
