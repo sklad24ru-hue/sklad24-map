@@ -1,6 +1,6 @@
 {
   "schema": "review-map-6",
-  "generatedAt": "2026-10-15T22:06:22.022Z",
+  "generatedAt": "2026-10-15T22:18:39.472Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -11,8 +11,8 @@
       "rating": 4.6,
       "reviewCount": 10,
       "new7": 0,
-      "new30": 0,
-      "new90": 0,
+      "new30": 1,
+      "new90": 10,
       "below5_7": 0,
       "below5_30": 0,
       "below5_90": 0,
@@ -21,56 +21,11 @@
       "low90": 0,
       "lowNo": 0,
       "noReply7": 0,
-      "noReply30": 0,
-      "noReply90": 0,
-      "trend7": {
-        "available": false,
-        "days": 7
-      },
-      "trend30": {
-        "available": false,
-        "days": 30
-      },
-      "trend90": {
-        "available": false,
-        "days": 90
-      },
-      "ratingHistorySince": "",
-      "attention": true,
-      "attentionScore": 3,
-      "attentionLevel": "watch",
-      "attentionLabel": "Наблюдать",
-      "recommendations": [
-        "Разобрать причины рейтинга ниже цели 4.8★."
-      ],
-      "coordinates": [
-        37.532677,
-        55.81423
-      ],
-      "region": "moscow",
-      "band": "yellow",
-      "signal": "Рейтинг 4.6 ниже 4.8",
-      "action": "Посмотреть отзывы"
-    },
-    {
-      "id": "203089861865",
-      "name": "Булатниково / Булатниково 2",
-      "active": true,
-      "rating": 5,
-      "reviewCount": 93,
-      "new7": 0,
-      "new30": 0,
-      "new90": 0,
-      "below5_7": 0,
-      "below5_30": 0,
-      "below5_90": 0,
-      "low7": 0,
-      "low30": 0,
-      "low90": 0,
-      "lowNo": 3,
-      "noReply7": 0,
-      "noReply30": 0,
-      "noReply90": 0,
+      "noReply30": 1,
+      "noReply90": 10,
+      "lastReviewDay": "2026-09-29",
+      "lastReviewDateSource": "published",
+      "lastReviewAgeDays": 17,
       "trend7": {
         "available": false,
         "days": 7
@@ -89,7 +44,60 @@
       "attentionLevel": "watch",
       "attentionLabel": "Наблюдать",
       "recommendations": [
-        "Ответить на 3 отзыв(а) 1–3★ без ответа."
+        "Разобрать причины рейтинга ниже цели 4.8★.",
+        "Закрыть свежие отзывы без ответа."
+      ],
+      "coordinates": [
+        37.532677,
+        55.81423
+      ],
+      "region": "moscow",
+      "band": "yellow",
+      "signal": "Рейтинг 4.6 ниже 4.8",
+      "action": "Посмотреть отзывы"
+    },
+    {
+      "id": "203089861865",
+      "name": "Булатниково / Булатниково 2",
+      "active": true,
+      "rating": 5,
+      "reviewCount": 93,
+      "new7": 0,
+      "new30": 6,
+      "new90": 14,
+      "below5_7": 0,
+      "below5_30": 0,
+      "below5_90": 0,
+      "low7": 0,
+      "low30": 0,
+      "low90": 0,
+      "lowNo": 3,
+      "noReply7": 0,
+      "noReply30": 6,
+      "noReply90": 14,
+      "lastReviewDay": "2026-10-07",
+      "lastReviewDateSource": "updated",
+      "lastReviewAgeDays": 9,
+      "trend7": {
+        "available": false,
+        "days": 7
+      },
+      "trend30": {
+        "available": false,
+        "days": 30
+      },
+      "trend90": {
+        "available": false,
+        "days": 90
+      },
+      "ratingHistorySince": "",
+      "attention": true,
+      "attentionScore": 6,
+      "attentionLevel": "high",
+      "attentionLabel": "Высокий",
+      "recommendations": [
+        "Ответить на 3 отзыв(а) 1–3★ без ответа.",
+        "Закрыть свежие отзывы без ответа."
       ],
       "coordinates": [
         37.648028,
@@ -119,6 +127,9 @@
       "noReply7": 0,
       "noReply30": 0,
       "noReply90": 0,
+      "lastReviewDay": "2026-07-10",
+      "lastReviewDateSource": "published",
+      "lastReviewAgeDays": 98,
       "trend7": {
         "available": false,
         "days": 7
@@ -156,8 +167,8 @@
       "rating": 5,
       "reviewCount": 43,
       "new7": 0,
-      "new30": 0,
-      "new90": 0,
+      "new30": 6,
+      "new90": 20,
       "below5_7": 0,
       "below5_30": 0,
       "below5_90": 0,
@@ -166,8 +177,11 @@
       "low90": 0,
       "lowNo": 1,
       "noReply7": 0,
-      "noReply30": 0,
-      "noReply90": 0,
+      "noReply30": 6,
+      "noReply90": 20,
+      "lastReviewDay": "2026-10-09",
+      "lastReviewDateSource": "published",
+      "lastReviewAgeDays": 7,
       "trend7": {
         "available": false,
         "days": 7
@@ -182,11 +196,12 @@
       },
       "ratingHistorySince": "",
       "attention": true,
-      "attentionScore": 2,
-      "attentionLevel": "normal",
-      "attentionLabel": "Норма",
+      "attentionScore": 4,
+      "attentionLevel": "watch",
+      "attentionLabel": "Наблюдать",
       "recommendations": [
-        "Ответить на 1 отзыв(а) 1–3★ без ответа."
+        "Ответить на 1 отзыв(а) 1–3★ без ответа.",
+        "Закрыть свежие отзывы без ответа."
       ],
       "coordinates": [
         37.589059,
@@ -204,8 +219,8 @@
       "rating": 4.3,
       "reviewCount": 9,
       "new7": 0,
-      "new30": 0,
-      "new90": 0,
+      "new30": 1,
+      "new90": 2,
       "below5_7": 0,
       "below5_30": 0,
       "below5_90": 0,
@@ -214,8 +229,11 @@
       "low90": 0,
       "lowNo": 1,
       "noReply7": 0,
-      "noReply30": 0,
-      "noReply90": 0,
+      "noReply30": 1,
+      "noReply90": 2,
+      "lastReviewDay": "2026-09-29",
+      "lastReviewDateSource": "published",
+      "lastReviewAgeDays": 17,
       "trend7": {
         "available": false,
         "days": 7
@@ -230,12 +248,13 @@
       },
       "ratingHistorySince": "",
       "attention": true,
-      "attentionScore": 6,
+      "attentionScore": 7,
       "attentionLevel": "high",
       "attentionLabel": "Высокий",
       "recommendations": [
         "Ответить на 1 отзыв(а) 1–3★ без ответа.",
-        "Разобрать причины рейтинга ниже цели 4.8★."
+        "Разобрать причины рейтинга ниже цели 4.8★.",
+        "Закрыть свежие отзывы без ответа."
       ],
       "coordinates": [
         37.254958,
@@ -254,7 +273,7 @@
       "reviewCount": 15,
       "new7": 0,
       "new30": 0,
-      "new90": 0,
+      "new90": 1,
       "below5_7": 0,
       "below5_30": 0,
       "below5_90": 0,
@@ -264,7 +283,10 @@
       "lowNo": 1,
       "noReply7": 0,
       "noReply30": 0,
-      "noReply90": 0,
+      "noReply90": 1,
+      "lastReviewDay": "2026-08-26",
+      "lastReviewDateSource": "published",
+      "lastReviewAgeDays": 51,
       "trend7": {
         "available": false,
         "days": 7
@@ -302,8 +324,8 @@
       "rating": 5,
       "reviewCount": 61,
       "new7": 0,
-      "new30": 0,
-      "new90": 0,
+      "new30": 8,
+      "new90": 12,
       "below5_7": 0,
       "below5_30": 0,
       "below5_90": 0,
@@ -312,8 +334,11 @@
       "low90": 0,
       "lowNo": 1,
       "noReply7": 0,
-      "noReply30": 0,
-      "noReply90": 0,
+      "noReply30": 8,
+      "noReply90": 12,
+      "lastReviewDay": "2026-10-09",
+      "lastReviewDateSource": "published",
+      "lastReviewAgeDays": 7,
       "trend7": {
         "available": false,
         "days": 7
@@ -328,11 +353,12 @@
       },
       "ratingHistorySince": "",
       "attention": true,
-      "attentionScore": 2,
-      "attentionLevel": "normal",
-      "attentionLabel": "Норма",
+      "attentionScore": 4,
+      "attentionLevel": "watch",
+      "attentionLabel": "Наблюдать",
       "recommendations": [
-        "Ответить на 1 отзыв(а) 1–3★ без ответа."
+        "Ответить на 1 отзыв(а) 1–3★ без ответа.",
+        "Закрыть свежие отзывы без ответа."
       ],
       "coordinates": [
         37.91443,
@@ -351,7 +377,7 @@
       "reviewCount": 4,
       "new7": 0,
       "new30": 0,
-      "new90": 0,
+      "new90": 2,
       "below5_7": 0,
       "below5_30": 0,
       "below5_90": 0,
@@ -361,7 +387,10 @@
       "lowNo": 0,
       "noReply7": 0,
       "noReply30": 0,
-      "noReply90": 0,
+      "noReply90": 2,
+      "lastReviewDay": "2026-09-01",
+      "lastReviewDateSource": "published",
+      "lastReviewAgeDays": 45,
       "trend7": {
         "available": false,
         "days": 7
@@ -398,8 +427,8 @@
       "rating": 4.6,
       "reviewCount": 11,
       "new7": 0,
-      "new30": 0,
-      "new90": 0,
+      "new30": 1,
+      "new90": 8,
       "below5_7": 0,
       "below5_30": 0,
       "below5_90": 0,
@@ -408,8 +437,11 @@
       "low90": 0,
       "lowNo": 0,
       "noReply7": 0,
-      "noReply30": 0,
-      "noReply90": 0,
+      "noReply30": 1,
+      "noReply90": 8,
+      "lastReviewDay": "2026-09-26",
+      "lastReviewDateSource": "published",
+      "lastReviewAgeDays": 20,
       "trend7": {
         "available": false,
         "days": 7
@@ -424,11 +456,12 @@
       },
       "ratingHistorySince": "",
       "attention": true,
-      "attentionScore": 3,
+      "attentionScore": 4,
       "attentionLevel": "watch",
       "attentionLabel": "Наблюдать",
       "recommendations": [
-        "Разобрать причины рейтинга ниже цели 4.8★."
+        "Разобрать причины рейтинга ниже цели 4.8★.",
+        "Закрыть свежие отзывы без ответа."
       ],
       "coordinates": [
         30.364233,
@@ -446,8 +479,8 @@
       "rating": 5,
       "reviewCount": 25,
       "new7": 0,
-      "new30": 0,
-      "new90": 0,
+      "new30": 1,
+      "new90": 5,
       "below5_7": 0,
       "below5_30": 0,
       "below5_90": 0,
@@ -456,54 +489,11 @@
       "low90": 0,
       "lowNo": 0,
       "noReply7": 0,
-      "noReply30": 0,
-      "noReply90": 0,
-      "trend7": {
-        "available": false,
-        "days": 7
-      },
-      "trend30": {
-        "available": false,
-        "days": 30
-      },
-      "trend90": {
-        "available": false,
-        "days": 90
-      },
-      "ratingHistorySince": "",
-      "attention": false,
-      "attentionScore": 0,
-      "attentionLevel": "normal",
-      "attentionLabel": "Норма",
-      "recommendations": [
-        "Срочных действий нет."
-      ],
-      "coordinates": [
-        37.231108,
-        55.675138
-      ],
-      "region": "moscow",
-      "band": "green"
-    },
-    {
-      "id": "41562165303",
-      "name": "Октябрьская набережная",
-      "active": true,
-      "rating": 4.8,
-      "reviewCount": 15,
-      "new7": 0,
-      "new30": 0,
-      "new90": 0,
-      "below5_7": 0,
-      "below5_30": 0,
-      "below5_90": 0,
-      "low7": 0,
-      "low30": 0,
-      "low90": 0,
-      "lowNo": 1,
-      "noReply7": 0,
-      "noReply30": 0,
-      "noReply90": 0,
+      "noReply30": 1,
+      "noReply90": 5,
+      "lastReviewDay": "2026-09-22",
+      "lastReviewDateSource": "published",
+      "lastReviewAgeDays": 24,
       "trend7": {
         "available": false,
         "days": 7
@@ -518,11 +508,63 @@
       },
       "ratingHistorySince": "",
       "attention": true,
-      "attentionScore": 2,
+      "attentionScore": 1,
       "attentionLevel": "normal",
       "attentionLabel": "Норма",
       "recommendations": [
-        "Ответить на 1 отзыв(а) 1–3★ без ответа."
+        "Закрыть свежие отзывы без ответа."
+      ],
+      "coordinates": [
+        37.231108,
+        55.675138
+      ],
+      "region": "moscow",
+      "band": "green",
+      "signal": "1 без ответа за 30 дней",
+      "action": "Ответить на свежие отзывы"
+    },
+    {
+      "id": "41562165303",
+      "name": "Октябрьская набережная",
+      "active": true,
+      "rating": 4.8,
+      "reviewCount": 15,
+      "new7": 0,
+      "new30": 2,
+      "new90": 9,
+      "below5_7": 0,
+      "below5_30": 0,
+      "below5_90": 0,
+      "low7": 0,
+      "low30": 0,
+      "low90": 0,
+      "lowNo": 1,
+      "noReply7": 0,
+      "noReply30": 2,
+      "noReply90": 9,
+      "lastReviewDay": "2026-10-01",
+      "lastReviewDateSource": "published",
+      "lastReviewAgeDays": 15,
+      "trend7": {
+        "available": false,
+        "days": 7
+      },
+      "trend30": {
+        "available": false,
+        "days": 30
+      },
+      "trend90": {
+        "available": false,
+        "days": 90
+      },
+      "ratingHistorySince": "",
+      "attention": true,
+      "attentionScore": 4,
+      "attentionLevel": "watch",
+      "attentionLabel": "Наблюдать",
+      "recommendations": [
+        "Ответить на 1 отзыв(а) 1–3★ без ответа.",
+        "Закрыть свежие отзывы без ответа."
       ],
       "coordinates": [
         30.499169,
@@ -540,8 +582,8 @@
       "rating": null,
       "reviewCount": 1,
       "new7": 0,
-      "new30": 0,
-      "new90": 0,
+      "new30": 1,
+      "new90": 1,
       "below5_7": 0,
       "below5_30": 0,
       "below5_90": 0,
@@ -550,54 +592,11 @@
       "low90": 0,
       "lowNo": 0,
       "noReply7": 0,
-      "noReply30": 0,
-      "noReply90": 0,
-      "trend7": {
-        "available": false,
-        "days": 7
-      },
-      "trend30": {
-        "available": false,
-        "days": 30
-      },
-      "trend90": {
-        "available": false,
-        "days": 90
-      },
-      "ratingHistorySince": "",
-      "attention": false,
-      "attentionScore": 0,
-      "attentionLevel": "normal",
-      "attentionLabel": "Норма",
-      "recommendations": [
-        "Срочных действий нет."
-      ],
-      "coordinates": [
-        37.734713,
-        55.974181
-      ],
-      "region": "moscow",
-      "band": "none"
-    },
-    {
-      "id": "44367646840",
-      "name": "Предпортовая",
-      "active": true,
-      "rating": 4.5,
-      "reviewCount": 8,
-      "new7": 0,
-      "new30": 0,
-      "new90": 0,
-      "below5_7": 0,
-      "below5_30": 0,
-      "below5_90": 0,
-      "low7": 0,
-      "low30": 0,
-      "low90": 0,
-      "lowNo": 0,
-      "noReply7": 0,
-      "noReply30": 0,
-      "noReply90": 0,
+      "noReply30": 1,
+      "noReply90": 1,
+      "lastReviewDay": "2026-10-09",
+      "lastReviewDateSource": "published",
+      "lastReviewAgeDays": 7,
       "trend7": {
         "available": false,
         "days": 7
@@ -612,11 +611,63 @@
       },
       "ratingHistorySince": "",
       "attention": true,
-      "attentionScore": 3,
+      "attentionScore": 1,
+      "attentionLevel": "normal",
+      "attentionLabel": "Норма",
+      "recommendations": [
+        "Закрыть свежие отзывы без ответа."
+      ],
+      "coordinates": [
+        37.734713,
+        55.974181
+      ],
+      "region": "moscow",
+      "band": "none",
+      "signal": "1 без ответа за 30 дней",
+      "action": "Ответить на свежие отзывы"
+    },
+    {
+      "id": "44367646840",
+      "name": "Предпортовая",
+      "active": true,
+      "rating": 4.5,
+      "reviewCount": 8,
+      "new7": 0,
+      "new30": 1,
+      "new90": 4,
+      "below5_7": 0,
+      "below5_30": 0,
+      "below5_90": 0,
+      "low7": 0,
+      "low30": 0,
+      "low90": 0,
+      "lowNo": 0,
+      "noReply7": 0,
+      "noReply30": 1,
+      "noReply90": 4,
+      "lastReviewDay": "2026-10-01",
+      "lastReviewDateSource": "published",
+      "lastReviewAgeDays": 15,
+      "trend7": {
+        "available": false,
+        "days": 7
+      },
+      "trend30": {
+        "available": false,
+        "days": 30
+      },
+      "trend90": {
+        "available": false,
+        "days": 90
+      },
+      "ratingHistorySince": "",
+      "attention": true,
+      "attentionScore": 4,
       "attentionLevel": "watch",
       "attentionLabel": "Наблюдать",
       "recommendations": [
-        "Разобрать причины рейтинга ниже цели 4.8★."
+        "Разобрать причины рейтинга ниже цели 4.8★.",
+        "Закрыть свежие отзывы без ответа."
       ],
       "coordinates": [
         30.311008,
@@ -634,8 +685,8 @@
       "rating": 4.5,
       "reviewCount": 8,
       "new7": 0,
-      "new30": 0,
-      "new90": 0,
+      "new30": 1,
+      "new90": 2,
       "below5_7": 0,
       "below5_30": 0,
       "below5_90": 0,
@@ -644,8 +695,11 @@
       "low90": 0,
       "lowNo": 0,
       "noReply7": 0,
-      "noReply30": 0,
-      "noReply90": 0,
+      "noReply30": 1,
+      "noReply90": 2,
+      "lastReviewDay": "2026-09-28",
+      "lastReviewDateSource": "published",
+      "lastReviewAgeDays": 18,
       "trend7": {
         "available": false,
         "days": 7
@@ -660,11 +714,12 @@
       },
       "ratingHistorySince": "",
       "attention": true,
-      "attentionScore": 3,
+      "attentionScore": 4,
       "attentionLevel": "watch",
       "attentionLabel": "Наблюдать",
       "recommendations": [
-        "Разобрать причины рейтинга ниже цели 4.8★."
+        "Разобрать причины рейтинга ниже цели 4.8★.",
+        "Закрыть свежие отзывы без ответа."
       ],
       "coordinates": [
         37.680209,
@@ -682,8 +737,8 @@
       "rating": 4.8,
       "reviewCount": 16,
       "new7": 0,
-      "new30": 0,
-      "new90": 0,
+      "new30": 1,
+      "new90": 6,
       "below5_7": 0,
       "below5_30": 0,
       "below5_90": 0,
@@ -692,8 +747,11 @@
       "low90": 0,
       "lowNo": 0,
       "noReply7": 0,
-      "noReply30": 0,
-      "noReply90": 0,
+      "noReply30": 1,
+      "noReply90": 6,
+      "lastReviewDay": "2026-09-28",
+      "lastReviewDateSource": "published",
+      "lastReviewAgeDays": 18,
       "trend7": {
         "available": false,
         "days": 7
@@ -707,19 +765,21 @@
         "days": 90
       },
       "ratingHistorySince": "",
-      "attention": false,
-      "attentionScore": 0,
+      "attention": true,
+      "attentionScore": 1,
       "attentionLevel": "normal",
       "attentionLabel": "Норма",
       "recommendations": [
-        "Срочных действий нет."
+        "Закрыть свежие отзывы без ответа."
       ],
       "coordinates": [
         30.449888,
         59.983369
       ],
       "region": "spb",
-      "band": "green"
+      "band": "green",
+      "signal": "1 без ответа за 30 дней",
+      "action": "Ответить на свежие отзывы"
     },
     {
       "id": "48001119656",
@@ -729,7 +789,7 @@
       "reviewCount": 27,
       "new7": 0,
       "new30": 0,
-      "new90": 0,
+      "new90": 1,
       "below5_7": 0,
       "below5_30": 0,
       "below5_90": 0,
@@ -739,7 +799,10 @@
       "lowNo": 2,
       "noReply7": 0,
       "noReply30": 0,
-      "noReply90": 0,
+      "noReply90": 1,
+      "lastReviewDay": "2026-09-11",
+      "lastReviewDateSource": "published",
+      "lastReviewAgeDays": 35,
       "trend7": {
         "available": false,
         "days": 7
@@ -778,7 +841,7 @@
       "reviewCount": 4,
       "new7": 0,
       "new30": 0,
-      "new90": 0,
+      "new90": 1,
       "below5_7": 0,
       "below5_30": 0,
       "below5_90": 0,
@@ -788,7 +851,10 @@
       "lowNo": 0,
       "noReply7": 0,
       "noReply30": 0,
-      "noReply90": 0,
+      "noReply90": 1,
+      "lastReviewDay": "2026-08-27",
+      "lastReviewDateSource": "published",
+      "lastReviewAgeDays": 50,
       "trend7": {
         "available": false,
         "days": 7
@@ -825,8 +891,8 @@
       "rating": 5,
       "reviewCount": 84,
       "new7": 0,
-      "new30": 0,
-      "new90": 0,
+      "new30": 4,
+      "new90": 15,
       "below5_7": 0,
       "below5_30": 0,
       "below5_90": 0,
@@ -835,8 +901,11 @@
       "low90": 0,
       "lowNo": 6,
       "noReply7": 0,
-      "noReply30": 0,
-      "noReply90": 0,
+      "noReply30": 4,
+      "noReply90": 15,
+      "lastReviewDay": "2026-10-06",
+      "lastReviewDateSource": "updated",
+      "lastReviewAgeDays": 10,
       "trend7": {
         "available": false,
         "days": 7
@@ -851,11 +920,12 @@
       },
       "ratingHistorySince": "",
       "attention": true,
-      "attentionScore": 4,
-      "attentionLevel": "watch",
-      "attentionLabel": "Наблюдать",
+      "attentionScore": 6,
+      "attentionLevel": "high",
+      "attentionLabel": "Высокий",
       "recommendations": [
-        "Ответить на 6 отзыв(а) 1–3★ без ответа."
+        "Ответить на 6 отзыв(а) 1–3★ без ответа.",
+        "Закрыть свежие отзывы без ответа."
       ],
       "coordinates": [
         37.430031,
@@ -873,8 +943,8 @@
       "rating": 4.8,
       "reviewCount": 26,
       "new7": 0,
-      "new30": 0,
-      "new90": 0,
+      "new30": 3,
+      "new90": 6,
       "below5_7": 0,
       "below5_30": 0,
       "below5_90": 0,
@@ -883,8 +953,11 @@
       "low90": 0,
       "lowNo": 0,
       "noReply7": 0,
-      "noReply30": 0,
-      "noReply90": 0,
+      "noReply30": 3,
+      "noReply90": 6,
+      "lastReviewDay": "2026-10-09",
+      "lastReviewDateSource": "published",
+      "lastReviewAgeDays": 7,
       "trend7": {
         "available": false,
         "days": 7
@@ -898,19 +971,21 @@
         "days": 90
       },
       "ratingHistorySince": "",
-      "attention": false,
-      "attentionScore": 0,
+      "attention": true,
+      "attentionScore": 2,
       "attentionLevel": "normal",
       "attentionLabel": "Норма",
       "recommendations": [
-        "Срочных действий нет."
+        "Закрыть свежие отзывы без ответа."
       ],
       "coordinates": [
         37.785746,
         55.817704
       ],
       "region": "moscow",
-      "band": "green"
+      "band": "green",
+      "signal": "3 без ответа за 30 дней",
+      "action": "Ответить на свежие отзывы"
     },
     {
       "id": "124046528827",
@@ -931,6 +1006,9 @@
       "noReply7": 0,
       "noReply30": 0,
       "noReply90": 0,
+      "lastReviewDay": "2024-03-28",
+      "lastReviewDateSource": "published",
+      "lastReviewAgeDays": 932,
       "trend7": {
         "available": false,
         "days": 7
@@ -980,6 +1058,9 @@
       "noReply7": 0,
       "noReply30": 0,
       "noReply90": 0,
+      "lastReviewDay": "2024-11-16",
+      "lastReviewDateSource": "published",
+      "lastReviewAgeDays": 699,
       "trend7": {
         "available": false,
         "days": 7
@@ -1029,6 +1110,9 @@
       "noReply7": 0,
       "noReply30": 0,
       "noReply90": 0,
+      "lastReviewDay": "2020-02-17",
+      "lastReviewDateSource": "published",
+      "lastReviewAgeDays": 2433,
       "trend7": {
         "available": false,
         "days": 7
@@ -1077,6 +1161,9 @@
       "noReply7": 0,
       "noReply30": 0,
       "noReply90": 0,
+      "lastReviewDay": "2023-12-09",
+      "lastReviewDateSource": "published",
+      "lastReviewAgeDays": 1042,
       "trend7": {
         "available": false,
         "days": 7
@@ -1126,6 +1213,9 @@
       "noReply7": 0,
       "noReply30": 0,
       "noReply90": 0,
+      "lastReviewDay": "2025-05-03",
+      "lastReviewDateSource": "published",
+      "lastReviewAgeDays": 531,
       "trend7": {
         "available": false,
         "days": 7
@@ -1174,6 +1264,9 @@
       "noReply7": 0,
       "noReply30": 0,
       "noReply90": 0,
+      "lastReviewDay": "2023-12-23",
+      "lastReviewDateSource": "published",
+      "lastReviewAgeDays": 1028,
       "trend7": {
         "available": false,
         "days": 7
@@ -1223,6 +1316,9 @@
       "noReply7": 0,
       "noReply30": 0,
       "noReply90": 0,
+      "lastReviewDay": "2025-04-18",
+      "lastReviewDateSource": "published",
+      "lastReviewAgeDays": 546,
       "trend7": {
         "available": false,
         "days": 7
@@ -1272,6 +1368,9 @@
       "noReply7": 0,
       "noReply30": 0,
       "noReply90": 0,
+      "lastReviewDay": "2023-12-22",
+      "lastReviewDateSource": "published",
+      "lastReviewAgeDays": 1029,
       "trend7": {
         "available": false,
         "days": 7
@@ -1320,6 +1419,9 @@
       "noReply7": 0,
       "noReply30": 0,
       "noReply90": 0,
+      "lastReviewDay": "2023-09-13",
+      "lastReviewDateSource": "published",
+      "lastReviewAgeDays": 1129,
       "trend7": {
         "available": false,
         "days": 7
@@ -1368,6 +1470,9 @@
       "noReply7": 0,
       "noReply30": 0,
       "noReply90": 0,
+      "lastReviewDay": "2026-01-27",
+      "lastReviewDateSource": "published",
+      "lastReviewAgeDays": 262,
       "trend7": {
         "available": false,
         "days": 7
@@ -1416,6 +1521,9 @@
       "noReply7": 0,
       "noReply30": 0,
       "noReply90": 0,
+      "lastReviewDay": "2023-10-13",
+      "lastReviewDateSource": "published",
+      "lastReviewAgeDays": 1099,
       "trend7": {
         "available": false,
         "days": 7
@@ -1465,6 +1573,9 @@
       "noReply7": 0,
       "noReply30": 0,
       "noReply90": 0,
+      "lastReviewDay": "2026-01-19",
+      "lastReviewDateSource": "published",
+      "lastReviewAgeDays": 270,
       "trend7": {
         "available": false,
         "days": 7
@@ -1513,6 +1624,9 @@
       "noReply7": 0,
       "noReply30": 0,
       "noReply90": 0,
+      "lastReviewDay": "2026-07-17",
+      "lastReviewDateSource": "published",
+      "lastReviewAgeDays": 91,
       "trend7": {
         "available": false,
         "days": 7
@@ -1548,7 +1662,7 @@
       "reviewCount": 3,
       "new7": 0,
       "new30": 0,
-      "new90": 0,
+      "new90": 1,
       "below5_7": 0,
       "below5_30": 0,
       "below5_90": 0,
@@ -1558,7 +1672,10 @@
       "lowNo": 0,
       "noReply7": 0,
       "noReply30": 0,
-      "noReply90": 0,
+      "noReply90": 1,
+      "lastReviewDay": "2026-08-13",
+      "lastReviewDateSource": "published",
+      "lastReviewAgeDays": 64,
       "trend7": {
         "available": false,
         "days": 7
@@ -1607,6 +1724,9 @@
       "noReply7": 0,
       "noReply30": 0,
       "noReply90": 0,
+      "lastReviewDay": "2025-05-22",
+      "lastReviewDateSource": "published",
+      "lastReviewAgeDays": 512,
       "trend7": {
         "available": false,
         "days": 7
@@ -1656,6 +1776,9 @@
       "noReply7": 0,
       "noReply30": 0,
       "noReply90": 0,
+      "lastReviewDay": "2025-06-04",
+      "lastReviewDateSource": "published",
+      "lastReviewAgeDays": 499,
       "trend7": {
         "available": false,
         "days": 7
@@ -1704,6 +1827,9 @@
       "noReply7": 0,
       "noReply30": 0,
       "noReply90": 0,
+      "lastReviewDay": "2023-09-07",
+      "lastReviewDateSource": "published",
+      "lastReviewAgeDays": 1135,
       "trend7": {
         "available": false,
         "days": 7
@@ -1752,6 +1878,9 @@
       "noReply7": 0,
       "noReply30": 0,
       "noReply90": 0,
+      "lastReviewDay": "2022-07-07",
+      "lastReviewDateSource": "published",
+      "lastReviewAgeDays": 1562,
       "trend7": {
         "available": false,
         "days": 7
@@ -1800,6 +1929,9 @@
       "noReply7": 0,
       "noReply30": 0,
       "noReply90": 0,
+      "lastReviewDay": "2024-08-20",
+      "lastReviewDateSource": "published",
+      "lastReviewAgeDays": 787,
       "trend7": {
         "available": false,
         "days": 7
@@ -1849,6 +1981,9 @@
       "noReply7": 0,
       "noReply30": 0,
       "noReply90": 0,
+      "lastReviewDay": "2022-06-28",
+      "lastReviewDateSource": "published",
+      "lastReviewAgeDays": 1571,
       "trend7": {
         "available": false,
         "days": 7
@@ -1897,6 +2032,9 @@
       "noReply7": 0,
       "noReply30": 0,
       "noReply90": 0,
+      "lastReviewDay": "2023-11-23",
+      "lastReviewDateSource": "published",
+      "lastReviewAgeDays": 1058,
       "trend7": {
         "available": false,
         "days": 7
@@ -1946,6 +2084,9 @@
       "noReply7": 0,
       "noReply30": 0,
       "noReply90": 0,
+      "lastReviewDay": "2020-04-14",
+      "lastReviewDateSource": "published",
+      "lastReviewAgeDays": 2376,
       "trend7": {
         "available": false,
         "days": 7
@@ -1994,6 +2135,9 @@
       "noReply7": 0,
       "noReply30": 0,
       "noReply90": 0,
+      "lastReviewDay": "2023-01-23",
+      "lastReviewDateSource": "published",
+      "lastReviewAgeDays": 1362,
       "trend7": {
         "available": false,
         "days": 7
@@ -2030,10 +2174,10 @@
     "mapped": 42,
     "missing": 2,
     "below": 29,
-    "attention": 38
+    "attention": 42
   },
   "enabled": true,
-  "version": "3.43",
+  "version": "3.44",
   "options": {
     "renderer": "openlayers",
     "provider": "yandex-tiles-api-v1",
