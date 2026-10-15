@@ -1,6 +1,6 @@
 {
   "schema": "sklad24-map-2",
-  "generatedAt": "2026-10-15T17:18:04.928Z",
+  "generatedAt": "2026-10-15T17:30:40.999Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -936,5 +936,11 @@
     "missing": 2,
     "below": 29,
     "attention": 39
+  },
+  "enabled": true,
+  "version": "3.33",
+  "options": {
+    "activeOnly": true,
+    "region": "all"
   }
 }
