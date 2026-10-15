@@ -1,6 +1,6 @@
 {
-  "schema": "review-map-4",
-  "generatedAt": "2026-10-15T21:33:26.251Z",
+  "schema": "review-map-5",
+  "generatedAt": "2026-10-15T21:37:24.418Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -844,9 +844,9 @@
     "attention": 38
   },
   "enabled": true,
-  "version": "3.40",
+  "version": "3.41",
   "options": {
-    "renderer": "maplibre-gl",
+    "renderer": "openlayers",
     "provider": "yandex-tiles-api-v1",
     "fallbackProvider": "interactive-list-v1",
     "yandexTilesApiKey": "7a87b7fe-e14f-447d-8c84-666b248a6a2b",
