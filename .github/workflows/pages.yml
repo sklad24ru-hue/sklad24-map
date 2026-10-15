@@ -17,8 +17,8 @@ concurrency:
   cancel-in-progress: true
 
 env:
-  MAP_EXPORT_URL: "https://script.google.com/macros/s/AKfycby5Ur46k1kMXS5QaIYhDlT-hup3FiXk_LaK11mQNF5EBlnzWtM/exec?view=map-export"
-  MAP_HEALTH_URL: "https://script.google.com/macros/s/AKfycby5Ur46k1kMXS5QaIYhDlT-hup3FiXk_LaK11mQNF5EBlnzWtM/exec?view=health"
+  MAP_EXPORT_URL: "https://script.google.com/macros/s/AKfycbxzmL1KFlWZ2Ch-9FCM_Zel7y0Pd2e7dJiyBNsTYf7A_SBYkNUMGpGewaMwESn2vps/exec?view=map-export"
+  MAP_HEALTH_URL: "https://script.google.com/macros/s/AKfycbxzmL1KFlWZ2Ch-9FCM_Zel7y0Pd2e7dJiyBNsTYf7A_SBYkNUMGpGewaMwESn2vps/exec?view=health"
 
 jobs:
   deploy:
