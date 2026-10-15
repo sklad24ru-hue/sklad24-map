@@ -1,6 +1,6 @@
 {
-  "schema": "review-map-2",
-  "generatedAt": "2026-10-15T20:09:34.273Z",
+  "schema": "review-map-3",
+  "generatedAt": "2026-10-15T20:21:10.967Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -15,16 +15,14 @@
       "low30": 0,
       "lowNo": 0,
       "attention": true,
-      "signal": "Рейтинг 4.6 ниже 4.8",
-      "action": "Посмотреть отзывы",
       "coordinates": [
         37.532677,
         55.81423
       ],
       "region": "moscow",
       "band": "yellow",
-      "url": "https://yandex.ru/maps/org/107733193829/",
-      "reviewsUrl": "https://yandex.ru/maps/org/107733193829/reviews/"
+      "signal": "Рейтинг 4.6 ниже 4.8",
+      "action": "Посмотреть отзывы"
     },
     {
       "id": "203089861865",
@@ -37,16 +35,14 @@
       "low30": 0,
       "lowNo": 3,
       "attention": true,
-      "signal": "3 без ответа на 1–3★",
-      "action": "Ответить на 1–3★",
       "coordinates": [
         37.648028,
         55.562384
       ],
       "region": "moscow",
       "band": "green",
-      "url": "https://yandex.ru/maps/org/203089861865/",
-      "reviewsUrl": "https://yandex.ru/maps/org/203089861865/reviews/"
+      "signal": "3 без ответа на 1–3★",
+      "action": "Ответить на 1–3★"
     },
     {
       "id": "26673303045",
@@ -59,16 +55,14 @@
       "low30": 0,
       "lowNo": 2,
       "attention": true,
-      "signal": "Ошибка данных",
-      "action": "Проверить карточку",
       "coordinates": [
         37.570573,
         55.919402
       ],
       "region": "moscow",
       "band": "yellow",
-      "url": "https://yandex.ru/maps/org/26673303045/",
-      "reviewsUrl": "https://yandex.ru/maps/org/26673303045/reviews/"
+      "signal": "2 без ответа на 1–3★",
+      "action": "Ответить на 1–3★"
     },
     {
       "id": "234135876724",
@@ -81,16 +75,14 @@
       "low30": 0,
       "lowNo": 1,
       "attention": true,
-      "signal": "1 без ответа на 1–3★",
-      "action": "Ответить на 1–3★",
       "coordinates": [
         37.589059,
         55.929223
       ],
       "region": "moscow",
       "band": "green",
-      "url": "https://yandex.ru/maps/org/234135876724/",
-      "reviewsUrl": "https://yandex.ru/maps/org/234135876724/reviews/"
+      "signal": "1 без ответа на 1–3★",
+      "action": "Ответить на 1–3★"
     },
     {
       "id": "133898157728",
@@ -103,16 +95,14 @@
       "low30": 0,
       "lowNo": 1,
       "attention": true,
-      "signal": "1 без ответа на 1–3★",
-      "action": "Ответить на 1–3★",
       "coordinates": [
         37.254958,
         55.621318
       ],
       "region": "moscow",
       "band": "red",
-      "url": "https://yandex.ru/maps/org/133898157728/",
-      "reviewsUrl": "https://yandex.ru/maps/org/133898157728/reviews/"
+      "signal": "1 без ответа на 1–3★",
+      "action": "Ответить на 1–3★"
     },
     {
       "id": "25448067823",
@@ -125,16 +115,14 @@
       "low30": 0,
       "lowNo": 1,
       "attention": true,
-      "signal": "1 без ответа на 1–3★",
-      "action": "Ответить на 1–3★",
       "coordinates": [
         37.571174,
         55.71983
       ],
       "region": "moscow",
       "band": "red",
-      "url": "https://yandex.ru/maps/org/25448067823/",
-      "reviewsUrl": "https://yandex.ru/maps/org/25448067823/reviews/"
+      "signal": "1 без ответа на 1–3★",
+      "action": "Ответить на 1–3★"
     },
     {
       "id": "28524928026",
@@ -147,16 +135,14 @@
       "low30": 0,
       "lowNo": 1,
       "attention": true,
-      "signal": "1 без ответа на 1–3★",
-      "action": "Ответить на 1–3★",
       "coordinates": [
         37.91443,
         55.6769
       ],
       "region": "moscow",
       "band": "green",
-      "url": "https://yandex.ru/maps/org/28524928026/",
-      "reviewsUrl": "https://yandex.ru/maps/org/28524928026/reviews/"
+      "signal": "1 без ответа на 1–3★",
+      "action": "Ответить на 1–3★"
     },
     {
       "id": "148591524142",
@@ -169,16 +155,14 @@
       "low30": 0,
       "lowNo": 0,
       "attention": true,
-      "signal": "Рейтинг 4.2 ниже 4.8",
-      "action": "Посмотреть отзывы",
       "coordinates": [
         30.288874,
         59.890627
       ],
       "region": "spb",
       "band": "red",
-      "url": "https://yandex.ru/maps/org/148591524142/",
-      "reviewsUrl": "https://yandex.ru/maps/org/148591524142/reviews/"
+      "signal": "Рейтинг 4.2 ниже 4.8",
+      "action": "Посмотреть отзывы"
     },
     {
       "id": "189001895569",
@@ -191,16 +175,14 @@
       "low30": 0,
       "lowNo": 0,
       "attention": true,
-      "signal": "Рейтинг 4.6 ниже 4.8",
-      "action": "Посмотреть отзывы",
       "coordinates": [
         30.364233,
         59.909531
       ],
       "region": "spb",
       "band": "yellow",
-      "url": "https://yandex.ru/maps/org/189001895569/",
-      "reviewsUrl": "https://yandex.ru/maps/org/189001895569/reviews/"
+      "signal": "Рейтинг 4.6 ниже 4.8",
+      "action": "Посмотреть отзывы"
     },
     {
       "id": "202990118089",
@@ -213,16 +195,12 @@
       "low30": 0,
       "lowNo": 0,
       "attention": false,
-      "signal": "",
-      "action": "",
       "coordinates": [
         37.231108,
         55.675138
       ],
       "region": "moscow",
-      "band": "green",
-      "url": "https://yandex.ru/maps/org/202990118089/",
-      "reviewsUrl": "https://yandex.ru/maps/org/202990118089/reviews/"
+      "band": "green"
     },
     {
       "id": "41562165303",
@@ -235,16 +213,14 @@
       "low30": 0,
       "lowNo": 1,
       "attention": true,
-      "signal": "1 без ответа на 1–3★",
-      "action": "Ответить на 1–3★",
       "coordinates": [
         30.499169,
         59.87061
       ],
       "region": "spb",
       "band": "green",
-      "url": "https://yandex.ru/maps/org/41562165303/",
-      "reviewsUrl": "https://yandex.ru/maps/org/41562165303/reviews/"
+      "signal": "1 без ответа на 1–3★",
+      "action": "Ответить на 1–3★"
     },
     {
       "id": "97691792751",
@@ -257,16 +233,12 @@
       "low30": 0,
       "lowNo": 0,
       "attention": false,
-      "signal": "",
-      "action": "",
       "coordinates": [
         37.734713,
         55.974181
       ],
       "region": "moscow",
-      "band": "none",
-      "url": "https://yandex.ru/maps/org/97691792751/",
-      "reviewsUrl": "https://yandex.ru/maps/org/97691792751/reviews/"
+      "band": "none"
     },
     {
       "id": "44367646840",
@@ -279,16 +251,14 @@
       "low30": 0,
       "lowNo": 0,
       "attention": true,
-      "signal": "Рейтинг 4.5 ниже 4.8",
-      "action": "Посмотреть отзывы",
       "coordinates": [
         30.311008,
         59.824199
       ],
       "region": "spb",
       "band": "orange",
-      "url": "https://yandex.ru/maps/org/44367646840/",
-      "reviewsUrl": "https://yandex.ru/maps/org/44367646840/reviews/"
+      "signal": "Рейтинг 4.5 ниже 4.8",
+      "action": "Посмотреть отзывы"
     },
     {
       "id": "41502583292",
@@ -301,16 +271,14 @@
       "low30": 0,
       "lowNo": 0,
       "attention": true,
-      "signal": "Рейтинг 4.5 ниже 4.8",
-      "action": "Посмотреть отзывы",
       "coordinates": [
         37.680209,
         55.846391
       ],
       "region": "moscow",
       "band": "orange",
-      "url": "https://yandex.ru/maps/org/41502583292/",
-      "reviewsUrl": "https://yandex.ru/maps/org/41502583292/reviews/"
+      "signal": "Рейтинг 4.5 ниже 4.8",
+      "action": "Посмотреть отзывы"
     },
     {
       "id": "89154501833",
@@ -323,16 +291,12 @@
       "low30": 0,
       "lowNo": 0,
       "attention": false,
-      "signal": "",
-      "action": "",
       "coordinates": [
         30.449888,
         59.983369
       ],
       "region": "spb",
-      "band": "green",
-      "url": "https://yandex.ru/maps/org/89154501833/",
-      "reviewsUrl": "https://yandex.ru/maps/org/89154501833/reviews/"
+      "band": "green"
     },
     {
       "id": "48001119656",
@@ -345,16 +309,14 @@
       "low30": 0,
       "lowNo": 2,
       "attention": true,
-      "signal": "2 без ответа на 1–3★",
-      "action": "Ответить на 1–3★",
       "coordinates": [
         37.758823,
         55.717082
       ],
       "region": "moscow",
       "band": "yellow",
-      "url": "https://yandex.ru/maps/org/48001119656/",
-      "reviewsUrl": "https://yandex.ru/maps/org/48001119656/reviews/"
+      "signal": "2 без ответа на 1–3★",
+      "action": "Ответить на 1–3★"
     },
     {
       "id": "206360892688",
@@ -367,16 +329,14 @@
       "low30": 0,
       "lowNo": 0,
       "attention": true,
-      "signal": "Рейтинг 4.3 ниже 4.8",
-      "action": "Посмотреть отзывы",
       "coordinates": [
         30.365626,
         59.898503
       ],
       "region": "spb",
       "band": "red",
-      "url": "https://yandex.ru/maps/org/206360892688/",
-      "reviewsUrl": "https://yandex.ru/maps/org/206360892688/reviews/"
+      "signal": "Рейтинг 4.3 ниже 4.8",
+      "action": "Посмотреть отзывы"
     },
     {
       "id": "138863571990",
@@ -389,16 +349,14 @@
       "low30": 0,
       "lowNo": 6,
       "attention": true,
-      "signal": "6 без ответа на 1–3★",
-      "action": "Ответить на 1–3★",
       "coordinates": [
         37.430031,
         55.907844
       ],
       "region": "moscow",
       "band": "green",
-      "url": "https://yandex.ru/maps/org/138863571990/",
-      "reviewsUrl": "https://yandex.ru/maps/org/138863571990/reviews/"
+      "signal": "Ошибка данных",
+      "action": "Проверить карточку"
     },
     {
       "id": "159095481106",
@@ -411,16 +369,12 @@
       "low30": 0,
       "lowNo": 0,
       "attention": false,
-      "signal": "",
-      "action": "",
       "coordinates": [
         37.785746,
         55.817704
       ],
       "region": "moscow",
-      "band": "green",
-      "url": "https://yandex.ru/maps/org/159095481106/",
-      "reviewsUrl": "https://yandex.ru/maps/org/159095481106/reviews/"
+      "band": "green"
     },
     {
       "id": "124046528827",
@@ -433,16 +387,14 @@
       "low30": 0,
       "lowNo": 1,
       "attention": true,
-      "signal": "1 без ответа на 1–3★",
-      "action": "Ответить на 1–3★",
       "coordinates": [
         37.579978,
         55.864338
       ],
       "region": "moscow",
       "band": "orange",
-      "url": "https://yandex.ru/maps/org/124046528827/",
-      "reviewsUrl": "https://yandex.ru/maps/org/124046528827/reviews/"
+      "signal": "1 без ответа на 1–3★",
+      "action": "Ответить на 1–3★"
     },
     {
       "id": "1292274959",
@@ -455,16 +407,14 @@
       "low30": 0,
       "lowNo": 4,
       "attention": true,
-      "signal": "4 без ответа на 1–3★",
-      "action": "Ответить на 1–3★",
       "coordinates": [
         37.609654,
         55.582897
       ],
       "region": "moscow",
       "band": "yellow",
-      "url": "https://yandex.ru/maps/org/1292274959/",
-      "reviewsUrl": "https://yandex.ru/maps/org/1292274959/reviews/"
+      "signal": "4 без ответа на 1–3★",
+      "action": "Ответить на 1–3★"
     },
     {
       "id": "97016834505",
@@ -477,16 +427,14 @@
       "low30": 0,
       "lowNo": 0,
       "attention": true,
-      "signal": "Рейтинг 4.2 ниже 4.8",
-      "action": "Посмотреть отзывы",
       "coordinates": [
         37.501851,
         55.75782
       ],
       "region": "moscow",
       "band": "red",
-      "url": "https://yandex.ru/maps/org/97016834505/",
-      "reviewsUrl": "https://yandex.ru/maps/org/97016834505/reviews/"
+      "signal": "Рейтинг 4.2 ниже 4.8",
+      "action": "Посмотреть отзывы"
     },
     {
       "id": "70286938525",
@@ -499,16 +447,14 @@
       "low30": 0,
       "lowNo": 1,
       "attention": true,
-      "signal": "1 без ответа на 1–3★",
-      "action": "Ответить на 1–3★",
       "coordinates": [
         37.528437,
         55.850176
       ],
       "region": "moscow",
       "band": "orange",
-      "url": "https://yandex.ru/maps/org/70286938525/",
-      "reviewsUrl": "https://yandex.ru/maps/org/70286938525/reviews/"
+      "signal": "1 без ответа на 1–3★",
+      "action": "Ответить на 1–3★"
     },
     {
       "id": "51098051930",
@@ -521,16 +467,14 @@
       "low30": 0,
       "lowNo": 0,
       "attention": true,
-      "signal": "Рейтинг 4.0 ниже 4.8",
-      "action": "Посмотреть отзывы",
       "coordinates": [
         37.798816,
         55.62415
       ],
       "region": "moscow",
       "band": "red",
-      "url": "https://yandex.ru/maps/org/51098051930/",
-      "reviewsUrl": "https://yandex.ru/maps/org/51098051930/reviews/"
+      "signal": "Рейтинг 4.0 ниже 4.8",
+      "action": "Посмотреть отзывы"
     },
     {
       "id": "138250466418",
@@ -543,16 +487,14 @@
       "low30": 0,
       "lowNo": 1,
       "attention": true,
-      "signal": "1 без ответа на 1–3★",
-      "action": "Ответить на 1–3★",
       "coordinates": [
         37.54047,
         55.906088
       ],
       "region": "moscow",
       "band": "yellow",
-      "url": "https://yandex.ru/maps/org/138250466418/",
-      "reviewsUrl": "https://yandex.ru/maps/org/138250466418/reviews/"
+      "signal": "1 без ответа на 1–3★",
+      "action": "Ответить на 1–3★"
     },
     {
       "id": "202839031465",
@@ -565,16 +507,14 @@
       "low30": 0,
       "lowNo": 2,
       "attention": true,
-      "signal": "2 без ответа на 1–3★",
-      "action": "Ответить на 1–3★",
       "coordinates": [
         37.450093,
         55.798855
       ],
       "region": "moscow",
       "band": "yellow",
-      "url": "https://yandex.ru/maps/org/202839031465/",
-      "reviewsUrl": "https://yandex.ru/maps/org/202839031465/reviews/"
+      "signal": "2 без ответа на 1–3★",
+      "action": "Ответить на 1–3★"
     },
     {
       "id": "101233466519",
@@ -587,16 +527,14 @@
       "low30": 0,
       "lowNo": 3,
       "attention": true,
-      "signal": "3 без ответа на 1–3★",
-      "action": "Ответить на 1–3★",
       "coordinates": [
         37.527094,
         55.65949
       ],
       "region": "moscow",
       "band": "green",
-      "url": "https://yandex.ru/maps/org/101233466519/",
-      "reviewsUrl": "https://yandex.ru/maps/org/101233466519/reviews/"
+      "signal": "3 без ответа на 1–3★",
+      "action": "Ответить на 1–3★"
     },
     {
       "id": "229242049255",
@@ -609,16 +547,14 @@
       "low30": 0,
       "lowNo": 2,
       "attention": true,
-      "signal": "2 без ответа на 1–3★",
-      "action": "Ответить на 1–3★",
       "coordinates": [
         37.463386,
         55.862237
       ],
       "region": "spb",
       "band": "green",
-      "url": "https://yandex.ru/maps/org/229242049255/",
-      "reviewsUrl": "https://yandex.ru/maps/org/229242049255/reviews/"
+      "signal": "2 без ответа на 1–3★",
+      "action": "Ответить на 1–3★"
     },
     {
       "id": "16902258832",
@@ -631,16 +567,14 @@
       "low30": 0,
       "lowNo": 0,
       "attention": true,
-      "signal": "Рейтинг 4.4 ниже 4.8",
-      "action": "Посмотреть отзывы",
       "coordinates": [
         37.393919,
         55.792184
       ],
       "region": "moscow",
       "band": "orange",
-      "url": "https://yandex.ru/maps/org/16902258832/",
-      "reviewsUrl": "https://yandex.ru/maps/org/16902258832/reviews/"
+      "signal": "Рейтинг 4.4 ниже 4.8",
+      "action": "Посмотреть отзывы"
     },
     {
       "id": "87874661964",
@@ -653,16 +587,14 @@
       "low30": 0,
       "lowNo": 1,
       "attention": true,
-      "signal": "1 без ответа на 1–3★",
-      "action": "Ответить на 1–3★",
       "coordinates": [
         37.725206,
         55.653279
       ],
       "region": "moscow",
       "band": "red",
-      "url": "https://yandex.ru/maps/org/87874661964/",
-      "reviewsUrl": "https://yandex.ru/maps/org/87874661964/reviews/"
+      "signal": "1 без ответа на 1–3★",
+      "action": "Ответить на 1–3★"
     },
     {
       "id": "47258285319",
@@ -675,16 +607,14 @@
       "low30": 0,
       "lowNo": 5,
       "attention": true,
-      "signal": "5 без ответа на 1–3★",
-      "action": "Ответить на 1–3★",
       "coordinates": [
         37.708163,
         55.891984
       ],
       "region": "moscow",
       "band": "green",
-      "url": "https://yandex.ru/maps/org/47258285319/",
-      "reviewsUrl": "https://yandex.ru/maps/org/47258285319/reviews/"
+      "signal": "5 без ответа на 1–3★",
+      "action": "Ответить на 1–3★"
     },
     {
       "id": "38728845294",
@@ -697,16 +627,12 @@
       "low30": 0,
       "lowNo": 0,
       "attention": false,
-      "signal": "",
-      "action": "",
       "coordinates": [
         37.758356,
         55.881737
       ],
       "region": "moscow",
-      "band": "green",
-      "url": "https://yandex.ru/maps/org/38728845294/",
-      "reviewsUrl": "https://yandex.ru/maps/org/38728845294/reviews/"
+      "band": "green"
     },
     {
       "id": "28991532988",
@@ -719,16 +645,14 @@
       "low30": 0,
       "lowNo": 0,
       "attention": true,
-      "signal": "Рейтинг 4.3 ниже 4.8",
-      "action": "Посмотреть отзывы",
       "coordinates": [
         37.780635,
         55.93837
       ],
       "region": "moscow",
       "band": "red",
-      "url": "https://yandex.ru/maps/org/28991532988/",
-      "reviewsUrl": "https://yandex.ru/maps/org/28991532988/reviews/"
+      "signal": "Рейтинг 4.3 ниже 4.8",
+      "action": "Посмотреть отзывы"
     },
     {
       "id": "198171681540",
@@ -741,16 +665,14 @@
       "low30": 0,
       "lowNo": 1,
       "attention": true,
-      "signal": "1 без ответа на 1–3★",
-      "action": "Ответить на 1–3★",
       "coordinates": [
         37.177371,
         55.832141
       ],
       "region": "moscow",
       "band": "red",
-      "url": "https://yandex.ru/maps/org/198171681540/",
-      "reviewsUrl": "https://yandex.ru/maps/org/198171681540/reviews/"
+      "signal": "1 без ответа на 1–3★",
+      "action": "Ответить на 1–3★"
     },
     {
       "id": "70233846022",
@@ -763,16 +685,14 @@
       "low30": 0,
       "lowNo": 0,
       "attention": true,
-      "signal": "Рейтинг 4.5 ниже 4.8",
-      "action": "Посмотреть отзывы",
       "coordinates": [
         37.158605,
         55.783956
       ],
       "region": "moscow",
       "band": "orange",
-      "url": "https://yandex.ru/maps/org/70233846022/",
-      "reviewsUrl": "https://yandex.ru/maps/org/70233846022/reviews/"
+      "signal": "Рейтинг 4.5 ниже 4.8",
+      "action": "Посмотреть отзывы"
     },
     {
       "id": "21458623633",
@@ -785,16 +705,14 @@
       "low30": 0,
       "lowNo": 0,
       "attention": true,
-      "signal": "Рейтинг 4.3 ниже 4.8",
-      "action": "Посмотреть отзывы",
       "coordinates": [
         37.79605,
         55.756533
       ],
       "region": "moscow",
       "band": "red",
-      "url": "https://yandex.ru/maps/org/21458623633/",
-      "reviewsUrl": "https://yandex.ru/maps/org/21458623633/reviews/"
+      "signal": "Рейтинг 4.3 ниже 4.8",
+      "action": "Посмотреть отзывы"
     },
     {
       "id": "243547050778",
@@ -807,16 +725,14 @@
       "low30": 0,
       "lowNo": 0,
       "attention": true,
-      "signal": "Рейтинг 4.6 ниже 4.8",
-      "action": "Посмотреть отзывы",
       "coordinates": [
         37.722514,
         55.724591
       ],
       "region": "moscow",
       "band": "yellow",
-      "url": "https://yandex.ru/maps/org/243547050778/",
-      "reviewsUrl": "https://yandex.ru/maps/org/243547050778/reviews/"
+      "signal": "Рейтинг 4.6 ниже 4.8",
+      "action": "Посмотреть отзывы"
     },
     {
       "id": "120529177523",
@@ -829,16 +745,14 @@
       "low30": 0,
       "lowNo": 3,
       "attention": true,
-      "signal": "3 без ответа на 1–3★",
-      "action": "Ответить на 1–3★",
       "coordinates": [
         37.511553,
         55.725362
       ],
       "region": "moscow",
       "band": "red",
-      "url": "https://yandex.ru/maps/org/120529177523/",
-      "reviewsUrl": "https://yandex.ru/maps/org/120529177523/reviews/"
+      "signal": "3 без ответа на 1–3★",
+      "action": "Ответить на 1–3★"
     },
     {
       "id": "188179066370",
@@ -851,16 +765,14 @@
       "low30": 0,
       "lowNo": 0,
       "attention": true,
-      "signal": "Рейтинг 4.1 ниже 4.8",
-      "action": "Посмотреть отзывы",
       "coordinates": [
         37.421129,
         55.695656
       ],
       "region": "moscow",
       "band": "red",
-      "url": "https://yandex.ru/maps/org/188179066370/",
-      "reviewsUrl": "https://yandex.ru/maps/org/188179066370/reviews/"
+      "signal": "Рейтинг 4.1 ниже 4.8",
+      "action": "Посмотреть отзывы"
     },
     {
       "id": "112079808635",
@@ -873,16 +785,14 @@
       "low30": 0,
       "lowNo": 1,
       "attention": true,
-      "signal": "1 без ответа на 1–3★",
-      "action": "Ответить на 1–3★",
       "coordinates": [
         37.590239,
         55.809582
       ],
       "region": "moscow",
       "band": "red",
-      "url": "https://yandex.ru/maps/org/112079808635/",
-      "reviewsUrl": "https://yandex.ru/maps/org/112079808635/reviews/"
+      "signal": "1 без ответа на 1–3★",
+      "action": "Ответить на 1–3★"
     },
     {
       "id": "103997923136",
@@ -895,16 +805,14 @@
       "low30": 0,
       "lowNo": 0,
       "attention": true,
-      "signal": "Рейтинг 4.0 ниже 4.8",
-      "action": "Посмотреть отзывы",
       "coordinates": [
         37.467498,
         55.739726
       ],
       "region": "moscow",
       "band": "red",
-      "url": "https://yandex.ru/maps/org/103997923136/",
-      "reviewsUrl": "https://yandex.ru/maps/org/103997923136/reviews/"
+      "signal": "Рейтинг 4.0 ниже 4.8",
+      "action": "Посмотреть отзывы"
     },
     {
       "id": "1197847103",
@@ -917,16 +825,14 @@
       "low30": 0,
       "lowNo": 0,
       "attention": true,
-      "signal": "Рейтинг 4.7 ниже 4.8",
-      "action": "Посмотреть отзывы",
       "coordinates": [
         37.707036,
         55.702008
       ],
       "region": "moscow",
       "band": "yellow",
-      "url": "https://yandex.ru/maps/org/1197847103/",
-      "reviewsUrl": "https://yandex.ru/maps/org/1197847103/reviews/"
+      "signal": "Рейтинг 4.7 ниже 4.8",
+      "action": "Посмотреть отзывы"
     }
   ],
   "summary": {
@@ -938,13 +844,12 @@
     "attention": 38
   },
   "enabled": true,
-  "version": "3.38",
+  "version": "3.39",
   "options": {
+    "renderer": "maplibre-gl",
     "provider": "yandex-tiles-api-v1",
-    "legacyProvider": "yandex-maps-js-api-v3",
     "fallbackProvider": "pmtiles-maplibre-v1",
     "yandexTilesApiKey": "",
-    "yandexApiKey": "8f9500a4-62d8-4fa0-895b-f15412774b3f",
     "pmtilesEnabled": true,
     "pmtilesMoscowUrl": "maps/moscow.pmtiles",
     "pmtilesSpbUrl": "maps/spb.pmtiles",
