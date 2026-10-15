@@ -1,6 +1,6 @@
 {
   "schema": "sklad24-map-2",
-  "generatedAt": "2026-10-15T17:30:40.999Z",
+  "generatedAt": "2026-10-15T17:52:58.735Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -322,9 +322,9 @@
       "below5_30": 0,
       "low30": 0,
       "lowNo": 0,
-      "attention": true,
-      "signal": "Ошибка данных",
-      "action": "Проверить карточку",
+      "attention": false,
+      "signal": "",
+      "action": "",
       "coordinates": [
         30.449888,
         59.983369
@@ -935,7 +935,7 @@
     "mapped": 42,
     "missing": 2,
     "below": 29,
-    "attention": 39
+    "attention": 38
   },
   "enabled": true,
   "version": "3.33",
