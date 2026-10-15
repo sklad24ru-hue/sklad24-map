@@ -153,26 +153,41 @@
 
     if(api){
       return new Promise((resolve,reject)=>{
-        const callback='s24MapData_'+Date.now()+'_'+Math.random().toString(36).slice(2),
-          script=document.createElement('script');
+        const nonce='s24_'+Date.now()+'_'+Math.random().toString(36).slice(2),
+          iframe=document.createElement('iframe');
         let done=false;
+
+        const cleanup=()=>{
+          window.removeEventListener('message',onMessage);
+          try{iframe.remove()}catch(_){}
+          clearTimeout(timer);
+        };
         const finish=(err,data)=>{
-          if(done)return;done=true;clearTimeout(timer);
-          try{delete window[callback]}catch(_){}
-          try{script.remove()}catch(_){}
+          if(done)return;done=true;cleanup();
           if(err)reject(err);else resolve(data);
         };
-        window[callback]=data=>{
-          if(!data||!Array.isArray(data.points)||!data.summary)
+        const onMessage=e=>{
+          const allowed=e.origin==='https://script.google.com'||
+            e.origin==='https://script.googleusercontent.com'||
+            /\\.googleusercontent\\.com$/i.test(new URL(e.origin).hostname);
+          if(!allowed)return;
+          const m=e.data;
+          if(!m||m.type!=='sklad24-map-data'||m.nonce!==nonce)return;
+          if(m.error)return finish(Error(m.error));
+          if(!m.data||!Array.isArray(m.data.points)||!m.data.summary)
             return finish(Error('Сервер вернул неверный формат данных.'));
-          finish(null,data);
+          finish(null,m.data);
         };
+
+        window.addEventListener('message',onMessage);
+        iframe.style.display='none';
+        iframe.title='Sklad-24 data bridge';
         const sep=api.includes('?')?'&':'?';
-        script.src=api+sep+'view=map-data&callback='+encodeURIComponent(callback)+'&_='+Date.now();
-        script.async=true;
-        script.onerror=()=>finish(Error('Не удалось получить данные из Google Apps Script.'));
-        const timer=setTimeout(()=>finish(Error('Google Apps Script не ответил за 20 секунд.')),20000);
-        document.head.appendChild(script);
+        iframe.src=api+sep+'view=map-bridge&nonce='+encodeURIComponent(nonce)+'&_='+Date.now();
+        iframe.onerror=()=>finish(Error('Не удалось открыть канал данных Google Apps Script.'));
+        document.body.appendChild(iframe);
+
+        const timer=setTimeout(()=>finish(Error('Google Apps Script не ответил за 25 секунд.')),25000);
       });
     }
 
