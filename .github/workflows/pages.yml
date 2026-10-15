@@ -84,21 +84,26 @@ jobs:
           if not isinstance(data.get('summary'), dict):
               raise SystemExit('summary is not an object')
 
+          enabled = data.get('enabled', True) is not False
           total = int(data['summary'].get('total') or 0)
           mapped = int(data['summary'].get('mapped') or 0)
           points = len(data['points'])
-          if total <= 0:
-              raise SystemExit('snapshot contains zero cards')
-          if mapped != points:
-              raise SystemExit(f'mapped={mapped} but points={points}')
-          if points <= 0:
-              raise SystemExit('snapshot contains zero mapped points')
+          if enabled:
+              if total <= 0:
+                  raise SystemExit('snapshot contains zero cards')
+              if mapped != points:
+                  raise SystemExit(f'mapped={mapped} but points={points}')
+              if points <= 0:
+                  raise SystemExit('snapshot contains zero mapped points')
+          else:
+              if points != 0 or mapped != 0:
+                  raise SystemExit('disabled snapshot must not publish map points')
 
           target.write_text(
               json.dumps(data, ensure_ascii=False, indent=2) + '\n',
               encoding='utf-8'
           )
-          print(f'Validated snapshot: total={total}, mapped={mapped}, points={points}')
+          print(f'Validated snapshot: enabled={enabled}, total={total}, mapped={mapped}, points={points}')
           PY
             then
               mv /tmp/map-data.valid.json map-data.json
