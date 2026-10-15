@@ -159,15 +159,34 @@ jobs:
         if: env.S24_MAP_REFRESHED == '1'
         shell: bash
         run: |
-          if git diff --quiet -- map-data.json; then
-            echo "Snapshot did not change."
-            exit 0
-          fi
+          cp map-data.json /tmp/map-data.snapshot.json
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add map-data.json
-          git commit -m "Refresh map data snapshot [skip ci]"
-          git push
+
+          for attempt in 1 2 3; do
+            echo "Persist snapshot attempt ${attempt}/3"
+            git fetch origin main
+            git reset --hard origin/main
+            cp /tmp/map-data.snapshot.json map-data.json
+
+            if git diff --quiet -- map-data.json; then
+              echo "Snapshot did not change."
+              exit 0
+            fi
+
+            git add map-data.json
+            git commit -m "Refresh map data snapshot [skip ci]"
+
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+
+            echo "::warning::Snapshot push raced with another commit; retrying from latest main."
+            sleep 2
+          done
+
+          echo "::error::Could not persist map-data.json after 3 attempts."
+          exit 1
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
