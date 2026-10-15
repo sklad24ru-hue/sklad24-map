@@ -1,6 +1,6 @@
 {
   "schema": "review-map-2",
-  "generatedAt": "2026-10-15T19:11:41.926Z",
+  "generatedAt": "2026-10-15T19:31:34.422Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -938,12 +938,16 @@
     "attention": 38
   },
   "enabled": true,
-  "version": "3.37",
+  "version": "3.38",
   "options": {
-    "provider": "yandex-maps-js-api-v3",
-    "fallbackProvider": "2gis-mapgl-v1",
+    "provider": "yandex-tiles-api-v1",
+    "legacyProvider": "yandex-maps-js-api-v3",
+    "fallbackProvider": "pmtiles-maplibre-v1",
+    "yandexTilesApiKey": "",
     "yandexApiKey": "8f9500a4-62d8-4fa0-895b-f15412774b3f",
-    "gis2ApiKey": "",
+    "pmtilesEnabled": true,
+    "pmtilesMoscowUrl": "maps/moscow.pmtiles",
+    "pmtilesSpbUrl": "maps/spb.pmtiles",
     "activeOnly": true,
     "region": "all"
   }
