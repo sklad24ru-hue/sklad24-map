@@ -1,6 +1,6 @@
 {
   "schema": "review-map-6",
-  "generatedAt": "2026-10-15T22:44:33.886Z",
+  "generatedAt": "2026-10-15T23:07:24.067Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -2177,7 +2177,7 @@
     "attention": 42
   },
   "enabled": true,
-  "version": "3.44",
+  "version": "3.45",
   "options": {
     "renderer": "openlayers",
     "provider": "yandex-tiles-api-v1",
