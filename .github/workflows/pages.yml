@@ -75,7 +75,8 @@ jobs:
               raise SystemExit('root is not an object')
           if data.get('error'):
               raise SystemExit('Apps Script returned: ' + str(data.get('error')))
-          if not str(data.get('schema', '')).startswith('sklad24-map-'):
+          schema = str(data.get('schema', ''))
+          if not (schema.startswith('review-map-') or schema.startswith('sklad24-map-')):
               raise SystemExit('unexpected schema')
           if not data.get('generatedAt'):
               raise SystemExit('generatedAt is missing')
