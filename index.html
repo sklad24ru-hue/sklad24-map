@@ -116,6 +116,25 @@
   ];
   const state={data:null,map:null,layer:null,markers:[],selected:null,region:'all'};
 
+  function applySnapshotOptions(){
+    const o=state.data&&state.data.options||{};
+    $('activeOnly').checked=o.activeOnly!==false;
+    const region=['all','moscow','spb'].includes(String(o.region))?String(o.region):'all';
+    state.region=region;
+    [...$('regions').querySelectorAll('button[data-region]')].forEach(b=>b.classList.toggle('active',b.dataset.region===region));
+  }
+  function showDisabledMap(){
+    $('loading').classList.add('hidden');
+    $('summary').textContent='Внешняя карта отключена';
+    if(state.data&&state.data.generatedAt){
+      const when=new Date(state.data.generatedAt);
+      $('status').textContent='Состояние обновлено: '+when.toLocaleString('ru-RU');
+    }else $('status').textContent='';
+    $('detail').innerHTML='<div class="empty">Публикация внешней карты отключена в настройках Склад-24.</div>';
+    $('error').innerHTML='<h2>Внешняя карта отключена</h2><p>Публикация карты временно выключена администратором.</p>';
+    $('error').classList.remove('hidden');
+  }
+
   const esc=v=>String(v==null?'':v).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
   const setLoad=(title,pct,sub)=>{
     $('loadTitle').textContent=title;
@@ -288,6 +307,8 @@
       setLoad('Подготавливаю карту…',8,'Загружаю интерфейс и готовый снимок данных.');
       const [data]=await Promise.all([loadData(),loadLeaflet()]);
       state.data=data;
+      applySnapshotOptions();
+      if(data.enabled===false){showDisabledMap();return;}
       setLoad('Рисую объекты…',84,'Настраиваю маркеры и масштаб.');
       initMap();render(true);
       await sleep(80);
