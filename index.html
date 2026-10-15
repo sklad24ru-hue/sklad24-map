@@ -5,7 +5,8 @@
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#243746">
   <link rel="preconnect" href="https://api-maps.yandex.ru" crossorigin>
-  <title>Мониторинг отзывов · Склад-24</title>
+  <link rel="preconnect" href="https://mapgl.2gis.com" crossorigin>
+  <title>Мониторинг отзывов</title>
   <style>
     :root{--navy:#243746;--orange:#ff7200;--text:#243746;--muted:#71808a;--line:#dfe5e9}
     *{box-sizing:border-box}
@@ -34,12 +35,21 @@
     .links{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
     .links a{display:inline-block;text-decoration:none;border-radius:7px;padding:9px 11px;font-weight:700}
     .links .primary{background:var(--orange);color:#fff}.links .secondary{background:#eef2f4;color:var(--text)}
-    .s24-map-marker{background:transparent;border:0}
+    .review-map-marker{background:transparent;border:0}
     .yandex-marker{transform:translate(-50%,-50%)}
     .marker{min-width:48px;height:38px;border:3px solid #fff;border-radius:21px;box-shadow:0 2px 8px rgba(0,0,0,.25);color:#fff;font:800 14px Arial;display:flex;flex-direction:column;justify-content:center;align-items:center;cursor:pointer;padding:2px 7px}
     .marker small{font-size:9px;font-weight:600;opacity:.92}
     .marker.green{background:#3f7d58}.marker.yellow{background:#c69728}.marker.orange{background:#d9772f}.marker.red{background:#b94a43}.marker.none{background:#77848d}
     .marker.selected{outline:3px solid var(--navy);outline-offset:2px}
+    .fallback-list{position:absolute;inset:0;overflow:auto;padding:84px 14px 18px;background:#f4f6f7}
+    .fallback-note{max-width:760px;margin:0 auto 12px;color:var(--muted);font-size:12px}
+    .fallback-grid{max-width:760px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:8px}
+    .fallback-card{border:1px solid var(--line);background:#fff;border-radius:10px;padding:11px 12px;text-align:left;color:var(--text);cursor:pointer;min-height:70px}
+    .fallback-card.selected{outline:3px solid var(--navy);outline-offset:1px}
+    .fallback-card strong{display:block;font-size:14px;margin-bottom:5px}
+    .fallback-meta{display:flex;gap:8px;align-items:center;color:var(--muted);font-size:12px}
+    .fallback-dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+    .fallback-dot.green{background:#3f7d58}.fallback-dot.yellow{background:#c69728}.fallback-dot.orange{background:#d9772f}.fallback-dot.red{background:#b94a43}.fallback-dot.none{background:#77848d}
     .loading{position:absolute;z-index:1300;inset:0;background:linear-gradient(145deg,#f7f9fa,#edf2f4);display:flex;align-items:center;justify-content:center;padding:24px;transition:opacity .18s ease}
     .loading.done{opacity:0;pointer-events:none}
     .loader-card{width:min(430px,92%);background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:0 10px 32px rgba(36,55,70,.10);text-align:center}
@@ -91,7 +101,7 @@
   </div>
   <aside class="sidebar">
     <div class="side-head">
-      <div class="brand"><b>СКЛАД-24</b> · МОНИТОРИНГ ОТЗЫВОВ</div>
+      <div class="brand">МОНИТОРИНГ ОТЗЫВОВ</div>
       <div id="summary" class="summary">Загрузка данных…</div>
       <div id="status" class="status"></div>
     </div>
@@ -106,17 +116,7 @@
     moscow:{center:[37.6173,55.7558],zoom:9},
     spb:{center:[30.3159,59.9391],zoom:9}
   };
-  const LEAFLET_JS=[
-    'https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js',
-    'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js',
-    'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js'
-  ];
-  const LEAFLET_CSS=[
-    'https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css',
-    'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css',
-    'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css'
-  ];
-  const state={data:null,map:null,provider:null,leafletLayer:null,markers:[],selected:null,region:'all',providerNote:''};
+  const state={data:null,map:null,provider:null,markers:[],selected:null,region:'all',providerNote:''};
 
   const esc=v=>String(v==null?'':v).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
   const sleep=ms=>new Promise(r=>setTimeout(r,ms));
@@ -146,7 +146,7 @@
       const when=new Date(state.data.generatedAt);
       $('status').textContent='Состояние обновлено: '+when.toLocaleString('ru-RU');
     }else $('status').textContent='';
-    $('detail').innerHTML='<div class="empty">Публикация внешнего мониторинга отзывов отключена в настройках Склад-24.</div>';
+    $('detail').innerHTML='<div class="empty">Публикация внешнего мониторинга отзывов отключена в настройках.</div>';
     $('error').innerHTML='<h2>Мониторинг отзывов отключён</h2><p>Публикация мониторинга отзывов временно выключена администратором.</p>';
     $('error').classList.remove('hidden');
   }
@@ -183,66 +183,55 @@
     });
   }
 
-  function loadScript(url,timeout=6000){
+  function load2Gis(timeout=12000){
+    if(window.mapgl)return Promise.resolve();
     return new Promise((resolve,reject)=>{
       const el=document.createElement('script');let done=false;
       const finish=err=>{
         if(done)return;done=true;clearTimeout(timer);
-        if(err){try{el.remove()}catch(_){}reject(err)}else resolve(url);
+        if(err){try{el.remove()}catch(_){}reject(err);return;}
+        window.mapgl?resolve():reject(Error('2ГИС MapGL не инициализировался'));
       };
-      el.src=url;el.async=true;
-      el.onload=()=>window.L?finish():finish(Error('Leaflet не инициализировался'));
-      el.onerror=()=>finish(Error('Ошибка загрузки '+url));
-      const timer=setTimeout(()=>finish(Error('Таймаут '+url)),timeout);
-      document.head.appendChild(el);
-    });
-  }
-  function loadCss(url,timeout=4500){
-    return new Promise((resolve,reject)=>{
-      const el=document.createElement('link');let done=false;
-      const finish=err=>{
-        if(done)return;done=true;clearTimeout(timer);
-        if(err){try{el.remove()}catch(_){}reject(err)}else resolve(url);
-      };
-      el.rel='stylesheet';el.href=url;
+      el.src='https://mapgl.2gis.com/api/js/v1';
+      el.async=true;
       el.onload=()=>finish();
-      el.onerror=()=>finish(Error('Ошибка CSS '+url));
-      const timer=setTimeout(()=>finish(Error('Таймаут CSS '+url)),timeout);
+      el.onerror=()=>finish(Error('Не удалось загрузить 2ГИС MapGL'));
+      const timer=setTimeout(()=>finish(Error('Таймаут загрузки 2ГИС MapGL')),timeout);
       document.head.appendChild(el);
     });
-  }
-  async function firstGood(loader,urls){
-    const errors=[];
-    for(const url of urls){try{return await loader(url)}catch(e){errors.push(e.message)}}
-    throw Error(errors.join(' | '));
-  }
-  async function loadLeaflet(){
-    if(window.L)return;
-    const css=firstGood(loadCss,LEAFLET_CSS).catch(()=>null);
-    await firstGood(loadScript,LEAFLET_JS);
-    await css;
   }
 
   async function chooseProvider(){
     const o=state.data&&state.data.options||{};
-    const key=String(o.yandexApiKey||'').trim();
-    if(key){
-      setLoad('Загружаю Яндекс Карты…',44,'Подключаю Yandex Maps JS API 3.0.');
+    const yandexKey=String(o.yandexApiKey||'').trim();
+    const gis2Key=String(o.gis2ApiKey||'').trim();
+
+    if(yandexKey){
+      setLoad('Загружаю Яндекс Карты…',44,'Подключаю основной картографический сервис.');
       try{
-        await loadYandex(key);
+        await loadYandex(yandexKey);
         state.provider='yandex';
         state.providerNote='Яндекс Карты';
         return;
       }catch(e){
-        console.warn('Yandex Maps failed, using reserve map:',e);
-        state.providerNote='Резервная карта · Яндекс временно недоступен';
+        console.warn('Yandex Maps failed; trying 2GIS:',e);
       }
-    }else{
-      state.providerNote='Резервная карта · ключ Яндекс Maps API ещё не настроен';
     }
-    setLoad('Загружаю резервную карту…',44,state.providerNote);
-    await loadLeaflet();
-    state.provider='leaflet';
+
+    if(gis2Key){
+      setLoad('Загружаю 2ГИС…',52,'Основная карта недоступна. Подключаю резервную.');
+      try{
+        await load2Gis();
+        state.provider='2gis';
+        state.providerNote='Резервная карта · 2ГИС';
+        return;
+      }catch(e){
+        console.warn('2GIS MapGL failed; using list mode:',e);
+      }
+    }
+
+    state.provider='list';
+    state.providerNote='Режим списка · карта временно недоступна';
   }
 
   function filtered(){
@@ -256,14 +245,13 @@
       return true;
     });
   }
-  const yCoords=p=>[Number(p.coordinates[0]),Number(p.coordinates[1])];
-  const lCoords=p=>[Number(p.coordinates[1]),Number(p.coordinates[0])];
+  const mapCoords=p=>[Number(p.coordinates[0]),Number(p.coordinates[1])];
 
   function clearMarkers(){
     if(state.provider==='yandex'&&state.map){
       for(const x of state.markers){try{state.map.removeChild(x.marker)}catch(_){}}
-    }else if(state.leafletLayer){
-      state.leafletLayer.clearLayers();
+    }else if(state.provider==='2gis'){
+      for(const x of state.markers){try{x.marker.destroy()}catch(_){}}
     }
     state.markers=[];
   }
@@ -271,10 +259,10 @@
   function paddedBounds(points){
     let minX=Infinity,minY=Infinity,maxX=-Infinity,maxY=-Infinity;
     for(const p of points){
-      const c=yCoords(p);
-      if(!Number.isFinite(c[0])||!Number.isFinite(c[1]))continue;
-      minX=Math.min(minX,c[0]);maxX=Math.max(maxX,c[0]);
-      minY=Math.min(minY,c[1]);maxY=Math.max(maxY,c[1]);
+      const cc=mapCoords(p);
+      if(!Number.isFinite(cc[0])||!Number.isFinite(cc[1]))continue;
+      minX=Math.min(minX,cc[0]);maxX=Math.max(maxX,cc[0]);
+      minY=Math.min(minY,cc[1]);maxY=Math.max(maxY,cc[1]);
     }
     if(!Number.isFinite(minX))return null;
     const dx=Math.max((maxX-minX)*.12,.015),dy=Math.max((maxY-minY)*.12,.01);
@@ -282,26 +270,38 @@
   }
 
   function fit(points,animate=true){
-    if(!points.length)return false;
+    if(!points.length||state.provider==='list')return false;
     if(state.provider==='yandex'){
       if(points.length===1){
-        state.map.setLocation({center:yCoords(points[0]),zoom:12,duration:animate?250:0,easing:'ease-in-out'});
+        state.map.setLocation({center:mapCoords(points[0]),zoom:12,duration:animate?250:0,easing:'ease-in-out'});
         return true;
       }
       const bounds=paddedBounds(points);
       if(bounds)state.map.setLocation({bounds,duration:animate?300:0,easing:'ease-in-out'});
       return !!bounds;
     }
-    if(points.length===1){state.map.setView(lCoords(points[0]),12,{animate});return true}
-    state.map.fitBounds(L.latLngBounds(points.map(lCoords)).pad(.12),{animate,maxZoom:13});
-    return true;
+    if(state.provider==='2gis'){
+      if(points.length===1){
+        state.map.setCenter(mapCoords(points[0]),{duration:animate?250:0});
+        state.map.setZoom(12,{duration:animate?250:0});
+        return true;
+      }
+      const bounds=paddedBounds(points);
+      if(bounds)state.map.fitBounds(
+        {southWest:bounds[0],northEast:bounds[1]},
+        {padding:{top:36,left:36,bottom:36,right:36},maxZoom:13}
+      );
+      return !!bounds;
+    }
+    return false;
   }
 
   function setPreset(view,animate=false){
     if(state.provider==='yandex'){
       state.map.setLocation({center:view.center,zoom:view.zoom,duration:animate?250:0,easing:'ease-in-out'});
-    }else{
-      state.map.setView([view.center[1],view.center[0]],view.zoom,{animate});
+    }else if(state.provider==='2gis'){
+      state.map.setCenter(view.center,{duration:animate?250:0});
+      state.map.setZoom(view.zoom,{duration:animate?250:0});
     }
   }
 
@@ -315,8 +315,14 @@
   function selectPoint(p){
     state.selected=p;
     for(const x of state.markers){
-      const el=x.el||(x.marker&&x.marker.getElement&&x.marker.getElement());
+      const el=x.el;
       if(el)el.classList.toggle('selected',x.p.id===p.id);
+      if(x.marker&&state.provider==='2gis'&&x.marker.setZIndex)try{x.marker.setZIndex(x.p.id===p.id?1000:100)}catch(_){}
+    }
+    if(state.provider==='list'){
+      for(const el of document.querySelectorAll('.fallback-card[data-id]')){
+        el.classList.toggle('selected',el.dataset.id===String(p.id));
+      }
     }
     const rating=p.rating==null?'—':Number(p.rating).toFixed(1)+'★';
     $('detail').innerHTML=
@@ -350,7 +356,7 @@
       if(e.key==='Enter'||e.key===' '){e.preventDefault();selectPoint(p);}
     });
     const marker=new ymaps3.YMapMarker({
-      coordinates:yCoords(p),
+      coordinates:mapCoords(p),
       zIndex:selected?1000:100,
       hideOutsideViewport:true
     },el);
@@ -358,27 +364,65 @@
     state.markers.push({marker,p,el});
   }
 
-  function addLeafletMarker(p,selected){
-    const html='<div class="marker '+(p.band||'none')+(selected?' selected':'')+'">'+markerHtml(p,selected)+'</div>';
-    const icon=L.divIcon({className:'s24-map-marker',html,iconSize:[58,42],iconAnchor:[29,21]});
-    const marker=L.marker(lCoords(p),{icon,keyboard:true,title:p.name})
-      .on('click',()=>selectPoint(p))
-      .addTo(state.leafletLayer);
-    state.markers.push({marker,p,el:null});
+  function add2GisMarker(p,selected){
+    const el=document.createElement('div');
+    el.className='marker gis2-marker '+(p.band||'none')+(selected?' selected':'');
+    el.innerHTML=markerHtml(p,selected);
+    el.title=p.name||'';
+    el.setAttribute('role','button');
+    el.tabIndex=0;
+    el.addEventListener('click',()=>selectPoint(p));
+    el.addEventListener('keydown',e=>{
+      if(e.key==='Enter'||e.key===' '){e.preventDefault();selectPoint(p);}
+    });
+    const marker=new mapgl.HtmlMarker(state.map,{
+      coordinates:mapCoords(p),
+      html:el,
+      anchor:[29,21],
+      interactive:true,
+      preventMapInteractions:true,
+      zIndex:selected?1000:100,
+      labeling:{type:'invincible',width:58,height:42,offset:[-29,-21]}
+    });
+    state.markers.push({marker,p,el});
+  }
+
+  function renderList(points){
+    const root=$('map');
+    const cards=points.map(p=>{
+      const rating=p.rating==null?'—':Number(p.rating).toFixed(1)+'★';
+      const reviews=p.reviewCount==null?'нет данных':esc(p.reviewCount)+' отзывов';
+      return '<button type="button" class="fallback-card'+(state.selected&&state.selected.id===p.id?' selected':'')+'" data-id="'+esc(p.id)+'">'+
+        '<strong>'+esc(p.name)+'</strong>'+
+        '<div class="fallback-meta"><span class="fallback-dot '+esc(p.band||'none')+'"></span><span>'+rating+'</span><span>·</span><span>'+reviews+'</span></div>'+
+      '</button>';
+    }).join('');
+    root.innerHTML='<div class="fallback-list"><div class="fallback-note">Картографические сервисы временно недоступны. Данные и фильтры продолжают работать.</div><div class="fallback-grid">'+cards+'</div></div>';
+    for(const el of root.querySelectorAll('.fallback-card[data-id]')){
+      el.addEventListener('click',()=>{
+        const p=points.find(x=>String(x.id)===el.dataset.id);
+        if(p)selectPoint(p);
+      });
+    }
   }
 
   function render(doFocus=false){
-    if(!state.map||!state.data)return;
+    if(!state.data)return;
+    if(state.provider!=='list'&&!state.map)return;
     clearMarkers();
     const points=filtered();
-    for(const p of points){
-      if(!Array.isArray(p.coordinates)||p.coordinates.length<2)continue;
-      const selected=state.selected&&state.selected.id===p.id;
-      if(state.provider==='yandex')addYandexMarker(p,selected);
-      else addLeafletMarker(p,selected);
+    if(state.provider==='list'){
+      renderList(points);
+    }else{
+      for(const p of points){
+        if(!Array.isArray(p.coordinates)||p.coordinates.length<2)continue;
+        const selected=state.selected&&state.selected.id===p.id;
+        if(state.provider==='yandex')addYandexMarker(p,selected);
+        else if(state.provider==='2gis')add2GisMarker(p,selected);
+      }
     }
     const sm=state.data.summary||{};
-    $('summary').textContent=points.length+' на карте · '+Number(sm.total||state.data.points.length)+
+    $('summary').textContent=points.length+(state.provider==='list'?' в списке':' на карте')+' · '+Number(sm.total||state.data.points.length)+
       ' карточек всего · '+Number(sm.below||0)+' ниже '+Number(state.data.target||4.8).toFixed(1)+'★';
     const parts=[];
     if(state.data.generatedAt){
@@ -405,19 +449,60 @@
     }catch(e){console.warn('Yandex zoom control unavailable:',e);}
   }
 
-  function initLeafletMap(){
-    state.map=L.map('map',{zoomControl:true,attributionControl:true}).setView([55.7558,37.6173],8);
-    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{
-      maxZoom:19,
-      attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
-    }).addTo(state.map);
-    state.leafletLayer=L.layerGroup().addTo(state.map);
-    setTimeout(()=>state.map.invalidateSize(),0);
+  function init2GisMap(){
+    const key=String((state.data.options||{}).gis2ApiKey||'').trim();
+    if(!key)throw Error('Ключ 2ГИС не настроен');
+    state.map=new mapgl.Map('map',{
+      key,
+      center:[37.6173,55.7558],
+      zoom:8,
+      lang:'ru',
+      zoomControl:true
+    });
+  }
+
+  function resetMapContainer(){
+    const node=$('map');
+    try{if(state.map&&state.provider==='2gis'&&state.map.destroy)state.map.destroy()}catch(_){}
+    state.map=null;
+    state.markers=[];
+    node.innerHTML='';
   }
 
   async function initMap(){
-    if(state.provider==='yandex')await initYandexMap();
-    else initLeafletMap();
+    if(state.provider==='yandex'){
+      try{
+        await initYandexMap();
+        return;
+      }catch(e){
+        console.warn('Yandex map initialization failed; trying 2GIS:',e);
+        resetMapContainer();
+        const key=String((state.data.options||{}).gis2ApiKey||'').trim();
+        if(key){
+          try{
+            await load2Gis();
+            state.provider='2gis';
+            state.providerNote='Резервная карта · 2ГИС';
+            init2GisMap();
+            return;
+          }catch(e2){console.warn('2GIS initialization failed; using list mode:',e2);}
+        }
+        state.provider='list';
+        state.providerNote='Режим списка · карта временно недоступна';
+        return;
+      }
+    }
+    if(state.provider==='2gis'){
+      try{
+        init2GisMap();
+        return;
+      }catch(e){
+        console.warn('2GIS initialization failed; using list mode:',e);
+        resetMapContainer();
+        state.provider='list';
+        state.providerNote='Режим списка · карта временно недоступна';
+      }
+    }
   }
 
   function bind(){
@@ -446,8 +531,10 @@
       applySnapshotOptions();
       if(state.data.enabled===false){showDisabledMap();return;}
       await chooseProvider();
-      setLoad('Рисую объекты…',82,state.provider==='yandex'?'Создаю маркеры на Яндекс Картах.':'Создаю маркеры на резервной карте.');
       await initMap();
+      const drawText=state.provider==='yandex'?'Создаю маркеры на Яндекс Картах.':
+        state.provider==='2gis'?'Создаю маркеры на 2ГИС.':'Показываю резервный список объектов.';
+      setLoad('Рисую объекты…',82,drawText);
       render(true);
       await sleep(80);
       setLoad('Готово',100,'');
