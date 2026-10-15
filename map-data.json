@@ -1,6 +1,6 @@
 {
   "schema": "sklad24-map-2",
-  "generatedAt": "2026-10-15T18:17:00.257Z",
+  "generatedAt": "2026-10-15T18:36:27.858Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -938,8 +938,10 @@
     "attention": 38
   },
   "enabled": true,
-  "version": "3.33",
+  "version": "3.36",
   "options": {
+    "provider": "yandex-maps-js-api-v3",
+    "yandexApiKey": "8f9500a4-62d8-4fa0-895b-f15412774b3f",
     "activeOnly": true,
     "region": "all"
   }
