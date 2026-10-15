@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#243746">
+  <title>Карта · Склад-24</title>
+  <style>
+    :root{--navy:#243746;--orange:#ff7200;--text:#243746;--muted:#71808a;--line:#dfe5e9;--soft:#f5f7f8}
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;font:13px/1.35 Arial,sans-serif;color:var(--text);background:#fff}
+    body{overflow:hidden}
+    .app{height:100%;display:grid;grid-template-columns:minmax(0,1fr) 340px}
+    .map-wrap{position:relative;min-width:0;background:#edf1f3}
+    #map{position:absolute;inset:0}
+    .topbar{position:absolute;z-index:1000;left:14px;top:14px;right:14px;display:flex;gap:8px;flex-wrap:wrap;pointer-events:none}
+    .control{pointer-events:auto;background:#fff;border:1px solid var(--line);border-radius:9px;padding:8px 10px;box-shadow:0 2px 10px rgba(36,55,70,.08);display:flex;gap:7px;align-items:center}
+    .control button{border:0;background:transparent;padding:6px 9px;border-radius:6px;color:var(--text);cursor:pointer;font-weight:700}
+    .control button.active{background:var(--navy);color:#fff}
+    .control label{white-space:nowrap}.control input{accent-color:var(--orange)}
+    .sidebar{border-left:1px solid var(--line);background:#fff;display:flex;flex-direction:column;min-width:0}
+    .side-head{padding:16px 18px;border-bottom:1px solid var(--line)}
+    .brand{font-weight:800;font-size:17px}.brand b{color:var(--orange)}
+    .summary,.status{color:var(--muted);margin-top:5px;font-size:12px}
+    .detail{padding:18px;overflow:auto;min-height:0}
+    .empty{color:var(--muted);padding-top:28px;text-align:center}
+    .name{font-size:19px;font-weight:800;margin-bottom:5px}
+    .rating{display:flex;align-items:baseline;gap:8px;margin:12px 0}
+    .rating strong{font-size:30px}.rating span{color:var(--muted)}
+    .grid{display:grid;grid-template-columns:1fr auto;gap:8px 14px;margin:16px 0}
+    .grid div:nth-child(odd){color:var(--muted)}
+    .signal{border-radius:8px;padding:10px 12px;background:#fff3d6;color:#76590b;margin:12px 0}
+    .links{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+    .links a{display:inline-block;text-decoration:none;border-radius:7px;padding:9px 11px;font-weight:700}
+    .links .primary{background:var(--orange);color:#fff}.links .secondary{background:#eef2f4;color:var(--text)}
+    .s24-map-marker{background:transparent;border:0}
+    .marker{min-width:48px;height:38px;border:3px solid #fff;border-radius:21px;box-shadow:0 2px 8px rgba(0,0,0,.25);color:#fff;font:800 14px Arial;display:flex;flex-direction:column;justify-content:center;align-items:center;cursor:pointer;padding:2px 7px}
+    .marker small{font-size:9px;font-weight:600;opacity:.92}
+    .marker.green{background:#3f7d58}.marker.yellow{background:#c69728}.marker.orange{background:#d9772f}.marker.red{background:#b94a43}.marker.none{background:#77848d}
+    .marker.selected{outline:3px solid var(--navy);outline-offset:2px}
+    .loading{position:absolute;z-index:1300;inset:0;background:linear-gradient(145deg,#f7f9fa,#edf2f4);display:flex;align-items:center;justify-content:center;padding:24px;transition:opacity .18s ease}
+    .loading.done{opacity:0;pointer-events:none}
+    .loader-card{width:min(430px,92%);background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:0 10px 32px rgba(36,55,70,.10);text-align:center}
+    .spinner{width:42px;height:42px;margin:0 auto 16px;border-radius:50%;border:4px solid #e5eaed;border-top-color:var(--orange);animation:spin .8s linear infinite}
+    .load-title{font-size:18px;font-weight:800}.load-sub{margin-top:7px;color:var(--muted);min-height:34px}
+    .progress{height:7px;background:#edf1f3;border-radius:10px;overflow:hidden;margin-top:17px}.progress>div{height:100%;width:8%;background:var(--orange);transition:width .25s}
+    .error{position:absolute;z-index:1400;inset:20px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px;overflow:auto}
+    .hidden{display:none!important}
+    @keyframes spin{to{transform:rotate(360deg)}}
+    @media(prefers-reduced-motion:reduce){.spinner{animation:none}}
+    @media(max-width:760px){
+      html,body{height:auto;min-height:100%;overflow:auto}
+      .app{display:block;height:auto;min-height:100vh}
+      .map-wrap{height:64vh;min-height:430px}
+      .sidebar{border-left:0;border-top:1px solid var(--line);min-height:36vh}
+      .topbar{left:8px;right:8px;top:8px;gap:6px}
+      .control{max-width:100%;overflow:auto;padding:6px 8px}
+      .control label{font-size:12px}
+      .side-head{padding:13px 15px}.detail{padding:15px}
+    }
+  </style>
+</head>
+<body>
+<div class="app">
+  <div class="map-wrap">
+    <div id="map"></div>
+    <div id="loading" class="loading">
+      <div class="loader-card">
+        <div class="spinner"></div>
+        <div id="loadTitle" class="load-title">Подготавливаю карту…</div>
+        <div id="loadSub" class="load-sub">Загружаю интерфейс и данные объектов.</div>
+        <div class="progress"><div id="loadBar"></div></div>
+      </div>
+    </div>
+    <div class="topbar">
+      <div class="control" id="regions">
+        <button data-region="all" class="active">Вся сеть</button>
+        <button data-region="moscow">Москва</button>
+        <button data-region="spb">СПб</button>
+      </div>
+      <div class="control">
+        <label><input id="activeOnly" type="checkbox" checked> Только активные</label>
+        <label><input id="below" type="checkbox"> Ниже цели</label>
+        <label><input id="low30" type="checkbox"> Есть 1–3★ за 30 дней</label>
+        <label><input id="attention" type="checkbox"> Требует внимания</label>
+      </div>
+    </div>
+    <div id="error" class="error hidden"></div>
+  </div>
+  <aside class="sidebar">
+    <div class="side-head">
+      <div class="brand"><b>СКЛАД-24</b> · КАРТА</div>
+      <div id="summary" class="summary">Загрузка данных…</div>
+      <div id="status" class="status"></div>
+    </div>
+    <div id="detail" class="detail"><div class="empty">После загрузки выберите объект на карте.</div></div>
+  </aside>
+</div>
+<script>
+(() => {
+  'use strict';
+  const $ = id => document.getElementById(id);
+  const REGION_VIEW = {
+    moscow:{center:[55.7558,37.6173],zoom:9},
+    spb:{center:[59.9391,30.3159],zoom:9}
+  };
+  const LEAFLET_JS=[
+    'https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.js',
+    'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js',
+    'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js'
+  ];
+  const LEAFLET_CSS=[
+    'https://cdn.jsdelivr.net/npm/leaflet@1.9.4/dist/leaflet.css',
+    'https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css',
+    'https://unpkg.com/leaflet@1.9.4/dist/leaflet.css'
+  ];
+  const state={data:null,map:null,layer:null,markers:[],selected:null,region:'all'};
+
+  const esc=v=>String(v==null?'':v).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
+  const setLoad=(t,p,s)=>{$('loadTitle').textContent=t;$('loadBar').style.width=Math.max(5,Math.min(100,p))+'%';$('loadSub').textContent=s||'';};
+  const showError=(title,msg)=>{$('loading').classList.add('hidden');$('error').innerHTML='<h2>'+esc(title)+'</h2><p>'+esc(msg)+'</p>';$('error').classList.remove('hidden');};
+  const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+
+  function loadScript(url,timeout=6000){
+    return new Promise((resolve,reject)=>{
+      const s=document.createElement('script');let done=false;
+      const finish=e=>{if(done)return;done=true;clearTimeout(timer);if(e){s.remove();reject(e)}else resolve(url)};
+      s.src=url;s.async=true;s.onload=()=>window.L?finish():finish(Error('Leaflet не инициализировался'));
+      s.onerror=()=>finish(Error('Ошибка загрузки '+url));
+      const timer=setTimeout(()=>finish(Error('Таймаут '+url)),timeout);document.head.appendChild(s);
+    });
+  }
+  function loadCss(url,timeout=4500){
+    return new Promise((resolve,reject)=>{
+      const l=document.createElement('link');let done=false;
+      const finish=e=>{if(done)return;done=true;clearTimeout(timer);if(e){l.remove();reject(e)}else resolve(url)};
+      l.rel='stylesheet';l.href=url;l.onload=()=>finish();l.onerror=()=>finish(Error('CSS '+url));
+      const timer=setTimeout(()=>finish(Error('Таймаут CSS '+url)),timeout);document.head.appendChild(l);
+    });
+  }
+  async function firstGood(loader,urls){
+    const errors=[];for(const u of urls){try{return await loader(u)}catch(e){errors.push(e.message)}}throw Error(errors.join(' | '));
+  }
+  async function loadLeaflet(){
+    if(window.L)return;
+    setLoad('Загружаю карту…',20,'Подключаю Leaflet.');
+    const css=firstGood(loadCss,LEAFLET_CSS).catch(()=>null);
+    await firstGood(loadScript,LEAFLET_JS);await css;
+  }
+  async function loadData(){
+    setLoad('Получаю объекты…',38,'Читаю опубликованные данные Склад-24.');
+    const r=await fetch('map-data.json?v='+Date.now(),{cache:'no-store'});
+    if(!r.ok)throw Error('Не удалось получить map-data.json: HTTP '+r.status);
+    const d=await r.json();
+    if(!d||!Array.isArray(d.points)||!d.summary)throw Error('Файл данных карты имеет неверный формат.');
+    return d;
+  }
+  function filtered(){
+    const d=state.data;if(!d)return [];
+    return d.points.filter(p=>{
+      if(state.region!=='all'&&p.region!==state.region)return false;
+      if($('activeOnly').checked&&!p.active)return false;
+      if($('below').checked&&!(p.rating!=null&&p.rating<d.target))return false;
+      if($('low30').checked&&!(p.low30>0))return false;
+      if($('attention').checked&&!p.attention)return false;
+      return true;
+    });
+  }
+  const latLng=p=>[Number(p.coordinates[1]),Number(p.coordinates[0])];
+  function clearMarkers(){if(state.layer)state.layer.clearLayers();state.markers=[]}
+  function fit(points,animate=true){
+    if(!points.length)return false;
+    if(points.length===1){state.map.setView(latLng(points[0]),12,{animate});return true}
+    state.map.fitBounds(L.latLngBounds(points.map(latLng)).pad(.12),{animate,maxZoom:13});return true;
+  }
+  function focusRegion(){
+    const points=filtered();
+    if(state.region==='all'){if(!fit(points,true))state.map.setView([56.5,36],6);return}
+    const preset=REGION_VIEW[state.region];if(preset)state.map.setView(preset.center,preset.zoom,{animate:false});
+    if(points.length)setTimeout(()=>fit(points,true),0);
+  }
+  function selectPoint(p){
+    state.selected=p;
+    for(const x of state.markers){
+      const root=x.marker.getElement(),el=root&&root.querySelector('.marker');
+      if(el)el.classList.toggle('selected',x.p.id===p.id);
+    }
+    const rating=p.rating==null?'—':Number(p.rating).toFixed(1)+'★';
+    $('detail').innerHTML=
+      '<div class="name">'+esc(p.name)+'</div>'+
+      '<div class="rating"><strong>'+rating+'</strong><span>'+(p.reviewCount==null?'нет данных':esc(p.reviewCount)+' отзывов')+'</span></div>'+
+      '<div class="grid">'+
+        '<div>Новых за 30 дней</div><b>'+Number(p.new30||0)+'</b>'+
+        '<div>1–4★ за 30 дней</div><b>'+Number(p.below5_30||0)+'</b>'+
+        '<div>1–3★ за 30 дней</div><b>'+Number(p.low30||0)+'</b>'+
+        '<div>1–3★ без ответа</div><b>'+Number(p.lowNo||0)+'</b>'+
+      '</div>'+
+      (p.signal?'<div class="signal"><b>'+esc(p.signal)+'</b>'+(p.action?'<br>'+esc(p.action):'')+'</div>':'')+
+      '<div class="links"><a class="primary" href="'+esc(p.url)+'" target="_blank" rel="noopener">Открыть Яндекс</a>'+
+      '<a class="secondary" href="'+esc(p.reviewsUrl)+'" target="_blank" rel="noopener">Отзывы</a></div>';
+  }
+  function render(doFocus=false){
+    if(!state.map||!state.data)return;
+    clearMarkers();const points=filtered();
+    for(const p of points){
+      if(!Array.isArray(p.coordinates)||p.coordinates.length<2)continue;
+      const selected=state.selected&&state.selected.id===p.id;
+      const html='<div class="marker '+(p.band||'none')+(selected?' selected':'')+'"><span>'+(p.rating==null?'—':Number(p.rating).toFixed(1))+'</span>'+
+        (p.reviewCount==null?'':'<small>'+esc(p.reviewCount)+'</small>')+'</div>';
+      const icon=L.divIcon({className:'s24-map-marker',html,iconSize:[58,42],iconAnchor:[29,21]});
+      const marker=L.marker(latLng(p),{icon,keyboard:true,title:p.name}).on('click',()=>selectPoint(p)).addTo(state.layer);
+      state.markers.push({marker,p});
+    }
+    const sm=state.data.summary||{};
+    $('summary').textContent=points.length+' на карте · '+Number(sm.total||state.data.points.length)+' карточек всего · '+Number(sm.below||0)+' ниже '+Number(state.data.target||4.8).toFixed(1)+'★';
+    $('status').textContent=state.data.generatedAt?'Данные: '+new Date(state.data.generatedAt).toLocaleString('ru-RU'):'';
+    if(doFocus)focusRegion();
+  }
+  function initMap(){
+    state.map=L.map('map',{zoomControl:true,attributionControl:true}).setView([55.7558,37.6173],8);
+    L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png',{
+      maxZoom:19,
+      attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(state.map);
+    state.layer=L.layerGroup().addTo(state.map);
+    setTimeout(()=>state.map.invalidateSize(),0);
+  }
+  function bind(){
+    $('regions').addEventListener('click',e=>{
+      const b=e.target.closest('button[data-region]');if(!b)return;
+      state.region=b.dataset.region;
+      [...$('regions').querySelectorAll('button')].forEach(x=>x.classList.toggle('active',x===b));
+      state.selected=null;$('detail').innerHTML='<div class="empty">Выберите объект на карте.</div>';
+      render(false);focusRegion();
+    });
+    for(const id of ['activeOnly','below','low30','attention'])$(id).addEventListener('change',()=>{
+      state.selected=null;$('detail').innerHTML='<div class="empty">Выберите объект на карте.</div>';render(false);focusRegion();
+    });
+  }
+  async function start(){
+    bind();
+    try{
+      const [data]=await Promise.all([loadData(),loadLeaflet()]);
+      state.data=data;setLoad('Рисую объекты…',82,'Настраиваю маркеры и масштаб.');
+      initMap();render(true);await sleep(100);
+      setLoad('Готово',100,'');
+      $('loading').classList.add('done');setTimeout(()=>$('loading').classList.add('hidden'),220);
+    }catch(e){showError('Карта не загрузилась',e&&e.message||String(e))}
+  }
+  start();
+})();
+</script>
+</body>
+</html>
