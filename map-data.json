@@ -1,0 +1,14 @@
+{
+  "schema": "sklad24-map-1",
+  "generatedAt": null,
+  "target": 4.8,
+  "points": [],
+  "summary": {
+    "total": 0,
+    "active": 0,
+    "mapped": 0,
+    "missing": 0,
+    "below": 0,
+    "attention": 0
+  }
+}
