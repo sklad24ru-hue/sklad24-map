@@ -1,6 +1,6 @@
 {
   "schema": "review-map-2",
-  "generatedAt": "2026-10-15T19:31:34.422Z",
+  "generatedAt": "2026-10-15T20:09:34.273Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -59,8 +59,8 @@
       "low30": 0,
       "lowNo": 2,
       "attention": true,
-      "signal": "2 без ответа на 1–3★",
-      "action": "Ответить на 1–3★",
+      "signal": "Ошибка данных",
+      "action": "Проверить карточку",
       "coordinates": [
         37.570573,
         55.919402
