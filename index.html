@@ -35,6 +35,7 @@
     .links a{display:inline-block;text-decoration:none;border-radius:7px;padding:9px 11px;font-weight:700}
     .links .primary{background:var(--orange);color:#fff}.links .secondary{background:#eef2f4;color:var(--text)}
     .s24-map-marker{background:transparent;border:0}
+    .yandex-marker{transform:translate(-50%,-50%)}
     .marker{min-width:48px;height:38px;border:3px solid #fff;border-radius:21px;box-shadow:0 2px 8px rgba(0,0,0,.25);color:#fff;font:800 14px Arial;display:flex;flex-direction:column;justify-content:center;align-items:center;cursor:pointer;padding:2px 7px}
     .marker small{font-size:9px;font-weight:600;opacity:.92}
     .marker.green{background:#3f7d58}.marker.yellow{background:#c69728}.marker.orange{background:#d9772f}.marker.red{background:#b94a43}.marker.none{background:#77848d}
@@ -339,7 +340,7 @@
 
   function addYandexMarker(p,selected){
     const el=document.createElement('div');
-    el.className='marker '+(p.band||'none')+(selected?' selected':'');
+    el.className='marker yandex-marker '+(p.band||'none')+(selected?' selected':'');
     el.innerHTML=markerHtml(p,selected);
     el.title=p.name||'';
     el.setAttribute('role','button');
