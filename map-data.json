@@ -1,6 +1,6 @@
 {
   "schema": "review-map-3",
-  "generatedAt": "2026-10-15T20:23:02.490Z",
+  "generatedAt": "2026-10-15T20:23:54.723Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -855,6 +855,5 @@
     "pmtilesSpbUrl": "maps/spb.pmtiles",
     "activeOnly": true,
     "region": "all"
-  },
-  "cacheFallback": true
+  }
 }
