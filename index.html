@@ -4,8 +4,10 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
   <meta name="theme-color" content="#243746">
-  <link rel="preconnect" href="https://api-maps.yandex.ru" crossorigin>
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <link rel="preconnect" href="https://tiles.api-maps.yandex.ru" crossorigin>
+  <link rel="preconnect" href="https://api-maps.yandex.ru" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
   <title>Карта отзывов</title>
   <style>
     :root{--navy:#243746;--orange:#ff7200;--text:#243746;--muted:#71808a;--line:#dfe5e9}
@@ -15,79 +17,51 @@
     .app{height:100%;display:grid;grid-template-columns:minmax(0,1fr) 340px}
     .map-wrap{position:relative;min-width:0;background:#edf1f3}
     #map{position:absolute;inset:0}
-    .topbar{position:absolute;z-index:1000;left:14px;top:14px;right:14px;display:flex;gap:8px;flex-wrap:wrap;pointer-events:none}
+    .topbar{position:absolute;z-index:20;left:14px;top:14px;right:14px;display:flex;gap:8px;flex-wrap:wrap;pointer-events:none}
     .control{pointer-events:auto;background:#fff;border:1px solid var(--line);border-radius:9px;padding:8px 10px;box-shadow:0 2px 10px rgba(36,55,70,.08);display:flex;gap:7px;align-items:center}
-    .control button{border:0;background:transparent;padding:6px 9px;border-radius:6px;color:var(--text);cursor:pointer;font-weight:700}
+    .control button{border:0;background:transparent;padding:7px 10px;border-radius:6px;color:var(--text);cursor:pointer;font-weight:700;min-height:34px}
     .control button.active{background:var(--navy);color:#fff}
     .control label{white-space:nowrap}.control input{accent-color:var(--orange)}
     .sidebar{border-left:1px solid var(--line);background:#fff;display:flex;flex-direction:column;min-width:0}
     .side-head{padding:16px 18px;border-bottom:1px solid var(--line)}
-    .brand{font-weight:800;font-size:17px}.brand b{color:var(--orange)}
-    .summary,.status{color:var(--muted);margin-top:5px;font-size:12px}
-    .detail{padding:18px;overflow:auto;min-height:0}
-    .empty{color:var(--muted);padding-top:28px;text-align:center}
+    .brand{font-weight:800;font-size:17px}.summary,.status{color:var(--muted);margin-top:5px;font-size:12px}
+    .detail{padding:18px;overflow:auto;min-height:0}.empty{color:var(--muted);padding-top:28px;text-align:center}
     .name{font-size:19px;font-weight:800;margin-bottom:5px}
-    .rating{display:flex;align-items:baseline;gap:8px;margin:12px 0}
-    .rating strong{font-size:30px}.rating span{color:var(--muted)}
-    .grid{display:grid;grid-template-columns:1fr auto;gap:8px 14px;margin:16px 0}
-    .grid div:nth-child(odd){color:var(--muted)}
+    .rating{display:flex;align-items:baseline;gap:8px;margin:12px 0}.rating strong{font-size:30px}.rating span{color:var(--muted)}
+    .grid{display:grid;grid-template-columns:1fr auto;gap:8px 14px;margin:16px 0}.grid div:nth-child(odd){color:var(--muted)}
     .signal{border-radius:8px;padding:10px 12px;background:#fff3d6;color:#76590b;margin:12px 0}
-    .links{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
-    .links a{display:inline-block;text-decoration:none;border-radius:7px;padding:9px 11px;font-weight:700}
+    .links{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}.links a{display:inline-block;text-decoration:none;border-radius:7px;padding:9px 11px;font-weight:700}
     .links .primary{background:var(--orange);color:#fff}.links .secondary{background:#eef2f4;color:var(--text)}
-    .review-map-marker{background:transparent;border:0}
-    .yandex-marker{transform:translate(-50%,-50%)}
-    .marker{min-width:48px;height:38px;border:3px solid #fff;border-radius:21px;box-shadow:0 2px 8px rgba(0,0,0,.25);color:#fff;font:800 14px Arial;display:flex;flex-direction:column;justify-content:center;align-items:center;cursor:pointer;padding:2px 7px}
-    .marker small{font-size:9px;font-weight:600;opacity:.92}
-    .marker.green{background:#3f7d58}.marker.yellow{background:#c69728}.marker.orange{background:#d9772f}.marker.red{background:#b94a43}.marker.none{background:#77848d}
+    .marker{transform:translate(-50%,-50%);min-width:48px;height:38px;border:3px solid #fff;border-radius:21px;box-shadow:0 2px 8px rgba(0,0,0,.25);color:#fff;font:800 14px Arial;display:flex;flex-direction:column;justify-content:center;align-items:center;cursor:pointer;padding:2px 7px;user-select:none}
+    .marker small{font-size:9px;font-weight:600;opacity:.92}.marker.green{background:#3f7d58}.marker.yellow{background:#c69728}.marker.orange{background:#d9772f}.marker.red{background:#b94a43}.marker.none{background:#77848d}
     .marker.selected{outline:3px solid var(--navy);outline-offset:2px}
-    .fallback-list{position:absolute;inset:0;overflow:auto;padding:84px 14px 18px;background:#f4f6f7}
-    .fallback-note{max-width:760px;margin:0 auto 12px;color:var(--muted);font-size:12px}
-    .fallback-grid{max-width:760px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:8px}
-    .fallback-card{border:1px solid var(--line);background:#fff;border-radius:10px;padding:11px 12px;text-align:left;color:var(--text);cursor:pointer;min-height:70px}
-    .fallback-card.selected{outline:3px solid var(--navy);outline-offset:1px}
-    .fallback-card strong{display:block;font-size:14px;margin-bottom:5px}
-    .fallback-meta{display:flex;gap:8px;align-items:center;color:var(--muted);font-size:12px}
-    .fallback-dot{width:10px;height:10px;border-radius:50%;display:inline-block}
-    .fallback-dot.green{background:#3f7d58}.fallback-dot.yellow{background:#c69728}.fallback-dot.orange{background:#d9772f}.fallback-dot.red{background:#b94a43}.fallback-dot.none{background:#77848d}
-    .loading{position:absolute;z-index:1300;inset:0;background:linear-gradient(145deg,#f7f9fa,#edf2f4);display:flex;align-items:center;justify-content:center;padding:24px;transition:opacity .18s ease}
-    .loading.done{opacity:0;pointer-events:none}
-    .loader-card{width:min(430px,92%);background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:0 10px 32px rgba(36,55,70,.10);text-align:center}
+    .loading{position:absolute;z-index:30;inset:0;background:linear-gradient(145deg,#f7f9fa,#edf2f4);display:flex;align-items:center;justify-content:center;padding:24px;transition:opacity .18s ease}
+    .loading.done{opacity:0;pointer-events:none}.loader-card{width:min(430px,92%);background:#fff;border:1px solid var(--line);border-radius:16px;padding:26px;box-shadow:0 10px 32px rgba(36,55,70,.10);text-align:center}
     .spinner{width:42px;height:42px;margin:0 auto 16px;border-radius:50%;border:4px solid #e5eaed;border-top-color:var(--orange);animation:spin .8s linear infinite}
-    .load-title{font-size:18px;font-weight:800}.load-sub{margin-top:7px;color:var(--muted);min-height:34px}
-    .progress{height:7px;background:#edf1f3;border-radius:10px;overflow:hidden;margin-top:17px}.progress>div{height:100%;width:8%;background:var(--orange);transition:width .25s}
-    .error{position:absolute;z-index:1400;inset:20px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px;overflow:auto}
-    .hidden{display:none!important}
-    @keyframes spin{to{transform:rotate(360deg)}}
-    @media(prefers-reduced-motion:reduce){.spinner{animation:none}}
-    @media(max-width:760px){
-      html,body{height:auto;min-height:100%;overflow:auto}
-      .app{display:block;height:auto;min-height:100vh}
-      .map-wrap{height:64vh;min-height:430px}
-      .sidebar{border-left:0;border-top:1px solid var(--line);min-height:36vh}
-      .topbar{left:8px;right:8px;top:8px;gap:6px}
-      .control{max-width:100%;overflow:auto;padding:6px 8px}
-      .control label{font-size:12px}
-      .side-head{padding:13px 15px}.detail{padding:15px}
-    }
-    .fallback-list{position:absolute;inset:0;overflow:auto;padding:78px 14px 18px;background:#f5f7f8}
-    .fallback-row{width:100%;display:grid;grid-template-columns:minmax(0,1fr) auto auto;gap:12px;align-items:center;border:1px solid var(--line);background:#fff;border-radius:9px;padding:11px 13px;margin:0 0 8px;text-align:left;color:var(--text);cursor:pointer}
-    .fallback-row.selected{outline:2px solid var(--navy)}
-    .fallback-name{font-weight:700;min-width:0}.fallback-rating{font-weight:800}.fallback-count{color:var(--muted);min-width:32px;text-align:right}
-    .yandex-branding{position:absolute;z-index:1200;left:0;bottom:0;display:block;line-height:0}
-    .yandex-branding img{display:block;max-height:38px;width:auto}
-    .open-in-maps{position:absolute;z-index:1200;right:10px;bottom:10px;background:#fff;border:1px solid var(--line);border-radius:7px;padding:7px 9px;text-decoration:none;color:var(--text);font-weight:700}
+    .load-title{font-size:18px;font-weight:800}.load-sub{margin-top:7px;color:var(--muted);min-height:34px}.progress{height:7px;background:#edf1f3;border-radius:10px;overflow:hidden;margin-top:17px}.progress>div{height:100%;width:8%;background:var(--orange);transition:width .25s}
+    .error{position:absolute;z-index:40;inset:20px;background:#fff;border:1px solid var(--line);border-radius:12px;padding:22px;overflow:auto}.hidden{display:none!important}
+    .provider{position:absolute;z-index:15;left:10px;bottom:10px;background:rgba(255,255,255,.94);border:1px solid var(--line);border-radius:7px;padding:5px 8px;font-size:11px;color:var(--muted)}
+    .yandex-branding{position:absolute;z-index:16;left:0;bottom:0;display:none;line-height:0}.yandex-branding.visible{display:block}.yandex-branding img{display:block;max-height:40px;width:auto}
+    .open-in-maps{position:absolute;z-index:16;right:10px;bottom:10px;background:#fff;border:1px solid var(--line);border-radius:7px;padding:7px 9px;text-decoration:none;color:var(--text);font-weight:700;display:none}.open-in-maps.visible{display:block}
+    .fallback-list{position:absolute;z-index:10;inset:0;background:#f5f7f8;padding:76px 14px 14px;overflow:auto}.fallback-grid{max-width:920px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:9px}
+    .fallback-item{background:#fff;border:1px solid var(--line);border-radius:10px;padding:11px;text-align:left;cursor:pointer;color:var(--text);min-height:72px}.fallback-item.selected{outline:3px solid var(--navy);outline-offset:1px}.fallback-item strong{font-size:14px;display:block}.fallback-item span{display:block;margin-top:5px;color:var(--muted);font-size:12px}
+    @keyframes spin{to{transform:rotate(360deg)}}@media(prefers-reduced-motion:reduce){.spinner{animation:none}}
+    @media(max-width:760px){html,body{height:auto;min-height:100%;overflow:auto}.app{display:block;height:auto;min-height:100vh}.map-wrap{height:64vh;min-height:430px}.sidebar{border-left:0;border-top:1px solid var(--line);min-height:36vh}.topbar{left:8px;right:8px;top:8px;gap:6px}.control{max-width:100%;overflow:auto;padding:6px 8px}.control label{font-size:12px}.side-head{padding:13px 15px}.detail{padding:15px}}
   </style>
 </head>
 <body>
 <div class="app">
   <div class="map-wrap">
     <div id="map"></div>
+    <div id="fallbackList" class="fallback-list hidden"><div id="fallbackGrid" class="fallback-grid"></div></div>
+    <a id="yandexLogo" class="yandex-branding" href="https://yandex.ru/maps/" target="_blank" rel="noopener" aria-label="Яндекс Карты"><img src="assets/yandex-logo.png" alt="Яндекс"></a>
+    <a id="openMaps" class="open-in-maps" href="https://yandex.ru/maps/" target="_blank" rel="noopener">Открыть в Картах</a>
+    <div id="provider" class="provider hidden"></div>
     <div id="loading" class="loading">
       <div class="loader-card">
         <div class="spinner"></div>
         <div id="loadTitle" class="load-title">Подготавливаю карту…</div>
-        <div id="loadSub" class="load-sub">Загружаю карту и готовый снимок данных.</div>
+        <div id="loadSub" class="load-sub">Загружаю данные.</div>
         <div class="progress"><div id="loadBar"></div></div>
       </div>
     </div>
@@ -108,101 +82,42 @@
   </div>
   <aside class="sidebar">
     <div class="side-head">
-      <div class="brand">МОНИТОРИНГ ОТЗЫВОВ</div>
+      <div class="brand">КАРТА ОТЗЫВОВ</div>
       <div id="summary" class="summary">Загрузка данных…</div>
       <div id="status" class="status"></div>
     </div>
-    <div id="detail" class="detail"><div class="empty">После загрузки выберите объект на карте отзывов.</div></div>
+    <div id="detail" class="detail"><div class="empty">После загрузки выберите объект.</div></div>
   </aside>
 </div>
-<script>(() => {
+
+<script type="module">
+(() => {
   'use strict';
   const $=id=>document.getElementById(id);
-  const REGION_VIEW={
-    moscow:{center:[37.6173,55.7558],zoom:9},
-    spb:{center:[30.3159,59.9391],zoom:9}
-  };
-  const MAPLIBRE_CSS='https://unpkg.com/maplibre-gl@6.14.0/dist/maplibre-gl.css';
-  const MAPLIBRE_JS='https://unpkg.com/maplibre-gl@6.14.0/dist/maplibre-gl.mjs';
-  const PMTILES_JS='https://cdn.jsdelivr.net/npm/pmtiles@4.5.0/+esm';
-  const YANDEX_LOGO_URL='assets/yandex-logo.png';
-  const state={data:null,map:null,provider:null,markers:[],selected:null,region:'all',providerNote:'',maplibre:null,pmtiles:null,pmProtocol:null};
-
+  const REGION_VIEW={moscow:{center:[37.6173,55.7558],zoom:8.8},spb:{center:[30.3159,59.9391],zoom:8.8}};
+  const state={data:null,map:null,maplibre:null,provider:'none',providerNote:'',markers:[],selected:null,region:'all',legacyYmaps:null};
   const esc=v=>String(v==null?'':v).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
   const sleep=ms=>new Promise(r=>setTimeout(r,ms));
-  const setLoad=(title,pct,sub)=>{$('loadTitle').textContent=title;$('loadBar').style.width=Math.max(5,Math.min(100,Number(pct)||0))+'%';$('loadSub').textContent=sub||'';};
-  const showError=(title,msg)=>{$('loading').classList.add('hidden');$('error').innerHTML='<h2>'+esc(title)+'</h2><p>'+esc(msg)+'</p><p style="color:#71808a">Попробуйте обновить страницу чуть позже.</p>';$('error').classList.remove('hidden');};
+  const setLoad=(title,pct,sub)=>{$('loadTitle').textContent=title;$('loadBar').style.width=Math.max(5,Math.min(100,Number(pct)||0))+'%';$('loadSub').textContent=sub||''};
+  const providerNote=t=>{state.providerNote=t||'';$('provider').textContent=state.providerNote;$('provider').classList.toggle('hidden',!state.providerNote)};
+  const urlFor=p=>'https://yandex.ru/maps/org/'+encodeURIComponent(String(p.id||''))+'/';
+  const reviewsUrlFor=p=>urlFor(p)+'reviews/';
 
-  function applySnapshotOptions(){
-    const o=state.data&&state.data.options||{};
-    $('activeOnly').checked=o.activeOnly!==false;
-    const region=['all','moscow','spb'].includes(String(o.region))?String(o.region):'all';
-    state.region=region;
-    [...$('regions').querySelectorAll('button[data-region]')].forEach(b=>b.classList.toggle('active',b.dataset.region===region));
-  }
-  function showDisabledMap(){
-    $('loading').classList.add('hidden');
-    $('summary').textContent='Карта отзывов отключена';
-    if(state.data&&state.data.generatedAt){const when=new Date(state.data.generatedAt);$('status').textContent='Состояние обновлено: '+when.toLocaleString('ru-RU');}else $('status').textContent='';
-    $('detail').innerHTML='<div class="empty">Публикация карты отзывов временно отключена.</div>';
-    $('error').innerHTML='<h2>Карта отзывов отключена</h2><p>Публикация карты временно выключена.</p>';
-    $('error').classList.remove('hidden');
-  }
   async function loadData(){
-    setLoad('Получаю объекты…',20,'Загружаю свежий снимок данных.');
-    const response=await fetch('map-data.json',{cache:'no-cache'});
-    if(!response.ok)throw Error('Не удалось получить данные: HTTP '+response.status);
-    const data=await response.json();
-    if(data&&data.error)throw Error('Обновление данных завершилось ошибкой: '+data.error);
-    if(!data||!Array.isArray(data.points)||!data.summary)throw Error('Файл данных карты имеет неверный формат.');
-    return data;
+    setLoad('Получаю объекты…',18,'Читаю последний опубликованный снимок.');
+    const r=await fetch('map-data.json',{cache:'no-cache'});
+    if(!r.ok)throw Error('Не удалось получить данные: HTTP '+r.status);
+    const d=await r.json();
+    if(d&&d.error)throw Error(String(d.error));
+    if(!d||!Array.isArray(d.points)||!d.summary)throw Error('Неверный формат данных карты.');
+    return d;
   }
 
-  function loadYandexJs(apiKey,timeout=14000){
-    if(window.ymaps3)return Promise.resolve(window.ymaps3.ready);
-    return new Promise((resolve,reject)=>{
-      const el=document.createElement('script');let done=false;
-      const finish=async err=>{
-        if(done)return;done=true;clearTimeout(timer);
-        if(err){try{el.remove()}catch(_){}reject(err);return;}
-        try{if(!window.ymaps3)throw Error('Яндекс Maps API не инициализировался');await window.ymaps3.ready;resolve();}catch(e){reject(e);}
-      };
-      el.src='https://api-maps.yandex.ru/v3/?apikey='+encodeURIComponent(apiKey)+'&lang=ru_RU';
-      el.async=true;el.onload=()=>finish();el.onerror=()=>finish(Error('Не удалось загрузить Яндекс Maps API'));
-      const timer=setTimeout(()=>finish(Error('Таймаут загрузки Яндекс Maps API')),timeout);
-      document.head.appendChild(el);
-    });
-  }
-  function loadCssOnce(url){
-    if([...document.styleSheets].some(x=>String(x.href||'')===url))return Promise.resolve();
-    return new Promise((resolve,reject)=>{const el=document.createElement('link');el.rel='stylesheet';el.href=url;el.onload=()=>resolve();el.onerror=()=>reject(Error('Не удалось загрузить CSS карты'));document.head.appendChild(el);});
-  }
-  async function loadMapLibre(){
-    if(state.maplibre)return state.maplibre;
-    setLoad('Подключаю движок карты…',36,'Загружаю MapLibre только при необходимости.');
-    await loadCssOnce(MAPLIBRE_CSS).catch(()=>null);
-    state.maplibre=await import(MAPLIBRE_JS);
-    return state.maplibre;
-  }
-  async function loadPmtiles(){if(state.pmtiles)return state.pmtiles;state.pmtiles=await import(PMTILES_JS);return state.pmtiles;}
-  async function urlExists(url){try{const r=await fetch(url,{headers:{Range:'bytes=0-127'},cache:'no-cache'});return r.ok||r.status===206;}catch(_){return false;}}
-  async function canUseYandexTiles(key){if(!key)return false;return await urlExists(YANDEX_LOGO_URL);}
-
-  async function chooseProvider(){
-    const o=state.data&&state.data.options||{};
-    const tilesKey=String(o.yandexTilesApiKey||'').trim();
-    const jsKey=String(o.yandexApiKey||'').trim();
-    if(await canUseYandexTiles(tilesKey)){
-      try{await loadMapLibre();state.provider='yandex-tiles';state.providerNote='Яндекс Карты · Tiles API';return;}catch(e){console.warn('Yandex Tiles renderer unavailable:',e);}
-    }
-    if(jsKey){
-      setLoad('Загружаю Яндекс Карты…',42,'Временный режим JavaScript API.');
-      try{await loadYandexJs(jsKey);state.provider='yandex-js';state.providerNote=tilesKey?'Яндекс Карты · временный JS API (ожидается логотип Tiles API)':'Яндекс Карты · JavaScript API';return;}catch(e){console.warn('Yandex JS API failed:',e);}
-    }
-    if(o.pmtilesEnabled!==false){
-      try{await loadMapLibre();await loadPmtiles();state.provider='pmtiles';state.providerNote='Автономная резервная карта';return;}catch(e){console.warn('PMTiles renderer unavailable:',e);}
-    }
-    state.provider='list';state.providerNote='Режим списка';
+  function applyOptions(){
+    const o=state.data.options||{};
+    $('activeOnly').checked=o.activeOnly!==false;
+    state.region=['all','moscow','spb'].includes(String(o.region))?String(o.region):'all';
+    [...$('regions').querySelectorAll('button[data-region]')].forEach(b=>b.classList.toggle('active',b.dataset.region===state.region));
   }
 
   function filtered(){
@@ -211,43 +126,25 @@
       if(state.region!=='all'&&p.region!==state.region)return false;
       if($('activeOnly').checked&&!p.active)return false;
       if($('below').checked&&!(p.rating!=null&&p.rating<d.target))return false;
-      if($('low30').checked&&!(p.low30>0))return false;
+      if($('low30').checked&&!(Number(p.low30)>0))return false;
       if($('attention').checked&&!p.attention)return false;
       return true;
     });
   }
-  const coords=p=>[Number(p.coordinates[0]),Number(p.coordinates[1])];
 
-  function clearMarkers(){
-    if(state.provider==='yandex-js'&&state.map){for(const x of state.markers){try{state.map.removeChild(x.marker)}catch(_){}}}
-    else{for(const x of state.markers){try{x.marker.remove()}catch(_){}}}
-    state.markers=[];
+  function updateSummary(points){
+    const sm=state.data.summary||{};
+    $('summary').textContent=points.length+' на карте · '+Number(sm.total||state.data.points.length)+' карточек всего · '+Number(sm.below||0)+' ниже '+Number(state.data.target||4.8).toFixed(1)+'★';
+    const parts=[];
+    if(state.data.generatedAt){const dt=new Date(state.data.generatedAt);parts.push('Данные: '+dt.toLocaleString('ru-RU'))}
+    if(state.providerNote)parts.push(state.providerNote);
+    $('status').textContent=parts.join(' · ');
   }
-  function paddedBounds(points){
-    let minX=Infinity,minY=Infinity,maxX=-Infinity,maxY=-Infinity;
-    for(const p of points){const c=coords(p);if(!Number.isFinite(c[0])||!Number.isFinite(c[1]))continue;minX=Math.min(minX,c[0]);maxX=Math.max(maxX,c[0]);minY=Math.min(minY,c[1]);maxY=Math.max(maxY,c[1]);}
-    return Number.isFinite(minX)?[[minX,minY],[maxX,maxY]]:null;
-  }
-  function fit(points,animate=true){
-    if(!points.length||state.provider==='list')return false;
-    if(state.provider==='yandex-js'){
-      if(points.length===1){state.map.setLocation({center:coords(points[0]),zoom:12,duration:animate?250:0,easing:'ease-in-out'});return true;}
-      const b=paddedBounds(points);if(b)state.map.setLocation({bounds:b,duration:animate?300:0,easing:'ease-in-out'});return !!b;
-    }
-    if(points.length===1){state.map.easeTo({center:coords(points[0]),zoom:12,duration:animate?250:0});return true;}
-    const b=paddedBounds(points);if(b)state.map.fitBounds(b,{padding:55,maxZoom:13,duration:animate?300:0});return !!b;
-  }
-  function setPreset(view,animate=false){
-    if(state.provider==='list')return;
-    if(state.provider==='yandex-js')state.map.setLocation({center:view.center,zoom:view.zoom,duration:animate?250:0,easing:'ease-in-out'});
-    else state.map.easeTo({center:view.center,zoom:view.zoom,duration:animate?250:0});
-  }
-  function focusRegion(){const points=filtered();if(points.length&&fit(points,true))return;if(state.region!=='all'&&REGION_VIEW[state.region]){setPreset(REGION_VIEW[state.region]);return;}setPreset({center:[36,56.5],zoom:6});}
 
   function selectPoint(p){
     state.selected=p;
-    for(const x of state.markers){if(x.el)x.el.classList.toggle('selected',x.p.id===p.id);}
-    for(const row of document.querySelectorAll('.fallback-row'))row.classList.toggle('selected',row.dataset.id===String(p.id));
+    for(const x of state.markers)x.el&&x.el.classList.toggle('selected',String(x.p.id)===String(p.id));
+    for(const x of $('fallbackGrid').querySelectorAll('[data-id]'))x.classList.toggle('selected',x.dataset.id===String(p.id));
     const rating=p.rating==null?'—':Number(p.rating).toFixed(1)+'★';
     $('detail').innerHTML=
       '<div class="name">'+esc(p.name)+'</div>'+
@@ -259,120 +156,175 @@
         '<div>1–3★ без ответа</div><b>'+Number(p.lowNo||0)+'</b>'+
       '</div>'+
       (p.signal?'<div class="signal"><b>'+esc(p.signal)+'</b>'+(p.action?'<br>'+esc(p.action):'')+'</div>':'')+
-      '<div class="links"><a class="primary" href="'+esc(p.url)+'" target="_blank" rel="noopener">Открыть карточку</a>'+
-      '<a class="secondary" href="'+esc(p.reviewsUrl)+'" target="_blank" rel="noopener">Отзывы</a></div>';
+      '<div class="links"><a class="primary" href="'+esc(p.url||urlFor(p))+'" target="_blank" rel="noopener">Открыть карточку</a>'+
+      '<a class="secondary" href="'+esc(p.reviewsUrl||reviewsUrlFor(p))+'" target="_blank" rel="noopener">Отзывы</a></div>';
   }
-  function markerNode(p,selected){
-    const el=document.createElement('button');el.type='button';el.className='marker '+(p.band||'none')+(selected?' selected':'');el.title=p.name;
+
+  function markerElement(p){
+    const el=document.createElement('button');el.type='button';el.className='marker '+(p.band||'none');el.title=p.name||'';
     el.innerHTML='<span>'+(p.rating==null?'—':Number(p.rating).toFixed(1))+'</span>'+(p.reviewCount==null?'':'<small>'+esc(p.reviewCount)+'</small>');
     el.addEventListener('click',()=>selectPoint(p));return el;
   }
-  function addYandexJsMarker(p,selected){
-    const el=markerNode(p,selected);el.classList.add('yandex-marker');
-    const marker=new ymaps3.YMapMarker({coordinates:coords(p),zIndex:selected?1000:100,hideOutsideViewport:true},el);
-    state.map.addChild(marker);state.markers.push({marker,p,el});
-  }
-  function addMapLibreMarker(p,selected){
-    const el=markerNode(p,selected);
-    const marker=new state.maplibre.Marker({element:el,anchor:'center'}).setLngLat(coords(p)).addTo(state.map);
-    state.markers.push({marker,p,el});
-  }
-  function renderList(points){
-    const root=$('map');root.innerHTML='';root.classList.add('list-mode');
-    const wrap=document.createElement('div');wrap.className='fallback-list';
-    for(const p of points){
-      const row=document.createElement('button');row.type='button';row.className='fallback-row';row.dataset.id=String(p.id);
-      row.innerHTML='<span class="fallback-name">'+esc(p.name)+'</span><span class="fallback-rating">'+(p.rating==null?'—':Number(p.rating).toFixed(1)+'★')+'</span><span class="fallback-count">'+(p.reviewCount==null?'—':esc(p.reviewCount))+'</span>';
-      row.addEventListener('click',()=>selectPoint(p));wrap.appendChild(row);
-    }
-    root.appendChild(wrap);
-  }
-  function render(doFocus=false){
-    if(!state.data)return;clearMarkers();const points=filtered();
-    if(state.provider==='list')renderList(points);
-    else{$('map').classList.remove('list-mode');for(const p of points){if(!Array.isArray(p.coordinates)||p.coordinates.length<2)continue;const selected=state.selected&&state.selected.id===p.id;if(state.provider==='yandex-js')addYandexJsMarker(p,selected);else addMapLibreMarker(p,selected);}}
-    const sm=state.data.summary||{};
-    $('summary').textContent=points.length+' на карте · '+Number(sm.total||state.data.points.length)+' карточек всего · '+Number(sm.below||0)+' ниже '+Number(state.data.target||4.8).toFixed(1)+'★';
-    const parts=[];if(state.data.generatedAt){const when=new Date(state.data.generatedAt);parts.push('Данные: '+when.toLocaleString('ru-RU'));}if(state.providerNote)parts.push(state.providerNote);$('status').textContent=parts.join(' · ');
-    if(doFocus)focusRegion();
+
+  function clearMarkers(){
+    for(const x of state.markers){try{state.provider==='legacy-yandex'?state.map.removeChild(x.marker):x.marker.remove()}catch(_){}}
+    state.markers=[];
   }
 
-  async function initYandexJsMap(){
-    const {YMap,YMapDefaultSchemeLayer,YMapDefaultFeaturesLayer}=ymaps3;
-    state.map=new YMap(document.getElementById('map'),{location:{center:[37.6173,55.7558],zoom:8},theme:'light',showScaleInCopyrights:true},[new YMapDefaultSchemeLayer({}),new YMapDefaultFeaturesLayer({zIndex:1800})]);
-    try{const {YMapZoomControl}=await ymaps3.import('@yandex/ymaps3-default-ui-theme');const controls=new ymaps3.YMapControls({position:'right'});controls.addChild(new YMapZoomControl({easing:'ease-in-out'}));state.map.addChild(controls);}catch(e){console.warn('Yandex zoom control unavailable:',e);}
+  function renderList(points){
+    $('fallbackList').classList.remove('hidden');
+    $('fallbackGrid').innerHTML='';
+    for(const p of points){
+      const b=document.createElement('button');b.type='button';b.className='fallback-item';b.dataset.id=String(p.id);
+      b.innerHTML='<strong>'+esc(p.name)+'</strong><span>'+(p.rating==null?'—':Number(p.rating).toFixed(1)+'★')+(p.reviewCount==null?'':' · '+esc(p.reviewCount)+' отзывов')+'</span>';
+      b.addEventListener('click',()=>selectPoint(p));$('fallbackGrid').appendChild(b);
+    }
   }
-  function addYandexBranding(){
-    const wrap=document.createElement('a');wrap.className='yandex-branding';wrap.href='https://yandex.ru/maps/';wrap.target='_blank';wrap.rel='noopener';
-    const img=document.createElement('img');img.src=YANDEX_LOGO_URL;img.alt='Яндекс';wrap.appendChild(img);document.querySelector('.map-wrap').appendChild(wrap);
-    const open=document.createElement('a');open.className='open-in-maps';open.href='https://yandex.ru/maps/';open.target='_blank';open.rel='noopener';open.textContent='Открыть в Картах';document.querySelector('.map-wrap').appendChild(open);
+
+  function fitMap(points,animate=true){
+    if(!state.map||!points.length||state.provider==='list')return;
+    if(state.provider==='legacy-yandex'){
+      if(points.length===1){state.map.setLocation({center:pcoord(points[0]),zoom:12,duration:animate?250:0});return}
+      const c=points.map(pcoord),xs=c.map(x=>x[0]),ys=c.map(x=>x[1]);
+      state.map.setLocation({bounds:[[Math.min(...xs),Math.min(...ys)],[Math.max(...xs),Math.max(...ys)]],duration:animate?300:0});
+      return;
+    }
+    if(points.length===1){state.map.easeTo({center:pcoord(points[0]),zoom:12,duration:animate?250:0});return}
+    const b=new state.maplibre.LngLatBounds();for(const p of points)b.extend(pcoord(p));
+    state.map.fitBounds(b,{padding:{top:78,bottom:52,left:42,right:42},maxZoom:13,duration:animate?330:0});
   }
-  async function initYandexTilesMap(){
-    const o=state.data.options||{},key=String(o.yandexTilesApiKey||'').trim();
-    const tile='https://tiles.api-maps.yandex.ru/v1/tiles/?x={x}&y={y}&z={z}&lang=ru_RU&l=map&projection=web_mercator&apikey='+encodeURIComponent(key);
-    state.map=new state.maplibre.Map({container:'map',style:{version:8,sources:{yandex:{type:'raster',tiles:[tile],tileSize:256,maxzoom:20}},layers:[{id:'yandex',type:'raster',source:'yandex'}]},center:[37.6173,55.7558],zoom:8,attributionControl:false});
-    state.map.addControl(new state.maplibre.NavigationControl({showCompass:false}),'top-right');addYandexBranding();
-  }
-  function pmStyleFor(sourceDefs){
-    const sources={},layers=[{id:'bg',type:'background',paint:{'background-color':'#f2f1ed'}}];
-    for(const def of sourceDefs){
-      sources[def.id]={type:'vector',url:'pmtiles://'+def.url};
-      for(const l of def.layers){
-        const n=String(l.id||'').toLowerCase(),sid=def.id+'-'+n.replace(/[^a-z0-9_-]/g,'-');
-        if(/water/.test(n))layers.push({id:sid,type:/way|line/.test(n)?'line':'fill',source:def.id,'source-layer':l.id,paint:/way|line/.test(n)?{'line-color':'#9cc8df','line-width':1.2}:{'fill-color':'#c9e4f3'}});
-        else if(/building/.test(n))layers.push({id:sid,type:'fill',source:def.id,'source-layer':l.id,paint:{'fill-color':'#dedbd5','fill-outline-color':'#cbc6be'}});
-        else if(/road|transport|highway|street/.test(n))layers.push({id:sid,type:'line',source:def.id,'source-layer':l.id,paint:{'line-color':'#ffffff','line-width':['interpolate',['linear'],['zoom'],7,.4,12,2.1]}});
-        else if(/park|green|landuse|landcover|natural/.test(n))layers.push({id:sid,type:'fill',source:def.id,'source-layer':l.id,paint:{'fill-color':'#dfead8','fill-opacity':.75}});
-        else if(/boundary|admin/.test(n))layers.push({id:sid,type:'line',source:def.id,'source-layer':l.id,paint:{'line-color':'#b7bdc2','line-width':.7,'line-dasharray':[3,2]}});
+
+  const pcoord=p=>[Number(p.coordinates[0]),Number(p.coordinates[1])];
+
+  function render(){
+    const points=filtered();clearMarkers();
+    if(state.provider==='list')renderList(points);
+    else{
+      $('fallbackList').classList.add('hidden');
+      for(const p of points){
+        if(!Array.isArray(p.coordinates)||p.coordinates.length<2)continue;
+        const el=markerElement(p);
+        if(state.provider==='legacy-yandex'){
+          const marker=new state.legacyYmaps.YMapMarker({coordinates:pcoord(p),zIndex:100,hideOutsideViewport:true},el);
+          state.map.addChild(marker);state.markers.push({marker,p,el});
+        }else{
+          const marker=new state.maplibre.Marker({element:el,anchor:'center'}).setLngLat(pcoord(p)).addTo(state.map);
+          state.markers.push({marker,p,el});
+        }
       }
     }
-    return {version:8,sources,layers};
+    updateSummary(points);return points;
   }
-  async function pmSource(url,id){
-    if(!url||!(await urlExists(url)))return null;
-    const archive=new state.pmtiles.PMTiles(url);const meta=await archive.getMetadata().catch(()=>({}));
-    const layers=Array.isArray(meta.vector_layers)?meta.vector_layers:[];
-    return {id,url,layers};
-  }
-  async function initPmtilesMap(){
-    const o=state.data.options||{},defs=[];
-    if(state.region!=='spb'){const d=await pmSource(String(o.pmtilesMoscowUrl||'maps/moscow.pmtiles'),'moscow');if(d)defs.push(d);}
-    if(state.region!=='moscow'){const d=await pmSource(String(o.pmtilesSpbUrl||'maps/spb.pmtiles'),'spb');if(d)defs.push(d);}
-    if(!defs.length)throw Error('PMTiles-файлы ещё не загружены.');
-    if(!state.pmProtocol){state.pmProtocol=new state.pmtiles.Protocol();state.maplibre.addProtocol('pmtiles',state.pmProtocol.tile);}
-    state.map=new state.maplibre.Map({container:'map',style:pmStyleFor(defs),center:[37.6173,55.7558],zoom:8,attributionControl:false});
-    state.map.addControl(new state.maplibre.NavigationControl({showCompass:false}),'top-right');
-  }
-  async function initMap(){
-    if(state.provider==='yandex-tiles')return initYandexTilesMap();
-    if(state.provider==='yandex-js')return initYandexJsMap();
-    if(state.provider==='pmtiles'){try{return await initPmtilesMap();}catch(e){console.warn(e);state.provider='list';state.providerNote='Режим списка · резервная подложка ещё не загружена';return;}}
-  }
-  function destroyMap(){
-    clearMarkers();
-    if(state.map){try{state.provider==='yandex-js'?state.map.destroy():state.map.remove();}catch(_){}state.map=null;}
-    for(const x of document.querySelectorAll('.yandex-branding,.open-in-maps'))x.remove();
-    $('map').innerHTML='';
-  }
-  function bind(){
-    $('regions').addEventListener('click',async e=>{
-      const b=e.target.closest('button[data-region]');if(!b)return;
-      state.region=b.dataset.region;[...$('regions').querySelectorAll('button')].forEach(x=>x.classList.toggle('active',x===b));state.selected=null;$('detail').innerHTML='<div class="empty">Выберите объект на карте отзывов.</div>';
-      if(state.provider==='pmtiles'){destroyMap();try{await initPmtilesMap();}catch(_){state.provider='list';state.providerNote='Режим списка · резервная подложка ещё не загружена';}}
-      render(false);focusRegion();
+
+  function imageProbe(src,timeout=4500){
+    return new Promise((resolve,reject)=>{
+      const img=new Image();let done=false;
+      const finish=ok=>{if(done)return;done=true;clearTimeout(timer);img.onload=img.onerror=null;ok?resolve(src):reject(Error('resource unavailable'))};
+      img.onload=()=>finish(true);img.onerror=()=>finish(false);
+      const timer=setTimeout(()=>finish(false),timeout);
+      img.src=src+(src.includes('?')?'&':'?')+'_='+Date.now();
     });
-    for(const id of ['activeOnly','below','low30','attention'])$(id).addEventListener('change',()=>{state.selected=null;$('detail').innerHTML='<div class="empty">Выберите объект на карте отзывов.</div>';render(false);focusRegion();});
   }
+  function tileAt(lon,lat,z){
+    const n=2**z,x=Math.floor((lon+180)/360*n),r=lat*Math.PI/180;
+    return {x,y:Math.floor((1-Math.log(Math.tan(r)+1/Math.cos(r))/Math.PI)/2*n),z};
+  }
+  function yandexTileTemplate(key){
+    return 'https://tiles.api-maps.yandex.ru/v1/tiles/?x={x}&y={y}&z={z}&lang=ru_RU&l=map&projection=web_mercator&apikey='+encodeURIComponent(key);
+  }
+  function yandexProbe(key){
+    const t=tileAt(37.6173,55.7558,8);
+    return yandexTileTemplate(key).replace('{x}',t.x).replace('{y}',t.y).replace('{z}',t.z);
+  }
+
+  async function loadMapLibre(){
+    if(state.maplibre)return state.maplibre;
+    setLoad('Подключаю карту…',38,'Загружаю MapLibre.');
+    const css=document.createElement('link');css.rel='stylesheet';css.href='https://cdn.jsdelivr.net/npm/maplibre-gl@6.14.0/dist/maplibre-gl.css';document.head.appendChild(css);
+    state.maplibre=await import('https://cdn.jsdelivr.net/npm/maplibre-gl@6.14.0/+esm');
+    return state.maplibre;
+  }
+
+  async function initTiles(){
+    const key=String(state.data.options?.yandexTilesApiKey||'').trim();
+    if(!key)return false;
+    try{
+      await Promise.all([imageProbe('assets/yandex-logo.png',3500),imageProbe(yandexProbe(key),5500)]);
+      await loadMapLibre();
+    }catch(e){console.warn('Tiles preflight failed:',e);return false}
+
+    const template=yandexTileTemplate(key);
+    state.map=new state.maplibre.Map({
+      container:'map',
+      style:{version:8,sources:{yandex:{type:'raster',tiles:[template],tileSize:256,minzoom:0,maxzoom:20}},layers:[{id:'yandex',type:'raster',source:'yandex'}]},
+      center:[37.6173,55.7558],zoom:8,maxZoom:18,attributionControl:false
+    });
+    state.map.addControl(new state.maplibre.NavigationControl({showCompass:false}),'top-right');
+    state.provider='yandex-tiles';providerNote('Яндекс Карты · Tiles API');
+    $('yandexLogo').classList.add('visible');$('openMaps').classList.add('visible');
+    return true;
+  }
+
+  async function initLegacy(){
+    const key=String(state.data.options?.yandexApiKey||'').trim();
+    if(!key)return false;
+    setLoad('Открываю текущую карту…',40,'Совместимый режим до перехода на Tiles API.');
+    try{
+      if(!window.ymaps3){
+        await new Promise((resolve,reject)=>{
+          const s=document.createElement('script');s.src='https://api-maps.yandex.ru/v3/?apikey='+encodeURIComponent(key)+'&lang=ru_RU';s.async=true;
+          s.onload=resolve;s.onerror=()=>reject(Error('legacy api load failed'));document.head.appendChild(s);
+        });
+      }
+      await ymaps3.ready;state.legacyYmaps=ymaps3;
+      const {YMap,YMapDefaultSchemeLayer,YMapDefaultFeaturesLayer}=ymaps3;
+      state.map=new YMap(document.getElementById('map'),{location:{center:[37.6173,55.7558],zoom:8},theme:'light'},[new YMapDefaultSchemeLayer({}),new YMapDefaultFeaturesLayer({})]);
+      state.provider='legacy-yandex';providerNote('Яндекс Карты · переходный режим');
+      return true;
+    }catch(e){console.warn('Legacy map failed:',e);return false}
+  }
+
+  function showList(note){
+    state.provider='list';providerNote(note||'Режим списка');
+    $('yandexLogo').classList.remove('visible');$('openMaps').classList.remove('visible');
+    render();
+  }
+
+  function bind(){
+    $('regions').addEventListener('click',e=>{
+      const b=e.target.closest('button[data-region]');if(!b)return;
+      state.region=b.dataset.region;[...$('regions').querySelectorAll('button')].forEach(x=>x.classList.toggle('active',x===b));
+      state.selected=null;$('detail').innerHTML='<div class="empty">Выберите объект.</div>';
+      const points=render();
+      if(state.provider==='yandex-tiles')fitMap(points,true);
+      else if(state.provider==='legacy-yandex'&&points.length)fitMap(points,true);
+    });
+    for(const id of ['activeOnly','below','low30','attention'])$(id).addEventListener('change',()=>{
+      state.selected=null;$('detail').innerHTML='<div class="empty">Выберите объект.</div>';
+      const points=render();if(state.provider!=='list')fitMap(points,true);
+    });
+  }
+
   async function start(){
     bind();
     try{
-      setLoad('Подготавливаю карту…',8,'Загружаю интерфейс и данные.');state.data=await loadData();applySnapshotOptions();if(state.data.enabled===false){showDisabledMap();return;}
-      await chooseProvider();
-      if(state.provider!=='list'){setLoad('Рисую карту…',78,state.providerNote);try{await initMap();}catch(e){console.warn(e);state.provider='list';state.providerNote='Режим списка';}}
-      render(true);await sleep(60);setLoad('Готово',100,'');$('loading').classList.add('done');setTimeout(()=>$('loading').classList.add('hidden'),220);
-    }catch(e){showError('Карта не загрузилась',e&&e.message||String(e));}
+      state.data=await loadData();applyOptions();
+      if(state.data.enabled===false){showList('Карта отзывов отключена');$('loading').classList.add('hidden');return}
+
+      let ok=await initTiles();
+      if(!ok)ok=await initLegacy(); // нужен только до установки Apps Script v3.40
+      if(!ok){showList('Картографическая подложка недоступна');$('loading').classList.add('hidden');return}
+
+      setLoad('Рисую объекты…',80,state.providerNote);
+      const points=render();fitMap(points,false);
+      await sleep(80);setLoad('Готово',100,'');$('loading').classList.add('done');setTimeout(()=>$('loading').classList.add('hidden'),220);
+    }catch(e){
+      console.error(e);
+      try{showList('Карта недоступна · показан список объектов');$('loading').classList.add('hidden')}catch(_){$('error').textContent=String(e);$('error').classList.remove('hidden')}
+    }
   }
   start();
-})();</script>
+})();
+</script>
 </body>
 </html>
