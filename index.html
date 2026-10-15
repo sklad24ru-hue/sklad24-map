@@ -6,7 +6,7 @@
   <meta name="theme-color" content="#243746">
   <title>Карта · Склад-24</title>
   <style>
-    :root{--navy:#243746;--orange:#ff7200;--text:#243746;--muted:#71808a;--line:#dfe5e9;--soft:#f5f7f8}
+    :root{--navy:#243746;--orange:#ff7200;--text:#243746;--muted:#71808a;--line:#dfe5e9}
     *{box-sizing:border-box}
     html,body{margin:0;height:100%;font:13px/1.35 Arial,sans-serif;color:var(--text);background:#fff}
     body{overflow:hidden}
@@ -68,7 +68,7 @@
       <div class="loader-card">
         <div class="spinner"></div>
         <div id="loadTitle" class="load-title">Подготавливаю карту…</div>
-        <div id="loadSub" class="load-sub">Загружаю интерфейс и данные объектов.</div>
+        <div id="loadSub" class="load-sub">Загружаю карту и готовый снимок данных.</div>
         <div class="progress"><div id="loadBar"></div></div>
       </div>
     </div>
@@ -99,8 +99,8 @@
 <script>
 (() => {
   'use strict';
-  const $ = id => document.getElementById(id);
-  const REGION_VIEW = {
+  const $=id=>document.getElementById(id);
+  const REGION_VIEW={
     moscow:{center:[55.7558,37.6173],zoom:9},
     spb:{center:[59.9391,30.3159],zoom:9}
   };
@@ -117,122 +117,68 @@
   const state={data:null,map:null,layer:null,markers:[],selected:null,region:'all'};
 
   const esc=v=>String(v==null?'':v).replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]));
-  const setLoad=(t,p,s)=>{$('loadTitle').textContent=t;$('loadBar').style.width=Math.max(5,Math.min(100,p))+'%';$('loadSub').textContent=s||'';};
-  const showError=(title,msg)=>{$('loading').classList.add('hidden');$('error').innerHTML='<h2>'+esc(title)+'</h2><p>'+esc(msg)+'</p>';$('error').classList.remove('hidden');};
+  const setLoad=(title,pct,sub)=>{
+    $('loadTitle').textContent=title;
+    $('loadBar').style.width=Math.max(5,Math.min(100,Number(pct)||0))+'%';
+    $('loadSub').textContent=sub||'';
+  };
+  const showError=(title,msg)=>{
+    $('loading').classList.add('hidden');
+    $('error').innerHTML='<h2>'+esc(title)+'</h2><p>'+esc(msg)+'</p>'+
+      '<p style="color:#71808a">Данные обновляются автоматически раз в 15 минут. Попробуйте обновить страницу чуть позже.</p>';
+    $('error').classList.remove('hidden');
+  };
   const sleep=ms=>new Promise(r=>setTimeout(r,ms));
 
   function loadScript(url,timeout=6000){
     return new Promise((resolve,reject)=>{
-      const s=document.createElement('script');let done=false;
-      const finish=e=>{if(done)return;done=true;clearTimeout(timer);if(e){s.remove();reject(e)}else resolve(url)};
-      s.src=url;s.async=true;s.onload=()=>window.L?finish():finish(Error('Leaflet не инициализировался'));
-      s.onerror=()=>finish(Error('Ошибка загрузки '+url));
-      const timer=setTimeout(()=>finish(Error('Таймаут '+url)),timeout);document.head.appendChild(s);
+      const el=document.createElement('script');let done=false;
+      const finish=err=>{
+        if(done)return;done=true;clearTimeout(timer);
+        if(err){try{el.remove()}catch(_){}reject(err)}else resolve(url);
+      };
+      el.src=url;el.async=true;
+      el.onload=()=>window.L?finish():finish(Error('Leaflet не инициализировался'));
+      el.onerror=()=>finish(Error('Ошибка загрузки '+url));
+      const timer=setTimeout(()=>finish(Error('Таймаут '+url)),timeout);
+      document.head.appendChild(el);
     });
   }
   function loadCss(url,timeout=4500){
     return new Promise((resolve,reject)=>{
-      const l=document.createElement('link');let done=false;
-      const finish=e=>{if(done)return;done=true;clearTimeout(timer);if(e){l.remove();reject(e)}else resolve(url)};
-      l.rel='stylesheet';l.href=url;l.onload=()=>finish();l.onerror=()=>finish(Error('CSS '+url));
-      const timer=setTimeout(()=>finish(Error('Таймаут CSS '+url)),timeout);document.head.appendChild(l);
+      const el=document.createElement('link');let done=false;
+      const finish=err=>{
+        if(done)return;done=true;clearTimeout(timer);
+        if(err){try{el.remove()}catch(_){}reject(err)}else resolve(url);
+      };
+      el.rel='stylesheet';el.href=url;
+      el.onload=()=>finish();
+      el.onerror=()=>finish(Error('Ошибка CSS '+url));
+      const timer=setTimeout(()=>finish(Error('Таймаут CSS '+url)),timeout);
+      document.head.appendChild(el);
     });
   }
   async function firstGood(loader,urls){
-    const errors=[];for(const u of urls){try{return await loader(u)}catch(e){errors.push(e.message)}}throw Error(errors.join(' | '));
+    const errors=[];
+    for(const url of urls){try{return await loader(url)}catch(e){errors.push(e.message)}}
+    throw Error(errors.join(' | '));
   }
   async function loadLeaflet(){
     if(window.L)return;
-    setLoad('Загружаю карту…',20,'Подключаю Leaflet.');
+    setLoad('Загружаю карту…',24,'Подключаю Leaflet и OpenStreetMap.');
     const css=firstGood(loadCss,LEAFLET_CSS).catch(()=>null);
-    await firstGood(loadScript,LEAFLET_JS);await css;
+    await firstGood(loadScript,LEAFLET_JS);
+    await css;
   }
-  function bridgeRequest(api,view,type,timeoutMs=22000){
-    return new Promise((resolve,reject)=>{
-      const nonce='s24_'+Date.now()+'_'+Math.random().toString(36).slice(2),
-        iframe=document.createElement('iframe');
-      let done=false,timer=null,slowTimer=null,busyRetries=0;
-
-      const cleanup=()=>{
-        window.removeEventListener('message',onMessage);
-        if(timer)clearTimeout(timer);
-        if(slowTimer)clearTimeout(slowTimer);
-        try{iframe.remove()}catch(_){}
-      };
-      const finish=(err,data)=>{
-        if(done)return;done=true;cleanup();
-        if(err)reject(err);else resolve(data);
-      };
-      const open=()=>{
-        const sep=api.includes('?')?'&':'?';
-        iframe.src=api+sep+'view='+encodeURIComponent(view)+'&nonce='+encodeURIComponent(nonce)+'&_='+Date.now();
-      };
-      const onMessage=e=>{
-        if(e.source!==iframe.contentWindow)return;
-        const m=e.data;
-        if(!m||m.type!==type||m.nonce!==nonce)return;
-        if(m.error==='busy'){
-          if(++busyRetries>8)return finish(Error('Apps Script долго занят фоновым обновлением.'));
-          setLoad('Система занята…',48,'Жду свободное окно, попытка '+busyRetries+' из 8.');
-          return setTimeout(open,Math.min(600+busyRetries*200,1800));
-        }
-        if(m.error)return finish(Error(m.error));
-        finish(null,m.data);
-      };
-
-      window.addEventListener('message',onMessage);
-      iframe.style.display='none';
-      iframe.title='Sklad-24 data bridge';
-      iframe.addEventListener('load',()=>{
-        if(!done)setLoad('Канал данных открыт…',52,'Apps Script обрабатывает запрос.');
-      });
-      document.body.appendChild(iframe);
-      open();
-
-      slowTimer=setTimeout(()=>{
-        if(!done)setLoad('Apps Script ещё отвечает…',58,'Карта не зависла. Жду данные ещё несколько секунд.');
-      },7000);
-      timer=setTimeout(()=>finish(Error('Apps Script не вернул '+view+' за '+Math.round(timeoutMs/1000)+' секунд.')),timeoutMs);
-    });
-  }
-
   async function loadData(){
-    setLoad('Получаю объекты…',38,'Сначала загружаю только координаты и основные показатели.');
-    const api=new URLSearchParams(location.search).get('api');
-
-    if(api){
-      const d=await bridgeRequest(api,'map-bridge','sklad24-map-data',22000);
-      if(!d||!Array.isArray(d.points)||!d.summary)throw Error('Сервер вернул неверный формат основных данных.');
-      d._api=api;
-      return d;
-    }
-
-    const r=await fetch('map-data.json?v='+Date.now(),{cache:'no-store'});
-    if(!r.ok)throw Error('Не удалось получить map-data.json: HTTP '+r.status);
-    const d=await r.json();
-    if(!d||!Array.isArray(d.points)||!d.summary)throw Error('Файл данных карты имеет неверный формат.');
-    return d;
-  }
-
-  async function loadAnalytics(){
-    const api=state.data&&state.data._api;
-    if(!api)return;
-    try{
-      $('status').textContent='Догружаю аналитику за 30 дней…';
-      const a=await bridgeRequest(api,'map-analytics-bridge','sklad24-map-analytics',30000);
-      if(!a||!a.byId)return;
-      for(const p of state.data.points){
-        const x=a.byId[String(p.id)];
-        if(x)Object.assign(p,x);
-      }
-      if(a.summary&&Number.isFinite(Number(a.summary.attention)))
-        state.data.summary.attention=Number(a.summary.attention);
-      state.data.analyticsReady=true;
-      $('status').textContent=state.data.generatedAt?'Данные: '+new Date(state.data.generatedAt).toLocaleString('ru-RU'):'Аналитика загружена';
-      if($('low30').checked||$('attention').checked)render(false);
-    }catch(e){
-      $('status').textContent='Карта работает · аналитика 30 дней не загрузилась: '+(e.message||e);
-    }
+    setLoad('Получаю объекты…',42,'Читаю готовый снимок данных с GitHub Pages.');
+    const response=await fetch('map-data.json?v='+Date.now(),{cache:'no-store'});
+    if(!response.ok)throw Error('Не удалось получить map-data.json: HTTP '+response.status);
+    const data=await response.json();
+    if(data&&data.error)throw Error('Обновление данных завершилось ошибкой: '+data.error);
+    if(!data||!Array.isArray(data.points)||!data.summary)
+      throw Error('Файл данных карты имеет неверный формат.');
+    return data;
   }
   function filtered(){
     const d=state.data;if(!d)return [];
@@ -250,12 +196,17 @@
   function fit(points,animate=true){
     if(!points.length)return false;
     if(points.length===1){state.map.setView(latLng(points[0]),12,{animate});return true}
-    state.map.fitBounds(L.latLngBounds(points.map(latLng)).pad(.12),{animate,maxZoom:13});return true;
+    state.map.fitBounds(L.latLngBounds(points.map(latLng)).pad(.12),{animate,maxZoom:13});
+    return true;
   }
   function focusRegion(){
     const points=filtered();
-    if(state.region==='all'){if(!fit(points,true))state.map.setView([56.5,36],6);return}
-    const preset=REGION_VIEW[state.region];if(preset)state.map.setView(preset.center,preset.zoom,{animate:false});
+    if(state.region==='all'){
+      if(!fit(points,true))state.map.setView([56.5,36],6);
+      return;
+    }
+    const preset=REGION_VIEW[state.region];
+    if(preset)state.map.setView(preset.center,preset.zoom,{animate:false});
     if(points.length)setTimeout(()=>fit(points,true),0);
   }
   function selectPoint(p){
@@ -280,19 +231,29 @@
   }
   function render(doFocus=false){
     if(!state.map||!state.data)return;
-    clearMarkers();const points=filtered();
+    clearMarkers();
+    const points=filtered();
     for(const p of points){
       if(!Array.isArray(p.coordinates)||p.coordinates.length<2)continue;
-      const selected=state.selected&&state.selected.id===p.id;
-      const html='<div class="marker '+(p.band||'none')+(selected?' selected':'')+'"><span>'+(p.rating==null?'—':Number(p.rating).toFixed(1))+'</span>'+
-        (p.reviewCount==null?'':'<small>'+esc(p.reviewCount)+'</small>')+'</div>';
-      const icon=L.divIcon({className:'s24-map-marker',html,iconSize:[58,42],iconAnchor:[29,21]});
-      const marker=L.marker(latLng(p),{icon,keyboard:true,title:p.name}).on('click',()=>selectPoint(p)).addTo(state.layer);
+      const selected=state.selected&&state.selected.id===p.id,
+        html='<div class="marker '+(p.band||'none')+(selected?' selected':'')+'"><span>'+
+          (p.rating==null?'—':Number(p.rating).toFixed(1))+'</span>'+
+          (p.reviewCount==null?'':'<small>'+esc(p.reviewCount)+'</small>')+'</div>',
+        icon=L.divIcon({className:'s24-map-marker',html,iconSize:[58,42],iconAnchor:[29,21]}),
+        marker=L.marker(latLng(p),{icon,keyboard:true,title:p.name})
+          .on('click',()=>selectPoint(p))
+          .addTo(state.layer);
       state.markers.push({marker,p});
     }
     const sm=state.data.summary||{};
-    $('summary').textContent=points.length+' на карте · '+Number(sm.total||state.data.points.length)+' карточек всего · '+Number(sm.below||0)+' ниже '+Number(state.data.target||4.8).toFixed(1)+'★';
-    $('status').textContent=state.data.generatedAt?'Данные: '+new Date(state.data.generatedAt).toLocaleString('ru-RU'):'';
+    $('summary').textContent=points.length+' на карте · '+Number(sm.total||state.data.points.length)+
+      ' карточек всего · '+Number(sm.below||0)+' ниже '+Number(state.data.target||4.8).toFixed(1)+'★';
+    if(state.data.generatedAt){
+      const when=new Date(state.data.generatedAt);
+      $('status').textContent='Данные: '+when.toLocaleString('ru-RU');
+    }else{
+      $('status').textContent='Данные ещё не опубликованы.';
+    }
     if(doFocus)focusRegion();
   }
   function initMap(){
@@ -309,27 +270,33 @@
       const b=e.target.closest('button[data-region]');if(!b)return;
       state.region=b.dataset.region;
       [...$('regions').querySelectorAll('button')].forEach(x=>x.classList.toggle('active',x===b));
-      state.selected=null;$('detail').innerHTML='<div class="empty">Выберите объект на карте.</div>';
+      state.selected=null;
+      $('detail').innerHTML='<div class="empty">Выберите объект на карте.</div>';
       render(false);focusRegion();
     });
-    for(const id of ['activeOnly','below','low30','attention'])$(id).addEventListener('change',()=>{
-      state.selected=null;$('detail').innerHTML='<div class="empty">Выберите объект на карте.</div>';render(false);focusRegion();
-    });
+    for(const id of ['activeOnly','below','low30','attention']){
+      $(id).addEventListener('change',()=>{
+        state.selected=null;
+        $('detail').innerHTML='<div class="empty">Выберите объект на карте.</div>';
+        render(false);focusRegion();
+      });
+    }
   }
   async function start(){
     bind();
     try{
-      setLoad('Подготавливаю карту…',8,'Проверяю доступ к данным и загружаю Leaflet.');
-      const leafletP=loadLeaflet();
-      const dataP=loadData();
-      const [data]=await Promise.all([dataP,leafletP]);
+      setLoad('Подготавливаю карту…',8,'Загружаю интерфейс и готовый снимок данных.');
+      const [data]=await Promise.all([loadData(),loadLeaflet()]);
       state.data=data;
-      setLoad('Рисую объекты…',86,'Основные данные получены. Аналитика загрузится отдельно.');
-      initMap();render(true);await sleep(80);
+      setLoad('Рисую объекты…',84,'Настраиваю маркеры и масштаб.');
+      initMap();render(true);
+      await sleep(80);
       setLoad('Готово',100,'');
-      $('loading').classList.add('done');setTimeout(()=>$('loading').classList.add('hidden'),220);
-      setTimeout(loadAnalytics,150);
-    }catch(e){showError('Карта не загрузилась',e&&e.message||String(e))}
+      $('loading').classList.add('done');
+      setTimeout(()=>$('loading').classList.add('hidden'),220);
+    }catch(e){
+      showError('Карта не загрузилась',e&&e.message||String(e));
+    }
   }
   start();
 })();

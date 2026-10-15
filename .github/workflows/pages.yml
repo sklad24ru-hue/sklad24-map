@@ -1,8 +1,10 @@
-name: Deploy map to GitHub Pages
+name: Refresh map data and deploy Pages
 
 on:
   push:
     branches: ["main"]
+  schedule:
+    - cron: "*/15 * * * *"
   workflow_dispatch:
 
 permissions:
@@ -14,15 +16,95 @@ concurrency:
   group: pages
   cancel-in-progress: true
 
+env:
+  MAP_EXPORT_URL: "https://script.google.com/macros/s/AKfycby5Ur46k1kMXS5QaIYhDlT-hup3FiXk_LaK11mQNF5EBlnzWtM/exec?view=map-export"
+
 jobs:
   deploy:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Refresh public map snapshot
+        shell: bash
+        run: |
+          set -u
+          success=0
+
+          for attempt in 1 2 3 4 5 6; do
+            echo "Map export attempt ${attempt}/6"
+            rm -f /tmp/map-data.raw.json /tmp/map-data.valid.json
+
+            curl \
+              --fail \
+              --location \
+              --silent \
+              --show-error \
+              --retry 2 \
+              --retry-all-errors \
+              --connect-timeout 15 \
+              --max-time 180 \
+              "${MAP_EXPORT_URL}&_=$(date +%s)" \
+              --output /tmp/map-data.raw.json || true
+
+            if python3 - <<'PY'
+          import json
+          from pathlib import Path
+
+          source = Path('/tmp/map-data.raw.json')
+          target = Path('/tmp/map-data.valid.json')
+
+          if not source.exists() or source.stat().st_size == 0:
+              raise SystemExit(1)
+
+          try:
+              data = json.loads(source.read_text(encoding='utf-8'))
+          except Exception:
+              raise SystemExit(1)
+
+          if not isinstance(data, dict):
+              raise SystemExit(1)
+          if data.get('error'):
+              print('Apps Script returned:', data.get('error'))
+              raise SystemExit(1)
+          if not isinstance(data.get('points'), list):
+              raise SystemExit(1)
+          if not isinstance(data.get('summary'), dict):
+              raise SystemExit(1)
+          if not str(data.get('schema', '')).startswith('sklad24-map-'):
+              raise SystemExit(1)
+
+          target.write_text(
+              json.dumps(data, ensure_ascii=False, indent=2) + '\n',
+              encoding='utf-8'
+          )
+          print('Validated points:', len(data['points']))
+          PY
+            then
+              mv /tmp/map-data.valid.json map-data.json
+              success=1
+              break
+            fi
+
+            sleep 15
+          done
+
+          if [ "${success}" -ne 1 ]; then
+            echo "::warning::Apps Script export is not ready; deploying the previous map-data.json snapshot."
+            python3 - <<'PY'
+          import json
+          from pathlib import Path
+          p = Path('map-data.json')
+          data = json.loads(p.read_text(encoding='utf-8'))
+          if not isinstance(data.get('points'), list) or not isinstance(data.get('summary'), dict):
+              raise SystemExit('Existing map-data.json is invalid')
+          PY
+          fi
 
       - name: Configure Pages
         uses: actions/configure-pages@v5
