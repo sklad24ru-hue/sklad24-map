@@ -1,6 +1,6 @@
 {
   "schema": "review-map-6",
-  "generatedAt": "2026-10-16T02:12:02.649Z",
+  "generatedAt": "2026-10-16T02:50:27.559Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -890,7 +890,7 @@
       "active": true,
       "rating": 5,
       "reviewCount": 84,
-      "new7": 0,
+      "new7": 1,
       "new30": 4,
       "new90": 15,
       "below5_7": 0,
@@ -900,12 +900,12 @@
       "low30": 0,
       "low90": 0,
       "lowNo": 6,
-      "noReply7": 0,
+      "noReply7": 1,
       "noReply30": 4,
       "noReply90": 15,
-      "lastReviewDay": "2026-10-06",
+      "lastReviewDay": "2026-10-14",
       "lastReviewDateSource": "updated",
-      "lastReviewAgeDays": 10,
+      "lastReviewAgeDays": 2,
       "trend7": {
         "available": false,
         "days": 7
