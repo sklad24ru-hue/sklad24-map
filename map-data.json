@@ -1,6 +1,6 @@
 {
   "schema": "review-map-6",
-  "generatedAt": "2026-10-16T11:04:17.002Z",
+  "generatedAt": "2026-10-16T11:47:26.359Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -798,10 +798,11 @@
       },
       "ratingHistorySince": "2026-10-15",
       "attention": true,
-      "attentionScore": 4,
-      "attentionLevel": "watch",
-      "attentionLabel": "Наблюдать",
+      "attentionScore": 10,
+      "attentionLevel": "critical",
+      "attentionLabel": "Критический",
       "recommendations": [
+        "Проверить корректность данных карточки.",
         "Разобрать причины рейтинга ниже цели 4.8★.",
         "Закрыть свежие отзывы без ответа."
       ],
@@ -811,8 +812,8 @@
       ],
       "region": "moscow",
       "band": "orange",
-      "signal": "Рейтинг 4.5 ниже 4.8",
-      "action": "Посмотреть отзывы"
+      "signal": "Ошибка данных",
+      "action": "Проверить карточку"
     },
     {
       "id": "89154501833",
