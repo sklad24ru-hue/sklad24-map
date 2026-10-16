@@ -1,6 +1,6 @@
 {
   "schema": "review-map-6",
-  "generatedAt": "2026-10-16T04:48:42.212Z",
+  "generatedAt": "2026-10-16T05:27:53.510Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -28,17 +28,20 @@
       "lastReviewAgeDays": 17,
       "trend7": {
         "available": false,
-        "days": 7
+        "days": 7,
+        "since": "2026-10-15"
       },
       "trend30": {
         "available": false,
-        "days": 30
+        "days": 30,
+        "since": "2026-10-15"
       },
       "trend90": {
         "available": false,
-        "days": 90
+        "days": 90,
+        "since": "2026-10-15"
       },
-      "ratingHistorySince": "",
+      "ratingHistorySince": "2026-10-15",
       "attention": true,
       "attentionScore": 4,
       "attentionLevel": "watch",
@@ -80,22 +83,26 @@
       "lastReviewAgeDays": 9,
       "trend7": {
         "available": false,
-        "days": 7
+        "days": 7,
+        "since": "2026-10-15"
       },
       "trend30": {
         "available": false,
-        "days": 30
+        "days": 30,
+        "since": "2026-10-15"
       },
       "trend90": {
         "available": false,
-        "days": 90
+        "days": 90,
+        "since": "2026-10-15"
       },
-      "ratingHistorySince": "",
+      "ratingHistorySince": "2026-10-15",
       "attention": true,
-      "attentionScore": 6,
-      "attentionLevel": "high",
-      "attentionLabel": "Высокий",
+      "attentionScore": 10,
+      "attentionLevel": "critical",
+      "attentionLabel": "Критический",
       "recommendations": [
+        "Проверить корректность данных карточки.",
         "Ответить на 3 отзыв(а) 1–3★ без ответа.",
         "Закрыть свежие отзывы без ответа."
       ],
@@ -105,8 +112,8 @@
       ],
       "region": "moscow",
       "band": "green",
-      "signal": "3 без ответа на 1–3★",
-      "action": "Ответить на 1–3★"
+      "signal": "Ошибка данных",
+      "action": "Проверить карточку"
     },
     {
       "id": "26673303045",
@@ -132,17 +139,20 @@
       "lastReviewAgeDays": 98,
       "trend7": {
         "available": false,
-        "days": 7
+        "days": 7,
+        "since": "2026-10-15"
       },
       "trend30": {
         "available": false,
-        "days": 30
+        "days": 30,
+        "since": "2026-10-15"
       },
       "trend90": {
         "available": false,
-        "days": 90
+        "days": 90,
+        "since": "2026-10-15"
       },
-      "ratingHistorySince": "",
+      "ratingHistorySince": "2026-10-15",
       "attention": true,
       "attentionScore": 7,
       "attentionLevel": "high",
@@ -184,17 +194,20 @@
       "lastReviewAgeDays": 7,
       "trend7": {
         "available": false,
-        "days": 7
+        "days": 7,
+        "since": "2026-10-15"
       },
       "trend30": {
         "available": false,
-        "days": 30
+        "days": 30,
+        "since": "2026-10-15"
       },
       "trend90": {
         "available": false,
-        "days": 90
+        "days": 90,
+        "since": "2026-10-15"
       },
-      "ratingHistorySince": "",
+      "ratingHistorySince": "2026-10-15",
       "attention": true,
       "attentionScore": 4,
       "attentionLevel": "watch",
@@ -236,17 +249,20 @@
       "lastReviewAgeDays": 17,
       "trend7": {
         "available": false,
-        "days": 7
+        "days": 7,
+        "since": "2026-10-15"
       },
       "trend30": {
         "available": false,
-        "days": 30
+        "days": 30,
+        "since": "2026-10-15"
       },
       "trend90": {
         "available": false,
-        "days": 90
+        "days": 90,
+        "since": "2026-10-15"
       },
-      "ratingHistorySince": "",
+      "ratingHistorySince": "2026-10-15",
       "attention": true,
       "attentionScore": 7,
       "attentionLevel": "high",
@@ -289,17 +305,20 @@
       "lastReviewAgeDays": 51,
       "trend7": {
         "available": false,
-        "days": 7
+        "days": 7,
+        "since": "2026-10-15"
       },
       "trend30": {
         "available": false,
-        "days": 30
+        "days": 30,
+        "since": "2026-10-15"
       },
       "trend90": {
         "available": false,
-        "days": 90
+        "days": 90,
+        "since": "2026-10-15"
       },
-      "ratingHistorySince": "",
+      "ratingHistorySince": "2026-10-15",
       "attention": true,
       "attentionScore": 6,
       "attentionLevel": "high",
@@ -341,17 +360,20 @@
       "lastReviewAgeDays": 7,
       "trend7": {
         "available": false,
-        "days": 7
+        "days": 7,
+        "since": "2026-10-15"
       },
       "trend30": {
         "available": false,
-        "days": 30
+        "days": 30,
+        "since": "2026-10-15"
       },
       "trend90": {
         "available": false,
-        "days": 90
+        "days": 90,
+        "since": "2026-10-15"
       },
-      "ratingHistorySince": "",
+      "ratingHistorySince": "2026-10-15",
       "attention": true,
       "attentionScore": 4,
       "attentionLevel": "watch",
@@ -393,17 +415,20 @@
       "lastReviewAgeDays": 45,
       "trend7": {
         "available": false,
-        "days": 7
+        "days": 7,
+        "since": "2026-10-15"
       },
       "trend30": {
         "available": false,
-        "days": 30
+        "days": 30,
+        "since": "2026-10-15"
       },
       "trend90": {
         "available": false,
-        "days": 90
+        "days": 90,
+        "since": "2026-10-15"
       },
-      "ratingHistorySince": "",
+      "ratingHistorySince": "2026-10-15",
       "attention": true,
       "attentionScore": 4,
       "attentionLevel": "watch",
@@ -444,17 +469,20 @@
       "lastReviewAgeDays": 20,
       "trend7": {
         "available": false,
-        "days": 7
+        "days": 7,
+        "since": "2026-10-15"
       },
       "trend30": {
         "available": false,
-        "days": 30
+        "days": 30,
+        "since": "2026-10-15"
       },
       "trend90": {
         "available": false,
-        "days": 90
+        "days": 90,
+        "since": "2026-10-15"
       },
-      "ratingHistorySince": "",
+      "ratingHistorySince": "2026-10-15",
       "attention": true,
       "attentionScore": 4,
       "attentionLevel": "watch",
@@ -496,17 +524,20 @@
       "lastReviewAgeDays": 24,
       "trend7": {
         "available": false,
-        "days": 7
+        "days": 7,
+        "since": "2026-10-15"
       },
       "trend30": {
         "available": false,
-        "days": 30
+        "days": 30,
+        "since": "2026-10-15"
       },
       "trend90": {
         "available": false,
-        "days": 90
+        "days": 90,
+        "since": "2026-10-15"
       },
-      "ratingHistorySince": "",
+      "ratingHistorySince": "2026-10-15",
       "attention": true,
       "attentionScore": 1,
       "attentionLevel": "normal",
@@ -547,17 +578,20 @@
       "lastReviewAgeDays": 15,
       "trend7": {
         "available": false,
-        "days": 7
+        "days": 7,
+        "since": "2026-10-15"
       },
       "trend30": {
         "available": false,
-        "days": 30
+        "days": 30,
+        "since": "2026-10-15"
       },
       "trend90": {
         "available": false,
-        "days": 90
+        "days": 90,
+        "since": "2026-10-15"
       },
-      "ratingHistorySince": "",
+      "ratingHistorySince": "2026-10-15",
       "attention": true,
       "attentionScore": 4,
       "attentionLevel": "watch",
@@ -609,7 +643,7 @@
         "available": false,
         "days": 90
       },
-      "ratingHistorySince": "",
+      "ratingHistorySince": "2026-10-15",
       "attention": true,
       "attentionScore": 1,
       "attentionLevel": "normal",
@@ -650,17 +684,20 @@
       "lastReviewAgeDays": 15,
       "trend7": {
         "available": false,
-        "days": 7
+        "days": 7,
+        "since": "2026-10-15"
       },
       "trend30": {
         "available": false,
-        "days": 30
+        "days": 30,
+        "since": "2026-10-15"
       },
       "trend90": {
         "available": false,
-        "days": 90
+        "days": 90,
+        "since": "2026-10-15"
       },
-      "ratingHistorySince": "",
+      "ratingHistorySince": "2026-10-15",
       "attention": true,
       "attentionScore": 4,
       "attentionLevel": "watch",
@@ -702,17 +739,20 @@
       "lastReviewAgeDays": 18,
       "trend7": {
         "available": false,
-        "days": 7
+        "days": 7,
+        "since": "2026-10-15"
       },
       "trend30": {
         "available": false,
-        "days": 30
+        "days": 30,
+        "since": "2026-10-15"
       },
       "trend90": {
         "available": false,
-        "days": 90
+        "days": 90,
+        "since": "2026-10-15"
       },
-      "ratingHistorySince": "",
+      "ratingHistorySince": "2026-10-15",
       "attention": true,
       "attentionScore": 4,
       "attentionLevel": "watch",
@@ -754,17 +794,20 @@
       "lastReviewAgeDays": 18,
       "trend7": {
         "available": false,
-        "days": 7
+        "days": 7,
+        "since": "2026-10-15"
       },
       "trend30": {
         "available": false,
-        "days": 30
+        "days": 30,
+        "since": "2026-10-15"
       },
       "trend90": {
         "available": false,
-        "days": 90
+        "days": 90,
+        "since": "2026-10-15"
       },
-      "ratingHistorySince": "",
+      "ratingHistorySince": "2026-10-15",
       "attention": true,
       "attentionScore": 1,
       "attentionLevel": "normal",
@@ -805,17 +848,20 @@
       "lastReviewAgeDays": 35,
       "trend7": {
         "available": false,
-        "days": 7
+        "days": 7,
+        "since": "2026-10-15"
       },
       "trend30": {
         "available": false,
-        "days": 30
+        "days": 30,
+        "since": "2026-10-15"
       },
       "trend90": {
         "available": false,
-        "days": 90
+        "days": 90,
+        "since": "2026-10-15"
       },
-      "ratingHistorySince": "",
+      "ratingHistorySince": "2026-10-15",
       "attention": true,
       "attentionScore": 7,
       "attentionLevel": "high",
@@ -857,17 +903,20 @@
       "lastReviewAgeDays": 50,
       "trend7": {
         "available": false,
-        "days": 7
+        "days": 7,
+        "since": "2026-10-15"
       },
       "trend30": {
         "available": false,
-        "days": 30
+        "days": 30,
+        "since": "2026-10-15"
       },
       "trend90": {
         "available": false,
-        "days": 90
+        "days": 90,
+        "since": "2026-10-15"
       },
-      "ratingHistorySince": "",
+      "ratingHistorySince": "2026-10-15",
       "attention": true,
       "attentionScore": 4,
       "attentionLevel": "watch",
@@ -889,7 +938,7 @@
       "name": "Химки",
       "active": true,
       "rating": 5,
-      "reviewCount": 84,
+      "reviewCount": 85,
       "new7": 1,
       "new30": 4,
       "new90": 15,
@@ -908,17 +957,20 @@
       "lastReviewAgeDays": 2,
       "trend7": {
         "available": false,
-        "days": 7
+        "days": 7,
+        "since": "2026-10-15"
       },
       "trend30": {
         "available": false,
-        "days": 30
+        "days": 30,
+        "since": "2026-10-15"
       },
       "trend90": {
         "available": false,
-        "days": 90
+        "days": 90,
+        "since": "2026-10-15"
       },
-      "ratingHistorySince": "",
+      "ratingHistorySince": "2026-10-15",
       "attention": true,
       "attentionScore": 6,
       "attentionLevel": "high",
@@ -960,17 +1012,20 @@
       "lastReviewAgeDays": 7,
       "trend7": {
         "available": false,
-        "days": 7
+        "days": 7,
+        "since": "2026-10-15"
       },
       "trend30": {
         "available": false,
-        "days": 30
+        "days": 30,
+        "since": "2026-10-15"
       },
       "trend90": {
         "available": false,
-        "days": 90
+        "days": 90,
+        "since": "2026-10-15"
       },
-      "ratingHistorySince": "",
+      "ratingHistorySince": "2026-10-15",
       "attention": true,
       "attentionScore": 2,
       "attentionLevel": "normal",
@@ -1011,17 +1066,20 @@
       "lastReviewAgeDays": 932,
       "trend7": {
         "available": false,
-        "days": 7
+        "days": 7,
+        "since": "2026-10-15"
       },
       "trend30": {
         "available": false,
-        "days": 30
+        "days": 30,
+        "since": "2026-10-15"
       },
       "trend90": {
         "available": false,
-        "days": 90
+        "days": 90,
+        "since": "2026-10-15"
       },
-      "ratingHistorySince": "",
+      "ratingHistorySince": "2026-10-15",
       "attention": true,
       "attentionScore": 5,
       "attentionLevel": "high",
@@ -1063,17 +1121,20 @@
       "lastReviewAgeDays": 699,
       "trend7": {
         "available": false,
-        "days": 7
+        "days": 7,
+        "since": "2026-10-15"
       },
       "trend30": {
         "available": false,
-        "days": 30
+        "days": 30,
+        "since": "2026-10-15"
       },
       "trend90": {
         "available": false,
-        "days": 90
+        "days": 90,
+        "since": "2026-10-15"
       },
-      "ratingHistorySince": "",
+      "ratingHistorySince": "2026-10-15",
       "attention": true,
       "attentionScore": 6,
       "attentionLevel": "high",
@@ -1115,17 +1176,20 @@
       "lastReviewAgeDays": 2433,
       "trend7": {
         "available": false,
-        "days": 7
+        "days": 7,
+        "since": "2026-10-15"
       },
       "trend30": {
         "available": false,
-        "days": 30
+        "days": 30,
+        "since": "2026-10-15"
       },
       "trend90": {
         "available": false,
-        "days": 90
+        "days": 90,
+        "since": "2026-10-15"
       },
-      "ratingHistorySince": "",
+      "ratingHistorySince": "2026-10-15",
       "attention": true,
       "attentionScore": 4,
       "attentionLevel": "watch",
@@ -1166,17 +1230,20 @@
       "lastReviewAgeDays": 1042,
       "trend7": {
         "available": false,
-        "days": 7
+        "days": 7,
+        "since": "2026-10-15"
       },
       "trend30": {
         "available": false,
-        "days": 30
+        "days": 30,
+        "since": "2026-10-15"
       },
       "trend90": {
         "available": false,
-        "days": 90
+        "days": 90,
+        "since": "2026-10-15"
       },
-      "ratingHistorySince": "",
+      "ratingHistorySince": "2026-10-15",
       "attention": true,
       "attentionScore": 5,
       "attentionLevel": "high",
@@ -1218,17 +1285,20 @@
       "lastReviewAgeDays": 531,
       "trend7": {
         "available": false,
-        "days": 7
+        "days": 7,
+        "since": "2026-10-15"
       },
       "trend30": {
         "available": false,
-        "days": 30
+        "days": 30,
+        "since": "2026-10-15"
       },
       "trend90": {
         "available": false,
-        "days": 90
+        "days": 90,
+        "since": "2026-10-15"
       },
-      "ratingHistorySince": "",
+      "ratingHistorySince": "2026-10-15",
       "attention": true,
       "attentionScore": 4,
       "attentionLevel": "watch",
@@ -1269,17 +1339,20 @@
       "lastReviewAgeDays": 1028,
       "trend7": {
         "available": false,
-        "days": 7
+        "days": 7,
+        "since": "2026-10-15"
       },
       "trend30": {
         "available": false,
-        "days": 30
+        "days": 30,
+        "since": "2026-10-15"
       },
       "trend90": {
         "available": false,
-        "days": 90
+        "days": 90,
+        "since": "2026-10-15"
       },
-      "ratingHistorySince": "",
+      "ratingHistorySince": "2026-10-15",
       "attention": true,
       "attentionScore": 4,
       "attentionLevel": "watch",
@@ -1321,17 +1394,20 @@
       "lastReviewAgeDays": 546,
       "trend7": {
         "available": false,
-        "days": 7
+        "days": 7,
+        "since": "2026-10-15"
       },
       "trend30": {
         "available": false,
-        "days": 30
+        "days": 30,
+        "since": "2026-10-15"
       },
       "trend90": {
         "available": false,
-        "days": 90
+        "days": 90,
+        "since": "2026-10-15"
       },
-      "ratingHistorySince": "",
+      "ratingHistorySince": "2026-10-15",
       "attention": true,
       "attentionScore": 6,
       "attentionLevel": "high",
@@ -1373,17 +1449,20 @@
       "lastReviewAgeDays": 1029,
       "trend7": {
         "available": false,
-        "days": 7
+        "days": 7,
+        "since": "2026-10-15"
       },
       "trend30": {
         "available": false,
-        "days": 30
+        "days": 30,
+        "since": "2026-10-15"
       },
       "trend90": {
         "available": false,
-        "days": 90
+        "days": 90,
+        "since": "2026-10-15"
       },
-      "ratingHistorySince": "",
+      "ratingHistorySince": "2026-10-15",
       "attention": true,
       "attentionScore": 4,
       "attentionLevel": "watch",
@@ -1424,17 +1503,20 @@
       "lastReviewAgeDays": 1129,
       "trend7": {
         "available": false,
-        "days": 7
+        "days": 7,
+        "since": "2026-10-15"
       },
       "trend30": {
         "available": false,
-        "days": 30
+        "days": 30,
+        "since": "2026-10-15"
       },
       "trend90": {
         "available": false,
-        "days": 90
+        "days": 90,
+        "since": "2026-10-15"
       },
-      "ratingHistorySince": "",
+      "ratingHistorySince": "2026-10-15",
       "attention": true,
       "attentionScore": 4,
       "attentionLevel": "watch",
@@ -1475,17 +1557,20 @@
       "lastReviewAgeDays": 262,
       "trend7": {
         "available": false,
-        "days": 7
+        "days": 7,
+        "since": "2026-10-15"
       },
       "trend30": {
         "available": false,
-        "days": 30
+        "days": 30,
+        "since": "2026-10-15"
       },
       "trend90": {
         "available": false,
-        "days": 90
+        "days": 90,
+        "since": "2026-10-15"
       },
-      "ratingHistorySince": "",
+      "ratingHistorySince": "2026-10-15",
       "attention": true,
       "attentionScore": 3,
       "attentionLevel": "watch",
@@ -1526,17 +1611,20 @@
       "lastReviewAgeDays": 1099,
       "trend7": {
         "available": false,
-        "days": 7
+        "days": 7,
+        "since": "2026-10-15"
       },
       "trend30": {
         "available": false,
-        "days": 30
+        "days": 30,
+        "since": "2026-10-15"
       },
       "trend90": {
         "available": false,
-        "days": 90
+        "days": 90,
+        "since": "2026-10-15"
       },
-      "ratingHistorySince": "",
+      "ratingHistorySince": "2026-10-15",
       "attention": true,
       "attentionScore": 6,
       "attentionLevel": "high",
@@ -1578,17 +1666,20 @@
       "lastReviewAgeDays": 270,
       "trend7": {
         "available": false,
-        "days": 7
+        "days": 7,
+        "since": "2026-10-15"
       },
       "trend30": {
         "available": false,
-        "days": 30
+        "days": 30,
+        "since": "2026-10-15"
       },
       "trend90": {
         "available": false,
-        "days": 90
+        "days": 90,
+        "since": "2026-10-15"
       },
-      "ratingHistorySince": "",
+      "ratingHistorySince": "2026-10-15",
       "attention": true,
       "attentionScore": 4,
       "attentionLevel": "watch",
@@ -1629,17 +1720,20 @@
       "lastReviewAgeDays": 91,
       "trend7": {
         "available": false,
-        "days": 7
+        "days": 7,
+        "since": "2026-10-15"
       },
       "trend30": {
         "available": false,
-        "days": 30
+        "days": 30,
+        "since": "2026-10-15"
       },
       "trend90": {
         "available": false,
-        "days": 90
+        "days": 90,
+        "since": "2026-10-15"
       },
-      "ratingHistorySince": "",
+      "ratingHistorySince": "2026-10-15",
       "attention": false,
       "attentionScore": 0,
       "attentionLevel": "normal",
@@ -1678,17 +1772,20 @@
       "lastReviewAgeDays": 64,
       "trend7": {
         "available": false,
-        "days": 7
+        "days": 7,
+        "since": "2026-10-15"
       },
       "trend30": {
         "available": false,
-        "days": 30
+        "days": 30,
+        "since": "2026-10-15"
       },
       "trend90": {
         "available": false,
-        "days": 90
+        "days": 90,
+        "since": "2026-10-15"
       },
-      "ratingHistorySince": "",
+      "ratingHistorySince": "2026-10-15",
       "attention": true,
       "attentionScore": 4,
       "attentionLevel": "watch",
@@ -1729,17 +1826,20 @@
       "lastReviewAgeDays": 512,
       "trend7": {
         "available": false,
-        "days": 7
+        "days": 7,
+        "since": "2026-10-15"
       },
       "trend30": {
         "available": false,
-        "days": 30
+        "days": 30,
+        "since": "2026-10-15"
       },
       "trend90": {
         "available": false,
-        "days": 90
+        "days": 90,
+        "since": "2026-10-15"
       },
-      "ratingHistorySince": "",
+      "ratingHistorySince": "2026-10-15",
       "attention": true,
       "attentionScore": 6,
       "attentionLevel": "high",
@@ -1781,17 +1881,20 @@
       "lastReviewAgeDays": 499,
       "trend7": {
         "available": false,
-        "days": 7
+        "days": 7,
+        "since": "2026-10-15"
       },
       "trend30": {
         "available": false,
-        "days": 30
+        "days": 30,
+        "since": "2026-10-15"
       },
       "trend90": {
         "available": false,
-        "days": 90
+        "days": 90,
+        "since": "2026-10-15"
       },
-      "ratingHistorySince": "",
+      "ratingHistorySince": "2026-10-15",
       "attention": true,
       "attentionScore": 3,
       "attentionLevel": "watch",
@@ -1832,17 +1935,20 @@
       "lastReviewAgeDays": 1135,
       "trend7": {
         "available": false,
-        "days": 7
+        "days": 7,
+        "since": "2026-10-15"
       },
       "trend30": {
         "available": false,
-        "days": 30
+        "days": 30,
+        "since": "2026-10-15"
       },
       "trend90": {
         "available": false,
-        "days": 90
+        "days": 90,
+        "since": "2026-10-15"
       },
-      "ratingHistorySince": "",
+      "ratingHistorySince": "2026-10-15",
       "attention": true,
       "attentionScore": 4,
       "attentionLevel": "watch",
@@ -1883,17 +1989,20 @@
       "lastReviewAgeDays": 1562,
       "trend7": {
         "available": false,
-        "days": 7
+        "days": 7,
+        "since": "2026-10-15"
       },
       "trend30": {
         "available": false,
-        "days": 30
+        "days": 30,
+        "since": "2026-10-15"
       },
       "trend90": {
         "available": false,
-        "days": 90
+        "days": 90,
+        "since": "2026-10-15"
       },
-      "ratingHistorySince": "",
+      "ratingHistorySince": "2026-10-15",
       "attention": true,
       "attentionScore": 3,
       "attentionLevel": "watch",
@@ -1934,17 +2043,20 @@
       "lastReviewAgeDays": 787,
       "trend7": {
         "available": false,
-        "days": 7
+        "days": 7,
+        "since": "2026-10-15"
       },
       "trend30": {
         "available": false,
-        "days": 30
+        "days": 30,
+        "since": "2026-10-15"
       },
       "trend90": {
         "available": false,
-        "days": 90
+        "days": 90,
+        "since": "2026-10-15"
       },
-      "ratingHistorySince": "",
+      "ratingHistorySince": "2026-10-15",
       "attention": true,
       "attentionScore": 8,
       "attentionLevel": "critical",
@@ -1986,17 +2098,20 @@
       "lastReviewAgeDays": 1571,
       "trend7": {
         "available": false,
-        "days": 7
+        "days": 7,
+        "since": "2026-10-15"
       },
       "trend30": {
         "available": false,
-        "days": 30
+        "days": 30,
+        "since": "2026-10-15"
       },
       "trend90": {
         "available": false,
-        "days": 90
+        "days": 90,
+        "since": "2026-10-15"
       },
-      "ratingHistorySince": "",
+      "ratingHistorySince": "2026-10-15",
       "attention": true,
       "attentionScore": 4,
       "attentionLevel": "watch",
@@ -2037,17 +2152,20 @@
       "lastReviewAgeDays": 1058,
       "trend7": {
         "available": false,
-        "days": 7
+        "days": 7,
+        "since": "2026-10-15"
       },
       "trend30": {
         "available": false,
-        "days": 30
+        "days": 30,
+        "since": "2026-10-15"
       },
       "trend90": {
         "available": false,
-        "days": 90
+        "days": 90,
+        "since": "2026-10-15"
       },
-      "ratingHistorySince": "",
+      "ratingHistorySince": "2026-10-15",
       "attention": true,
       "attentionScore": 6,
       "attentionLevel": "high",
@@ -2089,17 +2207,20 @@
       "lastReviewAgeDays": 2376,
       "trend7": {
         "available": false,
-        "days": 7
+        "days": 7,
+        "since": "2026-10-15"
       },
       "trend30": {
         "available": false,
-        "days": 30
+        "days": 30,
+        "since": "2026-10-15"
       },
       "trend90": {
         "available": false,
-        "days": 90
+        "days": 90,
+        "since": "2026-10-15"
       },
-      "ratingHistorySince": "",
+      "ratingHistorySince": "2026-10-15",
       "attention": true,
       "attentionScore": 4,
       "attentionLevel": "watch",
@@ -2140,17 +2261,20 @@
       "lastReviewAgeDays": 1362,
       "trend7": {
         "available": false,
-        "days": 7
+        "days": 7,
+        "since": "2026-10-15"
       },
       "trend30": {
         "available": false,
-        "days": 30
+        "days": 30,
+        "since": "2026-10-15"
       },
       "trend90": {
         "available": false,
-        "days": 90
+        "days": 90,
+        "since": "2026-10-15"
       },
-      "ratingHistorySince": "",
+      "ratingHistorySince": "2026-10-15",
       "attention": true,
       "attentionScore": 2,
       "attentionLevel": "normal",
