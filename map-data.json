@@ -1,6 +1,6 @@
 {
   "schema": "review-map-6",
-  "generatedAt": "2026-10-20T23:00:11.388Z",
+  "generatedAt": "2026-10-21T00:06:24.602Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -818,7 +818,7 @@
       "id": "89154501833",
       "name": "Ручьи",
       "active": true,
-      "rating": 4.8,
+      "rating": 4.9,
       "reviewCount": 16,
       "new7": 0,
       "new30": 1,
@@ -2461,6 +2461,5 @@
     "yandexTilesApiKey": "7a87b7fe-e14f-447d-8c84-666b248a6a2b",
     "activeOnly": true,
     "region": "all"
-  },
-  "cacheFallback": true
+  }
 }
