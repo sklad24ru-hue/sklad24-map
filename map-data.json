@@ -1,6 +1,6 @@
 {
   "schema": "review-map-6",
-  "generatedAt": "2026-10-22T01:19:42.988Z",
+  "generatedAt": "2026-10-22T02:05:51.455Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -9,7 +9,7 @@
       "name": "Аэропорт",
       "active": true,
       "rating": 4.6,
-      "reviewCount": 10,
+      "reviewCount": 11,
       "new7": 1,
       "new30": 2,
       "new90": 11,
@@ -35,7 +35,7 @@
         "fromDay": "2026-10-15",
         "fromRating": 4.6,
         "ratingDelta": 0,
-        "reviewDelta": 0,
+        "reviewDelta": 1,
         "approximate": true
       },
       "trend30": {
@@ -382,7 +382,7 @@
       "name": "Люберцы",
       "active": true,
       "rating": 5,
-      "reviewCount": 61,
+      "reviewCount": 62,
       "new7": 1,
       "new30": 9,
       "new90": 13,
@@ -408,7 +408,7 @@
         "fromDay": "2026-10-15",
         "fromRating": 5,
         "ratingDelta": 0,
-        "reviewDelta": 0,
+        "reviewDelta": 1,
         "approximate": true
       },
       "trend30": {
