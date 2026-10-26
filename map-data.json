@@ -1,6 +1,6 @@
 {
   "schema": "review-map-6",
-  "generatedAt": "2026-10-26T00:43:47.818Z",
+  "generatedAt": "2026-10-26T01:30:42.826Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -8,7 +8,7 @@
       "id": "107733193829",
       "name": "Аэропорт",
       "active": true,
-      "rating": 4.6,
+      "rating": 4.7,
       "reviewCount": 11,
       "new7": 1,
       "new30": 2,
@@ -34,7 +34,7 @@
         "days": 7,
         "fromDay": "2026-10-19",
         "fromRating": 4.6,
-        "ratingDelta": 0,
+        "ratingDelta": 0.1,
         "reviewDelta": 1,
         "approximate": false
       },
@@ -50,9 +50,9 @@
       },
       "ratingHistorySince": "2026-10-15",
       "attention": true,
-      "attentionScore": 5,
-      "attentionLevel": "high",
-      "attentionLabel": "Высокий",
+      "attentionScore": 4,
+      "attentionLevel": "watch",
+      "attentionLabel": "Наблюдать",
       "recommendations": [
         "Разобрать причины рейтинга ниже цели 4.8★.",
         "Закрыть свежие отзывы без ответа."
@@ -63,7 +63,7 @@
       ],
       "region": "moscow",
       "band": "yellow",
-      "signal": "Рейтинг 4.6 ниже 4.8",
+      "signal": "Рейтинг 4.7 ниже 4.8",
       "action": "Посмотреть отзывы"
     },
     {
