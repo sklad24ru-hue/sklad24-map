@@ -1,6 +1,6 @@
 {
   "schema": "review-map-6",
-  "generatedAt": "2026-10-28T10:28:28.241Z",
+  "generatedAt": "2026-10-28T12:13:04.712Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -2479,6 +2479,5 @@
     "yandexTilesApiKey": "7a87b7fe-e14f-447d-8c84-666b248a6a2b",
     "activeOnly": true,
     "region": "all"
-  },
-  "cacheFallback": true
+  }
 }
