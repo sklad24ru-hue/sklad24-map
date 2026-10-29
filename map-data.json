@@ -1,6 +1,6 @@
 {
   "schema": "review-map-6",
-  "generatedAt": "2026-10-29T21:56:00.068Z",
+  "generatedAt": "2026-10-29T22:38:56.931Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -338,7 +338,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-22",
+        "fromDay": "2026-10-23",
         "fromRating": 4.3,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -460,7 +460,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-22",
+        "fromDay": "2026-10-23",
         "fromRating": 4.2,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -521,7 +521,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-22",
+        "fromDay": "2026-10-23",
         "fromRating": 4.6,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -641,7 +641,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-22",
+        "fromDay": "2026-10-23",
         "fromRating": 4.8,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -759,7 +759,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-22",
+        "fromDay": "2026-10-23",
         "fromRating": 4.5,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -821,7 +821,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-22",
+        "fromDay": "2026-10-23",
         "fromRating": 4.5,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -882,7 +882,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-22",
+        "fromDay": "2026-10-23",
         "fromRating": 4.9,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -1002,7 +1002,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-22",
+        "fromDay": "2026-10-23",
         "fromRating": 4.3,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -1041,9 +1041,9 @@
       "active": true,
       "rating": 5,
       "reviewCount": 86,
-      "new7": 0,
-      "new30": 2,
-      "new90": 15,
+      "new7": 1,
+      "new30": 3,
+      "new90": 16,
       "below5_7": 0,
       "below5_30": 0,
       "below5_90": 0,
@@ -1051,15 +1051,15 @@
       "low30": 0,
       "low90": 0,
       "lowNo": 6,
-      "noReply7": 0,
-      "noReply30": 2,
-      "noReply90": 15,
+      "noReply7": 1,
+      "noReply30": 3,
+      "noReply90": 16,
       "undatedReviews": 1,
       "futureDatedReviews": 0,
       "periodBasis": "publication-only-v1",
-      "lastReviewDay": "2026-10-14",
+      "lastReviewDay": "2026-10-29",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 16,
+      "lastReviewAgeDays": 1,
       "trend7": {
         "available": true,
         "days": 7,
@@ -1093,7 +1093,7 @@
       ],
       "region": "moscow",
       "band": "green",
-      "signal": "2 без ответа за 30 дней",
+      "signal": "3 без ответа за 30 дней",
       "action": "Ответить на свежие отзывы"
     },
     {
