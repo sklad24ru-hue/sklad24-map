@@ -1,6 +1,6 @@
 {
   "schema": "review-map-6",
-  "generatedAt": "2026-10-29T17:22:32.999Z",
+  "generatedAt": "2026-10-29T19:16:18.921Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -1040,7 +1040,7 @@
       "name": "Химки",
       "active": true,
       "rating": 5,
-      "reviewCount": 85,
+      "reviewCount": 86,
       "new7": 0,
       "new30": 2,
       "new90": 15,
@@ -1066,7 +1066,7 @@
         "fromDay": "2026-10-22",
         "fromRating": 5,
         "ratingDelta": 0,
-        "reviewDelta": 0,
+        "reviewDelta": 1,
         "approximate": false
       },
       "trend30": {
@@ -2478,6 +2478,5 @@
     "yandexTilesApiKey": "7a87b7fe-e14f-447d-8c84-666b248a6a2b",
     "activeOnly": true,
     "region": "all"
-  },
-  "cacheFallback": true
+  }
 }
