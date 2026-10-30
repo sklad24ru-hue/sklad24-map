@@ -1,6 +1,6 @@
 {
   "schema": "review-map-6",
-  "generatedAt": "2026-10-30T19:06:44.840Z",
+  "generatedAt": "2026-10-30T19:56:09.252Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -1950,6 +1950,63 @@
       "action": "Посмотреть отзывы"
     },
     {
+      "id": "31152751979",
+      "name": "Нагатинская · архив",
+      "active": false,
+      "rating": 4.3,
+      "reviewCount": 15,
+      "new7": 0,
+      "new30": 0,
+      "new90": 0,
+      "below5_7": 0,
+      "below5_30": 0,
+      "below5_90": 0,
+      "low7": 0,
+      "low30": 0,
+      "low90": 0,
+      "lowNo": 0,
+      "noReply7": 0,
+      "noReply30": 0,
+      "noReply90": 0,
+      "undatedReviews": 0,
+      "futureDatedReviews": 0,
+      "periodBasis": "publication-only-v1",
+      "lastReviewDay": "2020-09-02",
+      "lastReviewDateSource": "published",
+      "lastReviewAgeDays": 2249,
+      "trend7": {
+        "available": false,
+        "days": 7,
+        "since": "2026-10-30"
+      },
+      "trend30": {
+        "available": false,
+        "days": 30,
+        "since": "2026-10-30"
+      },
+      "trend90": {
+        "available": false,
+        "days": 90,
+        "since": "2026-10-30"
+      },
+      "ratingHistorySince": "2026-10-30",
+      "attention": true,
+      "attentionScore": 4,
+      "attentionLevel": "watch",
+      "attentionLabel": "Наблюдать",
+      "recommendations": [
+        "Разобрать причины рейтинга ниже цели 4.8★."
+      ],
+      "coordinates": [
+        37.642294,
+        55.676605
+      ],
+      "region": "moscow",
+      "band": "red",
+      "signal": "Рейтинг 4.3 ниже 4.8",
+      "action": "Посмотреть отзывы"
+    },
+    {
       "id": "198171681540",
       "name": "Нахабино · архив",
       "active": false,
@@ -2406,6 +2463,63 @@
       "action": "Посмотреть отзывы"
     },
     {
+      "id": "106696494817",
+      "name": "Царицыно · архив",
+      "active": false,
+      "rating": 4.6,
+      "reviewCount": 69,
+      "new7": 0,
+      "new30": 0,
+      "new90": 0,
+      "below5_7": 0,
+      "below5_30": 0,
+      "below5_90": 0,
+      "low7": 0,
+      "low30": 0,
+      "low90": 0,
+      "lowNo": 3,
+      "noReply7": 0,
+      "noReply30": 0,
+      "noReply90": 0,
+      "undatedReviews": 0,
+      "futureDatedReviews": 0,
+      "periodBasis": "publication-only-v1",
+      "lastReviewDay": "2023-04-25",
+      "lastReviewDateSource": "published",
+      "lastReviewAgeDays": 1284,
+      "trend7": {
+        "available": false,
+        "days": 7,
+        "since": "2026-10-30"
+      },
+      "trend30": {
+        "available": false,
+        "days": 30,
+        "since": "2026-10-30"
+      },
+      "trend90": {
+        "available": false,
+        "days": 90,
+        "since": "2026-10-30"
+      },
+      "ratingHistorySince": "2026-10-30",
+      "attention": true,
+      "attentionScore": 3,
+      "attentionLevel": "watch",
+      "attentionLabel": "Наблюдать",
+      "recommendations": [
+        "Разобрать причины рейтинга ниже цели 4.8★."
+      ],
+      "coordinates": [
+        37.632646,
+        55.638988
+      ],
+      "region": "moscow",
+      "band": "yellow",
+      "signal": "Рейтинг 4.6 ниже 4.8",
+      "action": "Посмотреть отзывы"
+    },
+    {
       "id": "1197847103",
       "name": "Южный порт · архив",
       "active": false,
@@ -2464,12 +2578,12 @@
     }
   ],
   "summary": {
-    "total": 43,
+    "total": 45,
     "active": 19,
-    "mapped": 42,
+    "mapped": 44,
     "missing": 1,
-    "below": 29,
-    "attention": 37
+    "below": 31,
+    "attention": 39
   },
   "enabled": true,
   "version": "3.55",
