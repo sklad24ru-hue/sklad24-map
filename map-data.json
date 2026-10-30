@@ -1,6 +1,6 @@
 {
   "schema": "review-map-6",
-  "generatedAt": "2026-10-30T22:51:05.972Z",
+  "generatedAt": "2026-10-30T23:30:35.851Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -216,7 +216,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-23",
+        "fromDay": "2026-10-24",
         "fromRating": 5,
         "ratingDelta": 0,
         "reviewDelta": 2,
@@ -857,10 +857,10 @@
       "name": "Ручьи",
       "active": true,
       "rating": 4.9,
-      "reviewCount": 17,
-      "new7": 1,
-      "new30": 1,
-      "new90": 6,
+      "reviewCount": 18,
+      "new7": 2,
+      "new30": 2,
+      "new90": 7,
       "below5_7": 0,
       "below5_30": 0,
       "below5_90": 0,
@@ -868,9 +868,9 @@
       "low30": 0,
       "low90": 0,
       "lowNo": 0,
-      "noReply7": 1,
-      "noReply30": 1,
-      "noReply90": 6,
+      "noReply7": 2,
+      "noReply30": 2,
+      "noReply90": 7,
       "undatedReviews": 0,
       "futureDatedReviews": 0,
       "periodBasis": "publication-only-v1",
@@ -883,7 +883,7 @@
         "fromDay": "2026-10-24",
         "fromRating": 4.9,
         "ratingDelta": 0,
-        "reviewDelta": 1,
+        "reviewDelta": 2,
         "approximate": false
       },
       "trend30": {
@@ -898,7 +898,7 @@
       },
       "ratingHistorySince": "2026-10-15",
       "attention": true,
-      "attentionScore": 1,
+      "attentionScore": 2,
       "attentionLevel": "normal",
       "attentionLabel": "Норма",
       "recommendations": [
@@ -910,7 +910,7 @@
       ],
       "region": "spb",
       "band": "green",
-      "signal": "1 без ответа за 30 дней",
+      "signal": "2 без ответа за 30 дней",
       "action": "Ответить на свежие отзывы"
     },
     {
