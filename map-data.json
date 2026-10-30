@@ -1,6 +1,6 @@
 {
   "schema": "review-map-6",
-  "generatedAt": "2026-10-30T10:20:35.015Z",
+  "generatedAt": "2026-10-30T11:56:52.635Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -2462,12 +2462,12 @@
     }
   ],
   "summary": {
-    "total": 44,
+    "total": 43,
     "active": 19,
     "mapped": 42,
-    "missing": 2,
+    "missing": 1,
     "below": 29,
-    "attention": 37
+    "attention": 36
   },
   "enabled": true,
   "version": "3.55",
@@ -2478,6 +2478,5 @@
     "yandexTilesApiKey": "7a87b7fe-e14f-447d-8c84-666b248a6a2b",
     "activeOnly": true,
     "region": "all"
-  },
-  "cacheFallback": true
+  }
 }
