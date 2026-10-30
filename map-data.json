@@ -1,6 +1,6 @@
 {
   "schema": "review-map-6",
-  "generatedAt": "2026-10-30T16:43:37.212Z",
+  "generatedAt": "2026-10-30T17:27:04.837Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -859,10 +859,10 @@
       "name": "Ручьи",
       "active": true,
       "rating": 4.9,
-      "reviewCount": 16,
-      "new7": 0,
-      "new30": 0,
-      "new90": 5,
+      "reviewCount": 17,
+      "new7": 1,
+      "new30": 1,
+      "new90": 6,
       "below5_7": 0,
       "below5_30": 0,
       "below5_90": 0,
@@ -870,22 +870,22 @@
       "low30": 0,
       "low90": 0,
       "lowNo": 0,
-      "noReply7": 0,
-      "noReply30": 0,
-      "noReply90": 5,
+      "noReply7": 1,
+      "noReply30": 1,
+      "noReply90": 6,
       "undatedReviews": 0,
       "futureDatedReviews": 0,
       "periodBasis": "publication-only-v1",
-      "lastReviewDay": "2026-09-28",
+      "lastReviewDay": "2026-10-30",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 32,
+      "lastReviewAgeDays": 0,
       "trend7": {
         "available": true,
         "days": 7,
         "fromDay": "2026-10-23",
         "fromRating": 4.9,
         "ratingDelta": 0,
-        "reviewDelta": 0,
+        "reviewDelta": 1,
         "approximate": false
       },
       "trend30": {
@@ -899,19 +899,21 @@
         "since": "2026-10-15"
       },
       "ratingHistorySince": "2026-10-15",
-      "attention": false,
-      "attentionScore": 0,
+      "attention": true,
+      "attentionScore": 1,
       "attentionLevel": "normal",
       "attentionLabel": "Норма",
       "recommendations": [
-        "Срочных действий нет."
+        "Закрыть свежие отзывы без ответа."
       ],
       "coordinates": [
         30.449888,
         59.983369
       ],
       "region": "spb",
-      "band": "green"
+      "band": "green",
+      "signal": "1 без ответа за 30 дней",
+      "action": "Ответить на свежие отзывы"
     },
     {
       "id": "48001119656",
@@ -2467,7 +2469,7 @@
     "mapped": 42,
     "missing": 1,
     "below": 29,
-    "attention": 36
+    "attention": 37
   },
   "enabled": true,
   "version": "3.55",
