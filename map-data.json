@@ -1,6 +1,6 @@
 {
   "schema": "review-map-6",
-  "generatedAt": "2026-10-31T14:48:57.331Z",
+  "generatedAt": "2026-10-31T16:16:41.763Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -1765,11 +1765,12 @@
       },
       "ratingHistorySince": "2026-10-15",
       "attention": true,
-      "attentionScore": 4,
-      "attentionLevel": "watch",
-      "attentionLabel": "Наблюдать",
+      "attentionScore": 6,
+      "attentionLevel": "high",
+      "attentionLabel": "Высокий",
       "recommendations": [
-        "Разобрать причины рейтинга ниже цели 4.8★."
+        "Разобрать причины рейтинга ниже цели 4.8★.",
+        "Обновить данные территории."
       ],
       "coordinates": [
         37.725206,
@@ -1777,8 +1778,8 @@
       ],
       "region": "moscow",
       "band": "red",
-      "signal": "Рейтинг 4.3 ниже 4.8",
-      "action": "Посмотреть отзывы"
+      "signal": "Данные устарели",
+      "action": "Обновить данные"
     },
     {
       "id": "47258285319",
@@ -1932,11 +1933,12 @@
       },
       "ratingHistorySince": "2026-10-15",
       "attention": true,
-      "attentionScore": 4,
-      "attentionLevel": "watch",
-      "attentionLabel": "Наблюдать",
+      "attentionScore": 6,
+      "attentionLevel": "high",
+      "attentionLabel": "Высокий",
       "recommendations": [
-        "Разобрать причины рейтинга ниже цели 4.8★."
+        "Разобрать причины рейтинга ниже цели 4.8★.",
+        "Обновить данные территории."
       ],
       "coordinates": [
         37.780635,
@@ -1944,8 +1946,8 @@
       ],
       "region": "moscow",
       "band": "red",
-      "signal": "Рейтинг 4.3 ниже 4.8",
-      "action": "Посмотреть отзывы"
+      "signal": "Данные устарели",
+      "action": "Обновить данные"
     },
     {
       "id": "31152751979",
@@ -2103,11 +2105,12 @@
       },
       "ratingHistorySince": "2026-10-15",
       "attention": true,
-      "attentionScore": 3,
-      "attentionLevel": "watch",
-      "attentionLabel": "Наблюдать",
+      "attentionScore": 5,
+      "attentionLevel": "high",
+      "attentionLabel": "Высокий",
       "recommendations": [
-        "Разобрать причины рейтинга ниже цели 4.8★."
+        "Разобрать причины рейтинга ниже цели 4.8★.",
+        "Обновить данные территории."
       ],
       "coordinates": [
         37.158605,
@@ -2115,8 +2118,8 @@
       ],
       "region": "moscow",
       "band": "orange",
-      "signal": "Рейтинг 4.5 ниже 4.8",
-      "action": "Посмотреть отзывы"
+      "signal": "Данные устарели",
+      "action": "Обновить данные"
     },
     {
       "id": "21458623633",
@@ -2274,11 +2277,12 @@
       },
       "ratingHistorySince": "2026-10-15",
       "attention": true,
-      "attentionScore": 4,
-      "attentionLevel": "watch",
-      "attentionLabel": "Наблюдать",
+      "attentionScore": 6,
+      "attentionLevel": "high",
+      "attentionLabel": "Высокий",
       "recommendations": [
-        "Разобрать причины рейтинга ниже цели 4.8★."
+        "Разобрать причины рейтинга ниже цели 4.8★.",
+        "Обновить данные территории."
       ],
       "coordinates": [
         37.511553,
@@ -2286,8 +2290,8 @@
       ],
       "region": "moscow",
       "band": "red",
-      "signal": "Рейтинг 4.3 ниже 4.8",
-      "action": "Посмотреть отзывы"
+      "signal": "Данные устарели",
+      "action": "Обновить данные"
     },
     {
       "id": "188179066370",
@@ -2445,11 +2449,12 @@
       },
       "ratingHistorySince": "2026-10-15",
       "attention": true,
-      "attentionScore": 4,
-      "attentionLevel": "watch",
-      "attentionLabel": "Наблюдать",
+      "attentionScore": 6,
+      "attentionLevel": "high",
+      "attentionLabel": "Высокий",
       "recommendations": [
-        "Разобрать причины рейтинга ниже цели 4.8★."
+        "Разобрать причины рейтинга ниже цели 4.8★.",
+        "Обновить данные территории."
       ],
       "coordinates": [
         37.467498,
@@ -2457,8 +2462,8 @@
       ],
       "region": "moscow",
       "band": "red",
-      "signal": "Рейтинг 4.0 ниже 4.8",
-      "action": "Посмотреть отзывы"
+      "signal": "Данные устарели",
+      "action": "Обновить данные"
     },
     {
       "id": "106696494817",
@@ -2592,6 +2597,5 @@
     "yandexTilesApiKey": "7a87b7fe-e14f-447d-8c84-666b248a6a2b",
     "activeOnly": true,
     "region": "all"
-  },
-  "cacheFallback": true
+  }
 }
