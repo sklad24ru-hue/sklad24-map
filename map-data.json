@@ -1,6 +1,6 @@
 {
   "schema": "review-map-6",
-  "generatedAt": "2026-10-31T01:32:42.784Z",
+  "generatedAt": "2026-10-31T03:19:12.532Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -377,9 +377,9 @@
       "active": true,
       "rating": 5,
       "reviewCount": 63,
-      "new7": 0,
-      "new30": 8,
-      "new90": 13,
+      "new7": 1,
+      "new30": 9,
+      "new90": 14,
       "below5_7": 0,
       "below5_30": 0,
       "below5_90": 0,
@@ -387,15 +387,15 @@
       "low30": 0,
       "low90": 0,
       "lowNo": 1,
-      "noReply7": 0,
-      "noReply30": 8,
-      "noReply90": 13,
+      "noReply7": 1,
+      "noReply30": 9,
+      "noReply90": 14,
       "undatedReviews": 0,
       "futureDatedReviews": 0,
       "periodBasis": "publication-only-v1",
-      "lastReviewDay": "2026-10-20",
+      "lastReviewDay": "2026-10-30",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 11,
+      "lastReviewAgeDays": 1,
       "trend7": {
         "available": true,
         "days": 7,
@@ -429,7 +429,7 @@
       ],
       "region": "moscow",
       "band": "green",
-      "signal": "8 без ответа за 30 дней",
+      "signal": "9 без ответа за 30 дней",
       "action": "Ответить на свежие отзывы"
     },
     {
@@ -2592,6 +2592,5 @@
     "yandexTilesApiKey": "7a87b7fe-e14f-447d-8c84-666b248a6a2b",
     "activeOnly": true,
     "region": "all"
-  },
-  "cacheFallback": true
+  }
 }
