@@ -1,6 +1,6 @@
 {
   "schema": "review-map-6",
-  "generatedAt": "2026-11-02T23:13:20.480Z",
+  "generatedAt": "2026-11-02T23:52:45.471Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -338,7 +338,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-26",
+        "fromDay": "2026-10-27",
         "fromRating": 4.3,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -399,7 +399,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-26",
+        "fromDay": "2026-10-27",
         "fromRating": 5,
         "ratingDelta": 0,
         "reviewDelta": 2,
@@ -460,7 +460,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-26",
+        "fromDay": "2026-10-27",
         "fromRating": 4.2,
         "ratingDelta": 0,
         "reviewDelta": 1,
@@ -584,7 +584,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-26",
+        "fromDay": "2026-10-27",
         "fromRating": 5,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -820,7 +820,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-26",
+        "fromDay": "2026-10-27",
         "fromRating": 4.5,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -942,7 +942,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-26",
+        "fromDay": "2026-10-27",
         "fromRating": 4.6,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -1064,7 +1064,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-26",
+        "fromDay": "2026-10-27",
         "fromRating": 5,
         "ratingDelta": 0,
         "reviewDelta": 3,
@@ -1125,7 +1125,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-26",
+        "fromDay": "2026-10-27",
         "fromRating": 4.8,
         "ratingDelta": 0,
         "reviewDelta": 0,
