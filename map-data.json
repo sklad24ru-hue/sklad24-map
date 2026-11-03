@@ -1,6 +1,6 @@
 {
   "schema": "review-map-6",
-  "generatedAt": "2026-11-03T22:16:19.383Z",
+  "generatedAt": "2026-11-03T23:15:44.357Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -499,7 +499,7 @@
       "name": "Обводный канал",
       "active": true,
       "rating": 4.7,
-      "reviewCount": 13,
+      "reviewCount": 14,
       "new7": 2,
       "new30": 2,
       "new90": 10,
@@ -525,7 +525,7 @@
         "fromDay": "2026-10-28",
         "fromRating": 4.6,
         "ratingDelta": 0.1,
-        "reviewDelta": 2,
+        "reviewDelta": 3,
         "approximate": false
       },
       "trend30": {
