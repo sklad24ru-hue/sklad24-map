@@ -1,6 +1,6 @@
 {
   "schema": "review-map-6",
-  "generatedAt": "2026-11-03T21:17:26.146Z",
+  "generatedAt": "2026-11-03T22:16:19.383Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -32,7 +32,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-27",
+        "fromDay": "2026-10-28",
         "fromRating": 4.7,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -94,7 +94,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-27",
+        "fromDay": "2026-10-28",
         "fromRating": 5,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -132,7 +132,7 @@
       "name": "Вёшки",
       "active": true,
       "rating": 4.6,
-      "reviewCount": 49,
+      "reviewCount": 50,
       "new7": 0,
       "new30": 0,
       "new90": 0,
@@ -155,10 +155,10 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-27",
+        "fromDay": "2026-10-28",
         "fromRating": 4.6,
         "ratingDelta": 0,
-        "reviewDelta": 0,
+        "reviewDelta": 1,
         "approximate": false
       },
       "trend30": {
@@ -216,7 +216,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-27",
+        "fromDay": "2026-10-28",
         "fromRating": 5,
         "ratingDelta": 0,
         "reviewDelta": 2,
@@ -277,7 +277,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-27",
+        "fromDay": "2026-10-28",
         "fromRating": 4.3,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -338,7 +338,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-27",
+        "fromDay": "2026-10-28",
         "fromRating": 4.3,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -399,7 +399,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-27",
+        "fromDay": "2026-10-28",
         "fromRating": 5,
         "ratingDelta": 0,
         "reviewDelta": 3,
@@ -436,7 +436,7 @@
       "id": "148591524142",
       "name": "Нарвская",
       "active": true,
-      "rating": 4.2,
+      "rating": 4.3,
       "reviewCount": 5,
       "new7": 2,
       "new30": 2,
@@ -460,9 +460,9 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-27",
+        "fromDay": "2026-10-28",
         "fromRating": 4.2,
-        "ratingDelta": 0,
+        "ratingDelta": 0.1,
         "reviewDelta": 1,
         "approximate": false
       },
@@ -491,7 +491,7 @@
       ],
       "region": "spb",
       "band": "red",
-      "signal": "Рейтинг 4.2 ниже 4.8",
+      "signal": "Рейтинг 4.3 ниже 4.8",
       "action": "Посмотреть отзывы"
     },
     {
@@ -522,7 +522,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-27",
+        "fromDay": "2026-10-28",
         "fromRating": 4.6,
         "ratingDelta": 0.1,
         "reviewDelta": 2,
@@ -584,7 +584,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-27",
+        "fromDay": "2026-10-28",
         "fromRating": 5,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -643,7 +643,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-27",
+        "fromDay": "2026-10-28",
         "fromRating": 4.8,
         "ratingDelta": 0,
         "reviewDelta": 1,
@@ -761,7 +761,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-27",
+        "fromDay": "2026-10-28",
         "fromRating": 4.5,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -822,7 +822,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-27",
+        "fromDay": "2026-10-28",
         "fromRating": 4.5,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -883,7 +883,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-27",
+        "fromDay": "2026-10-28",
         "fromRating": 4.9,
         "ratingDelta": 0,
         "reviewDelta": 4,
@@ -944,7 +944,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-27",
+        "fromDay": "2026-10-28",
         "fromRating": 4.6,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -1005,7 +1005,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-27",
+        "fromDay": "2026-10-28",
         "fromRating": 4.3,
         "ratingDelta": 0,
         "reviewDelta": 2,
@@ -1067,7 +1067,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-27",
+        "fromDay": "2026-10-28",
         "fromRating": 5,
         "ratingDelta": 0,
         "reviewDelta": 3,
@@ -1128,7 +1128,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-27",
+        "fromDay": "2026-10-28",
         "fromRating": 4.8,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -1189,7 +1189,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-27",
+        "fromDay": "2026-10-28",
         "fromRating": 4.5,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -1250,7 +1250,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-27",
+        "fromDay": "2026-10-28",
         "fromRating": 4.7,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -1311,7 +1311,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-27",
+        "fromDay": "2026-10-28",
         "fromRating": 4.2,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -1372,7 +1372,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-27",
+        "fromDay": "2026-10-28",
         "fromRating": 4.5,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -1433,7 +1433,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-27",
+        "fromDay": "2026-10-28",
         "fromRating": 4,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -1494,7 +1494,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-27",
+        "fromDay": "2026-10-28",
         "fromRating": 4.7,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -1555,7 +1555,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-27",
+        "fromDay": "2026-10-28",
         "fromRating": 4.7,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -1616,7 +1616,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-27",
+        "fromDay": "2026-10-28",
         "fromRating": 4.8,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -1675,7 +1675,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-27",
+        "fromDay": "2026-10-28",
         "fromRating": 4.8,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -1734,7 +1734,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-27",
+        "fromDay": "2026-10-28",
         "fromRating": 4.4,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -1795,7 +1795,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-27",
+        "fromDay": "2026-10-28",
         "fromRating": 4.3,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -1856,7 +1856,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-27",
+        "fromDay": "2026-10-28",
         "fromRating": 4.9,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -1915,7 +1915,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-27",
+        "fromDay": "2026-10-28",
         "fromRating": 4.9,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -1974,7 +1974,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-27",
+        "fromDay": "2026-10-28",
         "fromRating": 4.3,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -2092,7 +2092,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-27",
+        "fromDay": "2026-10-28",
         "fromRating": 4,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -2153,7 +2153,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-27",
+        "fromDay": "2026-10-28",
         "fromRating": 4.5,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -2214,7 +2214,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-27",
+        "fromDay": "2026-10-28",
         "fromRating": 4.3,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -2275,7 +2275,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-27",
+        "fromDay": "2026-10-28",
         "fromRating": 4.6,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -2336,7 +2336,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-27",
+        "fromDay": "2026-10-28",
         "fromRating": 4.3,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -2397,7 +2397,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-27",
+        "fromDay": "2026-10-28",
         "fromRating": 4.1,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -2458,7 +2458,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-27",
+        "fromDay": "2026-10-28",
         "fromRating": 4.2,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -2519,7 +2519,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-27",
+        "fromDay": "2026-10-28",
         "fromRating": 4,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -2637,7 +2637,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-27",
+        "fromDay": "2026-10-28",
         "fromRating": 4.7,
         "ratingDelta": 0,
         "reviewDelta": 0,
