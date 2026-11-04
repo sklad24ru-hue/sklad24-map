@@ -1,6 +1,6 @@
 {
   "schema": "review-map-6",
-  "generatedAt": "2026-11-04T03:20:44.737Z",
+  "generatedAt": "2026-11-04T04:28:07.233Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -133,9 +133,9 @@
       "active": true,
       "rating": 4.6,
       "reviewCount": 50,
-      "new7": 0,
-      "new30": 0,
-      "new90": 0,
+      "new7": 1,
+      "new30": 1,
+      "new90": 1,
       "below5_7": 0,
       "below5_30": 0,
       "below5_90": 0,
@@ -143,15 +143,15 @@
       "low30": 0,
       "low90": 0,
       "lowNo": 2,
-      "noReply7": 0,
-      "noReply30": 0,
-      "noReply90": 0,
+      "noReply7": 1,
+      "noReply30": 1,
+      "noReply90": 1,
       "undatedReviews": 0,
       "futureDatedReviews": 0,
       "periodBasis": "publication-only-v1",
-      "lastReviewDay": "2026-07-10",
+      "lastReviewDay": "2026-11-03",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 117,
+      "lastReviewAgeDays": 1,
       "trend7": {
         "available": true,
         "days": 7,
@@ -173,11 +173,12 @@
       },
       "ratingHistorySince": "2026-10-15",
       "attention": true,
-      "attentionScore": 3,
+      "attentionScore": 4,
       "attentionLevel": "watch",
       "attentionLabel": "Наблюдать",
       "recommendations": [
-        "Разобрать причины рейтинга ниже цели 4.8★."
+        "Разобрать причины рейтинга ниже цели 4.8★.",
+        "Закрыть свежие отзывы без ответа."
       ],
       "coordinates": [
         37.570573,
