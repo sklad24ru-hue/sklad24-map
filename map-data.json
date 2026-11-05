@@ -1,6 +1,6 @@
 {
   "schema": "review-map-6",
-  "generatedAt": "2026-11-05T15:57:59.855Z",
+  "generatedAt": "2026-11-05T18:54:21.379Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -133,9 +133,9 @@
       "active": true,
       "rating": 4.6,
       "reviewCount": 51,
-      "new7": 2,
-      "new30": 2,
-      "new90": 2,
+      "new7": 3,
+      "new30": 3,
+      "new90": 3,
       "below5_7": 0,
       "below5_30": 0,
       "below5_90": 0,
@@ -143,15 +143,15 @@
       "low30": 0,
       "low90": 0,
       "lowNo": 2,
-      "noReply7": 2,
-      "noReply30": 2,
-      "noReply90": 2,
+      "noReply7": 3,
+      "noReply30": 3,
+      "noReply90": 3,
       "undatedReviews": 0,
       "futureDatedReviews": 0,
       "periodBasis": "publication-only-v1",
-      "lastReviewDay": "2026-11-04",
+      "lastReviewDay": "2026-11-05",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 1,
+      "lastReviewAgeDays": 0,
       "trend7": {
         "available": true,
         "days": 7,
@@ -194,10 +194,10 @@
       "name": "Вёшки 2",
       "active": true,
       "rating": 5,
-      "reviewCount": 45,
-      "new7": 2,
-      "new30": 3,
-      "new90": 16,
+      "reviewCount": 46,
+      "new7": 3,
+      "new30": 4,
+      "new90": 17,
       "below5_7": 0,
       "below5_30": 0,
       "below5_90": 0,
@@ -205,22 +205,22 @@
       "low30": 0,
       "low90": 0,
       "lowNo": 1,
-      "noReply7": 2,
-      "noReply30": 3,
-      "noReply90": 16,
+      "noReply7": 3,
+      "noReply30": 4,
+      "noReply90": 17,
       "undatedReviews": 0,
       "futureDatedReviews": 0,
       "periodBasis": "publication-only-v1",
-      "lastReviewDay": "2026-10-30",
+      "lastReviewDay": "2026-11-05",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 6,
+      "lastReviewAgeDays": 0,
       "trend7": {
         "available": true,
         "days": 7,
         "fromDay": "2026-10-29",
         "fromRating": 5,
         "ratingDelta": 0,
-        "reviewDelta": 2,
+        "reviewDelta": 3,
         "approximate": false
       },
       "trend30": {
@@ -247,7 +247,7 @@
       ],
       "region": "moscow",
       "band": "green",
-      "signal": "3 без ответа за 30 дней",
+      "signal": "4 без ответа за 30 дней",
       "action": "Ответить на свежие отзывы"
     },
     {
@@ -1071,7 +1071,7 @@
         "fromDay": "2026-10-29",
         "fromRating": 5,
         "ratingDelta": 0,
-        "reviewDelta": 3,
+        "reviewDelta": 2,
         "approximate": false
       },
       "trend30": {
@@ -2716,6 +2716,5 @@
     "yandexTilesApiKey": "7a87b7fe-e14f-447d-8c84-666b248a6a2b",
     "activeOnly": true,
     "region": "all"
-  },
-  "cacheFallback": true
+  }
 }
