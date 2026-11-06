@@ -1,6 +1,6 @@
 {
   "schema": "review-map-6",
-  "generatedAt": "2026-11-06T17:33:42.943Z",
+  "generatedAt": "2026-11-06T19:37:47.902Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -72,9 +72,9 @@
       "active": true,
       "rating": 5,
       "reviewCount": 93,
-      "new7": 0,
-      "new30": 0,
-      "new90": 13,
+      "new7": 1,
+      "new30": 1,
+      "new90": 14,
       "below5_7": 0,
       "below5_30": 0,
       "below5_90": 0,
@@ -82,15 +82,15 @@
       "low30": 0,
       "low90": 0,
       "lowNo": 3,
-      "noReply7": 0,
-      "noReply30": 0,
-      "noReply90": 13,
+      "noReply7": 1,
+      "noReply30": 1,
+      "noReply90": 14,
       "undatedReviews": 0,
       "futureDatedReviews": 0,
       "periodBasis": "publication-only-v1",
-      "lastReviewDay": "2026-10-07",
+      "lastReviewDay": "2026-11-06",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 30,
+      "lastReviewAgeDays": 0,
       "trend7": {
         "available": true,
         "days": 7,
@@ -111,19 +111,21 @@
         "since": "2026-10-15"
       },
       "ratingHistorySince": "2026-10-15",
-      "attention": false,
-      "attentionScore": 0,
+      "attention": true,
+      "attentionScore": 1,
       "attentionLevel": "normal",
       "attentionLabel": "Норма",
       "recommendations": [
-        "Срочных действий нет."
+        "Закрыть свежие отзывы без ответа."
       ],
       "coordinates": [
         37.648028,
         55.562384
       ],
       "region": "moscow",
-      "band": "green"
+      "band": "green",
+      "signal": "1 без ответа за 30 дней",
+      "action": "Ответить на свежие отзывы"
     },
     {
       "id": "26673303045",
@@ -375,10 +377,10 @@
       "name": "Люберцы",
       "active": true,
       "rating": 5,
-      "reviewCount": 65,
-      "new7": 2,
-      "new30": 6,
-      "new90": 16,
+      "reviewCount": 66,
+      "new7": 3,
+      "new30": 7,
+      "new90": 17,
       "below5_7": 0,
       "below5_30": 0,
       "below5_90": 0,
@@ -386,22 +388,22 @@
       "low30": 0,
       "low90": 0,
       "lowNo": 1,
-      "noReply7": 2,
-      "noReply30": 6,
-      "noReply90": 16,
+      "noReply7": 3,
+      "noReply30": 7,
+      "noReply90": 17,
       "undatedReviews": 0,
       "futureDatedReviews": 0,
       "periodBasis": "publication-only-v1",
-      "lastReviewDay": "2026-11-02",
+      "lastReviewDay": "2026-11-06",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 4,
+      "lastReviewAgeDays": 0,
       "trend7": {
         "available": true,
         "days": 7,
         "fromDay": "2026-10-30",
         "fromRating": 5,
         "ratingDelta": 0,
-        "reviewDelta": 3,
+        "reviewDelta": 4,
         "approximate": false
       },
       "trend30": {
@@ -428,7 +430,7 @@
       ],
       "region": "moscow",
       "band": "green",
-      "signal": "6 без ответа за 30 дней",
+      "signal": "7 без ответа за 30 дней",
       "action": "Ответить на свежие отзывы"
     },
     {
@@ -1044,10 +1046,10 @@
       "name": "Химки",
       "active": true,
       "rating": 5,
-      "reviewCount": 88,
-      "new7": 1,
-      "new30": 4,
-      "new90": 17,
+      "reviewCount": 89,
+      "new7": 2,
+      "new30": 5,
+      "new90": 18,
       "below5_7": 0,
       "below5_30": 0,
       "below5_90": 0,
@@ -1055,22 +1057,22 @@
       "low30": 0,
       "low90": 0,
       "lowNo": 6,
-      "noReply7": 1,
-      "noReply30": 4,
-      "noReply90": 17,
+      "noReply7": 2,
+      "noReply30": 5,
+      "noReply90": 18,
       "undatedReviews": 1,
       "futureDatedReviews": 0,
       "periodBasis": "publication-only-v1",
-      "lastReviewDay": "2026-11-02",
+      "lastReviewDay": "2026-11-06",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 4,
+      "lastReviewAgeDays": 0,
       "trend7": {
         "available": true,
         "days": 7,
         "fromDay": "2026-10-30",
         "fromRating": 5,
         "ratingDelta": 0,
-        "reviewDelta": 2,
+        "reviewDelta": 3,
         "approximate": false
       },
       "trend30": {
@@ -1097,7 +1099,7 @@
       ],
       "region": "moscow",
       "band": "green",
-      "signal": "4 без ответа за 30 дней",
+      "signal": "5 без ответа за 30 дней",
       "action": "Ответить на свежие отзывы"
     },
     {
@@ -2704,7 +2706,7 @@
     "mapped": 44,
     "missing": 1,
     "below": 31,
-    "attention": 42
+    "attention": 43
   },
   "enabled": true,
   "version": "3.55",
@@ -2715,6 +2717,5 @@
     "yandexTilesApiKey": "7a87b7fe-e14f-447d-8c84-666b248a6a2b",
     "activeOnly": true,
     "region": "all"
-  },
-  "cacheFallback": true
+  }
 }
