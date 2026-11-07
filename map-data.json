@@ -1,6 +1,6 @@
 {
   "schema": "review-map-6",
-  "generatedAt": "2026-11-07T11:13:27.777Z",
+  "generatedAt": "2026-11-07T11:55:29.155Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -888,7 +888,7 @@
         "fromDay": "2026-10-31",
         "fromRating": 4.9,
         "ratingDelta": 0,
-        "reviewDelta": 3,
+        "reviewDelta": 2,
         "approximate": false
       },
       "trend30": {
