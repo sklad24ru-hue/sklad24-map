@@ -1,6 +1,6 @@
 {
   "schema": "review-map-6",
-  "generatedAt": "2026-11-07T01:33:49.353Z",
+  "generatedAt": "2026-11-07T02:28:55.870Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -32,7 +32,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-30",
+        "fromDay": "2026-10-31",
         "fromRating": 4.7,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -94,7 +94,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-30",
+        "fromDay": "2026-10-31",
         "fromRating": 5,
         "ratingDelta": 0,
         "reviewDelta": 1,
@@ -400,7 +400,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-30",
+        "fromDay": "2026-10-31",
         "fromRating": 5,
         "ratingDelta": 0,
         "reviewDelta": 3,
@@ -621,10 +621,10 @@
       "name": "Октябрьская набережная",
       "active": true,
       "rating": 4.8,
-      "reviewCount": 16,
-      "new7": 1,
-      "new30": 1,
-      "new90": 9,
+      "reviewCount": 17,
+      "new7": 2,
+      "new30": 2,
+      "new90": 10,
       "below5_7": 0,
       "below5_30": 0,
       "below5_90": 0,
@@ -632,22 +632,22 @@
       "low30": 0,
       "low90": 0,
       "lowNo": 1,
-      "noReply7": 1,
-      "noReply30": 1,
-      "noReply90": 9,
+      "noReply7": 2,
+      "noReply30": 2,
+      "noReply90": 10,
       "undatedReviews": 0,
       "futureDatedReviews": 0,
       "periodBasis": "publication-only-v1",
-      "lastReviewDay": "2026-11-02",
+      "lastReviewDay": "2026-11-06",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 5,
+      "lastReviewAgeDays": 1,
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-30",
+        "fromDay": "2026-10-31",
         "fromRating": 4.8,
         "ratingDelta": 0,
-        "reviewDelta": 1,
+        "reviewDelta": 2,
         "approximate": false
       },
       "trend30": {
@@ -662,7 +662,7 @@
       },
       "ratingHistorySince": "2026-10-15",
       "attention": true,
-      "attentionScore": 1,
+      "attentionScore": 2,
       "attentionLevel": "normal",
       "attentionLabel": "Норма",
       "recommendations": [
@@ -674,7 +674,7 @@
       ],
       "region": "spb",
       "band": "green",
-      "signal": "1 без ответа за 30 дней",
+      "signal": "2 без ответа за 30 дней",
       "action": "Ответить на свежие отзывы"
     },
     {
@@ -2057,7 +2057,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-30",
+        "fromDay": "2026-10-31",
         "fromRating": 4.3,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -2614,7 +2614,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-30",
+        "fromDay": "2026-10-31",
         "fromRating": 4.6,
         "ratingDelta": 0,
         "reviewDelta": 0,
