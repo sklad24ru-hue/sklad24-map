@@ -1,6 +1,6 @@
 {
   "schema": "review-map-6",
-  "generatedAt": "2026-11-08T00:03:16.801Z",
+  "generatedAt": "2026-11-08T01:23:02.361Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -461,7 +461,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-31",
+        "fromDay": "2026-11-01",
         "fromRating": 4.2,
         "ratingDelta": 0.1,
         "reviewDelta": 1,
@@ -762,7 +762,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-31",
+        "fromDay": "2026-11-01",
         "fromRating": 4.5,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -885,7 +885,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-10-31",
+        "fromDay": "2026-11-01",
         "fromRating": 4.9,
         "ratingDelta": 0,
         "reviewDelta": 2,
@@ -1087,11 +1087,10 @@
       },
       "ratingHistorySince": "2026-10-15",
       "attention": true,
-      "attentionScore": 6,
-      "attentionLevel": "high",
-      "attentionLabel": "Высокий",
+      "attentionScore": 4,
+      "attentionLevel": "watch",
+      "attentionLabel": "Наблюдать",
       "recommendations": [
-        "Ответить на свежие отзывы 1–3★: 1 за 30 дней.",
         "Разобрать свежие 1–3★ за последние 7 дней.",
         "Закрыть свежие отзывы без ответа."
       ],
@@ -1101,8 +1100,8 @@
       ],
       "region": "moscow",
       "band": "green",
-      "signal": "1 без ответа на 1–3★ за 30 дней",
-      "action": "Ответить на 1–3★"
+      "signal": "1 отзывов 1–3★ за 30 дней",
+      "action": "Разобрать свежие отзывы"
     },
     {
       "id": "159095481106",
