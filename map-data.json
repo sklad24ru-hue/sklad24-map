@@ -1,6 +1,6 @@
 {
   "schema": "review-map-6",
-  "generatedAt": "2026-11-08T14:24:57.370Z",
+  "generatedAt": "2026-11-08T15:52:13.752Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -984,10 +984,10 @@
       "name": "Салова",
       "active": true,
       "rating": 4.3,
-      "reviewCount": 6,
-      "new7": 2,
-      "new30": 2,
-      "new90": 3,
+      "reviewCount": 7,
+      "new7": 3,
+      "new30": 3,
+      "new90": 4,
       "below5_7": 1,
       "below5_30": 1,
       "below5_90": 1,
@@ -995,22 +995,22 @@
       "low30": 0,
       "low90": 0,
       "lowNo": 0,
-      "noReply7": 2,
-      "noReply30": 2,
-      "noReply90": 3,
+      "noReply7": 3,
+      "noReply30": 3,
+      "noReply90": 4,
       "undatedReviews": 0,
       "futureDatedReviews": 0,
       "periodBasis": "publication-only-v1",
-      "lastReviewDay": "2026-11-02",
+      "lastReviewDay": "2026-11-08",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 6,
+      "lastReviewAgeDays": 0,
       "trend7": {
         "available": true,
         "days": 7,
         "fromDay": "2026-11-01",
         "fromRating": 4.3,
         "ratingDelta": 0,
-        "reviewDelta": 2,
+        "reviewDelta": 3,
         "approximate": false
       },
       "trend30": {
@@ -2632,6 +2632,5 @@
     "yandexTilesApiKey": "7a87b7fe-e14f-447d-8c84-666b248a6a2b",
     "activeOnly": true,
     "region": "all"
-  },
-  "cacheFallback": true
+  }
 }
