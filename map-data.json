@@ -1,6 +1,6 @@
 {
   "schema": "review-map-6",
-  "generatedAt": "2026-11-08T21:09:08.701Z",
+  "generatedAt": "2026-11-08T22:34:36.578Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -32,7 +32,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-01",
+        "fromDay": "2026-11-02",
         "fromRating": 4.7,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -94,7 +94,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-01",
+        "fromDay": "2026-11-02",
         "fromRating": 5,
         "ratingDelta": 0,
         "reviewDelta": 1,
@@ -155,7 +155,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-01",
+        "fromDay": "2026-11-02",
         "fromRating": 4.6,
         "ratingDelta": 0,
         "reviewDelta": 4,
@@ -217,7 +217,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-01",
+        "fromDay": "2026-11-02",
         "fromRating": 5,
         "ratingDelta": 0,
         "reviewDelta": 2,
@@ -278,7 +278,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-01",
+        "fromDay": "2026-11-02",
         "fromRating": 4.3,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -400,7 +400,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-01",
+        "fromDay": "2026-11-02",
         "fromRating": 5,
         "ratingDelta": 0,
         "reviewDelta": 3,
@@ -438,8 +438,8 @@
       "name": "Нарвская",
       "active": true,
       "rating": 4.3,
-      "reviewCount": 5,
-      "new7": 0,
+      "reviewCount": 6,
+      "new7": 1,
       "new30": 2,
       "new90": 4,
       "below5_7": 0,
@@ -449,22 +449,22 @@
       "low30": 0,
       "low90": 0,
       "lowNo": 0,
-      "noReply7": 0,
+      "noReply7": 1,
       "noReply30": 2,
       "noReply90": 4,
-      "undatedReviews": 0,
+      "undatedReviews": 1,
       "futureDatedReviews": 0,
       "periodBasis": "publication-only-v1",
-      "lastReviewDay": "2026-11-01",
+      "lastReviewDay": "2026-11-08",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 8,
+      "lastReviewAgeDays": 1,
       "trend7": {
         "available": true,
         "days": 7,
         "fromDay": "2026-11-01",
         "fromRating": 4.2,
         "ratingDelta": 0.1,
-        "reviewDelta": 0,
+        "reviewDelta": 1,
         "approximate": false
       },
       "trend30": {
@@ -646,7 +646,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-01",
+        "fromDay": "2026-11-02",
         "fromRating": 4.8,
         "ratingDelta": 0,
         "reviewDelta": 2,
@@ -823,7 +823,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-01",
+        "fromDay": "2026-11-02",
         "fromRating": 4.5,
         "ratingDelta": 0,
         "reviewDelta": 1,
@@ -946,7 +946,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-01",
+        "fromDay": "2026-11-02",
         "fromRating": 4.6,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -1069,7 +1069,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-01",
+        "fromDay": "2026-11-02",
         "fromRating": 5,
         "ratingDelta": 0,
         "reviewDelta": 3,
@@ -1998,7 +1998,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-01",
+        "fromDay": "2026-11-02",
         "fromRating": 4.3,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -2523,7 +2523,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-01",
+        "fromDay": "2026-11-02",
         "fromRating": 4.6,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -2632,6 +2632,5 @@
     "yandexTilesApiKey": "7a87b7fe-e14f-447d-8c84-666b248a6a2b",
     "activeOnly": true,
     "region": "all"
-  },
-  "cacheFallback": true
+  }
 }
