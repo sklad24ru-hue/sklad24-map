@@ -1,6 +1,6 @@
 {
   "schema": "review-map-6",
-  "generatedAt": "2026-11-10T21:25:20.641Z",
+  "generatedAt": "2026-11-10T23:37:27.917Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -32,7 +32,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-03",
+        "fromDay": "2026-11-04",
         "fromRating": 4.7,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -94,7 +94,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-03",
+        "fromDay": "2026-11-04",
         "fromRating": 5,
         "ratingDelta": 0,
         "reviewDelta": 1,
@@ -132,10 +132,10 @@
       "name": "Вёшки",
       "active": true,
       "rating": 4.6,
-      "reviewCount": 54,
-      "new7": 3,
-      "new30": 5,
-      "new90": 5,
+      "reviewCount": 56,
+      "new7": 4,
+      "new30": 6,
+      "new90": 6,
       "below5_7": 0,
       "below5_30": 0,
       "below5_90": 0,
@@ -143,22 +143,22 @@
       "low30": 0,
       "low90": 0,
       "lowNo": 2,
-      "noReply7": 3,
-      "noReply30": 5,
-      "noReply90": 5,
+      "noReply7": 4,
+      "noReply30": 6,
+      "noReply90": 6,
       "undatedReviews": 0,
       "futureDatedReviews": 0,
       "periodBasis": "publication-only-v1",
-      "lastReviewDay": "2026-11-09",
+      "lastReviewDay": "2026-11-10",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 2,
+      "lastReviewAgeDays": 1,
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-03",
+        "fromDay": "2026-11-04",
         "fromRating": 4.6,
         "ratingDelta": 0,
-        "reviewDelta": 5,
+        "reviewDelta": 6,
         "approximate": false
       },
       "trend30": {
@@ -217,7 +217,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-03",
+        "fromDay": "2026-11-04",
         "fromRating": 5,
         "ratingDelta": 0,
         "reviewDelta": 2,
@@ -278,7 +278,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-03",
+        "fromDay": "2026-11-04",
         "fromRating": 4.3,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -339,7 +339,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-03",
+        "fromDay": "2026-11-04",
         "fromRating": 4.3,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -400,7 +400,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-03",
+        "fromDay": "2026-11-04",
         "fromRating": 5,
         "ratingDelta": 0,
         "reviewDelta": 1,
@@ -461,9 +461,9 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-03",
-        "fromRating": 4.2,
-        "ratingDelta": 0.1,
+        "fromDay": "2026-11-04",
+        "fromRating": 4.3,
+        "ratingDelta": 0,
         "reviewDelta": 1,
         "approximate": false
       },
@@ -500,10 +500,10 @@
       "name": "Обводный канал",
       "active": true,
       "rating": 4.7,
-      "reviewCount": 14,
-      "new7": 0,
-      "new30": 3,
-      "new90": 10,
+      "reviewCount": 15,
+      "new7": 1,
+      "new30": 4,
+      "new90": 11,
       "below5_7": 0,
       "below5_30": 0,
       "below5_90": 0,
@@ -511,19 +511,19 @@
       "low30": 0,
       "low90": 0,
       "lowNo": 0,
-      "noReply7": 0,
-      "noReply30": 3,
-      "noReply90": 10,
+      "noReply7": 1,
+      "noReply30": 4,
+      "noReply90": 11,
       "undatedReviews": 0,
       "futureDatedReviews": 0,
       "periodBasis": "publication-only-v1",
-      "lastReviewDay": "2026-11-03",
+      "lastReviewDay": "2026-11-10",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 8,
+      "lastReviewAgeDays": 1,
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-03",
+        "fromDay": "2026-11-04",
         "fromRating": 4.7,
         "ratingDelta": 0,
         "reviewDelta": 1,
@@ -585,7 +585,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-03",
+        "fromDay": "2026-11-04",
         "fromRating": 5,
         "ratingDelta": 0,
         "reviewDelta": 1,
@@ -646,7 +646,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-03",
+        "fromDay": "2026-11-04",
         "fromRating": 4.8,
         "ratingDelta": 0,
         "reviewDelta": 1,
@@ -762,7 +762,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-03",
+        "fromDay": "2026-11-04",
         "fromRating": 4.5,
         "ratingDelta": 0,
         "reviewDelta": 1,
@@ -824,7 +824,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-03",
+        "fromDay": "2026-11-04",
         "fromRating": 4.5,
         "ratingDelta": 0,
         "reviewDelta": 1,
@@ -886,7 +886,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-03",
+        "fromDay": "2026-11-04",
         "fromRating": 4.9,
         "ratingDelta": 0,
         "reviewDelta": 2,
@@ -947,7 +947,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-03",
+        "fromDay": "2026-11-04",
         "fromRating": 4.6,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -1008,7 +1008,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-03",
+        "fromDay": "2026-11-04",
         "fromRating": 4.3,
         "ratingDelta": 0,
         "reviewDelta": 1,
@@ -1070,7 +1070,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-03",
+        "fromDay": "2026-11-04",
         "fromRating": 5,
         "ratingDelta": 0,
         "reviewDelta": 2,
@@ -1133,7 +1133,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-03",
+        "fromDay": "2026-11-04",
         "fromRating": 4.8,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -2038,7 +2038,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-03",
+        "fromDay": "2026-11-04",
         "fromRating": 4.3,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -2587,7 +2587,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-03",
+        "fromDay": "2026-11-04",
         "fromRating": 4.6,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -2699,6 +2699,5 @@
     "yandexTilesApiKey": "7a87b7fe-e14f-447d-8c84-666b248a6a2b",
     "activeOnly": true,
     "region": "all"
-  },
-  "cacheFallback": true
+  }
 }
