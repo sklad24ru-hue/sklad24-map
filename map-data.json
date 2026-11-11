@@ -1,6 +1,6 @@
 {
   "schema": "review-map-6",
-  "generatedAt": "2026-11-11T09:57:08.401Z",
+  "generatedAt": "2026-11-11T12:59:12.655Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -181,8 +181,8 @@
         "Закрыть свежие отзывы без ответа."
       ],
       "coordinates": [
-        37.570573,
-        55.919402
+        37.570525,
+        55.919487
       ],
       "region": "moscow",
       "band": "yellow",
@@ -800,7 +800,7 @@
       "id": "41502583292",
       "name": "Ростокино",
       "active": true,
-      "rating": 4.5,
+      "rating": 4.6,
       "reviewCount": 9,
       "new7": 1,
       "new30": 1,
@@ -826,7 +826,7 @@
         "days": 7,
         "fromDay": "2026-11-04",
         "fromRating": 4.5,
-        "ratingDelta": 0,
+        "ratingDelta": 0.1,
         "reviewDelta": 1,
         "approximate": false
       },
@@ -854,8 +854,8 @@
         55.846391
       ],
       "region": "moscow",
-      "band": "orange",
-      "signal": "Рейтинг 4.5 ниже 4.8",
+      "band": "yellow",
+      "signal": "Рейтинг 4.6 ниже 4.8",
       "action": "Посмотреть отзывы"
     },
     {
@@ -2607,6 +2607,5 @@
     "yandexTilesApiKey": "7a87b7fe-e14f-447d-8c84-666b248a6a2b",
     "activeOnly": true,
     "region": "all"
-  },
-  "cacheFallback": true
+  }
 }
