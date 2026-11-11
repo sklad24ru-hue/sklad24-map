@@ -1,6 +1,6 @@
 {
   "schema": "review-map-6",
-  "generatedAt": "2026-11-11T00:19:58.179Z",
+  "generatedAt": "2026-11-11T02:29:52.658Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -1190,13 +1190,9 @@
       "lastReviewDateSource": "published",
       "lastReviewAgeDays": 958,
       "trend7": {
-        "available": true,
+        "available": false,
         "days": 7,
-        "fromDay": "2026-11-02",
-        "fromRating": 4.5,
-        "ratingDelta": 0,
-        "reviewDelta": 0,
-        "approximate": false
+        "since": "2026-10-15"
       },
       "trend30": {
         "available": false,
@@ -1251,13 +1247,9 @@
       "lastReviewDateSource": "published",
       "lastReviewAgeDays": 725,
       "trend7": {
-        "available": true,
+        "available": false,
         "days": 7,
-        "fromDay": "2026-11-02",
-        "fromRating": 4.7,
-        "ratingDelta": 0,
-        "reviewDelta": 0,
-        "approximate": false
+        "since": "2026-10-15"
       },
       "trend30": {
         "available": false,
@@ -1312,13 +1304,9 @@
       "lastReviewDateSource": "published",
       "lastReviewAgeDays": 2459,
       "trend7": {
-        "available": true,
+        "available": false,
         "days": 7,
-        "fromDay": "2026-11-02",
-        "fromRating": 4.2,
-        "ratingDelta": 0,
-        "reviewDelta": 0,
-        "approximate": false
+        "since": "2026-10-15"
       },
       "trend30": {
         "available": false,
@@ -1373,13 +1361,9 @@
       "lastReviewDateSource": "published",
       "lastReviewAgeDays": 1068,
       "trend7": {
-        "available": true,
+        "available": false,
         "days": 7,
-        "fromDay": "2026-11-02",
-        "fromRating": 4.5,
-        "ratingDelta": 0,
-        "reviewDelta": 0,
-        "approximate": false
+        "since": "2026-10-15"
       },
       "trend30": {
         "available": false,
@@ -1434,13 +1418,9 @@
       "lastReviewDateSource": "published",
       "lastReviewAgeDays": 557,
       "trend7": {
-        "available": true,
+        "available": false,
         "days": 7,
-        "fromDay": "2026-11-02",
-        "fromRating": 4,
-        "ratingDelta": 0,
-        "reviewDelta": 0,
-        "approximate": false
+        "since": "2026-10-15"
       },
       "trend30": {
         "available": false,
@@ -1495,13 +1475,9 @@
       "lastReviewDateSource": "published",
       "lastReviewAgeDays": 1054,
       "trend7": {
-        "available": true,
+        "available": false,
         "days": 7,
-        "fromDay": "2026-11-02",
-        "fromRating": 4.7,
-        "ratingDelta": 0,
-        "reviewDelta": 0,
-        "approximate": false
+        "since": "2026-10-15"
       },
       "trend30": {
         "available": false,
@@ -1556,13 +1532,9 @@
       "lastReviewDateSource": "published",
       "lastReviewAgeDays": 572,
       "trend7": {
-        "available": true,
+        "available": false,
         "days": 7,
-        "fromDay": "2026-11-02",
-        "fromRating": 4.7,
-        "ratingDelta": 0,
-        "reviewDelta": 0,
-        "approximate": false
+        "since": "2026-10-15"
       },
       "trend30": {
         "available": false,
@@ -1617,13 +1589,9 @@
       "lastReviewDateSource": "published",
       "lastReviewAgeDays": 1055,
       "trend7": {
-        "available": true,
+        "available": false,
         "days": 7,
-        "fromDay": "2026-11-02",
-        "fromRating": 4.8,
-        "ratingDelta": 0,
-        "reviewDelta": 0,
-        "approximate": false
+        "since": "2026-10-15"
       },
       "trend30": {
         "available": false,
@@ -1676,13 +1644,9 @@
       "lastReviewDateSource": "published",
       "lastReviewAgeDays": 1155,
       "trend7": {
-        "available": true,
+        "available": false,
         "days": 7,
-        "fromDay": "2026-11-02",
-        "fromRating": 4.8,
-        "ratingDelta": 0,
-        "reviewDelta": 0,
-        "approximate": false
+        "since": "2026-10-15"
       },
       "trend30": {
         "available": false,
@@ -2699,6 +2663,5 @@
     "yandexTilesApiKey": "7a87b7fe-e14f-447d-8c84-666b248a6a2b",
     "activeOnly": true,
     "region": "all"
-  },
-  "cacheFallback": true
+  }
 }
