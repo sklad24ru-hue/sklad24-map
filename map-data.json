@@ -1,6 +1,6 @@
 {
   "schema": "review-map-6",
-  "generatedAt": "2026-11-12T03:51:07.363Z",
+  "generatedAt": "2026-11-12T05:58:14.942Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -132,7 +132,7 @@
       "name": "Вёшки",
       "active": true,
       "rating": 4.6,
-      "reviewCount": 56,
+      "reviewCount": 57,
       "new7": 5,
       "new30": 8,
       "new90": 8,
@@ -158,7 +158,7 @@
         "fromDay": "2026-11-05",
         "fromRating": 4.6,
         "ratingDelta": 0,
-        "reviewDelta": 5,
+        "reviewDelta": 6,
         "approximate": false
       },
       "trend30": {
@@ -2634,6 +2634,5 @@
     "yandexTilesApiKey": "7a87b7fe-e14f-447d-8c84-666b248a6a2b",
     "activeOnly": true,
     "region": "all"
-  },
-  "cacheFallback": true
+  }
 }
