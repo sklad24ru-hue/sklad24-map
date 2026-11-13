@@ -1,6 +1,6 @@
 {
   "schema": "review-map-6",
-  "generatedAt": "2026-11-13T09:13:49.575Z",
+  "generatedAt": "2026-11-13T10:18:38.597Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -131,7 +131,7 @@
       "id": "26673303045",
       "name": "Вёшки",
       "active": true,
-      "rating": 4.6,
+      "rating": 4.7,
       "reviewCount": 59,
       "new7": 6,
       "new30": 10,
@@ -157,7 +157,7 @@
         "days": 7,
         "fromDay": "2026-11-06",
         "fromRating": 4.6,
-        "ratingDelta": 0,
+        "ratingDelta": 0.1,
         "reviewDelta": 7,
         "approximate": false
       },
@@ -173,9 +173,9 @@
       },
       "ratingHistorySince": "2026-10-15",
       "attention": true,
-      "attentionScore": 5,
-      "attentionLevel": "high",
-      "attentionLabel": "Высокий",
+      "attentionScore": 4,
+      "attentionLevel": "watch",
+      "attentionLabel": "Наблюдать",
       "recommendations": [
         "Разобрать причины рейтинга ниже цели 4.8★.",
         "Закрыть свежие отзывы без ответа."
@@ -186,7 +186,7 @@
       ],
       "region": "moscow",
       "band": "yellow",
-      "signal": "Рейтинг 4.6 ниже 4.8",
+      "signal": "Рейтинг 4.7 ниже 4.8",
       "action": "Посмотреть отзывы"
     },
     {
@@ -984,7 +984,7 @@
       "id": "206360892688",
       "name": "Салова",
       "active": true,
-      "rating": 4.3,
+      "rating": 4.4,
       "reviewCount": 8,
       "new7": 2,
       "new30": 4,
@@ -1010,7 +1010,7 @@
         "days": 7,
         "fromDay": "2026-11-06",
         "fromRating": 4.3,
-        "ratingDelta": 0,
+        "ratingDelta": 0.1,
         "reviewDelta": 2,
         "approximate": false
       },
@@ -1026,7 +1026,7 @@
       },
       "ratingHistorySince": "2026-10-15",
       "attention": true,
-      "attentionScore": 6,
+      "attentionScore": 5,
       "attentionLevel": "high",
       "attentionLabel": "Высокий",
       "recommendations": [
@@ -1038,8 +1038,8 @@
         59.898503
       ],
       "region": "spb",
-      "band": "red",
-      "signal": "Рейтинг 4.3 ниже 4.8",
+      "band": "orange",
+      "signal": "Рейтинг 4.4 ниже 4.8",
       "action": "Посмотреть отзывы"
     },
     {
