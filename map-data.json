@@ -1,6 +1,6 @@
 {
   "schema": "review-map-6",
-  "generatedAt": "2026-11-13T17:26:49.827Z",
+  "generatedAt": "2026-11-13T19:27:53.804Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -403,7 +403,7 @@
         "fromDay": "2026-11-06",
         "fromRating": 5,
         "ratingDelta": 0,
-        "reviewDelta": 1,
+        "reviewDelta": 0,
         "approximate": false
       },
       "trend30": {
@@ -1073,7 +1073,7 @@
         "fromDay": "2026-11-06",
         "fromRating": 5,
         "ratingDelta": 0,
-        "reviewDelta": 2,
+        "reviewDelta": 1,
         "approximate": false
       },
       "trend30": {
@@ -2606,6 +2606,5 @@
     "yandexTilesApiKey": "7a87b7fe-e14f-447d-8c84-666b248a6a2b",
     "activeOnly": true,
     "region": "all"
-  },
-  "cacheFallback": true
+  }
 }
