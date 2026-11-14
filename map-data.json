@@ -1,6 +1,6 @@
 {
   "schema": "review-map-6",
-  "generatedAt": "2026-11-13T23:55:27.914Z",
+  "generatedAt": "2026-11-14T00:52:53.718Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -32,7 +32,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-06",
+        "fromDay": "2026-11-07",
         "fromRating": 4.7,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -98,10 +98,10 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-06",
+        "fromDay": "2026-11-07",
         "fromRating": 5,
         "ratingDelta": 0,
-        "reviewDelta": 1,
+        "reviewDelta": 0,
         "approximate": false
       },
       "trend30": {
@@ -163,10 +163,10 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-06",
+        "fromDay": "2026-11-07",
         "fromRating": 4.6,
         "ratingDelta": 0.1,
-        "reviewDelta": 7,
+        "reviewDelta": 6,
         "approximate": false
       },
       "trend30": {
@@ -229,7 +229,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-06",
+        "fromDay": "2026-11-07",
         "fromRating": 5,
         "ratingDelta": 0,
         "reviewDelta": 1,
@@ -294,7 +294,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-06",
+        "fromDay": "2026-11-07",
         "fromRating": 4.3,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -2109,7 +2109,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-06",
+        "fromDay": "2026-11-07",
         "fromRating": 4.3,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -2658,7 +2658,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-06",
+        "fromDay": "2026-11-07",
         "fromRating": 4.6,
         "ratingDelta": 0,
         "reviewDelta": 0,
