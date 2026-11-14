@@ -1,6 +1,6 @@
 {
   "schema": "review-map-6",
-  "generatedAt": "2026-11-14T01:57:15.147Z",
+  "generatedAt": "2026-11-14T02:48:56.835Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -806,7 +806,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-06",
+        "fromDay": "2026-11-07",
         "fromRating": 4.5,
         "ratingDelta": 0,
         "reviewDelta": 1,
@@ -938,7 +938,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-06",
+        "fromDay": "2026-11-07",
         "fromRating": 4.9,
         "ratingDelta": 0,
         "reviewDelta": 3,
@@ -1068,7 +1068,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-06",
+        "fromDay": "2026-11-07",
         "fromRating": 4.3,
         "ratingDelta": 0.1,
         "reviewDelta": 2,
