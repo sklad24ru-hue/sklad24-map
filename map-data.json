@@ -1,6 +1,6 @@
 {
   "schema": "review-map-6",
-  "generatedAt": "2026-11-17T08:57:56.017Z",
+  "generatedAt": "2026-11-17T18:26:06.854Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -465,7 +465,7 @@
       "id": "148591524142",
       "name": "Нарвская",
       "active": true,
-      "rating": 4.3,
+      "rating": 4.4,
       "reviewCount": 7,
       "new7": 1,
       "new30": 3,
@@ -491,7 +491,7 @@
         "days": 7,
         "fromDay": "2026-11-10",
         "fromRating": 4.3,
-        "ratingDelta": 0,
+        "ratingDelta": 0.1,
         "reviewDelta": 1,
         "approximate": false
       },
@@ -500,7 +500,7 @@
         "days": 30,
         "fromDay": "2026-10-17",
         "fromRating": 4.2,
-        "ratingDelta": 0.1,
+        "ratingDelta": 0.2,
         "reviewDelta": 3,
         "approximate": false
       },
@@ -511,7 +511,7 @@
       },
       "ratingHistorySince": "2026-10-15",
       "attention": true,
-      "attentionScore": 6,
+      "attentionScore": 5,
       "attentionLevel": "high",
       "attentionLabel": "Высокий",
       "recommendations": [
@@ -523,8 +523,8 @@
         59.890627
       ],
       "region": "spb",
-      "band": "red",
-      "signal": "Рейтинг 4.3 ниже 4.8",
+      "band": "orange",
+      "signal": "Рейтинг 4.4 ниже 4.8",
       "action": "Посмотреть отзывы"
     },
     {
