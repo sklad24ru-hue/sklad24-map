@@ -1,6 +1,6 @@
 {
   "schema": "review-map-6",
-  "generatedAt": "2026-11-18T08:37:41.728Z",
+  "generatedAt": "2026-11-18T17:36:40.745Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -140,10 +140,10 @@
       "name": "Вёшки",
       "active": true,
       "rating": 4.7,
-      "reviewCount": 62,
-      "new7": 5,
-      "new30": 13,
-      "new90": 13,
+      "reviewCount": 63,
+      "new7": 6,
+      "new30": 14,
+      "new90": 14,
       "below5_7": 0,
       "below5_30": 0,
       "below5_90": 0,
@@ -151,9 +151,9 @@
       "low30": 0,
       "low90": 0,
       "lowNo": 2,
-      "noReply7": 5,
-      "noReply30": 13,
-      "noReply90": 13,
+      "noReply7": 6,
+      "noReply30": 14,
+      "noReply90": 14,
       "undatedReviews": 0,
       "futureDatedReviews": 0,
       "periodBasis": "publication-only-v1",
@@ -166,7 +166,7 @@
         "fromDay": "2026-11-11",
         "fromRating": 4.6,
         "ratingDelta": 0.1,
-        "reviewDelta": 6,
+        "reviewDelta": 7,
         "approximate": false
       },
       "trend30": {
@@ -175,7 +175,7 @@
         "fromDay": "2026-10-18",
         "fromRating": 4.6,
         "ratingDelta": 0.1,
-        "reviewDelta": 13,
+        "reviewDelta": 14,
         "approximate": false
       },
       "trend90": {
@@ -873,8 +873,8 @@
         "available": true,
         "days": 7,
         "fromDay": "2026-11-11",
-        "fromRating": 4.5,
-        "ratingDelta": 0.1,
+        "fromRating": 4.6,
+        "ratingDelta": 0,
         "reviewDelta": 1,
         "approximate": false
       },
