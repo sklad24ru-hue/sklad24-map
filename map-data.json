@@ -1,6 +1,6 @@
 {
   "schema": "review-map-6",
-  "generatedAt": "2026-11-18T23:36:57.242Z",
+  "generatedAt": "2026-11-19T04:33:36.114Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -271,10 +271,10 @@
       "name": "Внуково",
       "active": true,
       "rating": 4.3,
-      "reviewCount": 9,
-      "new7": 0,
-      "new30": 0,
-      "new90": 1,
+      "reviewCount": 10,
+      "new7": 1,
+      "new30": 1,
+      "new90": 2,
       "below5_7": 0,
       "below5_30": 0,
       "below5_90": 0,
@@ -282,22 +282,22 @@
       "low30": 0,
       "low90": 0,
       "lowNo": 1,
-      "noReply7": 0,
-      "noReply30": 0,
-      "noReply90": 1,
+      "noReply7": 1,
+      "noReply30": 1,
+      "noReply90": 2,
       "undatedReviews": 0,
       "futureDatedReviews": 0,
       "periodBasis": "publication-only-v1",
-      "lastReviewDay": "2026-09-29",
+      "lastReviewDay": "2026-11-18",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 51,
+      "lastReviewAgeDays": 1,
       "trend7": {
         "available": true,
         "days": 7,
         "fromDay": "2026-11-12",
         "fromRating": 4.3,
         "ratingDelta": 0,
-        "reviewDelta": 0,
+        "reviewDelta": 1,
         "approximate": false
       },
       "trend30": {
@@ -306,7 +306,7 @@
         "fromDay": "2026-10-19",
         "fromRating": 4.3,
         "ratingDelta": 0,
-        "reviewDelta": 0,
+        "reviewDelta": 1,
         "approximate": false
       },
       "trend90": {
@@ -316,11 +316,12 @@
       },
       "ratingHistorySince": "2026-10-15",
       "attention": true,
-      "attentionScore": 4,
-      "attentionLevel": "watch",
-      "attentionLabel": "Наблюдать",
+      "attentionScore": 5,
+      "attentionLevel": "high",
+      "attentionLabel": "Высокий",
       "recommendations": [
-        "Разобрать причины рейтинга ниже цели 4.8★."
+        "Разобрать причины рейтинга ниже цели 4.8★.",
+        "Закрыть свежие отзывы без ответа."
       ],
       "coordinates": [
         37.254958,
@@ -359,7 +360,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-11",
+        "fromDay": "2026-11-12",
         "fromRating": 4.3,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -489,7 +490,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-11",
+        "fromDay": "2026-11-12",
         "fromRating": 4.3,
         "ratingDelta": 0.1,
         "reviewDelta": 1,
@@ -555,7 +556,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-11",
+        "fromDay": "2026-11-12",
         "fromRating": 4.7,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -686,7 +687,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-11",
+        "fromDay": "2026-11-12",
         "fromRating": 4.8,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -806,7 +807,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-11",
+        "fromDay": "2026-11-12",
         "fromRating": 4.5,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -872,7 +873,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-11",
+        "fromDay": "2026-11-12",
         "fromRating": 4.6,
         "ratingDelta": 0,
         "reviewDelta": 1,
@@ -938,7 +939,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-11",
+        "fromDay": "2026-11-12",
         "fromRating": 4.9,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -1068,10 +1069,10 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-11",
+        "fromDay": "2026-11-12",
         "fromRating": 4.3,
         "ratingDelta": 0.2,
-        "reviewDelta": 2,
+        "reviewDelta": 1,
         "approximate": false
       },
       "trend30": {
@@ -1199,7 +1200,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-11",
+        "fromDay": "2026-11-12",
         "fromRating": 4.8,
         "ratingDelta": 0,
         "reviewDelta": 0,
