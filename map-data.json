@@ -1,6 +1,6 @@
 {
   "schema": "review-map-6",
-  "generatedAt": "2026-11-20T12:04:06.896Z",
+  "generatedAt": "2026-11-20T20:27:18.498Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -41,10 +41,10 @@
       "trend30": {
         "available": true,
         "days": 30,
-        "fromDay": "2026-10-20",
+        "fromDay": "2026-10-21",
         "fromRating": 4.6,
         "ratingDelta": 0.1,
-        "reviewDelta": 2,
+        "reviewDelta": 1,
         "approximate": false
       },
       "trend90": {
@@ -107,7 +107,7 @@
       "trend30": {
         "available": true,
         "days": 30,
-        "fromDay": "2026-10-20",
+        "fromDay": "2026-10-21",
         "fromRating": 5,
         "ratingDelta": 0,
         "reviewDelta": 1,
@@ -172,7 +172,7 @@
       "trend30": {
         "available": true,
         "days": 30,
-        "fromDay": "2026-10-20",
+        "fromDay": "2026-10-21",
         "fromRating": 4.6,
         "ratingDelta": 0.1,
         "reviewDelta": 15,
@@ -238,7 +238,7 @@
       "trend30": {
         "available": true,
         "days": 30,
-        "fromDay": "2026-10-20",
+        "fromDay": "2026-10-21",
         "fromRating": 5,
         "ratingDelta": 0,
         "reviewDelta": 7,
@@ -303,7 +303,7 @@
       "trend30": {
         "available": true,
         "days": 30,
-        "fromDay": "2026-10-20",
+        "fromDay": "2026-10-21",
         "fromRating": 4.3,
         "ratingDelta": 0,
         "reviewDelta": 1,
@@ -369,7 +369,7 @@
       "trend30": {
         "available": true,
         "days": 30,
-        "fromDay": "2026-10-20",
+        "fromDay": "2026-10-21",
         "fromRating": 4.3,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -434,10 +434,10 @@
       "trend30": {
         "available": true,
         "days": 30,
-        "fromDay": "2026-10-20",
+        "fromDay": "2026-10-21",
         "fromRating": 5,
         "ratingDelta": 0,
-        "reviewDelta": 6,
+        "reviewDelta": 5,
         "approximate": false
       },
       "trend90": {
@@ -499,7 +499,7 @@
       "trend30": {
         "available": true,
         "days": 30,
-        "fromDay": "2026-10-20",
+        "fromDay": "2026-10-21",
         "fromRating": 4.2,
         "ratingDelta": 0.2,
         "reviewDelta": 3,
@@ -565,7 +565,7 @@
       "trend30": {
         "available": true,
         "days": 30,
-        "fromDay": "2026-10-20",
+        "fromDay": "2026-10-21",
         "fromRating": 4.6,
         "ratingDelta": 0.1,
         "reviewDelta": 4,
@@ -631,7 +631,7 @@
       "trend30": {
         "available": true,
         "days": 30,
-        "fromDay": "2026-10-20",
+        "fromDay": "2026-10-21",
         "fromRating": 5,
         "ratingDelta": 0,
         "reviewDelta": 1,
@@ -696,7 +696,7 @@
       "trend30": {
         "available": true,
         "days": 30,
-        "fromDay": "2026-10-20",
+        "fromDay": "2026-10-21",
         "fromRating": 4.8,
         "ratingDelta": 0,
         "reviewDelta": 2,
@@ -816,7 +816,7 @@
       "trend30": {
         "available": true,
         "days": 30,
-        "fromDay": "2026-10-20",
+        "fromDay": "2026-10-21",
         "fromRating": 4.5,
         "ratingDelta": 0,
         "reviewDelta": 1,
@@ -882,7 +882,7 @@
       "trend30": {
         "available": true,
         "days": 30,
-        "fromDay": "2026-10-20",
+        "fromDay": "2026-10-21",
         "fromRating": 4.5,
         "ratingDelta": 0.1,
         "reviewDelta": 2,
@@ -948,9 +948,9 @@
       "trend30": {
         "available": true,
         "days": 30,
-        "fromDay": "2026-10-20",
-        "fromRating": 4.8,
-        "ratingDelta": 0.1,
+        "fromDay": "2026-10-21",
+        "fromRating": 4.9,
+        "ratingDelta": 0,
         "reviewDelta": 7,
         "approximate": false
       },
@@ -1013,7 +1013,7 @@
       "trend30": {
         "available": true,
         "days": 30,
-        "fromDay": "2026-10-20",
+        "fromDay": "2026-10-21",
         "fromRating": 4.6,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -1144,7 +1144,7 @@
       "trend30": {
         "available": true,
         "days": 30,
-        "fromDay": "2026-10-20",
+        "fromDay": "2026-10-21",
         "fromRating": 5,
         "ratingDelta": 0,
         "reviewDelta": 10,
@@ -1209,7 +1209,7 @@
       "trend30": {
         "available": true,
         "days": 30,
-        "fromDay": "2026-10-20",
+        "fromDay": "2026-10-21",
         "fromRating": 4.8,
         "ratingDelta": 0,
         "reviewDelta": 0,
