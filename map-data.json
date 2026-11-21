@@ -1,6 +1,6 @@
 {
   "schema": "review-map-6",
-  "generatedAt": "2026-11-21T16:41:58.535Z",
+  "generatedAt": "2026-11-21T21:55:31.905Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -28,7 +28,7 @@
       "periodBasis": "publication-only-v1",
       "lastReviewDay": "2026-11-16",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 5,
+      "lastReviewAgeDays": 6,
       "trend7": {
         "available": true,
         "days": 7,
@@ -41,7 +41,7 @@
       "trend30": {
         "available": true,
         "days": 30,
-        "fromDay": "2026-10-21",
+        "fromDay": "2026-10-22",
         "fromRating": 4.6,
         "ratingDelta": 0.1,
         "reviewDelta": 1,
@@ -94,7 +94,7 @@
       "periodBasis": "publication-only-v1",
       "lastReviewDay": "2026-11-06",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 15,
+      "lastReviewAgeDays": 16,
       "trend7": {
         "available": true,
         "days": 7,
@@ -107,7 +107,7 @@
       "trend30": {
         "available": true,
         "days": 30,
-        "fromDay": "2026-10-21",
+        "fromDay": "2026-10-22",
         "fromRating": 5,
         "ratingDelta": 0,
         "reviewDelta": 1,
@@ -159,7 +159,7 @@
       "periodBasis": "publication-only-v1",
       "lastReviewDay": "2026-11-19",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 2,
+      "lastReviewAgeDays": 3,
       "trend7": {
         "available": true,
         "days": 7,
@@ -172,7 +172,7 @@
       "trend30": {
         "available": true,
         "days": 30,
-        "fromDay": "2026-10-21",
+        "fromDay": "2026-10-22",
         "fromRating": 4.6,
         "ratingDelta": 0.1,
         "reviewDelta": 15,
@@ -225,7 +225,7 @@
       "periodBasis": "publication-only-v1",
       "lastReviewDay": "2026-11-19",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 2,
+      "lastReviewAgeDays": 3,
       "trend7": {
         "available": true,
         "days": 7,
@@ -238,7 +238,7 @@
       "trend30": {
         "available": true,
         "days": 30,
-        "fromDay": "2026-10-21",
+        "fromDay": "2026-10-22",
         "fromRating": 5,
         "ratingDelta": 0,
         "reviewDelta": 7,
@@ -290,7 +290,7 @@
       "periodBasis": "publication-only-v1",
       "lastReviewDay": "2026-11-18",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 3,
+      "lastReviewAgeDays": 4,
       "trend7": {
         "available": true,
         "days": 7,
@@ -303,7 +303,7 @@
       "trend30": {
         "available": true,
         "days": 30,
-        "fromDay": "2026-10-21",
+        "fromDay": "2026-10-22",
         "fromRating": 4.3,
         "ratingDelta": 0,
         "reviewDelta": 1,
@@ -356,7 +356,7 @@
       "periodBasis": "publication-only-v1",
       "lastReviewDay": "2026-08-26",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 87,
+      "lastReviewAgeDays": 88,
       "trend7": {
         "available": true,
         "days": 7,
@@ -369,7 +369,7 @@
       "trend30": {
         "available": true,
         "days": 30,
-        "fromDay": "2026-10-21",
+        "fromDay": "2026-10-22",
         "fromRating": 4.3,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -421,7 +421,7 @@
       "periodBasis": "publication-only-v1",
       "lastReviewDay": "2026-11-17",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 4,
+      "lastReviewAgeDays": 5,
       "trend7": {
         "available": true,
         "days": 7,
@@ -434,7 +434,7 @@
       "trend30": {
         "available": true,
         "days": 30,
-        "fromDay": "2026-10-21",
+        "fromDay": "2026-10-22",
         "fromRating": 5,
         "ratingDelta": 0,
         "reviewDelta": 5,
@@ -486,11 +486,11 @@
       "periodBasis": "publication-only-v1",
       "lastReviewDay": "2026-11-14",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 7,
+      "lastReviewAgeDays": 8,
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-14",
+        "fromDay": "2026-11-15",
         "fromRating": 4.3,
         "ratingDelta": 0.1,
         "reviewDelta": 0,
@@ -499,7 +499,7 @@
       "trend30": {
         "available": true,
         "days": 30,
-        "fromDay": "2026-10-21",
+        "fromDay": "2026-10-22",
         "fromRating": 4.2,
         "ratingDelta": 0.2,
         "reviewDelta": 3,
@@ -552,11 +552,11 @@
       "periodBasis": "publication-only-v1",
       "lastReviewDay": "2026-11-10",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 11,
+      "lastReviewAgeDays": 12,
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-14",
+        "fromDay": "2026-11-15",
         "fromRating": 4.7,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -565,7 +565,7 @@
       "trend30": {
         "available": true,
         "days": 30,
-        "fromDay": "2026-10-21",
+        "fromDay": "2026-10-22",
         "fromRating": 4.6,
         "ratingDelta": 0.1,
         "reviewDelta": 4,
@@ -618,7 +618,7 @@
       "periodBasis": "publication-only-v1",
       "lastReviewDay": "2026-11-07",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 14,
+      "lastReviewAgeDays": 15,
       "trend7": {
         "available": true,
         "days": 7,
@@ -631,7 +631,7 @@
       "trend30": {
         "available": true,
         "days": 30,
-        "fromDay": "2026-10-21",
+        "fromDay": "2026-10-22",
         "fromRating": 5,
         "ratingDelta": 0,
         "reviewDelta": 1,
@@ -683,11 +683,11 @@
       "periodBasis": "publication-only-v1",
       "lastReviewDay": "2026-11-06",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 15,
+      "lastReviewAgeDays": 16,
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-14",
+        "fromDay": "2026-11-15",
         "fromRating": 4.8,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -696,7 +696,7 @@
       "trend30": {
         "available": true,
         "days": 30,
-        "fromDay": "2026-10-21",
+        "fromDay": "2026-10-22",
         "fromRating": 4.8,
         "ratingDelta": 0,
         "reviewDelta": 2,
@@ -748,7 +748,7 @@
       "periodBasis": "publication-only-v1",
       "lastReviewDay": "2026-10-09",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 43,
+      "lastReviewAgeDays": 44,
       "trend7": {
         "available": false,
         "days": 7,
@@ -803,11 +803,11 @@
       "periodBasis": "publication-only-v1",
       "lastReviewDay": "2026-11-09",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 12,
+      "lastReviewAgeDays": 13,
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-14",
+        "fromDay": "2026-11-15",
         "fromRating": 4.5,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -816,7 +816,7 @@
       "trend30": {
         "available": true,
         "days": 30,
-        "fromDay": "2026-10-21",
+        "fromDay": "2026-10-22",
         "fromRating": 4.5,
         "ratingDelta": 0,
         "reviewDelta": 1,
@@ -869,7 +869,7 @@
       "periodBasis": "publication-only-v1",
       "lastReviewDay": "2026-11-12",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 9,
+      "lastReviewAgeDays": 10,
       "trend7": {
         "available": true,
         "days": 7,
@@ -882,7 +882,7 @@
       "trend30": {
         "available": true,
         "days": 30,
-        "fromDay": "2026-10-21",
+        "fromDay": "2026-10-22",
         "fromRating": 4.5,
         "ratingDelta": 0.1,
         "reviewDelta": 2,
@@ -935,11 +935,11 @@
       "periodBasis": "publication-only-v1",
       "lastReviewDay": "2026-11-10",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 11,
+      "lastReviewAgeDays": 12,
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-14",
+        "fromDay": "2026-11-15",
         "fromRating": 4.9,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -948,7 +948,7 @@
       "trend30": {
         "available": true,
         "days": 30,
-        "fromDay": "2026-10-21",
+        "fromDay": "2026-10-22",
         "fromRating": 4.9,
         "ratingDelta": 0,
         "reviewDelta": 7,
@@ -1000,7 +1000,7 @@
       "periodBasis": "publication-only-v1",
       "lastReviewDay": "2026-09-11",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 71,
+      "lastReviewAgeDays": 72,
       "trend7": {
         "available": true,
         "days": 7,
@@ -1013,7 +1013,7 @@
       "trend30": {
         "available": true,
         "days": 30,
-        "fromDay": "2026-10-21",
+        "fromDay": "2026-10-22",
         "fromRating": 4.6,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -1065,20 +1065,20 @@
       "periodBasis": "publication-only-v1",
       "lastReviewDay": "2026-11-17",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 4,
+      "lastReviewAgeDays": 5,
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-14",
-        "fromRating": 4.4,
-        "ratingDelta": 0.1,
+        "fromDay": "2026-11-15",
+        "fromRating": 4.5,
+        "ratingDelta": 0,
         "reviewDelta": 1,
         "approximate": false
       },
       "trend30": {
         "available": true,
         "days": 30,
-        "fromDay": "2026-10-21",
+        "fromDay": "2026-10-22",
         "fromRating": 4.3,
         "ratingDelta": 0.2,
         "reviewDelta": 5,
@@ -1131,7 +1131,7 @@
       "periodBasis": "publication-only-v1",
       "lastReviewDay": "2026-11-20",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 1,
+      "lastReviewAgeDays": 2,
       "trend7": {
         "available": true,
         "days": 7,
@@ -1144,7 +1144,7 @@
       "trend30": {
         "available": true,
         "days": 30,
-        "fromDay": "2026-10-21",
+        "fromDay": "2026-10-22",
         "fromRating": 5,
         "ratingDelta": 0,
         "reviewDelta": 11,
@@ -1196,7 +1196,7 @@
       "periodBasis": "publication-only-v1",
       "lastReviewDay": "2026-10-09",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 43,
+      "lastReviewAgeDays": 44,
       "trend7": {
         "available": true,
         "days": 7,
@@ -1209,7 +1209,7 @@
       "trend30": {
         "available": true,
         "days": 30,
-        "fromDay": "2026-10-21",
+        "fromDay": "2026-10-22",
         "fromRating": 4.8,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -1259,7 +1259,7 @@
       "periodBasis": "publication-only-v1",
       "lastReviewDay": "2024-03-28",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 968,
+      "lastReviewAgeDays": 969,
       "trend7": {
         "available": true,
         "days": 7,
@@ -1320,7 +1320,7 @@
       "periodBasis": "publication-only-v1",
       "lastReviewDay": "2024-11-16",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 735,
+      "lastReviewAgeDays": 736,
       "trend7": {
         "available": true,
         "days": 7,
@@ -1381,7 +1381,7 @@
       "periodBasis": "publication-only-v1",
       "lastReviewDay": "2020-02-17",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 2469,
+      "lastReviewAgeDays": 2470,
       "trend7": {
         "available": true,
         "days": 7,
@@ -1442,7 +1442,7 @@
       "periodBasis": "publication-only-v1",
       "lastReviewDay": "2023-12-09",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 1078,
+      "lastReviewAgeDays": 1079,
       "trend7": {
         "available": true,
         "days": 7,
@@ -1503,7 +1503,7 @@
       "periodBasis": "publication-only-v1",
       "lastReviewDay": "2025-05-03",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 567,
+      "lastReviewAgeDays": 568,
       "trend7": {
         "available": true,
         "days": 7,
@@ -1564,7 +1564,7 @@
       "periodBasis": "publication-only-v1",
       "lastReviewDay": "2023-12-23",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 1064,
+      "lastReviewAgeDays": 1065,
       "trend7": {
         "available": true,
         "days": 7,
@@ -1625,7 +1625,7 @@
       "periodBasis": "publication-only-v1",
       "lastReviewDay": "2025-04-18",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 582,
+      "lastReviewAgeDays": 583,
       "trend7": {
         "available": true,
         "days": 7,
@@ -1686,7 +1686,7 @@
       "periodBasis": "publication-only-v1",
       "lastReviewDay": "2023-12-22",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 1065,
+      "lastReviewAgeDays": 1066,
       "trend7": {
         "available": true,
         "days": 7,
@@ -1745,7 +1745,7 @@
       "periodBasis": "publication-only-v1",
       "lastReviewDay": "2023-09-13",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 1165,
+      "lastReviewAgeDays": 1166,
       "trend7": {
         "available": true,
         "days": 7,
@@ -1804,7 +1804,7 @@
       "periodBasis": "publication-only-v1",
       "lastReviewDay": "2026-01-27",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 298,
+      "lastReviewAgeDays": 299,
       "trend7": {
         "available": true,
         "days": 7,
@@ -1865,7 +1865,7 @@
       "periodBasis": "publication-only-v1",
       "lastReviewDay": "2023-10-13",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 1135,
+      "lastReviewAgeDays": 1136,
       "trend7": {
         "available": true,
         "days": 7,
@@ -1926,7 +1926,7 @@
       "periodBasis": "publication-only-v1",
       "lastReviewDay": "2026-01-19",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 306,
+      "lastReviewAgeDays": 307,
       "trend7": {
         "available": true,
         "days": 7,
@@ -1985,7 +1985,7 @@
       "periodBasis": "publication-only-v1",
       "lastReviewDay": "2026-07-17",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 127,
+      "lastReviewAgeDays": 128,
       "trend7": {
         "available": true,
         "days": 7,
@@ -2044,7 +2044,7 @@
       "periodBasis": "publication-only-v1",
       "lastReviewDay": "2026-08-13",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 100,
+      "lastReviewAgeDays": 101,
       "trend7": {
         "available": true,
         "days": 7,
@@ -2105,7 +2105,7 @@
       "periodBasis": "publication-only-v1",
       "lastReviewDay": "2020-09-02",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 2271,
+      "lastReviewAgeDays": 2272,
       "trend7": {
         "available": true,
         "days": 7,
@@ -2166,7 +2166,7 @@
       "periodBasis": "publication-only-v1",
       "lastReviewDay": "2025-05-22",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 548,
+      "lastReviewAgeDays": 549,
       "trend7": {
         "available": true,
         "days": 7,
@@ -2227,7 +2227,7 @@
       "periodBasis": "publication-only-v1",
       "lastReviewDay": "2025-06-04",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 535,
+      "lastReviewAgeDays": 536,
       "trend7": {
         "available": true,
         "days": 7,
@@ -2288,7 +2288,7 @@
       "periodBasis": "publication-only-v1",
       "lastReviewDay": "2023-09-07",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 1171,
+      "lastReviewAgeDays": 1172,
       "trend7": {
         "available": true,
         "days": 7,
@@ -2349,7 +2349,7 @@
       "periodBasis": "publication-only-v1",
       "lastReviewDay": "2022-07-07",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 1598,
+      "lastReviewAgeDays": 1599,
       "trend7": {
         "available": true,
         "days": 7,
@@ -2410,7 +2410,7 @@
       "periodBasis": "publication-only-v1",
       "lastReviewDay": "2024-08-20",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 823,
+      "lastReviewAgeDays": 824,
       "trend7": {
         "available": true,
         "days": 7,
@@ -2471,7 +2471,7 @@
       "periodBasis": "publication-only-v1",
       "lastReviewDay": "2022-06-28",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 1607,
+      "lastReviewAgeDays": 1608,
       "trend7": {
         "available": true,
         "days": 7,
@@ -2532,7 +2532,7 @@
       "periodBasis": "publication-only-v1",
       "lastReviewDay": "2023-11-23",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 1094,
+      "lastReviewAgeDays": 1095,
       "trend7": {
         "available": true,
         "days": 7,
@@ -2593,7 +2593,7 @@
       "periodBasis": "publication-only-v1",
       "lastReviewDay": "2020-04-14",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 2412,
+      "lastReviewAgeDays": 2413,
       "trend7": {
         "available": true,
         "days": 7,
@@ -2654,7 +2654,7 @@
       "periodBasis": "publication-only-v1",
       "lastReviewDay": "2023-04-25",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 1306,
+      "lastReviewAgeDays": 1307,
       "trend7": {
         "available": true,
         "days": 7,
@@ -2715,7 +2715,7 @@
       "periodBasis": "publication-only-v1",
       "lastReviewDay": "2023-01-23",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 1398,
+      "lastReviewAgeDays": 1399,
       "trend7": {
         "available": true,
         "days": 7,
