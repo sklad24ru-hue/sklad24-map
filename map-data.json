@@ -1,6 +1,6 @@
 {
   "schema": "review-map-6",
-  "generatedAt": "2026-11-22T02:01:41.836Z",
+  "generatedAt": "2026-11-22T09:49:57.978Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -98,7 +98,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-14",
+        "fromDay": "2026-11-15",
         "fromRating": 5,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -163,7 +163,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-14",
+        "fromDay": "2026-11-15",
         "fromRating": 4.7,
         "ratingDelta": 0,
         "reviewDelta": 5,
@@ -229,7 +229,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-14",
+        "fromDay": "2026-11-15",
         "fromRating": 5,
         "ratingDelta": 0,
         "reviewDelta": 3,
@@ -294,7 +294,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-14",
+        "fromDay": "2026-11-15",
         "fromRating": 4.3,
         "ratingDelta": 0,
         "reviewDelta": 1,
@@ -360,7 +360,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-14",
+        "fromDay": "2026-11-15",
         "fromRating": 4.3,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -425,7 +425,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-14",
+        "fromDay": "2026-11-15",
         "fromRating": 5,
         "ratingDelta": 0,
         "reviewDelta": 1,
@@ -622,7 +622,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-14",
+        "fromDay": "2026-11-15",
         "fromRating": 5,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -873,7 +873,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-14",
+        "fromDay": "2026-11-15",
         "fromRating": 4.6,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -1004,7 +1004,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-14",
+        "fromDay": "2026-11-15",
         "fromRating": 4.6,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -1045,7 +1045,7 @@
       "id": "206360892688",
       "name": "Салова",
       "active": true,
-      "rating": 4.5,
+      "rating": 4.6,
       "reviewCount": 9,
       "new7": 1,
       "new30": 5,
@@ -1071,7 +1071,7 @@
         "days": 7,
         "fromDay": "2026-11-15",
         "fromRating": 4.5,
-        "ratingDelta": 0,
+        "ratingDelta": 0.1,
         "reviewDelta": 1,
         "approximate": false
       },
@@ -1080,7 +1080,7 @@
         "days": 30,
         "fromDay": "2026-10-22",
         "fromRating": 4.3,
-        "ratingDelta": 0.2,
+        "ratingDelta": 0.3,
         "reviewDelta": 5,
         "approximate": false
       },
@@ -1103,8 +1103,8 @@
         59.898503
       ],
       "region": "spb",
-      "band": "orange",
-      "signal": "Рейтинг 4.5 ниже 4.8",
+      "band": "yellow",
+      "signal": "Рейтинг 4.6 ниже 4.8",
       "action": "Посмотреть отзывы"
     },
     {
@@ -1135,7 +1135,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-14",
+        "fromDay": "2026-11-15",
         "fromRating": 5,
         "ratingDelta": 0,
         "reviewDelta": 6,
@@ -1200,7 +1200,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-14",
+        "fromDay": "2026-11-15",
         "fromRating": 4.8,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -2053,7 +2053,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-14",
+        "fromDay": "2026-11-15",
         "fromRating": 4.3,
         "ratingDelta": 0,
         "reviewDelta": 0,
@@ -2570,7 +2570,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-14",
+        "fromDay": "2026-11-15",
         "fromRating": 4.6,
         "ratingDelta": 0,
         "reviewDelta": 0,
