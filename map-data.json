@@ -1,6 +1,6 @@
 {
   "schema": "review-map-6",
-  "generatedAt": "2026-11-23T03:37:56.798Z",
+  "generatedAt": "2026-11-23T13:42:47.352Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -32,7 +32,7 @@
       "trend7": {
         "available": true,
         "days": 7,
-        "fromDay": "2026-11-15",
+        "fromDay": "2026-11-16",
         "fromRating": 4.7,
         "ratingDelta": 0,
         "reviewDelta": 1,
@@ -765,19 +765,21 @@
         "since": "2026-10-15"
       },
       "ratingHistorySince": "2026-10-15",
-      "attention": false,
-      "attentionScore": 0,
-      "attentionLevel": "normal",
-      "attentionLabel": "Норма",
+      "attention": true,
+      "attentionScore": 10,
+      "attentionLevel": "critical",
+      "attentionLabel": "Критический",
       "recommendations": [
-        "Срочных действий нет."
+        "Проверить корректность данных карточки."
       ],
       "coordinates": [
         37.734713,
         55.974181
       ],
       "region": "moscow",
-      "band": "none"
+      "band": "none",
+      "signal": "Ошибка данных",
+      "action": "Проверить карточку"
     },
     {
       "id": "44367646840",
@@ -1138,7 +1140,7 @@
         "fromDay": "2026-11-16",
         "fromRating": 5,
         "ratingDelta": 0,
-        "reviewDelta": 6,
+        "reviewDelta": 7,
         "approximate": false
       },
       "trend30": {
@@ -1261,9 +1263,13 @@
       "lastReviewDateSource": "published",
       "lastReviewAgeDays": 970,
       "trend7": {
-        "available": false,
+        "available": true,
         "days": 7,
-        "since": "2026-10-15"
+        "fromDay": "2026-11-16",
+        "fromRating": 4.5,
+        "ratingDelta": 0,
+        "reviewDelta": 0,
+        "approximate": false
       },
       "trend30": {
         "available": false,
@@ -1277,12 +1283,11 @@
       },
       "ratingHistorySince": "2026-10-15",
       "attention": true,
-      "attentionScore": 5,
-      "attentionLevel": "high",
-      "attentionLabel": "Высокий",
+      "attentionScore": 3,
+      "attentionLevel": "watch",
+      "attentionLabel": "Наблюдать",
       "recommendations": [
-        "Разобрать причины рейтинга ниже цели 4.8★.",
-        "Обновить данные территории."
+        "Разобрать причины рейтинга ниже цели 4.8★."
       ],
       "coordinates": [
         37.579978,
@@ -1290,8 +1295,8 @@
       ],
       "region": "moscow",
       "band": "orange",
-      "signal": "Данные устарели",
-      "action": "Обновить данные"
+      "signal": "Рейтинг 4.5 ниже 4.8",
+      "action": "Посмотреть отзывы"
     },
     {
       "id": "1292274959",
@@ -1319,9 +1324,13 @@
       "lastReviewDateSource": "published",
       "lastReviewAgeDays": 737,
       "trend7": {
-        "available": false,
+        "available": true,
         "days": 7,
-        "since": "2026-10-15"
+        "fromDay": "2026-11-16",
+        "fromRating": 4.7,
+        "ratingDelta": 0,
+        "reviewDelta": 0,
+        "approximate": false
       },
       "trend30": {
         "available": false,
@@ -1335,12 +1344,11 @@
       },
       "ratingHistorySince": "2026-10-15",
       "attention": true,
-      "attentionScore": 4,
-      "attentionLevel": "watch",
-      "attentionLabel": "Наблюдать",
+      "attentionScore": 2,
+      "attentionLevel": "normal",
+      "attentionLabel": "Норма",
       "recommendations": [
-        "Разобрать причины рейтинга ниже цели 4.8★.",
-        "Обновить данные территории."
+        "Разобрать причины рейтинга ниже цели 4.8★."
       ],
       "coordinates": [
         37.609654,
@@ -1348,8 +1356,8 @@
       ],
       "region": "moscow",
       "band": "yellow",
-      "signal": "Данные устарели",
-      "action": "Обновить данные"
+      "signal": "Рейтинг 4.7 ниже 4.8",
+      "action": "Посмотреть отзывы"
     },
     {
       "id": "97016834505",
@@ -1377,9 +1385,13 @@
       "lastReviewDateSource": "published",
       "lastReviewAgeDays": 2471,
       "trend7": {
-        "available": false,
+        "available": true,
         "days": 7,
-        "since": "2026-10-15"
+        "fromDay": "2026-11-16",
+        "fromRating": 4.2,
+        "ratingDelta": 0,
+        "reviewDelta": 0,
+        "approximate": false
       },
       "trend30": {
         "available": false,
@@ -1393,12 +1405,11 @@
       },
       "ratingHistorySince": "2026-10-15",
       "attention": true,
-      "attentionScore": 6,
-      "attentionLevel": "high",
-      "attentionLabel": "Высокий",
+      "attentionScore": 4,
+      "attentionLevel": "watch",
+      "attentionLabel": "Наблюдать",
       "recommendations": [
-        "Разобрать причины рейтинга ниже цели 4.8★.",
-        "Обновить данные территории."
+        "Разобрать причины рейтинга ниже цели 4.8★."
       ],
       "coordinates": [
         37.501851,
@@ -1406,8 +1417,8 @@
       ],
       "region": "moscow",
       "band": "red",
-      "signal": "Данные устарели",
-      "action": "Обновить данные"
+      "signal": "Рейтинг 4.2 ниже 4.8",
+      "action": "Посмотреть отзывы"
     },
     {
       "id": "70286938525",
@@ -1435,9 +1446,13 @@
       "lastReviewDateSource": "published",
       "lastReviewAgeDays": 1080,
       "trend7": {
-        "available": false,
+        "available": true,
         "days": 7,
-        "since": "2026-10-15"
+        "fromDay": "2026-11-16",
+        "fromRating": 4.5,
+        "ratingDelta": 0,
+        "reviewDelta": 0,
+        "approximate": false
       },
       "trend30": {
         "available": false,
@@ -1451,12 +1466,11 @@
       },
       "ratingHistorySince": "2026-10-15",
       "attention": true,
-      "attentionScore": 5,
-      "attentionLevel": "high",
-      "attentionLabel": "Высокий",
+      "attentionScore": 3,
+      "attentionLevel": "watch",
+      "attentionLabel": "Наблюдать",
       "recommendations": [
-        "Разобрать причины рейтинга ниже цели 4.8★.",
-        "Обновить данные территории."
+        "Разобрать причины рейтинга ниже цели 4.8★."
       ],
       "coordinates": [
         37.528437,
@@ -1464,8 +1478,8 @@
       ],
       "region": "moscow",
       "band": "orange",
-      "signal": "Данные устарели",
-      "action": "Обновить данные"
+      "signal": "Рейтинг 4.5 ниже 4.8",
+      "action": "Посмотреть отзывы"
     },
     {
       "id": "51098051930",
@@ -1493,9 +1507,13 @@
       "lastReviewDateSource": "published",
       "lastReviewAgeDays": 569,
       "trend7": {
-        "available": false,
+        "available": true,
         "days": 7,
-        "since": "2026-10-15"
+        "fromDay": "2026-11-16",
+        "fromRating": 4,
+        "ratingDelta": 0,
+        "reviewDelta": 0,
+        "approximate": false
       },
       "trend30": {
         "available": false,
@@ -1509,12 +1527,11 @@
       },
       "ratingHistorySince": "2026-10-15",
       "attention": true,
-      "attentionScore": 6,
-      "attentionLevel": "high",
-      "attentionLabel": "Высокий",
+      "attentionScore": 4,
+      "attentionLevel": "watch",
+      "attentionLabel": "Наблюдать",
       "recommendations": [
-        "Разобрать причины рейтинга ниже цели 4.8★.",
-        "Обновить данные территории."
+        "Разобрать причины рейтинга ниже цели 4.8★."
       ],
       "coordinates": [
         37.798816,
@@ -1522,8 +1539,8 @@
       ],
       "region": "moscow",
       "band": "red",
-      "signal": "Данные устарели",
-      "action": "Обновить данные"
+      "signal": "Рейтинг 4.0 ниже 4.8",
+      "action": "Посмотреть отзывы"
     },
     {
       "id": "138250466418",
@@ -1551,9 +1568,13 @@
       "lastReviewDateSource": "published",
       "lastReviewAgeDays": 1066,
       "trend7": {
-        "available": false,
+        "available": true,
         "days": 7,
-        "since": "2026-10-15"
+        "fromDay": "2026-11-16",
+        "fromRating": 4.7,
+        "ratingDelta": 0,
+        "reviewDelta": 0,
+        "approximate": false
       },
       "trend30": {
         "available": false,
@@ -1567,12 +1588,11 @@
       },
       "ratingHistorySince": "2026-10-15",
       "attention": true,
-      "attentionScore": 4,
-      "attentionLevel": "watch",
-      "attentionLabel": "Наблюдать",
+      "attentionScore": 2,
+      "attentionLevel": "normal",
+      "attentionLabel": "Норма",
       "recommendations": [
-        "Разобрать причины рейтинга ниже цели 4.8★.",
-        "Обновить данные территории."
+        "Разобрать причины рейтинга ниже цели 4.8★."
       ],
       "coordinates": [
         37.54047,
@@ -1580,8 +1600,8 @@
       ],
       "region": "moscow",
       "band": "yellow",
-      "signal": "Данные устарели",
-      "action": "Обновить данные"
+      "signal": "Рейтинг 4.7 ниже 4.8",
+      "action": "Посмотреть отзывы"
     },
     {
       "id": "202839031465",
@@ -1609,9 +1629,13 @@
       "lastReviewDateSource": "published",
       "lastReviewAgeDays": 584,
       "trend7": {
-        "available": false,
+        "available": true,
         "days": 7,
-        "since": "2026-10-15"
+        "fromDay": "2026-11-16",
+        "fromRating": 4.7,
+        "ratingDelta": 0,
+        "reviewDelta": 0,
+        "approximate": false
       },
       "trend30": {
         "available": false,
@@ -1625,12 +1649,11 @@
       },
       "ratingHistorySince": "2026-10-15",
       "attention": true,
-      "attentionScore": 4,
-      "attentionLevel": "watch",
-      "attentionLabel": "Наблюдать",
+      "attentionScore": 2,
+      "attentionLevel": "normal",
+      "attentionLabel": "Норма",
       "recommendations": [
-        "Разобрать причины рейтинга ниже цели 4.8★.",
-        "Обновить данные территории."
+        "Разобрать причины рейтинга ниже цели 4.8★."
       ],
       "coordinates": [
         37.450093,
@@ -1638,8 +1661,8 @@
       ],
       "region": "moscow",
       "band": "yellow",
-      "signal": "Данные устарели",
-      "action": "Обновить данные"
+      "signal": "Рейтинг 4.7 ниже 4.8",
+      "action": "Посмотреть отзывы"
     },
     {
       "id": "101233466519",
@@ -1667,9 +1690,13 @@
       "lastReviewDateSource": "published",
       "lastReviewAgeDays": 1067,
       "trend7": {
-        "available": false,
+        "available": true,
         "days": 7,
-        "since": "2026-10-15"
+        "fromDay": "2026-11-16",
+        "fromRating": 4.8,
+        "ratingDelta": 0,
+        "reviewDelta": 0,
+        "approximate": false
       },
       "trend30": {
         "available": false,
@@ -1682,21 +1709,19 @@
         "since": "2026-10-15"
       },
       "ratingHistorySince": "2026-10-15",
-      "attention": true,
-      "attentionScore": 2,
+      "attention": false,
+      "attentionScore": 0,
       "attentionLevel": "normal",
       "attentionLabel": "Норма",
       "recommendations": [
-        "Обновить данные территории."
+        "Срочных действий нет."
       ],
       "coordinates": [
         37.527094,
         55.65949
       ],
       "region": "moscow",
-      "band": "green",
-      "signal": "Данные устарели",
-      "action": "Обновить данные"
+      "band": "green"
     },
     {
       "id": "229242049255",
@@ -1724,9 +1749,13 @@
       "lastReviewDateSource": "published",
       "lastReviewAgeDays": 1167,
       "trend7": {
-        "available": false,
+        "available": true,
         "days": 7,
-        "since": "2026-10-15"
+        "fromDay": "2026-11-16",
+        "fromRating": 4.8,
+        "ratingDelta": 0,
+        "reviewDelta": 0,
+        "approximate": false
       },
       "trend30": {
         "available": false,
@@ -1739,21 +1768,19 @@
         "since": "2026-10-15"
       },
       "ratingHistorySince": "2026-10-15",
-      "attention": true,
-      "attentionScore": 2,
+      "attention": false,
+      "attentionScore": 0,
       "attentionLevel": "normal",
       "attentionLabel": "Норма",
       "recommendations": [
-        "Обновить данные территории."
+        "Срочных действий нет."
       ],
       "coordinates": [
         37.463386,
         55.862237
       ],
       "region": "spb",
-      "band": "green",
-      "signal": "Данные устарели",
-      "action": "Обновить данные"
+      "band": "green"
     },
     {
       "id": "16902258832",
@@ -1781,9 +1808,13 @@
       "lastReviewDateSource": "published",
       "lastReviewAgeDays": 300,
       "trend7": {
-        "available": false,
+        "available": true,
         "days": 7,
-        "since": "2026-10-15"
+        "fromDay": "2026-11-16",
+        "fromRating": 4.4,
+        "ratingDelta": 0,
+        "reviewDelta": 0,
+        "approximate": false
       },
       "trend30": {
         "available": false,
@@ -1797,12 +1828,11 @@
       },
       "ratingHistorySince": "2026-10-15",
       "attention": true,
-      "attentionScore": 5,
-      "attentionLevel": "high",
-      "attentionLabel": "Высокий",
+      "attentionScore": 3,
+      "attentionLevel": "watch",
+      "attentionLabel": "Наблюдать",
       "recommendations": [
-        "Разобрать причины рейтинга ниже цели 4.8★.",
-        "Обновить данные территории."
+        "Разобрать причины рейтинга ниже цели 4.8★."
       ],
       "coordinates": [
         37.393919,
@@ -1810,8 +1840,8 @@
       ],
       "region": "moscow",
       "band": "orange",
-      "signal": "Данные устарели",
-      "action": "Обновить данные"
+      "signal": "Рейтинг 4.4 ниже 4.8",
+      "action": "Посмотреть отзывы"
     },
     {
       "id": "87874661964",
@@ -1839,9 +1869,13 @@
       "lastReviewDateSource": "published",
       "lastReviewAgeDays": 1137,
       "trend7": {
-        "available": false,
+        "available": true,
         "days": 7,
-        "since": "2026-10-15"
+        "fromDay": "2026-11-16",
+        "fromRating": 4.3,
+        "ratingDelta": 0,
+        "reviewDelta": 0,
+        "approximate": false
       },
       "trend30": {
         "available": false,
@@ -1855,12 +1889,11 @@
       },
       "ratingHistorySince": "2026-10-15",
       "attention": true,
-      "attentionScore": 6,
-      "attentionLevel": "high",
-      "attentionLabel": "Высокий",
+      "attentionScore": 4,
+      "attentionLevel": "watch",
+      "attentionLabel": "Наблюдать",
       "recommendations": [
-        "Разобрать причины рейтинга ниже цели 4.8★.",
-        "Обновить данные территории."
+        "Разобрать причины рейтинга ниже цели 4.8★."
       ],
       "coordinates": [
         37.725206,
@@ -1868,8 +1901,8 @@
       ],
       "region": "moscow",
       "band": "red",
-      "signal": "Данные устарели",
-      "action": "Обновить данные"
+      "signal": "Рейтинг 4.3 ниже 4.8",
+      "action": "Посмотреть отзывы"
     },
     {
       "id": "47258285319",
@@ -1897,9 +1930,13 @@
       "lastReviewDateSource": "published",
       "lastReviewAgeDays": 308,
       "trend7": {
-        "available": false,
+        "available": true,
         "days": 7,
-        "since": "2026-10-15"
+        "fromDay": "2026-11-16",
+        "fromRating": 4.9,
+        "ratingDelta": 0,
+        "reviewDelta": 0,
+        "approximate": false
       },
       "trend30": {
         "available": false,
@@ -1912,21 +1949,19 @@
         "since": "2026-10-15"
       },
       "ratingHistorySince": "2026-10-15",
-      "attention": true,
-      "attentionScore": 2,
+      "attention": false,
+      "attentionScore": 0,
       "attentionLevel": "normal",
       "attentionLabel": "Норма",
       "recommendations": [
-        "Обновить данные территории."
+        "Срочных действий нет."
       ],
       "coordinates": [
         37.708163,
         55.891984
       ],
       "region": "moscow",
-      "band": "green",
-      "signal": "Данные устарели",
-      "action": "Обновить данные"
+      "band": "green"
     },
     {
       "id": "38728845294",
@@ -1954,9 +1989,13 @@
       "lastReviewDateSource": "published",
       "lastReviewAgeDays": 129,
       "trend7": {
-        "available": false,
+        "available": true,
         "days": 7,
-        "since": "2026-10-15"
+        "fromDay": "2026-11-16",
+        "fromRating": 4.9,
+        "ratingDelta": 0,
+        "reviewDelta": 0,
+        "approximate": false
       },
       "trend30": {
         "available": false,
@@ -1969,21 +2008,19 @@
         "since": "2026-10-15"
       },
       "ratingHistorySince": "2026-10-15",
-      "attention": true,
-      "attentionScore": 2,
+      "attention": false,
+      "attentionScore": 0,
       "attentionLevel": "normal",
       "attentionLabel": "Норма",
       "recommendations": [
-        "Обновить данные территории."
+        "Срочных действий нет."
       ],
       "coordinates": [
         37.758356,
         55.881737
       ],
       "region": "moscow",
-      "band": "green",
-      "signal": "Данные устарели",
-      "action": "Обновить данные"
+      "band": "green"
     },
     {
       "id": "28991532988",
@@ -2011,9 +2048,13 @@
       "lastReviewDateSource": "published",
       "lastReviewAgeDays": 102,
       "trend7": {
-        "available": false,
+        "available": true,
         "days": 7,
-        "since": "2026-10-15"
+        "fromDay": "2026-11-16",
+        "fromRating": 4.3,
+        "ratingDelta": 0,
+        "reviewDelta": 0,
+        "approximate": false
       },
       "trend30": {
         "available": false,
@@ -2027,12 +2068,11 @@
       },
       "ratingHistorySince": "2026-10-15",
       "attention": true,
-      "attentionScore": 6,
-      "attentionLevel": "high",
-      "attentionLabel": "Высокий",
+      "attentionScore": 4,
+      "attentionLevel": "watch",
+      "attentionLabel": "Наблюдать",
       "recommendations": [
-        "Разобрать причины рейтинга ниже цели 4.8★.",
-        "Обновить данные территории."
+        "Разобрать причины рейтинга ниже цели 4.8★."
       ],
       "coordinates": [
         37.780635,
@@ -2040,8 +2080,8 @@
       ],
       "region": "moscow",
       "band": "red",
-      "signal": "Данные устарели",
-      "action": "Обновить данные"
+      "signal": "Рейтинг 4.3 ниже 4.8",
+      "action": "Посмотреть отзывы"
     },
     {
       "id": "31152751979",
@@ -2130,9 +2170,13 @@
       "lastReviewDateSource": "published",
       "lastReviewAgeDays": 550,
       "trend7": {
-        "available": false,
+        "available": true,
         "days": 7,
-        "since": "2026-10-15"
+        "fromDay": "2026-11-16",
+        "fromRating": 4,
+        "ratingDelta": 0,
+        "reviewDelta": 0,
+        "approximate": false
       },
       "trend30": {
         "available": false,
@@ -2146,12 +2190,11 @@
       },
       "ratingHistorySince": "2026-10-15",
       "attention": true,
-      "attentionScore": 6,
-      "attentionLevel": "high",
-      "attentionLabel": "Высокий",
+      "attentionScore": 4,
+      "attentionLevel": "watch",
+      "attentionLabel": "Наблюдать",
       "recommendations": [
-        "Разобрать причины рейтинга ниже цели 4.8★.",
-        "Обновить данные территории."
+        "Разобрать причины рейтинга ниже цели 4.8★."
       ],
       "coordinates": [
         37.177371,
@@ -2159,8 +2202,8 @@
       ],
       "region": "moscow",
       "band": "red",
-      "signal": "Данные устарели",
-      "action": "Обновить данные"
+      "signal": "Рейтинг 4.0 ниже 4.8",
+      "action": "Посмотреть отзывы"
     },
     {
       "id": "70233846022",
@@ -2188,9 +2231,13 @@
       "lastReviewDateSource": "published",
       "lastReviewAgeDays": 537,
       "trend7": {
-        "available": false,
+        "available": true,
         "days": 7,
-        "since": "2026-10-15"
+        "fromDay": "2026-11-16",
+        "fromRating": 4.5,
+        "ratingDelta": 0,
+        "reviewDelta": 0,
+        "approximate": false
       },
       "trend30": {
         "available": false,
@@ -2204,12 +2251,11 @@
       },
       "ratingHistorySince": "2026-10-15",
       "attention": true,
-      "attentionScore": 5,
-      "attentionLevel": "high",
-      "attentionLabel": "Высокий",
+      "attentionScore": 3,
+      "attentionLevel": "watch",
+      "attentionLabel": "Наблюдать",
       "recommendations": [
-        "Разобрать причины рейтинга ниже цели 4.8★.",
-        "Обновить данные территории."
+        "Разобрать причины рейтинга ниже цели 4.8★."
       ],
       "coordinates": [
         37.158605,
@@ -2217,8 +2263,8 @@
       ],
       "region": "moscow",
       "band": "orange",
-      "signal": "Данные устарели",
-      "action": "Обновить данные"
+      "signal": "Рейтинг 4.5 ниже 4.8",
+      "action": "Посмотреть отзывы"
     },
     {
       "id": "21458623633",
@@ -2246,9 +2292,13 @@
       "lastReviewDateSource": "published",
       "lastReviewAgeDays": 1173,
       "trend7": {
-        "available": false,
+        "available": true,
         "days": 7,
-        "since": "2026-10-15"
+        "fromDay": "2026-11-16",
+        "fromRating": 4.3,
+        "ratingDelta": 0,
+        "reviewDelta": 0,
+        "approximate": false
       },
       "trend30": {
         "available": false,
@@ -2262,12 +2312,11 @@
       },
       "ratingHistorySince": "2026-10-15",
       "attention": true,
-      "attentionScore": 6,
-      "attentionLevel": "high",
-      "attentionLabel": "Высокий",
+      "attentionScore": 4,
+      "attentionLevel": "watch",
+      "attentionLabel": "Наблюдать",
       "recommendations": [
-        "Разобрать причины рейтинга ниже цели 4.8★.",
-        "Обновить данные территории."
+        "Разобрать причины рейтинга ниже цели 4.8★."
       ],
       "coordinates": [
         37.79605,
@@ -2275,8 +2324,8 @@
       ],
       "region": "moscow",
       "band": "red",
-      "signal": "Данные устарели",
-      "action": "Обновить данные"
+      "signal": "Рейтинг 4.3 ниже 4.8",
+      "action": "Посмотреть отзывы"
     },
     {
       "id": "243547050778",
@@ -2304,9 +2353,13 @@
       "lastReviewDateSource": "published",
       "lastReviewAgeDays": 1600,
       "trend7": {
-        "available": false,
+        "available": true,
         "days": 7,
-        "since": "2026-10-15"
+        "fromDay": "2026-11-16",
+        "fromRating": 4.6,
+        "ratingDelta": 0,
+        "reviewDelta": 0,
+        "approximate": false
       },
       "trend30": {
         "available": false,
@@ -2320,12 +2373,11 @@
       },
       "ratingHistorySince": "2026-10-15",
       "attention": true,
-      "attentionScore": 5,
-      "attentionLevel": "high",
-      "attentionLabel": "Высокий",
+      "attentionScore": 3,
+      "attentionLevel": "watch",
+      "attentionLabel": "Наблюдать",
       "recommendations": [
-        "Разобрать причины рейтинга ниже цели 4.8★.",
-        "Обновить данные территории."
+        "Разобрать причины рейтинга ниже цели 4.8★."
       ],
       "coordinates": [
         37.722514,
@@ -2333,8 +2385,8 @@
       ],
       "region": "moscow",
       "band": "yellow",
-      "signal": "Данные устарели",
-      "action": "Обновить данные"
+      "signal": "Рейтинг 4.6 ниже 4.8",
+      "action": "Посмотреть отзывы"
     },
     {
       "id": "120529177523",
@@ -2362,9 +2414,13 @@
       "lastReviewDateSource": "published",
       "lastReviewAgeDays": 825,
       "trend7": {
-        "available": false,
+        "available": true,
         "days": 7,
-        "since": "2026-10-15"
+        "fromDay": "2026-11-16",
+        "fromRating": 4.3,
+        "ratingDelta": 0,
+        "reviewDelta": 0,
+        "approximate": false
       },
       "trend30": {
         "available": false,
@@ -2378,12 +2434,11 @@
       },
       "ratingHistorySince": "2026-10-15",
       "attention": true,
-      "attentionScore": 6,
-      "attentionLevel": "high",
-      "attentionLabel": "Высокий",
+      "attentionScore": 4,
+      "attentionLevel": "watch",
+      "attentionLabel": "Наблюдать",
       "recommendations": [
-        "Разобрать причины рейтинга ниже цели 4.8★.",
-        "Обновить данные территории."
+        "Разобрать причины рейтинга ниже цели 4.8★."
       ],
       "coordinates": [
         37.511553,
@@ -2391,8 +2446,8 @@
       ],
       "region": "moscow",
       "band": "red",
-      "signal": "Данные устарели",
-      "action": "Обновить данные"
+      "signal": "Рейтинг 4.3 ниже 4.8",
+      "action": "Посмотреть отзывы"
     },
     {
       "id": "188179066370",
@@ -2420,9 +2475,13 @@
       "lastReviewDateSource": "published",
       "lastReviewAgeDays": 1609,
       "trend7": {
-        "available": false,
+        "available": true,
         "days": 7,
-        "since": "2026-10-15"
+        "fromDay": "2026-11-16",
+        "fromRating": 4.1,
+        "ratingDelta": 0,
+        "reviewDelta": 0,
+        "approximate": false
       },
       "trend30": {
         "available": false,
@@ -2436,12 +2495,11 @@
       },
       "ratingHistorySince": "2026-10-15",
       "attention": true,
-      "attentionScore": 6,
-      "attentionLevel": "high",
-      "attentionLabel": "Высокий",
+      "attentionScore": 4,
+      "attentionLevel": "watch",
+      "attentionLabel": "Наблюдать",
       "recommendations": [
-        "Разобрать причины рейтинга ниже цели 4.8★.",
-        "Обновить данные территории."
+        "Разобрать причины рейтинга ниже цели 4.8★."
       ],
       "coordinates": [
         37.421129,
@@ -2449,8 +2507,8 @@
       ],
       "region": "moscow",
       "band": "red",
-      "signal": "Данные устарели",
-      "action": "Обновить данные"
+      "signal": "Рейтинг 4.1 ниже 4.8",
+      "action": "Посмотреть отзывы"
     },
     {
       "id": "112079808635",
@@ -2478,9 +2536,13 @@
       "lastReviewDateSource": "published",
       "lastReviewAgeDays": 1096,
       "trend7": {
-        "available": false,
+        "available": true,
         "days": 7,
-        "since": "2026-10-15"
+        "fromDay": "2026-11-16",
+        "fromRating": 4.2,
+        "ratingDelta": 0,
+        "reviewDelta": 0,
+        "approximate": false
       },
       "trend30": {
         "available": false,
@@ -2494,12 +2556,11 @@
       },
       "ratingHistorySince": "2026-10-15",
       "attention": true,
-      "attentionScore": 6,
-      "attentionLevel": "high",
-      "attentionLabel": "Высокий",
+      "attentionScore": 4,
+      "attentionLevel": "watch",
+      "attentionLabel": "Наблюдать",
       "recommendations": [
-        "Разобрать причины рейтинга ниже цели 4.8★.",
-        "Обновить данные территории."
+        "Разобрать причины рейтинга ниже цели 4.8★."
       ],
       "coordinates": [
         37.590239,
@@ -2507,8 +2568,8 @@
       ],
       "region": "moscow",
       "band": "red",
-      "signal": "Данные устарели",
-      "action": "Обновить данные"
+      "signal": "Рейтинг 4.2 ниже 4.8",
+      "action": "Посмотреть отзывы"
     },
     {
       "id": "103997923136",
@@ -2536,9 +2597,13 @@
       "lastReviewDateSource": "published",
       "lastReviewAgeDays": 2414,
       "trend7": {
-        "available": false,
+        "available": true,
         "days": 7,
-        "since": "2026-10-15"
+        "fromDay": "2026-11-16",
+        "fromRating": 4,
+        "ratingDelta": 0,
+        "reviewDelta": 0,
+        "approximate": false
       },
       "trend30": {
         "available": false,
@@ -2552,12 +2617,11 @@
       },
       "ratingHistorySince": "2026-10-15",
       "attention": true,
-      "attentionScore": 6,
-      "attentionLevel": "high",
-      "attentionLabel": "Высокий",
+      "attentionScore": 4,
+      "attentionLevel": "watch",
+      "attentionLabel": "Наблюдать",
       "recommendations": [
-        "Разобрать причины рейтинга ниже цели 4.8★.",
-        "Обновить данные территории."
+        "Разобрать причины рейтинга ниже цели 4.8★."
       ],
       "coordinates": [
         37.467498,
@@ -2565,8 +2629,8 @@
       ],
       "region": "moscow",
       "band": "red",
-      "signal": "Данные устарели",
-      "action": "Обновить данные"
+      "signal": "Рейтинг 4.0 ниже 4.8",
+      "action": "Посмотреть отзывы"
     },
     {
       "id": "106696494817",
@@ -2655,9 +2719,13 @@
       "lastReviewDateSource": "published",
       "lastReviewAgeDays": 1400,
       "trend7": {
-        "available": false,
+        "available": true,
         "days": 7,
-        "since": "2026-10-15"
+        "fromDay": "2026-11-16",
+        "fromRating": 4.7,
+        "ratingDelta": 0,
+        "reviewDelta": 0,
+        "approximate": false
       },
       "trend30": {
         "available": false,
@@ -2671,12 +2739,11 @@
       },
       "ratingHistorySince": "2026-10-15",
       "attention": true,
-      "attentionScore": 4,
-      "attentionLevel": "watch",
-      "attentionLabel": "Наблюдать",
+      "attentionScore": 2,
+      "attentionLevel": "normal",
+      "attentionLabel": "Норма",
       "recommendations": [
-        "Разобрать причины рейтинга ниже цели 4.8★.",
-        "Обновить данные территории."
+        "Разобрать причины рейтинга ниже цели 4.8★."
       ],
       "coordinates": [
         37.707036,
@@ -2684,8 +2751,8 @@
       ],
       "region": "moscow",
       "band": "yellow",
-      "signal": "Данные устарели",
-      "action": "Обновить данные"
+      "signal": "Рейтинг 4.7 ниже 4.8",
+      "action": "Посмотреть отзывы"
     }
   ],
   "summary": {
@@ -2694,7 +2761,7 @@
     "mapped": 44,
     "missing": 1,
     "below": 31,
-    "attention": 42
+    "attention": 39
   },
   "enabled": true,
   "version": "3.55",
