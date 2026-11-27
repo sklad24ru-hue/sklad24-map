@@ -1,6 +1,6 @@
 {
   "schema": "review-map-6",
-  "generatedAt": "2026-11-27T08:41:02.365Z",
+  "generatedAt": "2026-11-27T18:29:20.806Z",
   "analyticsReady": true,
   "target": 4.8,
   "points": [
@@ -76,9 +76,9 @@
       "active": true,
       "rating": 5,
       "reviewCount": 96,
-      "new7": 2,
-      "new30": 3,
-      "new90": 11,
+      "new7": 3,
+      "new30": 4,
+      "new90": 12,
       "below5_7": 0,
       "below5_30": 0,
       "below5_90": 0,
@@ -86,15 +86,15 @@
       "low30": 0,
       "low90": 0,
       "lowNo": 3,
-      "noReply7": 2,
-      "noReply30": 3,
-      "noReply90": 11,
+      "noReply7": 3,
+      "noReply30": 4,
+      "noReply90": 12,
       "undatedReviews": 0,
       "futureDatedReviews": 0,
       "periodBasis": "publication-only-v1",
-      "lastReviewDay": "2026-11-26",
+      "lastReviewDay": "2026-11-27",
       "lastReviewDateSource": "published",
-      "lastReviewAgeDays": 1,
+      "lastReviewAgeDays": 0,
       "trend7": {
         "available": true,
         "days": 7,
@@ -132,7 +132,7 @@
       ],
       "region": "moscow",
       "band": "green",
-      "signal": "3 без ответа за 30 дней",
+      "signal": "4 без ответа за 30 дней",
       "action": "Ответить на свежие отзывы"
     },
     {
@@ -532,7 +532,7 @@
       "id": "189001895569",
       "name": "Обводный канал",
       "active": true,
-      "rating": 4.7,
+      "rating": 4.8,
       "reviewCount": 16,
       "new7": 1,
       "new30": 5,
@@ -558,7 +558,7 @@
         "days": 7,
         "fromDay": "2026-11-20",
         "fromRating": 4.7,
-        "ratingDelta": 0,
+        "ratingDelta": 0.1,
         "reviewDelta": 1,
         "approximate": false
       },
@@ -567,7 +567,7 @@
         "days": 30,
         "fromDay": "2026-10-27",
         "fromRating": 4.6,
-        "ratingDelta": 0.1,
+        "ratingDelta": 0.2,
         "reviewDelta": 5,
         "approximate": false
       },
@@ -578,11 +578,10 @@
       },
       "ratingHistorySince": "2026-10-15",
       "attention": true,
-      "attentionScore": 4,
-      "attentionLevel": "watch",
-      "attentionLabel": "Наблюдать",
+      "attentionScore": 2,
+      "attentionLevel": "normal",
+      "attentionLabel": "Норма",
       "recommendations": [
-        "Разобрать причины рейтинга ниже цели 4.8★.",
         "Закрыть свежие отзывы без ответа."
       ],
       "coordinates": [
@@ -590,9 +589,9 @@
         59.909531
       ],
       "region": "spb",
-      "band": "yellow",
-      "signal": "Рейтинг 4.7 ниже 4.8",
-      "action": "Посмотреть отзывы"
+      "band": "green",
+      "signal": "5 без ответа за 30 дней",
+      "action": "Ответить на свежие отзывы"
     },
     {
       "id": "202990118089",
@@ -2852,7 +2851,7 @@
     "active": 19,
     "mapped": 44,
     "missing": 1,
-    "below": 31,
+    "below": 30,
     "attention": 39
   },
   "enabled": true,
